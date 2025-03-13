@@ -487,7 +487,6 @@
                 const trackWidth = track.clientWidth;
 
                 function onMove(e) {
-                    e.preventDefault();
                     const clientY = e.touches ? e.touches[0].clientY : e.clientY;
                     const deltaY = clientY - startY;
                     const scrollAmount = (deltaY / trackWidth) * pageHeight;
@@ -501,15 +500,16 @@
                     document.removeEventListener('touchend', onEnd);
                 }
 
-                document.addEventListener('mousemove', onMove, { passive: false });
+
+                document.addEventListener('mousemove', onMove);
                 document.addEventListener('mouseup', onEnd);
-                document.addEventListener('touchmove', (event) => event.preventDefault(), { passive: false });
+                document.addEventListener('touchmove', onMove);
                 document.addEventListener('touchend', onEnd);
             }
 
 
             thumb.addEventListener('mousedown', handleThumbDrag);
-            thumb.addEventListener('touchstart', handleThumbDrag, { passive: false });
+            thumb.addEventListener('touchstart', handleThumbDrag);
             window.addEventListener('scroll', updateThumbPosition);
             window.addEventListener('resize', updateThumbPosition);
 
