@@ -2,6 +2,7 @@
 .blue.navigationActive .cursor,
 .contact-fixed,
 .scrollbar-wrapper,
+.scrollbar-wrapper-wrapper,
 .cursor,
 .logo {
     mix-blend-mode: difference;
@@ -53,6 +54,7 @@
 }
 .blue .contact-fixed,
 .blue .scrollbar-wrapper,
+.blue .scrollbar-wrapper-wrapper,
 .blue .scrollbar-thumb,
 .blue .scrollbar-track,
 .blue .scrollbar-text,
@@ -64,6 +66,7 @@
 .green .scrollbar-track,
 .green .scrollbar-text,
 .green .scrollbar-wrapper,
+.green .scrollbar-wrapper-wrapper,
 .green header .logo-wrapper,
 .green-back-only header .hamby-wrapper,
 .green-back-only header .logo-wrapper,
@@ -2664,7 +2667,8 @@ textarea {
     }
 }
 .green-first .contact-fixed,
-.green-first .scrollbar-wrapper{
+.green-first .scrollbar-wrapper,
+.green-first .scrollbar-wrapper-wrapper{
     mix-blend-mode: unset;
 }
 .deloitte-banner {
