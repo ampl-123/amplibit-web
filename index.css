@@ -339,7 +339,7 @@ html::-webkit-scrollbar {
 .scrollbar-wrapper{
     position: fixed;
     top: 50%;
-    right: 3.8vw;
+    right: 4.8vw;
     width: 6.3vw;
     height: 1vw;
     z-index: 777;
@@ -1410,8 +1410,8 @@ footer .contact-info p {
 }
 .contact-fixed {
     position: fixed;
-    bottom: 3.8vw;
-    right: 3.8vw;
+    bottom: 4.7vw;
+    right: 4.7vw;
     font-size: 0.84vw;
     line-height: normal;
     letter-spacing: 0.11vw;
@@ -1962,7 +1962,7 @@ textarea {
     }
     .contact-fixed {
         bottom: 45px;
-        right: calc(3.8vw + 10px);
+        right: calc(4.2vw + 10px);
         letter-spacing: 0.96px;
         padding-top: 35px;
     }
@@ -2129,9 +2129,9 @@ textarea {
         bottom: 10px;
     }
     .scrollbar-wrapper{
-        right: calc(3.2vw + 15px);
+        right: calc(4.2vw + 10px);
         height: 15px;
-        width: 91px;
+        width: 90px;
     }
     @keyframes scrollbar-wrapper {
         0% {
@@ -2148,7 +2148,7 @@ textarea {
         margin-top: 4px;
     }
     .scrollbar-track{
-        width: 51px;
+        width: 50px;
         height: 1px;
         margin-top: 7px;
     }

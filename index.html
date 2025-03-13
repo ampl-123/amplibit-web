@@ -471,10 +471,10 @@
 
             function updateThumbPosition() {
                 const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
-                const trackWidth = track.clientWidth;
+                const trackWidth = track.clientWidth + 2;
                 const scrollPercentage = window.scrollY / pageHeight;
                 const thumbPosition = scrollPercentage * (trackWidth - thumb.clientWidth);
-                thumb.style.left = `${trackWidth - track.offsetTop - thumbPosition}px`;
+                thumb.style.left = `${(trackWidth - track.offsetTop - 1 - thumbPosition)}px`;
             }
 
             function handleThumbDrag(event) {
