@@ -509,7 +509,7 @@
 
 
             thumb.addEventListener('mousedown', handleThumbDrag);
-            thumb.addEventListener('touchstart', handleThumbDrag);
+            thumb.addEventListener('touchstart', handleThumbDrag, { passive: false });
             window.addEventListener('scroll', updateThumbPosition);
             window.addEventListener('resize', updateThumbPosition);
 
