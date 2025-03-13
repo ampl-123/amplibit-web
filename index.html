@@ -475,7 +475,7 @@
                 const trackWidth = track.clientWidth + 2;
                 const scrollPercentage = window.scrollY / pageHeight;
                 const thumbPosition = scrollPercentage * (trackWidth - thumb.clientWidth);
-                thumb.style.left = `${(trackWidth - track.offsetTop - 1 - thumbPosition)}px`;
+                thumb.style.left = `${Math.max(0, Math.min(trackWidth - track.offsetTop - 1 - thumbPosition))}px`;
             }
 
             function handleThumbDrag(event) {
@@ -503,7 +503,7 @@
 
                 document.addEventListener('mousemove', onMove, { passive: false });
                 document.addEventListener('mouseup', onEnd);
-                document.addEventListener('touchmove', onMove, { passive: false });
+                document.addEventListener('touchmove', (event) => event.preventDefault(), { passive: false });
                 document.addEventListener('touchend', onEnd);
             }
 
