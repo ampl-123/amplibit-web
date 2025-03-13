@@ -307,7 +307,7 @@ html::-webkit-scrollbar {
 }
 
 .scrollbar-track {
-    position: fixed;
+    position: absolute;
     margin-top: 0.5vw;
     height: 0.05vw;
     width: 3.5vw;
@@ -317,7 +317,7 @@ html::-webkit-scrollbar {
 }
 
 .scrollbar-thumb {
-    position: fixed;
+    position: absolute;
     margin-top: 0.3vw;
     width: 0.5vw;
     height: 0.5vw;
@@ -328,7 +328,7 @@ html::-webkit-scrollbar {
 }
 
 .scrollbar-text {
-    position: fixed;
+    position: absolute;
     left: 67%;
     width: 0.5vw;
     height: 0.5vw;
@@ -2157,6 +2157,13 @@ textarea {
             transform: translateY(calc(50% - 90px)) translateX(0)  rotate(-90deg);
         }
     }
+    .scrollbar-wrapper-wrapper{
+        position: fixed;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 777;
+    }
 
     .scrollbar-thumb{
         box-sizing: content-box;
@@ -2167,10 +2174,10 @@ textarea {
     .scrollbar-thumb::before {
         content: "";
         position: absolute;
-        top: -6px;
-        bottom: -6px;
-        left: -6px;
-        right: -6px;
+        top: -12px;
+        bottom: -12px;
+        left: -12px;
+        right: -12px;
     }
     .scrollbar-track{
         width: 50px;
