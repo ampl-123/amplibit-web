@@ -2691,4 +2691,9 @@ textarea {
     bottom: 0;
     box-shadow: inset 10px 0 10px 5px #000;
 }
+@supports (-webkit-touch-callout: none) {
+    .deloitte-banner .shadow {
+        box-shadow: inset 10px 0 10px 5px #000;
+    }
+}
 
