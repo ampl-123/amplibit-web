@@ -503,7 +503,7 @@
 
                 document.addEventListener('mousemove', onMove, { passive: false });
                 document.addEventListener('mouseup', onEnd);
-                document.addEventListener('touchmove', onMove, { passive: false });
+                document.addEventListener('touchmove', (event) => event.preventDefault(), { passive: false });
                 document.addEventListener('touchend', onEnd);
             }
 
