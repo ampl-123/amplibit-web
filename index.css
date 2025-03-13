@@ -336,8 +336,12 @@ html::-webkit-scrollbar {
     z-index: 777;
 }
 
+.scrollbar {
+    position: relative;
+}
+
 .scrollbar-wrapper{
-    position: fixed;
+    position: absolute;
     top: 50%;
     right: 4.8vw;
     width: 6.3vw;
@@ -347,6 +351,13 @@ html::-webkit-scrollbar {
     transform: translateY(calc(-50% - 6.3vw)) translateX(calc(3.8vw + 100%)) rotate(-90deg);
     mix-blend-mode: difference;
     animation: 1s 1s forwards scrollbar-wrapper;
+}
+
+.scrollbar-wrapper-wrapper{
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
 }
 
 @keyframes scrollbar-wrapper {
@@ -2130,15 +2141,16 @@ textarea {
     }
     .scrollbar-wrapper{
         right: calc(4.2vw + 10px);
+        top: 50%;
         height: 15px;
         width: 90px;
     }
     @keyframes scrollbar-wrapper {
         0% {
-            transform: translateY(calc(200px - 90px)) translateX(calc(3.2vw + 50%))  rotate(-90deg);
+            transform: translateY(calc(50% - 90px)) translateX(calc(3.2vw + 50%))  rotate(-90deg);
         }
         100% {
-            transform: translateY(calc(200px - 90px)) translateX(0)  rotate(-90deg);
+            transform: translateY(calc(50% - 90px)) translateX(0)  rotate(-90deg);
         }
     }
 
