@@ -2143,9 +2143,18 @@ textarea {
     }
 
     .scrollbar-thumb{
+        box-sizing: content-box;
         width: 7px;
         height: 7px;
         margin-top: 4px;
+    }
+    .scrollbar-thumb::before {
+        content: "";
+        position: absolute;
+        top: -6px;
+        bottom: -6px;
+        left: -6px;
+        right: -6px;
     }
     .scrollbar-track{
         width: 50px;
