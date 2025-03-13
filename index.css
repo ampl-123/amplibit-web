@@ -2142,7 +2142,7 @@ textarea {
     }
     .scrollbar-wrapper{
         right: calc(4.2vw + 10px);
-        top: 50%;
+        top: 50svh;
         height: 15px;
         width: 90px;
     }
