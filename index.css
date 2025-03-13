@@ -1961,7 +1961,7 @@ textarea {
         letter-spacing: 0.56px;
     }
     .contact-fixed {
-        bottom: 45px;
+        bottom: calc(4.2vw + 10px);
         right: calc(4.2vw + 10px);
         letter-spacing: 0.96px;
         padding-top: 35px;
@@ -2135,10 +2135,10 @@ textarea {
     }
     @keyframes scrollbar-wrapper {
         0% {
-            transform: translateY(calc(-50% - 45px)) translateX(calc(3.2vw + 150%))  rotate(-90deg);
+            transform: translateY(calc(-50% - 90px)) translateX(calc(3.2vw + 150%))  rotate(-90deg);
         }
         100% {
-            transform: translateY(calc(-50% - 45px)) translateX(0)  rotate(-90deg);
+            transform: translateY(calc(-50% - 90px)) translateX(0)  rotate(-90deg);
         }
     }
 
