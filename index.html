@@ -491,10 +491,9 @@
                 function onMove(e) {
                     e.preventDefault();
                     const clientY = e.touches ? e.touches[0].clientY : e.clientY;
-                    console.log(e.touches);
                     const deltaY = clientY - startY;
                     const scrollAmount = (deltaY / trackWidth) * pageHeight;
-                    setTimeout(() => { window.scrollTo(0, startScrollY + scrollAmount)});
+                    window.scrollTo({top: startScrollY + scrollAmount,left: 0, behavior: "auto"});
                 }
 
                 function onEnd() {
