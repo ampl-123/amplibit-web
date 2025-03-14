@@ -493,7 +493,7 @@
                     const clientY = e.touches ? e.touches[0].clientY : e.clientY;
                     const deltaY = clientY - startY;
                     const scrollAmount = (deltaY / trackWidth) * pageHeight;
-                    window.scrollTo({top: startScrollY + scrollAmount,left: 0, behavior: "auto"});
+                    window.scrollTo({top: startScrollY + scrollAmount,left: 0, behavior: "instant"});
                 }
 
                 function onEnd() {
