@@ -325,6 +325,8 @@ html::-webkit-scrollbar {
     border-radius: 50%;
     z-index: 777;
     transform-origin: center left;
+    will-change: transform;
+    transform: translate3d(0, 0, 0);
 }
 
 .scrollbar-text {
@@ -2691,9 +2693,5 @@ textarea {
     bottom: 0;
     box-shadow: inset 10px 0 10px 5px #000;
 }
-@supports (-webkit-touch-callout: none) {
-    .deloitte-banner .shadow {
-        box-shadow: inset 10px 10px 10px 10px #000;
-    }
-}
+
 
