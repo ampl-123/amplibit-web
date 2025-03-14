@@ -113,7 +113,9 @@
         <div class="scrollbar-wrapper-wrapper">
             <div class="scrollbar-wrapper">
                 <div class="scrollbar-track"></div>
-                <div class="scrollbar-thumb"></div>
+                <div class="scrollbar-thumbbox">
+                    <div class="scrollbar-thumb"></div>
+                </div>
                 <p class="scrollbar-text">scroll</p>
             </div>
         </div>
@@ -472,7 +474,7 @@
 
             function updateThumbPosition() {
                 const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
-                const scrollPercentage = Math.max(0, Math.min(0.55,1 - window.scrollY / pageHeight));
+                const scrollPercentage = Math.max(0, Math.min(0.5,1 - (window.scrollY / pageHeight)));
                 thumb.style.left = `${scrollPercentage * 100}%`;
             }
 
@@ -488,7 +490,13 @@
                     e.preventDefault();
                     const clientY = e.touches ? e.touches[0].clientY : e.clientY;
                     const deltaY = clientY - startY;
-                    const scrollAmount = Math.max(0, Math.min((deltaY / trackWidth), 1)) * pageHeight;
+                    let scrollAmount = 0;
+                    if (deltaY > 0){
+                        scrollAmount = Math.max(0, Math.min((deltaY / trackWidth), 1)) * pageHeight;
+                    } else {
+                        scrollAmount = Math.min(0, Math.max((deltaY / trackWidth), -1)) * pageHeight;
+                    }
+
                     console.log("startY", startY);
                     console.log("clientY",clientY);
                     console.log("deltaY",deltaY);
