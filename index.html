@@ -473,13 +473,17 @@
             function updateThumbPosition() {
                 const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
                 const trackWidth = track.clientWidth + 2;
-                const scrollPercentage = window.scrollY / pageHeight;
+                const scrollPercentage = Math.max(0, Math.min(100,window.scrollY / pageHeight));
+                console.log(scrollPercentage);
                 const thumbPosition = scrollPercentage * (trackWidth - thumb.clientWidth);
-                thumb.style.left = `${trackWidth - track.offsetTop - 1 - thumbPosition}px`;
+                console.log(trackWidth - track.offsetTop - 1 - thumbPosition);
+                thumb.style.left = `${(trackWidth - track.offsetTop - 1 - thumbPosition)}px`;
             }
 
             function handleThumbDrag(event) {
                 event.preventDefault();
+
+                document.documentElement.style.overflow = 'hidden';
 
                 const startY = event.touches ? event.touches[0].clientY : event.clientY;
                 const startScrollY = window.scrollY;
@@ -499,6 +503,8 @@
                     document.removeEventListener('mouseup', onEnd);
                     document.removeEventListener('touchmove', onMove);
                     document.removeEventListener('touchend', onEnd);
+
+                    document.documentElement.style.overflow = '';
                 }
 
                 document.addEventListener('mousemove', onMove, { passive: false });
