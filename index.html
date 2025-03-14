@@ -133,10 +133,10 @@
             </div>
         </div>
 
-        <div class="deloitte-banner">
+<!--        <div class="deloitte-banner">
             <div class="shadow"></div>
             <img src="img/deloitte-mobile.png" alt="Amplibit - Deloitte">
-        </div>
+        </div>-->
 
         <div class="partners-wrapper">
             <div class="partners-transition">
@@ -514,13 +514,13 @@
                 document.addEventListener('mousemove', onMove, { passive: false });
                 document.addEventListener('mouseup', onEnd);
                 document.addEventListener('touchmove', onMove, { passive: false });
-                document.addEventListener('touchend', onEnd, { passive: false });
+                document.addEventListener('touchend', onEnd);
             }
 
-
++
             thumb.addEventListener('mousedown', handleThumbDrag);
             thumb.addEventListener('touchstart', handleThumbDrag, { passive: false });
-            window.addEventListener('scroll', updateThumbPosition, { passive: false });
+            window.addEventListener('scroll', updateThumbPosition);
             window.addEventListener('resize', updateThumbPosition);
 
             updateThumbPosition();
