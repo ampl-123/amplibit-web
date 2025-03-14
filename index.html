@@ -477,7 +477,7 @@
                 console.log(scrollPercentage);
                 const thumbPosition = scrollPercentage * (trackWidth);
                 console.log(trackWidth - track.offsetTop - 1 - thumbPosition);
-                thumb.style.left = `${(trackWidth - track.offsetTop - 1 - thumbPosition)}px`;
+                thumb.style.left = `${Math.min(trackWidth, Math.max(0, trackWidth - track.offsetTop - 1 - thumbPosition))}px`;
             }
 
             function handleThumbDrag(event) {
@@ -493,7 +493,7 @@
                     const clientY = e.touches ? e.touches[0].clientY : e.clientY;
                     const deltaY = clientY - startY;
                     const scrollAmount = (deltaY / trackWidth) * pageHeight;
-                    window.scrollTo({top: startScrollY + scrollAmount,left: 0, behavior: "instant"});
+                    window.scrollTo(0, startScrollY + scrollAmount);
                 }
 
                 function onEnd() {
