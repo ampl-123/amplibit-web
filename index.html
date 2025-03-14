@@ -474,9 +474,9 @@
                 const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
                 const trackWidth = track.clientWidth + 2;
                 const scrollPercentage = Math.min(100,window.scrollY / pageHeight);
-                console.log(scrollPercentage);
+                console.log("scroll percent",scrollPercentage);
                 const thumbPosition = scrollPercentage * (trackWidth);
-                console.log(trackWidth - track.offsetTop - 1 - thumbPosition);
+                console.log("left",trackWidth - track.offsetTop - 1 - thumbPosition);
                 thumb.style.left = `${Math.min(trackWidth, Math.max(0, trackWidth - track.offsetTop - 1 - thumbPosition))}px`;
             }
 
