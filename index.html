@@ -474,7 +474,7 @@
 
             function updateThumbPosition() {
                 const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
-                const scrollPercentage = Math.max(0, Math.min(0.5,1 - (window.scrollY / pageHeight)));
+                const scrollPercentage = Math.max(0, Math.min(0.9 ,1 - (window.scrollY / pageHeight)));
                 thumb.style.left = `${scrollPercentage * 100}%`;
             }
 
@@ -490,7 +490,7 @@
                     e.preventDefault();
                     const clientY = e.touches ? e.touches[0].clientY : e.clientY;
                     const deltaY = clientY - startY;
-                    let scrollAmount = 0;
+                    let scrollAmount;
                     if (deltaY > 0){
                         scrollAmount = Math.max(0, Math.min((deltaY / trackWidth), 1)) * pageHeight;
                     } else {
@@ -514,13 +514,13 @@
                 document.addEventListener('mousemove', onMove, { passive: false });
                 document.addEventListener('mouseup', onEnd);
                 document.addEventListener('touchmove', onMove, { passive: false });
-                document.addEventListener('touchend', onEnd);
+                document.addEventListener('touchend', onEnd, { passive: false });
             }
 
 
             thumb.addEventListener('mousedown', handleThumbDrag);
             thumb.addEventListener('touchstart', handleThumbDrag, { passive: false });
-            window.addEventListener('scroll', updateThumbPosition);
+            window.addEventListener('scroll', updateThumbPosition, { passive: false });
             window.addEventListener('resize', updateThumbPosition);
 
             updateThumbPosition();
