@@ -2531,8 +2531,8 @@ textarea {
         padding: 40px 0 0;
     }
     .product-img-wrapper {
-        width: 400px;
-        min-height: 300px;
+        width: 80vw;
+        min-height: 60vw;
         margin-top: 5vw;
         margin-bottom: 7vw;
         padding: 2vw;
