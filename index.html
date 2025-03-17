@@ -120,7 +120,7 @@
             </div>
         </div>
 
-        <div class="banner-wrapper">
+        <div class="banner-wrapper section">
             <div class="banner-text-wrapper">
                 <p class="pretitle">All-in-one software company</p>
                 <h1 class="amplify">Amplify your</h1>
@@ -138,7 +138,7 @@
             <img src="img/deloitte-mobile.png" alt="Amplibit - Deloitte">
         </div>-->
 
-        <div class="partners-wrapper">
+        <div class="partners-wrapper section">
             <div class="partners-transition">
                 <h1 class="partners-title">Trusted by</h1>
                 <div class="partners-container">
@@ -161,7 +161,7 @@
             </div> 
         </div>
 
-        <div class="what-we-do-wrapper">
+        <div class="what-we-do-wrapper section">
             <h1 class="what-we-do-title">What we do</h1>
             <div class="what-we-do-services">
                 <div>
@@ -175,9 +175,48 @@
             </div>
         </div>
 
+        <div class="products-wrapper">
+            <div class="carousel-container">
+                <div class="carousel" id="carousel">
+                    <div class="carousel-item" style="background-image: url('img/vengo_bck.png');">
+                        <h1 class="product-name">Vengo</h1>
+                        <h2 class="product-moto">Your single point of truth for vendor management</h2>
+                        <div class="product-img-wrapper">
+                            <img class="product-img" src="img/Vengo_screen.png" alt="Vengo" loading="lazy"/>
+                        </div>
+                    </div>
+                    <div class="carousel-item" style="background-image: url('img/arrango_bck.png');">
+                        <h1 class="product-name">Arrango</h1>
+                        <h2 class="product-moto">Outsourcing arrangements</h2>
+                        <div class="product-img-wrapper">
+                            <img class="product-img" src="img/Vengo_screen.png" alt="Vengo" loading="lazy"/>
+                        </div>
+
+                    </div>
+                    <div class="carousel-item" style="background-image: url('img/tat_bck.png');">
+                        <h1 class="product-name">TAT</h1>
+                        <h2 class="product-moto">Freight management application</h2>
+                        <div class="product-img-wrapper">
+                            <img class="product-img" src="img/Vengo_screen.png" alt="Vengo" loading="lazy"/>
+                        </div>
+
+                    </div>
+                    <div class="carousel-item" style="background-image: url('img/tat_bck.png');">
+                        <h1 class="product-name">LIBBY</h1>
+                        <h2 class="product-moto">Liability management platform</h2>
+                        <div class="product-img-wrapper">
+                            <img class="product-img" src="img/Vengo_screen.png" alt="Vengo" loading="lazy"/>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
         <div class="services-wrapper">
             <div class="single-service-wrapper zero-service" id="Vengo">
-                <div class="single-service">
+                <div class="single-service section">
                     <div>
                         <h2>Your single point of truth for vendor management</h2>
                         <h1>Vengo</h1>
@@ -188,7 +227,7 @@
                 </div>
             </div>
 
-            <div class="single-service-wrapper first-service">
+            <div class="single-service-wrapper first-service section">
                 <div class="single-service">
                     <img src="img/catago.webp" alt="Product Catalog">
                     <div>
@@ -200,7 +239,7 @@
                 </div>
             </div>
 
-            <div class="single-service-wrapper second-service">
+            <div class="single-service-wrapper second-service section">
                 <div class="single-service">
                     <div>
                         <h2>Outsourcing Arrangements</h2>
@@ -213,7 +252,7 @@
             </div>
         </div>
 
-        <div class="amplibit-team-wrapper">
+        <div class="amplibit-team-wrapper section">
             <h1 class="team-title">Life at Amplibit</h1>
             
             <div class="team-mosaic-wrapper">
@@ -399,7 +438,7 @@
                 <h1>Have an idea?</h1>
                 <a href="/contact.html">Tell us about it</a>
             </div>
-            <div class="contact-info">
+            <div class="contact-info section">
                 <p class="text-hello"><span>i</span><span>d</span><span>n</span><span>@</span><span>f</span><span>&#x40;</span><span>o</span><span>o</span><span>&#x40;</span><span>c</span><span>a</span><span>c</span><span>m</span><span>o</span><span>p</span><span>t</span><span>l</span><span>a</span><span>i</span><span>c</span><span>b</span><span>t</span><span>i</span><span>@</span><span>t</span><span>c</span><span>.</span><span>d</span><span>c</span><span>r</span><span>o</span><span>n</span><span>m</span></p>
                 <p>+385 1 2096 296</p>
                 <p>Ulica grada Vukovara 5/1, Zagreb, Croatia</p>
@@ -474,7 +513,7 @@
 
             function updateThumbPosition() {
                 const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
-                const scrollPercentage = Math.max(0, Math.min(0.9 ,1 - (window.scrollY / pageHeight)));
+                const scrollPercentage = Math.max(0, Math.min(1 ,1 - (window.scrollY / pageHeight)));
                 thumb.style.left = `${scrollPercentage * 100}%`;
             }
 
@@ -497,11 +536,7 @@
                         scrollAmount = Math.min(0, Math.max((deltaY / trackWidth), -1)) * pageHeight;
                     }
 
-                    console.log("startY", startY);
-                    console.log("clientY",clientY);
-                    console.log("deltaY",deltaY);
-                    console.log("scrollAmount",scrollAmount);
-                    window.scrollTo(0, startScrollY + scrollAmount);
+                    window.scrollTo({top:startScrollY + scrollAmount, behavior: 'smooth'});
                 }
 
                 function onEnd() {
@@ -509,6 +544,8 @@
                     document.removeEventListener('mouseup', onEnd);
                     document.removeEventListener('touchmove', onMove);
                     document.removeEventListener('touchend', onEnd);
+
+                    snapToNearest();
                 }
 
                 document.addEventListener('mousemove', onMove, { passive: false });
@@ -526,7 +563,53 @@
                 thumb.addEventListener('touchstart', handleThumbDrag, { passive: false });
             }
 
-            window.addEventListener('scroll', updateThumbPosition);
+            /*let scrollTimeout;
+            let lastScrollY = window.scrollY;
+
+            window.addEventListener("scroll", () => {
+                updateThumbPosition(); // Keep your existing function
+
+                clearTimeout(scrollTimeout);
+
+                scrollTimeout = setTimeout(() => {
+                    const sections = document.querySelectorAll(".section");
+                    const currentScroll = window.scrollY;
+                    const viewportHeight = window.innerHeight;
+
+                    let scrollDirection = currentScroll > lastScrollY ? "down" : "up";
+                    lastScrollY = currentScroll; // Update last scroll position
+
+                    if (scrollDirection === "down") {
+                        sections.forEach((section, index) => {
+                            const sectionTop = section.offsetTop;
+                            const sectionHeight = section.offsetHeight;
+                            const sectionBottom = sectionTop + sectionHeight;
+
+                            // Snap to the next section when you're near the top of the next section
+                            const snapTrigger = sectionTop + (sectionHeight * 0.9); // 90% down the current section
+
+                            if (currentScroll + viewportHeight >= snapTrigger) {
+                                const nextSection = sections[index + 1];
+                                if (nextSection) {
+                                    window.scrollTo({ top: nextSection.offsetTop, behavior: "smooth" });
+                                }
+                            }
+                        });
+                    } else if (scrollDirection === "up") {
+                        sections.forEach((section, index) => {
+                            const sectionTop = section.offsetTop;
+
+                            // Snap to the top of the current section when you're close to the top of it
+                            if (currentScroll <= sectionTop) {
+                                window.scrollTo({ top: sectionTop, behavior: "smooth" });
+                            }
+                        });
+                    }
+                }, 150); // Delay for better UX
+            });*/
+
+
+            window.addEventListener("scroll", updateThumbPosition);
             window.addEventListener('resize', updateThumbPosition);
 
             updateThumbPosition();
