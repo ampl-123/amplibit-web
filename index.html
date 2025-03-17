@@ -517,9 +517,15 @@
                 document.addEventListener('touchend', onEnd);
             }
 
-+
-            thumb.addEventListener('mousedown', handleThumbDrag);
-            thumb.addEventListener('touchstart', handleThumbDrag, { passive: false });
+            function isIPhone() {
+                return /iPhone/i.test(navigator.userAgent);
+            }
+
+            if (!isIPhone()) {
+                thumb.addEventListener('mousedown', handleThumbDrag);
+                thumb.addEventListener('touchstart', handleThumbDrag, { passive: false });
+            }
+
             window.addEventListener('scroll', updateThumbPosition);
             window.addEventListener('resize', updateThumbPosition);
 
