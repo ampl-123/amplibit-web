@@ -24,12 +24,7 @@
     box-sizing: border-box;
     cursor: none;
     font-style: normal;
-    /*scroll-snap-type: y mandatory;*/
 }
-
-/*section {
-    scroll-snap-align: start;
-}*/
 .cursor-wrapper {
     position: absolute;
     top: 0;
