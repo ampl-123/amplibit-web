@@ -110,16 +110,13 @@
             </div>
         </header>
         <a href="/contact.html" class="contact-fixed">Let's talk</a>
-        <div class="scrollbar-wrapper-wrapper">
-            <div class="scrollbar-wrapper">
-                <div class="scrollbar-track"></div>
-                <div class="scrollbar-thumbbox">
-                    <div class="scrollbar-thumb"></div>
-                </div>
-                <p class="scrollbar-text">scroll</p>
+        <div class="scrollbar-wrapper">
+            <div class="scrollbar-track"></div>
+            <div class="scrollbar-thumbbox">
+                <div class="scrollbar-thumb"></div>
             </div>
+            <p class="scrollbar-text">scroll</p>
         </div>
-
         <div class="banner-wrapper section">
             <div class="banner-text-wrapper">
                 <p class="pretitle">All-in-one software company</p>
@@ -230,7 +227,7 @@
                         </div>
                     </div>
                     <div class="product-img-wrapper">
-                        <img class="product-img" src="img/tat_screen.png" alt="Tat" loading="lazy"/>
+                        <img class="product-img" src="img/catago_screen.png" alt="Tat" loading="lazy"/>
                     </div>
                 </div>
                 <div class="product-contain" style="background: linear-gradient(257.44deg, #23D192 0.58%, #18C5C8 99.42%);">
@@ -258,7 +255,7 @@
                         </div>
                     </div>
                     <div class="product-img-wrapper">
-                        <img class="product-img" src="img/arrango_screen.png" alt="Arrango" loading="lazy"/>
+                        <img class="product-img" src="img/arrango_table.png" alt="Arrango" loading="lazy"/>
                     </div>
                 </div>
                 <div class="product-contain" style="background: linear-gradient(252.14deg, #359BFF 0.52%, #4F6BCF 99.48%);">
@@ -287,7 +284,7 @@
 
                     </div>
                     <div class="product-img-wrapper">
-                        <img class="product-img" src="img/vengo_screen.png" alt="Vengo" loading="lazy"/>
+                        <img class="product-img" src="img/libby_screen.png" alt="Libby" loading="lazy"/>
                     </div>
                 </div>
 
@@ -576,7 +573,6 @@
                 0 > document.querySelector(".tell-us-about-it").getBoundingClientRect().bottom - window.innerHeight ? document.querySelector(".tell-us-about-it").classList.add("active") : document.querySelector(".tell-us-about-it").classList.remove("active"),
 
                 0 > document.querySelector(".zero-service").getBoundingClientRect().top - 0.5 * window.innerHeight ? document.body.classList.add("green-first","black") : document.body.classList.remove("green-first","black"),
-                0 > document.querySelector(".product-catalog").getBoundingClientRect().bottom - window.innerHeight ? document.querySelector(".product-catalog").classList.add("active") : document.querySelector(".product-catalog").classList.remove("active"),
 
                 0 > document.querySelector(".first-service").getBoundingClientRect().top - 0.5 * window.innerHeight ? document.body.classList.add("blue") : document.body.classList.remove("blue"),
                 0 > document.querySelector(".second-service").getBoundingClientRect().top - 0.5 * window.innerHeight ? document.body.classList.add("green") : document.body.classList.remove("green"),
@@ -591,9 +587,7 @@
             const catalog = document.querySelector(".product-catalog");
             const products = document.querySelectorAll(".product-contain");
             document.addEventListener("scroll", () => {
-                const catalogTop = catalog.getBoundingClientRect().top;
-                const catalogHeight = catalog.offsetHeight;
-                if (catalogTop || catalog.getBoundingClientRect().bottom) {
+                if (catalog.getBoundingClientRect().top <= window.innerHeight && catalog.getBoundingClientRect().bottom >= 0) {
                     document.body.classList.add("blue");
                 } else {
                     document.body.classList.remove("blue");

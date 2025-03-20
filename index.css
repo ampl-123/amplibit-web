@@ -363,29 +363,21 @@ html::-webkit-scrollbar {
 
 
 .scrollbar-wrapper{
-    position: relative;
-    top: 50%;
-    right: 4.8vw;
+    position: fixed;
+    bottom: -3.2vw;
+    left: 3.4vw;
     width: 6.3vw;
     height: 1vw;
     z-index: 777;
-    transform-origin: bottom right;
-    transform: translateY(calc(-50% - 6.3vw)) translateX(calc(3.8vw + 100%)) rotate(-90deg);
+    transform-origin: bottom left;
+    transform: translateY(calc(-50% - 6.3vw)) translateX(calc(-3.8vw - 100%)) rotate(-90deg);
     mix-blend-mode: difference;
     animation: 1s 1s forwards scrollbar-wrapper;
 }
 
-.scrollbar-wrapper-wrapper{
-    position: fixed;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    z-index: 777;
-}
-
 @keyframes scrollbar-wrapper {
     0% {
-        transform: translateY(calc(-50% - 6.3vw)) translateX(calc(3.8vw + 50%))  rotate(-90deg);
+        transform: translateY(calc(-50% - 6.3vw)) translateX(calc(-3.8vw - 50%))  rotate(-90deg);
     }
     100% {
         transform: translateY(calc(-50% - 6.3vw)) translateX(0)  rotate(-90deg);
@@ -790,10 +782,6 @@ html::-webkit-scrollbar {
     font-weight: 700;
     color: inherit;
 }
-.product-catalog .scrollbar-wrapper{
-    mix-blend-mode: unset;
-    color: #FFFFFF;
-}
 .product-catalog{
     position: relative;
     width: 100vw;
@@ -818,6 +806,7 @@ html::-webkit-scrollbar {
     width: 100%;
     height: 100vh;
     display: flex;
+    flex-flow: row;
     padding-right: 10vw;
     padding-left: 5vw;
     opacity: 0;
@@ -827,27 +816,19 @@ html::-webkit-scrollbar {
     opacity: 1;
 }
 .product-img-wrapper {
-    width: 53.3vw;
-    height: 35.5vw;
-    display: flex;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.5);
-    border-radius: 20px;
-    top: calc(50% - 17.5vw);
-    position: absolute;
-    right: 14.4vw;
+    align-content: center;
 }
 .product-img {
-    width: 53.3vw;
     height: 35.5vw;
-    padding: 1.25vw;
-    object-fit: cover;
-    object-position: top left;
+    object-fit: contain;
+/*    object-position: center right;*/
     border-radius: 2vw;
 }
 .product-info{
     display: flex;
     flex-direction: column;
+    width: 100%;
+    height: 100%;
 }
 .product-name,
 .product-moto {
@@ -2352,25 +2333,18 @@ textarea {
         bottom: 10px;
     }
     .scrollbar-wrapper{
-        right: calc(4.2vw + 10px);
-        top: 50svh;
+        left: calc(4.8vw + 10px);
+        bottom: calc(4.8vw + 10px);
         height: 15px;
         width: 90px;
     }
     @keyframes scrollbar-wrapper {
         0% {
-            transform: translateY(calc(50% - 90px)) translateX(calc(3.2vw + 50%))  rotate(-90deg);
+            transform: /*translateY(calc(50% - 90px))*/ translateX(calc(-3.2vw - 50%))  rotate(-90deg);
         }
         100% {
-            transform: translateY(calc(50% - 90px)) translateX(0)  rotate(-90deg);
+            transform: /*translateY(calc(50% - 90px))*/ translateX(0)  rotate(-90deg);
         }
-    }
-    .scrollbar-wrapper-wrapper{
-        position: fixed;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        z-index: 777;
     }
 
     .scrollbar-thumb{
@@ -2407,8 +2381,8 @@ textarea {
         border-radius: 50px;
     }
     .product-img {
-        width: 100%;
-        height: 100%;
+/*        width: 100%;
+        height: 100%;*/
         object-position: top left;
         border-radius: 25px;
     }
@@ -2624,19 +2598,16 @@ textarea {
     .product-contain{
         justify-content: center;
         align-content: flex-start;
-        flex-flow: column;
+        flex-flow: column-reverse;
     }
     .product-img-wrapper {
         width: 80vw;
-        min-height: 60vw;
-        margin-top: 12.0vw;
-        margin-bottom: 7vw;
         padding: 2vw;
     }
     .product-img {
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        object-fit: contain;
         object-position: top left;
         border-radius: 10px;
     }
@@ -2676,9 +2647,9 @@ textarea {
         flex-direction: column;
         align-items: flex-start;
         justify-content: space-between;
-        min-height: 10vw;
-        position: absolute;
-        top: 100px;
+        min-height: 35vw;
+        height: 50%;
+        position: relative;
     }
 }
 
