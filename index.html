@@ -199,7 +199,8 @@
                         </div>
                     </div>
                     <div class="product-img-wrapper">
-                        <img class="product-img" src="img/vengo_screen.png" alt="Vengo" loading="lazy"/>
+                        <img class="product-img" src="img/vengo_table.png" alt="Vengo" loading="lazy" style="width: 50vw"/>
+                        <img class="product-img-mini" src="img/vengo_kpi.png" alt="Vengo" loading="lazy"/>
                     </div>
                 </div>
                 <div class="product-contain" style="background: linear-gradient(252.14deg, #3FD9FF 0.52%, #56ABFA 79.69%);">
@@ -227,7 +228,8 @@
                         </div>
                     </div>
                     <div class="product-img-wrapper">
-                        <img class="product-img" src="img/catago_screen.png" alt="Tat" loading="lazy"/>
+                        <img class="product-img" src="img/catago_graph.png" alt="Catago" loading="lazy"/>
+                        <img class="product-img-mini" src="img/catago_add.png" alt="Catago" loading="lazy"/>
                     </div>
                 </div>
                 <div class="product-contain" style="background: linear-gradient(257.44deg, #23D192 0.58%, #18C5C8 99.42%);">
@@ -259,7 +261,7 @@
                     </div>
                 </div>
                 <div class="product-contain" style="background: linear-gradient(252.14deg, #359BFF 0.52%, #4F6BCF 99.48%);">
-                    <div class="product-info">
+                    <div class="product-info" style="padding-left: 0vw;">
                         <svg class="product-logo" width="63" height="69" viewBox="0 0 63 69" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g clip-path="url(#clip0_1072_8349)">
                                 <path d="M36.4039 34.2707L44.3017 29.8144L44.3017 9.84919L0.566274 34.1607L0.369141 34.2676L62.3691 68.7393L62.3691 48.774L36.4039 34.2707Z" fill="white"/>
@@ -283,11 +285,11 @@
                         </div>
 
                     </div>
-                    <div class="product-img-wrapper">
-                        <img class="product-img" src="img/libby_screen.png" alt="Libby" loading="lazy"/>
-                    </div>
+                        <div class="product-img-wrapper">
+                                <img class="product-img" src="img/libby_drop.png" alt="Libby" loading="lazy"/>
+                                <img class="product-img" src="img/libby_file.png" alt="Libby" loading="lazy" style="top: calc(50% + 18vw)"/>
+                        </div>
                 </div>
-
             </div>
         </section>
         <div class="services-wrapper">
@@ -586,38 +588,33 @@
         <script>
             const catalog = document.querySelector(".product-catalog");
             const products = document.querySelectorAll(".product-contain");
+            products[0].classList.toggle("active");
             document.addEventListener("scroll", () => {
-                if (catalog.getBoundingClientRect().top <= window.innerHeight && catalog.getBoundingClientRect().bottom >= 0) {
-                    document.body.classList.add("blue");
-                } else {
-                    document.body.classList.remove("blue");
+                document.body.classList.toggle("blue", catalog.getBoundingClientRect().top <= window.innerHeight && catalog.getBoundingClientRect().bottom >= 0);
+                const catalogRect = catalog.getBoundingClientRect();
+                if (catalogRect.top <= 0 && !(catalogRect.bottom < window.innerHeight)) {
+                    let progress = window.scrollY - catalog.offsetTop;
+                    let index = Math.min(Math.max(Math.floor(progress / window.innerHeight*4), 0), products.length - 1);
+                    products.forEach((p, i) => p.classList.toggle("active", i === index));
                 }
-                let progress = window.scrollY - catalog.offsetTop;
-                let index = Math.min(Math.max(Math.floor(progress / window.innerHeight), 0), products.length - 1);
-                products.forEach((p, i) => p.classList.toggle("active", i === index));
             });
 
         </script>
         <script>
             document.documentElement.style.overflowY = 'scroll';
-
             const thumb = document.querySelector('.scrollbar-thumb');
             const track = document.querySelector('.scrollbar-track');
-
             function updateThumbPosition() {
                 const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
                 const scrollPercentage = Math.max(0, Math.min(1 ,1 - (window.scrollY / pageHeight)));
                 thumb.style.left = `${scrollPercentage * 100}%`;
             }
-
             function handleThumbDrag(event) {
                 event.preventDefault();
-
                 const startY = event.touches ? event.touches[0].clientY : event.clientY;
                 const startScrollY = window.scrollY;
                 const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
                 const trackWidth = track.clientWidth;
-
                 function onMove(e) {
                     e.preventDefault();
                     const clientY = e.touches ? e.touches[0].clientY : e.clientY;
@@ -628,36 +625,29 @@
                     } else {
                         scrollAmount = Math.min(0, Math.max((deltaY / trackWidth), -1)) * pageHeight;
                     }
-
-                    window.scrollTo({top:startScrollY + scrollAmount, behavior: 'smooth'});
+                    window.scrollTo({top:startScrollY + scrollAmount});
                 }
-
                 function onEnd() {
                     document.removeEventListener('mousemove', onMove);
                     document.removeEventListener('mouseup', onEnd);
                     document.removeEventListener('touchmove', onMove);
                     document.removeEventListener('touchend', onEnd);
                 }
-
                 document.addEventListener('mousemove', onMove, { passive: false });
                 document.addEventListener('mouseup', onEnd);
                 document.addEventListener('touchmove', onMove, { passive: false });
                 document.addEventListener('touchend', onEnd);
             }
-
             function isIPhone() {
                 return /iPhone|iPad|iPod/i.test(navigator.userAgent);
             }
-
             if (!isIPhone()) {
                 thumb.addEventListener('mousedown', handleThumbDrag);
                 thumb.addEventListener('touchstart', handleThumbDrag, { passive: false });
             }
             window.addEventListener("scroll", updateThumbPosition);
             window.addEventListener('resize', updateThumbPosition);
-
             updateThumbPosition();
-
         </script>
 
     </body>
