@@ -174,9 +174,9 @@
 
         <section class="product-catalog">
             <div class="products-window">
-                <div class="product-contain" style="background: linear-gradient(252.14deg, #99DC70 0.52%, #63BE82 79.19%);">
+                <div id="contain-1" class="product-contain">
                     <div class="product-info">
-                        <svg class="product-logo" width="60" height="54" viewBox="0 0 60 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg id="logo-vengo" class="product-logo" width="60" height="54" viewBox="0 0 60 54" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g clip-path="url(#clip0_821_753)">
                                 <path d="M29.9136 22.6149L26.0239 15.7361L8.5969 15.7361L29.8176 53.8283L29.9109 54L60 0L42.573 1.5293e-06L29.9136 22.6149Z" fill="white"/>
                                 <path d="M32.3168 13.3027L39.9316 0.000320435L0.000220094 0.000323939L7.53279 13.3027L32.3168 13.3027Z" fill="white"/>
@@ -203,9 +203,9 @@
                         <img class="product-img-mini" src="img/vengo_kpi.png" alt="Vengo" loading="lazy"/>
                     </div>
                 </div>
-                <div class="product-contain" style="background: linear-gradient(252.14deg, #3FD9FF 0.52%, #56ABFA 79.69%);">
+                <div id="contain-2" class="product-contain">
                     <div class="product-info">
-                        <svg class="product-logo" width="54" height="60" viewBox="0 0 54 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg id="logo-catago" class="product-logo" width="54" height="60" viewBox="0 0 54 60" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g clip-path="url(#clip0_1072_8007)">
                                 <path d="M31.3851 29.9136L38.2639 26.0239V8.5969L0.171697 29.8176L0 29.9108L54 60V42.573L31.3851 29.9136Z" fill="white"/>
                                 <path d="M40.6973 32.3168L53.9997 39.9316V0.00022142L40.6973 7.53279V32.3168Z" fill="white"/>
@@ -232,9 +232,9 @@
                         <img class="product-img-mini" src="img/catago_add.png" alt="Catago" loading="lazy"/>
                     </div>
                 </div>
-                <div class="product-contain" style="background: linear-gradient(257.44deg, #23D192 0.58%, #18C5C8 99.42%);">
+                <div id="contain-3" class="product-contain">
                     <div class="product-info">
-                        <svg class="product-logo" width="68" height="61" viewBox="0 0 68 61" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg id="logo-arrango" class="product-logo" width="68" height="61" viewBox="0 0 68 61" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g clip-path="url(#clip0_821_757)">
                                 <path d="M33.9126 35.4535L38.297 43.224H57.9402L34.0208 0.193954L33.9157 0L0 61H19.6432L33.9126 35.4535Z" fill="white"/>
                                 <path d="M31.2044 45.9736L22.6211 61.0004H67.6307L59.1402 45.9736H31.2044Z" fill="white"/>
@@ -260,9 +260,9 @@
                         <img class="product-img" src="img/arrango_table.png" alt="Arrango" loading="lazy"/>
                     </div>
                 </div>
-                <div class="product-contain" style="background: linear-gradient(252.14deg, #359BFF 0.52%, #4F6BCF 99.48%);">
-                    <div class="product-info" style="padding-left: 0vw;">
-                        <svg class="product-logo" width="63" height="69" viewBox="0 0 63 69" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <div id="contain-4" class="product-contain">
+                    <div class="product-info" style="padding-left: 0;">
+                        <svg id="logo-libby" class="product-logo" width="63" height="69" viewBox="0 0 63 69" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g clip-path="url(#clip0_1072_8349)">
                                 <path d="M36.4039 34.2707L44.3017 29.8144L44.3017 9.84919L0.566274 34.1607L0.369141 34.2676L62.3691 68.7393L62.3691 48.774L36.4039 34.2707Z" fill="white"/>
                                 <path d="M47.0957 37.0241L62.3688 45.748L62.3688 0.000530435L47.0957 8.63024L47.0957 37.0241Z" fill="white"/>
@@ -287,7 +287,7 @@
                     </div>
                         <div class="product-img-wrapper">
                                 <img class="product-img" src="img/libby_drop.png" alt="Libby" loading="lazy"/>
-                                <img class="product-img" src="img/libby_file.png" alt="Libby" loading="lazy" style="top: calc(50% + 18vw)"/>
+                                <img class="product-img" src="img/libby_file.png" alt="Libby" loading="lazy" style="top: calc(50% + 18vw); max-width: 50vw"/>
                         </div>
                 </div>
             </div>
@@ -589,16 +589,33 @@
             const catalog = document.querySelector(".product-catalog");
             const products = document.querySelectorAll(".product-contain");
             products[0].classList.toggle("active");
+            document.body.classList.toggle("blue", catalog.getBoundingClientRect().top <= window.innerHeight && catalog.getBoundingClientRect().bottom >= 0);
             document.addEventListener("scroll", () => {
                 document.body.classList.toggle("blue", catalog.getBoundingClientRect().top <= window.innerHeight && catalog.getBoundingClientRect().bottom >= 0);
                 const catalogRect = catalog.getBoundingClientRect();
                 if (catalogRect.top <= 0 && !(catalogRect.bottom < window.innerHeight)) {
-                    let progress = window.scrollY - catalog.offsetTop;
-                    let index = Math.min(Math.max(Math.floor(progress / window.innerHeight*4), 0), products.length - 1);
+                    let progress = (window.scrollY - catalog.offsetTop)/(catalog.clientHeight*0.75);
+                    let index = Math.min(Math.max(Math.floor(progress / 0.25), 0), products.length - 1);
                     products.forEach((p, i) => p.classList.toggle("active", i === index));
+                    //console.log((progress));
+                    let shift = progress * 100 - (index * 25);
+                    console.log(shift);
+                    if(index < 3){
+                        console.log("dddd",(shift * 4 < 40 ? 100 : 100 - (shift * 4)))
+                        console.log("aaaa", (shift * 4 < 60 ? shift * 4 : 100))
+                        document.getElementById(`contain-${index+1}`)?.getElementsByClassName("product-img")[0].style.setProperty('--product-img-shift', Math.max(shift-10, 0) + '%');
+                        document.getElementById(`contain-${index+1}`)?.getElementsByClassName("product-img")[0].style.setProperty('--product-opacity', Math.max(shift*4 - 30, 0) + '%');
+                        document.getElementById(`contain-${index+1}`)?.getElementsByClassName("product-img")[1]?.style.setProperty('--product-img-shift', -Math.max(shift-10, 0) + '%');
+                        document.getElementById(`contain-${index+1}`)?.getElementsByClassName("product-img")[1]?.style.setProperty('--product-opacity', Math.max(shift*4 - 20, 0) + '%');
+                        document.getElementById(`contain-${index+1}`)?.getElementsByClassName("product-img-mini")[0]?.style.setProperty('--product-img-shift', -Math.max(shift-10, 0) + '%');
+                        document.getElementById(`contain-${index+1}`)?.getElementsByClassName("product-img-mini")[0]?.style.setProperty('--product-opacity', Math.max(shift*4 - 20, 0) + '%');
+                        document.getElementById(`contain-${index+1}`)?.getElementsByClassName("product-name")[0].style.setProperty('--product-name-shift', Math.max(shift-10, 0) + '%');
+                        document.getElementById(`contain-${index+1}`)?.getElementsByClassName("product-name")[0].style.setProperty('--product-name-opacity', Math.max(shift*4 - 20, 0) + '%');
+                        document.getElementById(`contain-${index+1}`)?.getElementsByClassName("product-moto")[0].style.setProperty('--product-moto-shift', Math.max(shift-10, 0) + '%');
+                        document.getElementById(`contain-${index+1}`)?.getElementsByClassName("product-moto")[0].style.setProperty('--product-moto-opacity', Math.max(shift*4 - 20, 0) + '%');
+                    }
                 }
             });
-
         </script>
         <script>
             document.documentElement.style.overflowY = 'scroll';
