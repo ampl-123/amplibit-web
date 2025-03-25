@@ -261,7 +261,7 @@
                     </div>
                 </div>
                 <div id="contain-4" class="product-contain">
-                    <div class="product-info" style="padding-left: 0;">
+                    <div class="product-info">
                         <svg id="logo-libby" class="product-logo" width="63" height="69" viewBox="0 0 63 69" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g clip-path="url(#clip0_1072_8349)">
                                 <path d="M36.4039 34.2707L44.3017 29.8144L44.3017 9.84919L0.566274 34.1607L0.369141 34.2676L62.3691 68.7393L62.3691 48.774L36.4039 34.2707Z" fill="white"/>
@@ -586,8 +586,27 @@
             });
         </script>
         <script>
+            const lerp = (r1, r2, g1, g2, b1, b2, t) => {
+                const r = Math.round(r1 + (r2 - r1) * t);
+                const g = Math.round(g1 + (g2 - g1) * t);
+                const b = Math.round(b1 + (b2 - b1) * t);
+                return `rgb(${r}, ${g}, ${b})`;
+            };
+            const gradients = [
+                [[153, 220, 112],
+                    [99, 190, 130]],
+                [[63, 217, 255],
+                    [86, 171, 250]],
+                [[35, 209, 146],
+                    [24, 197, 200]],
+                [[53, 155, 255],
+                    [79, 107, 207]],
+                [[53, 155, 255],
+                    [79, 107, 207]]
+            ];
             const catalog = document.querySelector(".product-catalog");
             const products = document.querySelectorAll(".product-contain");
+            const background = document.querySelector(".products-window");
             products[0].classList.toggle("active");
             document.body.classList.toggle("blue", catalog.getBoundingClientRect().top <= window.innerHeight && catalog.getBoundingClientRect().bottom >= 0);
             document.addEventListener("scroll", () => {
@@ -595,14 +614,19 @@
                 const catalogRect = catalog.getBoundingClientRect();
                 if (catalogRect.top <= 0 && !(catalogRect.bottom < window.innerHeight)) {
                     let progress = (window.scrollY - catalog.offsetTop)/(catalog.clientHeight*0.75);
+                    console.log("progress",progress)
                     let index = Math.min(Math.max(Math.floor(progress / 0.25), 0), products.length - 1);
                     products.forEach((p, i) => p.classList.toggle("active", i === index));
                     //console.log((progress));
                     let shift = progress * 100 - (index * 25);
+                    console.log("shift",shift)
+                    console.log(lerp(gradients[index][0][0],gradients[index+1][0][0],gradients[index][0][1],gradients[index+1][0][1],gradients[index][0][2], gradients[index+1][0][2], progress))
+                    background.style.setProperty('--gradient-first-color', lerp(gradients[index][0][0],gradients[index+1][0][0],gradients[index][0][1],gradients[index+1][0][1],gradients[index][0][2], gradients[index+1][0][2], shift/25))
+                    background.style.setProperty('--gradient-second-color', lerp(gradients[index][1][0],gradients[index+1][1][0],gradients[index][1][1],gradients[index+1][1][1],gradients[index][1][2], gradients[index+1][1][2], shift/25))
                     console.log(shift);
                     if(index < 3){
-                        console.log("dddd",(shift * 4 < 40 ? 100 : 100 - (shift * 4)))
-                        console.log("aaaa", (shift * 4 < 60 ? shift * 4 : 100))
+                        //console.log("dddd",(shift * 4 < 40 ? 100 : 100 - (shift * 4)))
+                        //console.log("aaaa", (shift * 4 < 60 ? shift * 4 : 100))
                         document.getElementById(`contain-${index+1}`)?.getElementsByClassName("product-img")[0].style.setProperty('--product-img-shift', Math.max(shift-10, 0) + '%');
                         document.getElementById(`contain-${index+1}`)?.getElementsByClassName("product-img")[0].style.setProperty('--product-opacity', Math.max(shift*4 - 30, 0) + '%');
                         document.getElementById(`contain-${index+1}`)?.getElementsByClassName("product-img")[1]?.style.setProperty('--product-img-shift', -Math.max(shift-10, 0) + '%');
@@ -613,6 +637,7 @@
                         document.getElementById(`contain-${index+1}`)?.getElementsByClassName("product-name")[0].style.setProperty('--product-name-opacity', Math.max(shift*4 - 20, 0) + '%');
                         document.getElementById(`contain-${index+1}`)?.getElementsByClassName("product-moto")[0].style.setProperty('--product-moto-shift', Math.max(shift-10, 0) + '%');
                         document.getElementById(`contain-${index+1}`)?.getElementsByClassName("product-moto")[0].style.setProperty('--product-moto-opacity', Math.max(shift*4 - 20, 0) + '%');
+                        document.getElementById(`contain-${index+1}`)?.getElementsByClassName("product-logo")[0].style.setProperty('--product-logo-rotate', (shift/25)*90 + 'deg');
                     }
                 }
             });

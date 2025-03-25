@@ -792,6 +792,8 @@ html::-webkit-scrollbar {
     display: flex;
 }
 .products-window{
+    --gradient-first-color: #99DC70 0.52%;
+    --gradient-second-color: #63BE82 79.19%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -801,6 +803,7 @@ html::-webkit-scrollbar {
     height: 100vh;
     background-size: cover;
     overflow: hidden;
+    background: linear-gradient(252.14deg, var(--gradient-first-color) 0.52%, var(--gradient-second-color) 79.19%);
 }
 
 .product-contain{
@@ -813,9 +816,8 @@ html::-webkit-scrollbar {
     padding-left: 5vw;
     opacity: 0;
     transition: opacity 1s ease-in-out;
-    background: linear-gradient(252.14deg, #99DC70 0.52%, #63BE82 79.19%);
 }
-#contain-1{
+/*#contain-1{
     background: linear-gradient(252.14deg, #99DC70 0.52%, #63BE82 79.19%);
 }
 #contain-2{
@@ -826,7 +828,7 @@ html::-webkit-scrollbar {
 }
 #contain-4{
     background: linear-gradient(252.14deg, #359BFF 0.52%, #4F6BCF 99.48%);
-}
+}*/
 
 .product-contain.active {
     opacity: 1;
@@ -906,10 +908,25 @@ html::-webkit-scrollbar {
     height: 1.9vw;
 }
 .product-logo{
-    width: 4.7vw;
+    --product-logo-rotate: 0deg;
+    transform-origin: center;
+    width: 4vw;
     height: 4vw;
     position: absolute;
     top: calc(50% - 14vw);
+    transform: rotate(var(--product-logo-rotate));
+}
+#logo-vengo{
+
+}
+#logo-catago{
+    transform: translate(-6px, 6px);
+}
+#logo-arrango{
+    transform: translate(-6px, -6px);
+}
+#logo-libby{
+    transform: translate(-6px, 6px);
 }
 .see-more{
     justify-content: center;
