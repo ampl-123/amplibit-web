@@ -35,7 +35,6 @@
     </head>
     <body>
         <div class='cursor' id="cursor"></div>
-
         <div class="overlay-wrapper">
             <img src="img/team.webp" alt="navigation image" loading="lazy">
             <div class="overlay-navigation">
@@ -139,6 +138,9 @@
             <div class="partners-transition">
                 <h1 class="partners-title">Trusted by</h1>
                 <div class="partners-container">
+                    <a href="#" aria-label="OTP">
+                        <img src="img/otp-bank-monochrome.svg" alt="OTP Bank">
+                    </a>
                     <a href="#" aria-label="Raiffeisenbank">
                         <img src="img/raiffeisenbank-monochrome.svg" alt="Raiffeisenbank">
                     </a>
@@ -174,19 +176,34 @@
 
         <section class="product-catalog">
             <div class="products-window">
+                <svg id="logo-vengo" class="product-logo" width="60" height="54" viewBox="0 0 60 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_821_753)">
+                        <path d="M29.9136 22.6149L26.0239 15.7361L8.5969 15.7361L29.8176 53.8283L29.9109 54L60 0L42.573 1.5293e-06L29.9136 22.6149Z" fill="white"/>
+                        <path d="M32.3168 13.3027L39.9316 0.000320435L0.000220094 0.000323939L7.53279 13.3027L32.3168 13.3027Z" fill="white"/>
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_821_753">
+                            <rect width="60" height="54" fill="white" transform="translate(60 54) rotate(180)"/>
+                        </clipPath>
+                    </defs>
+                </svg>
+                <svg id="logo-libby" class="product-logo" width="30" height="27" viewBox="0 0 30 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_389_3299)">
+                        <path d="M11.255 23.0923L15.0432 16.2244L15.0501 16.2369L19.439 8.31005L15.0912 0.391536L15.0446 0.304443L0 27.6957H8.70525L11.255 23.0923Z" fill="white"/>
+                        <path d="M12.2713 23.7311L10.0754 27.6958H30L26.2337 20.9482H13.8417L12.2713 23.7311Z" fill="url(#paint0_linear_389_3299)"/>
+                    </g>
+                    <defs>
+                        <linearGradient id="paint0_linear_389_3299" x1="10.0754" y1="24.3214" x2="30" y2="24.3214" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#00C2D7"/>
+                            <stop offset="1" stop-color="#60ADFA"/>
+                        </linearGradient>
+                        <clipPath id="clip0_389_3299">
+                            <rect width="60" height="54" fill="white" transform="translate(30 27) rotate(180)"/>
+                        </clipPath>
+                    </defs>
+                </svg>
                 <div id="contain-1" class="product-contain">
                     <div class="product-info">
-                        <svg id="logo-vengo" class="product-logo" width="60" height="54" viewBox="0 0 60 54" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_821_753)">
-                                <path d="M29.9136 22.6149L26.0239 15.7361L8.5969 15.7361L29.8176 53.8283L29.9109 54L60 0L42.573 1.5293e-06L29.9136 22.6149Z" fill="white"/>
-                                <path d="M32.3168 13.3027L39.9316 0.000320435L0.000220094 0.000323939L7.53279 13.3027L32.3168 13.3027Z" fill="white"/>
-                            </g>
-                            <defs>
-                                <clipPath id="clip0_821_753">
-                                    <rect width="60" height="54" fill="white" transform="translate(60 54) rotate(180)"/>
-                                </clipPath>
-                            </defs>
-                        </svg>
                         <h1 class="product-name">Vengo</h1>
                         <div class="product-moto">
                             <p>Your single point of truth for vendor management</p>
@@ -205,17 +222,6 @@
                 </div>
                 <div id="contain-2" class="product-contain">
                     <div class="product-info">
-                        <svg id="logo-catago" class="product-logo" width="54" height="60" viewBox="0 0 54 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_1072_8007)">
-                                <path d="M31.3851 29.9136L38.2639 26.0239V8.5969L0.171697 29.8176L0 29.9108L54 60V42.573L31.3851 29.9136Z" fill="white"/>
-                                <path d="M40.6973 32.3168L53.9997 39.9316V0.00022142L40.6973 7.53279V32.3168Z" fill="white"/>
-                            </g>
-                            <defs>
-                                <clipPath id="clip0_1072_8007">
-                                    <rect width="60" height="54" fill="white" transform="translate(0 60) rotate(-90)"/>
-                                </clipPath>
-                            </defs>
-                        </svg>
                         <h1 class="product-name">Catago</h1>
                         <div class="product-moto">
                             <p>Product catalog at its best</p>
@@ -234,17 +240,6 @@
                 </div>
                 <div id="contain-3" class="product-contain">
                     <div class="product-info">
-                        <svg id="logo-arrango" class="product-logo" width="68" height="61" viewBox="0 0 68 61" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_821_757)">
-                                <path d="M33.9126 35.4535L38.297 43.224H57.9402L34.0208 0.193954L33.9157 0L0 61H19.6432L33.9126 35.4535Z" fill="white"/>
-                                <path d="M31.2044 45.9736L22.6211 61.0004H67.6307L59.1402 45.9736H31.2044Z" fill="white"/>
-                            </g>
-                            <defs>
-                                <clipPath id="clip0_821_757">
-                                    <rect width="67.6304" height="61" fill="white"/>
-                                </clipPath>
-                            </defs>
-                        </svg>
                         <h1 class="product-name">Arrango</h1>
                         <div class="product-moto">
                             <p>Bank-ready platform which gives you insights and control of your bank's outsourced business. </p>
@@ -262,17 +257,6 @@
                 </div>
                 <div id="contain-4" class="product-contain">
                     <div class="product-info">
-                        <svg id="logo-libby" class="product-logo" width="63" height="69" viewBox="0 0 63 69" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_1072_8349)">
-                                <path d="M36.4039 34.2707L44.3017 29.8144L44.3017 9.84919L0.566274 34.1607L0.369141 34.2676L62.3691 68.7393L62.3691 48.774L36.4039 34.2707Z" fill="white"/>
-                                <path d="M47.0957 37.0241L62.3688 45.748L62.3688 0.000530435L47.0957 8.63024L47.0957 37.0241Z" fill="white"/>
-                            </g>
-                            <defs>
-                                <clipPath id="clip0_1072_8349">
-                                    <rect width="68.7391" height="62" fill="white" transform="translate(0.369141 68.7393) rotate(-90)"/>
-                                </clipPath>
-                            </defs>
-                        </svg>
                         <h1 class="product-name">LIBBY</h1>
                         <div class="product-moto">
                             <p>Bank-ready platform which gives you insights and control of your bank's outsourced business. </p>
@@ -592,21 +576,12 @@
                 const b = Math.round(b1 + (b2 - b1) * t);
                 return `rgb(${r}, ${g}, ${b})`;
             };
-            const gradients = [
-                [[153, 220, 112],
-                    [99, 190, 130]],
-                [[63, 217, 255],
-                    [86, 171, 250]],
-                [[35, 209, 146],
-                    [24, 197, 200]],
-                [[53, 155, 255],
-                    [79, 107, 207]],
-                [[53, 155, 255],
-                    [79, 107, 207]]
-            ];
+            const gradients = [[[153, 220, 112], [99, 190, 130]], [[63, 217, 255], [86, 171, 250]], [[35, 209, 146], [24, 197, 200]],[[53, 155, 255], [79, 107, 207]],[[53, 155, 255], [79, 107, 207]]];
             const catalog = document.querySelector(".product-catalog");
             const products = document.querySelectorAll(".product-contain");
             const background = document.querySelector(".products-window");
+            document.documentElement.style.setProperty('--shift', 0 +'%');
+            document.documentElement.style.setProperty('--rotate', 0 +'deg');
             products[0].classList.toggle("active");
             document.body.classList.toggle("blue", catalog.getBoundingClientRect().top <= window.innerHeight && catalog.getBoundingClientRect().bottom >= 0);
             document.addEventListener("scroll", () => {
@@ -614,17 +589,18 @@
                 const catalogRect = catalog.getBoundingClientRect();
                 if (catalogRect.top <= 0 && !(catalogRect.bottom < window.innerHeight)) {
                     let progress = (window.scrollY - catalog.offsetTop)/(catalog.clientHeight*0.75);
-                    console.log("progress",progress)
                     let index = Math.min(Math.max(Math.floor(progress / 0.25), 0), products.length - 1);
-                    products.forEach((p, i) => p.classList.toggle("active", i === index));
-                    //console.log((progress));
                     let shift = progress * 100 - (index * 25);
-                    console.log("shift",shift)
-                    console.log(lerp(gradients[index][0][0],gradients[index+1][0][0],gradients[index][0][1],gradients[index+1][0][1],gradients[index][0][2], gradients[index+1][0][2], progress))
+                    console.log(index)
+                    products.forEach((p, i) => p.classList.toggle("active", i === index));
+                    document.documentElement.style.setProperty('--shift', shift + '%');
+                    document.documentElement.style.setProperty('--rotate', progress * 360 + 'deg');
                     background.style.setProperty('--gradient-first-color', lerp(gradients[index][0][0],gradients[index+1][0][0],gradients[index][0][1],gradients[index+1][0][1],gradients[index][0][2], gradients[index+1][0][2], shift/25))
                     background.style.setProperty('--gradient-second-color', lerp(gradients[index][1][0],gradients[index+1][1][0],gradients[index][1][1],gradients[index+1][1][1],gradients[index][1][2], gradients[index+1][1][2], shift/25))
-                    console.log(shift);
-                    if(index < 3){
+                    progress > 0.70 ? document.getElementById("logo-vengo")?.classList.remove("active") : document.getElementById("logo-vengo")?.classList.add("active")
+                    progress > 0.70 ? document.getElementById("logo-libby")?.classList.add("active") : document.getElementById("logo-libby")?.classList.remove("active")
+                    //console.log(progress);
+                    /*if(index < 3){
                         //console.log("dddd",(shift * 4 < 40 ? 100 : 100 - (shift * 4)))
                         //console.log("aaaa", (shift * 4 < 60 ? shift * 4 : 100))
                         document.getElementById(`contain-${index+1}`)?.getElementsByClassName("product-img")[0].style.setProperty('--product-img-shift', Math.max(shift-10, 0) + '%');
@@ -638,7 +614,7 @@
                         document.getElementById(`contain-${index+1}`)?.getElementsByClassName("product-moto")[0].style.setProperty('--product-moto-shift', Math.max(shift-10, 0) + '%');
                         document.getElementById(`contain-${index+1}`)?.getElementsByClassName("product-moto")[0].style.setProperty('--product-moto-opacity', Math.max(shift*4 - 20, 0) + '%');
                         document.getElementById(`contain-${index+1}`)?.getElementsByClassName("product-logo")[0].style.setProperty('--product-logo-rotate', (shift/25)*90 + 'deg');
-                    }
+                    }*/
                 }
             });
         </script>
