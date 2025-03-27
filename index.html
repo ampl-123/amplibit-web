@@ -590,9 +590,10 @@
                 const catalogBottom = catalogRect.bottom;
                 document.body.classList.toggle("blue", catalogTop <= window.innerHeight && catalogBottom >= 0);
                 if (catalogRect.top <= 0 && !(catalogRect.bottom < window.innerHeight)) {
-                    let progress = (window.scrollY - catalog.offsetTop)/(catalog.clientHeight*0.75);
+                    let progress = (window.scrollY - catalog.offsetTop)/(catalog.clientHeight);
                     let index = Math.min(Math.max(Math.floor(progress / 0.25), 0), products.length - 1);
                     let shift = progress * 100 - (index * 25);
+                    console.log(progress)
                     products.forEach((p, i) => p.classList.toggle("active", i === index));
                     index < 3 ? document.documentElement.style.setProperty('--shift', shift + '%') : document.documentElement.style.setProperty('--shift', 0 + '%');
                     document.documentElement.style.setProperty('--rotate', progress * 360 + 'deg');
