@@ -309,6 +309,7 @@ html {
     -ms-overflow-style: none;
     /*scroll-snap-type: y mandatory;*/
     scroll-behavior: smooth;
+    /*overscroll-behavior: contain;*/
 }
 
 html::-webkit-scrollbar {
@@ -785,7 +786,7 @@ html::-webkit-scrollbar {
 .product-catalog{
     position: relative;
     width: 100vw;
-    height: 700vh;
+    height: 800vh;
     background: #000000;
     display: flex;
 }
@@ -854,7 +855,7 @@ html::-webkit-scrollbar {
     top: 45%;
     left: calc(50% + max(var(--shift) - 10%, 0%));
     display: block;
-    opacity: calc(100% - var(--shift)*4);
+    opacity: calc(120% - var(--shift)*4);
 }
 #libby-img-1{
     top:40%
@@ -875,8 +876,7 @@ html::-webkit-scrollbar {
     width: 30%;
     max-width: 14.5vw;
     height: auto;
-    opacity: calc(100% - var(--shift)*4);
-
+    opacity: calc(120% - var(--shift)*4);
 }
 .product-info{
     display: flex;
@@ -884,7 +884,7 @@ html::-webkit-scrollbar {
     width: 100%;
     height: 100%;
     padding-left: 9vw;
-    opacity: calc(100% - var(--shift)*4);
+    opacity: calc(120% - var(--shift)*4);
 }
 .product-name,
 .product-moto {
@@ -2960,7 +2960,7 @@ textarea {
     #logo-libby{
         transform-origin: center calc(50%);
         transform: scale(1.03) translateY(30%);
-        top: calc(10% - 11px);
+        top: calc(10% - 9px);
     }
     .product-img {
         object-fit: contain;

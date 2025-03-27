@@ -190,7 +190,7 @@
                 <svg id="logo-libby" class="product-logo" width="30" height="27" viewBox="0 0 30 27" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_389_3299)">
                         <path d="M11.255 23.0923L15.0432 16.2244L15.0501 16.2369L19.439 8.31005L15.0912 0.391536L15.0446 0.304443L0 27.6957H8.70525L11.255 23.0923Z" fill="white"/>
-                        <path d="M12.2713 23.7311L10.0754 27.6958H30L26.2337 20.9482H13.8417L12.2713 23.7311Z" fill="url(#paint0_linear_389_3299)"/>
+                        <path d="M12.2713 23.7311L10.0754 27.6958H30L26.2337 20.9482H13.8417L12.2713 23.7311Z" fill="white"/>
                     </g>
                     <defs>
                         <linearGradient id="paint0_linear_389_3299" x1="10.0754" y1="24.3214" x2="30" y2="24.3214" gradientUnits="userSpaceOnUse">
@@ -584,25 +584,54 @@
             document.documentElement.style.setProperty('--rotate', 0 +'deg');
             products[0].classList.toggle("active");
             document.body.classList.toggle("blue", catalog.getBoundingClientRect().top <= window.innerHeight && catalog.getBoundingClientRect().bottom >= 0);
+            let targetProgress = 0;
+            let currentProgress = 0;
+            const easeFactor = 0.08;
+            let animationFrame = null;
+            const threshold = 0.002;
+            const logoVengo = document.getElementById("logo-vengo");
+            const logoLibby = document.getElementById("logo-libby");
             document.addEventListener("scroll", () => {
+                if (!catalog) return;
                 const catalogRect = catalog.getBoundingClientRect();
-                const catalogTop = catalogRect.top;
-                const catalogBottom = catalogRect.bottom;
-                document.body.classList.toggle("blue", catalogTop <= window.innerHeight && catalogBottom >= 0);
-                if (catalogRect.top <= 0 && !(catalogRect.bottom < window.innerHeight)) {
-                    let progress = (window.scrollY - catalog.offsetTop)/(catalog.clientHeight);
-                    let index = Math.min(Math.max(Math.floor(progress / 0.25), 0), products.length - 1);
-                    let shift = progress * 100 - (index * 25);
-                    console.log(progress)
-                    products.forEach((p, i) => p.classList.toggle("active", i === index));
-                    index < 3 ? document.documentElement.style.setProperty('--shift', shift + '%') : document.documentElement.style.setProperty('--shift', 0 + '%');
-                    document.documentElement.style.setProperty('--rotate', progress * 360 + 'deg');
-                    background.style.setProperty('--gradient-first-color', lerp(gradients[index][0][0],gradients[index+1][0][0],gradients[index][0][1],gradients[index+1][0][1],gradients[index][0][2], gradients[index+1][0][2], shift/25))
-                    background.style.setProperty('--gradient-second-color', lerp(gradients[index][1][0],gradients[index+1][1][0],gradients[index][1][1],gradients[index+1][1][1],gradients[index][1][2], gradients[index+1][1][2], shift/25))
-                    progress > 0.70 ? document.getElementById("logo-vengo")?.classList.remove("active") : document.getElementById("logo-vengo")?.classList.add("active")
-                    progress > 0.70 ? document.getElementById("logo-libby")?.classList.add("active") : document.getElementById("logo-libby")?.classList.remove("active")
+                if (catalogRect.top <= 0 && catalogRect.bottom > window.innerHeight) {
+                    targetProgress = (window.scrollY - catalog.offsetTop) / catalog.clientHeight;
+                    if (!animationFrame) {
+                        animationFrame = requestAnimationFrame(updateProgress);
+                    }
                 }
             });
+            function updateProgress() {
+                currentProgress += (targetProgress - currentProgress) * easeFactor;
+                if (Math.abs(targetProgress - currentProgress) < threshold) {
+                    cancelAnimationFrame(animationFrame);
+                    animationFrame = null;
+                    return;
+                }
+                let index = Math.min(Math.max(Math.floor(currentProgress / 0.25), 0), products.length - 1);
+                let shift = currentProgress * 100 - index * 25;
+                document.documentElement.style.setProperty('--shift', index < 3 ? `${shift}%` : '0%');
+                document.documentElement.style.setProperty('--rotate', `${currentProgress * 360}deg`);
+                products.forEach((p, i) => {
+                    if (i === index) {
+                        p.classList.add("active");
+                    } else {
+                        p.classList.remove("active");
+                    }
+                });
+                if (background) {
+                    background.style.setProperty('--gradient-first-color', lerp(gradients[index][0][0], gradients[index + 1][0][0], gradients[index][0][1], gradients[index + 1][0][1], gradients[index][0][2], gradients[index + 1][0][2], shift / 25));
+                    background.style.setProperty('--gradient-second-color', lerp(gradients[index][1][0], gradients[index + 1][1][0], gradients[index][1][1], gradients[index + 1][1][1], gradients[index][1][2], gradients[index + 1][1][2], shift / 25));
+                }
+                if (logoVengo) {
+                    logoVengo.classList.toggle("active", currentProgress <= 0.73);
+                }
+                if (logoLibby) {
+                    logoLibby.classList.toggle("active", currentProgress > 0.70);
+                }
+
+                animationFrame = requestAnimationFrame(updateProgress);
+            }
         </script>
         <script>
             document.documentElement.style.overflowY = 'scroll';
