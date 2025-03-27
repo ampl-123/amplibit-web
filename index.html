@@ -270,13 +270,13 @@
 
                     </div>
                         <div class="product-img-wrapper">
-                                <img class="product-img" src="img/libby_drop.png" alt="Libby" loading="lazy"/>
-                                <img class="product-img" src="img/libby_file.png" alt="Libby" loading="lazy" style="top: calc(50% + 18vw); max-width: 50vw"/>
+                                <img id="libby-img-1" class="product-img" src="img/libby_drop.png" alt="Libby" loading="lazy"/>
+                                <img id="libby-img-2" class="product-img" src="img/libby_file.png" alt="Libby" loading="lazy" style="top: calc(35% + 18vw); max-width: 45vw"/>
                         </div>
                 </div>
             </div>
         </section>
-        <div class="services-wrapper">
+        <!--<div class="services-wrapper">
             <div class="single-service-wrapper zero-service" id="Vengo">
                 <div class="single-service section">
                     <div>
@@ -312,7 +312,7 @@
                     <img src="img/arango.webp" alt="Arrango">
                 </div>
             </div>
-        </div>
+        </div>-->
 
         <div class="amplibit-team-wrapper section">
             <h1 class="team-title">Life at Amplibit</h1>
@@ -533,7 +533,7 @@
         </footer>
         <script>document.addEventListener("DOMContentLoaded",function(){var a=document.querySelectorAll("h2.amplify-benefits");setInterval(function(){var c=Array.from(a).findIndex(function(b){return b.classList.contains("active")});Array.from(a).forEach(function(b){b.classList.remove("active")});a[(c+1)%a.length].classList.add("active")},2300)});</script>
         <script>document.addEventListener("DOMContentLoaded",function(){function c(){d.classList.add("hover")}function e(){d.classList.remove("hover")}var d=document.getElementById("cursor"),a=document.querySelector(".hamby"),b=document.querySelector(".lets-talk"),g=document.querySelector(".logo"),f=document.querySelectorAll("a");document.body.addEventListener("mousemove",function(h){d.style.left=h.clientX+"px";d.style.top=h.clientY+"px"});a.addEventListener("click",function(){a.classList.contains("active")?(a.classList.remove("active"),document.body.classList.remove("navigationActive"),setTimeout(function(){a.classList.remove("ready")},700)):(a.classList.add("active"),document.body.classList.add("navigationActive"),setTimeout(function(){a.classList.add("ready")},700))});a.addEventListener("mouseenter",c);a.addEventListener("mouseleave",e);b.addEventListener("mouseenter",c);b.addEventListener("mouseleave",e);g.addEventListener("mouseenter",c);g.addEventListener("mouseleave",e);for(b=0;b<f.length;b++)f[b].addEventListener("mouseenter",c),f[b].addEventListener("mouseleave",e)});</script>
-        <script>document.addEventListener("scroll",function(e){0>document.querySelector(".first-service").getBoundingClientRect().top-.5*window.innerHeight?document.body.classList.add("blue"):document.body.classList.remove("blue"),0>document.querySelector(".second-service").getBoundingClientRect().top-.5*window.innerHeight?document.body.classList.add("green"):document.body.classList.remove("green"),0>document.querySelector(".second-service").getBoundingClientRect().bottom&&document.body.classList.remove("green"),0>document.querySelector(".first-service").getBoundingClientRect().bottom&&document.body.classList.remove("blue"),0>document.querySelector(".first-service").getBoundingClientRect().bottom?document.body.classList.add("black"):document.body.classList.remove("black")});</script>
+        <!--<script>document.addEventListener("scroll",function(e){0>document.querySelector(".first-service").getBoundingClientRect().top-.5*window.innerHeight?document.body.classList.add("blue"):document.body.classList.remove("blue"),0>document.querySelector(".second-service").getBoundingClientRect().top-.5*window.innerHeight?document.body.classList.add("green"):document.body.classList.remove("green"),0>document.querySelector(".second-service").getBoundingClientRect().bottom&&document.body.classList.remove("green"),0>document.querySelector(".first-service").getBoundingClientRect().bottom&&document.body.classList.remove("blue"),0>document.querySelector(".first-service").getBoundingClientRect().bottom?document.body.classList.add("black"):document.body.classList.remove("black")});</script>-->
         <script src="funct/test-slim.js"></script>
         <script src="funct/ripple.js"></script>
         <script>window.onload = function() {
@@ -558,13 +558,13 @@
                 0 > document.querySelector(".team-title").getBoundingClientRect().bottom - window.innerHeight ? document.querySelector(".team-title").classList.add("active") : document.querySelector(".team-title").classList.remove("active"),
                 0 > document.querySelector(".tell-us-about-it").getBoundingClientRect().bottom - window.innerHeight ? document.querySelector(".tell-us-about-it").classList.add("active") : document.querySelector(".tell-us-about-it").classList.remove("active"),
 
-                0 > document.querySelector(".zero-service").getBoundingClientRect().top - 0.5 * window.innerHeight ? document.body.classList.add("green-first","black") : document.body.classList.remove("green-first","black"),
+                //0 > document.querySelector(".zero-service").getBoundingClientRect().top - 0.5 * window.innerHeight ? document.body.classList.add("green-first","black") : document.body.classList.remove("green-first","black"),
 
-                0 > document.querySelector(".first-service").getBoundingClientRect().top - 0.5 * window.innerHeight ? document.body.classList.add("blue") : document.body.classList.remove("blue"),
-                0 > document.querySelector(".second-service").getBoundingClientRect().top - 0.5 * window.innerHeight ? document.body.classList.add("green") : document.body.classList.remove("green"),
-                0 > document.querySelector(".second-service").getBoundingClientRect().bottom && document.body.classList.remove("green"),
-                0 > document.querySelector(".first-service").getBoundingClientRect().bottom && document.body.classList.remove("blue"),
-                0 > document.querySelector(".first-service").getBoundingClientRect().bottom ? document.body.classList.add("black") : document.body.classList.remove("black"),
+                //0 > document.querySelector(".first-service").getBoundingClientRect().top - 0.5 * window.innerHeight ? document.body.classList.add("blue") : document.body.classList.remove("blue"),
+                //0 > document.querySelector(".second-service").getBoundingClientRect().top - 0.5 * window.innerHeight ? document.body.classList.add("green") : document.body.classList.remove("green"),
+                //0 > document.querySelector(".second-service").getBoundingClientRect().bottom && document.body.classList.remove("green"),
+                //0 > document.querySelector(".first-service").getBoundingClientRect().bottom && document.body.classList.remove("blue"),
+                //0 > document.querySelector(".first-service").getBoundingClientRect().bottom ? document.body.classList.add("black") : document.body.classList.remove("black"),
                 0 > document.querySelector(".product-catalog").getBoundingClientRect().bottom && document.body.classList.remove("blue");
 
             });
@@ -585,36 +585,21 @@
             products[0].classList.toggle("active");
             document.body.classList.toggle("blue", catalog.getBoundingClientRect().top <= window.innerHeight && catalog.getBoundingClientRect().bottom >= 0);
             document.addEventListener("scroll", () => {
-                document.body.classList.toggle("blue", catalog.getBoundingClientRect().top <= window.innerHeight && catalog.getBoundingClientRect().bottom >= 0);
                 const catalogRect = catalog.getBoundingClientRect();
+                const catalogTop = catalogRect.top;
+                const catalogBottom = catalogRect.bottom;
+                document.body.classList.toggle("blue", catalogTop <= window.innerHeight && catalogBottom >= 0);
                 if (catalogRect.top <= 0 && !(catalogRect.bottom < window.innerHeight)) {
                     let progress = (window.scrollY - catalog.offsetTop)/(catalog.clientHeight*0.75);
                     let index = Math.min(Math.max(Math.floor(progress / 0.25), 0), products.length - 1);
                     let shift = progress * 100 - (index * 25);
-                    console.log(index)
                     products.forEach((p, i) => p.classList.toggle("active", i === index));
-                    document.documentElement.style.setProperty('--shift', shift + '%');
+                    index < 3 ? document.documentElement.style.setProperty('--shift', shift + '%') : document.documentElement.style.setProperty('--shift', 0 + '%');
                     document.documentElement.style.setProperty('--rotate', progress * 360 + 'deg');
                     background.style.setProperty('--gradient-first-color', lerp(gradients[index][0][0],gradients[index+1][0][0],gradients[index][0][1],gradients[index+1][0][1],gradients[index][0][2], gradients[index+1][0][2], shift/25))
                     background.style.setProperty('--gradient-second-color', lerp(gradients[index][1][0],gradients[index+1][1][0],gradients[index][1][1],gradients[index+1][1][1],gradients[index][1][2], gradients[index+1][1][2], shift/25))
                     progress > 0.70 ? document.getElementById("logo-vengo")?.classList.remove("active") : document.getElementById("logo-vengo")?.classList.add("active")
                     progress > 0.70 ? document.getElementById("logo-libby")?.classList.add("active") : document.getElementById("logo-libby")?.classList.remove("active")
-                    //console.log(progress);
-                    /*if(index < 3){
-                        //console.log("dddd",(shift * 4 < 40 ? 100 : 100 - (shift * 4)))
-                        //console.log("aaaa", (shift * 4 < 60 ? shift * 4 : 100))
-                        document.getElementById(`contain-${index+1}`)?.getElementsByClassName("product-img")[0].style.setProperty('--product-img-shift', Math.max(shift-10, 0) + '%');
-                        document.getElementById(`contain-${index+1}`)?.getElementsByClassName("product-img")[0].style.setProperty('--product-opacity', Math.max(shift*4 - 30, 0) + '%');
-                        document.getElementById(`contain-${index+1}`)?.getElementsByClassName("product-img")[1]?.style.setProperty('--product-img-shift', -Math.max(shift-10, 0) + '%');
-                        document.getElementById(`contain-${index+1}`)?.getElementsByClassName("product-img")[1]?.style.setProperty('--product-opacity', Math.max(shift*4 - 20, 0) + '%');
-                        document.getElementById(`contain-${index+1}`)?.getElementsByClassName("product-img-mini")[0]?.style.setProperty('--product-img-shift', -Math.max(shift-10, 0) + '%');
-                        document.getElementById(`contain-${index+1}`)?.getElementsByClassName("product-img-mini")[0]?.style.setProperty('--product-opacity', Math.max(shift*4 - 20, 0) + '%');
-                        document.getElementById(`contain-${index+1}`)?.getElementsByClassName("product-name")[0].style.setProperty('--product-name-shift', Math.max(shift-10, 0) + '%');
-                        document.getElementById(`contain-${index+1}`)?.getElementsByClassName("product-name")[0].style.setProperty('--product-name-opacity', Math.max(shift*4 - 20, 0) + '%');
-                        document.getElementById(`contain-${index+1}`)?.getElementsByClassName("product-moto")[0].style.setProperty('--product-moto-shift', Math.max(shift-10, 0) + '%');
-                        document.getElementById(`contain-${index+1}`)?.getElementsByClassName("product-moto")[0].style.setProperty('--product-moto-opacity', Math.max(shift*4 - 20, 0) + '%');
-                        document.getElementById(`contain-${index+1}`)?.getElementsByClassName("product-logo")[0].style.setProperty('--product-logo-rotate', (shift/25)*90 + 'deg');
-                    }*/
                 }
             });
         </script>
