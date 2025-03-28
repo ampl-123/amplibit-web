@@ -2958,6 +2958,9 @@ textarea {
     .contact-info-container {
         margin-bottom: 100px;
     }
+    .product-catalog{
+        height: 400vh;
+    }
     .product-contain{
         justify-content: center;
         align-content: flex-start;
