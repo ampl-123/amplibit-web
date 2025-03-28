@@ -786,7 +786,7 @@ html::-webkit-scrollbar {
 .product-catalog{
     position: relative;
     width: 100vw;
-    height: 800vh;
+    height: 600vh;
     background: #000000;
     display: flex;
 }
@@ -847,7 +847,7 @@ html::-webkit-scrollbar {
 }
 .product-img {
     position: absolute;
-    transform: translate(-50%, -50%);
+    transform: translate(-60%, -50%);
     max-height: 35vw;
     max-width: 45vw;
     width: min(100%, 45vw);
@@ -856,6 +856,11 @@ html::-webkit-scrollbar {
     left: calc(50% + max(var(--shift) - 10%, 0%));
     display: block;
     opacity: calc(120% - var(--shift)*4);
+}
+.product-contain.active .product-img,
+.product-img-wrapper.active .product-img{
+    transform: translate(-50%, -50%) ;
+    transition: transform 0.5s ease;
 }
 #libby-img-1{
     top:40%
@@ -871,12 +876,17 @@ html::-webkit-scrollbar {
 .product-img-mini{
     position: absolute;
     top: calc(45% + 13vw);
-    transform: translate(-50%, -50%);
+    transform: translate(-40%, -50%);
     left: calc(50% - 18vw - max(var(--shift) - 10%, 0%));
     width: 30%;
     max-width: 14.5vw;
     height: auto;
     opacity: calc(120% - var(--shift)*4);
+}
+.product-contain.active .product-img-mini,
+.product-img-wrapper.active .product-img-mini{
+    transform: translate(-50%, -50%) ;
+    transition: transform 0.7s ease;
 }
 .product-info{
     display: flex;
