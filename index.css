@@ -2967,13 +2967,19 @@ textarea {
         flex-flow: column-reverse;
     }
     .product-logo{
-        transform-origin: center calc(50% - 2px);
+        transform-origin: center calc(55% - 2px);
+        transform: rotateZ(min(calc(var(--rotate) - 0.1*var(--rotate)), 180deg)) scale(2);
         top: 10%;
     }
     #logo-libby{
         transform-origin: center calc(50%);
-        transform: scale(1.03) translateY(30%);
-        top: calc(10% - 9px);
+        transform: scale(2.06) translateY(33%);
+        top: calc(10%);
+    }
+    #logo-vengo{
+        transform-origin: center calc(50%);
+        top: calc(10%);
+        transform: translateY(70%) rotateZ(min(calc(var(--rotate) - 0.1*var(--rotate)), 180deg)) scale(2);
     }
     .product-img {
         object-fit: contain;
@@ -2993,11 +2999,6 @@ textarea {
         font-size: 15px;
         margin-bottom: 30px;
     }
-
-    /*.product-logo{
-        width:20px;
-        height: 20px;
-    }*/
     .see-more{
         border-radius: 25px;
         height: 45px;
