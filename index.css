@@ -700,6 +700,13 @@ html::-webkit-scrollbar {
     display: flex;
     flex-flow: column;
     justify-content: center;
+    transition: background-color 0.5s ease-in;
+}
+.what-we-do-wrapper.white{
+    background-color: white;
+}
+.what-we-do-wrapper.white h1{
+    color: black;
 }
 .about-us-wrapper h1,
 .contact-form-wrapper h1,
@@ -713,7 +720,7 @@ html::-webkit-scrollbar {
     opacity: 0;
     position: relative;
     left: -10vw;
-    transition: left 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    transition: left 0.3s ease-in-out, opacity 0.3s ease-in-out, color 1s ease-in-out;
 }
 .about-us-wrapper p,
 .how-we-do-it-wrapper p {
@@ -772,6 +779,10 @@ html::-webkit-scrollbar {
     font-size: 1.25vw;
     font-weight: 500;
     line-height: 188%;
+    transition: color 0.5s ease-in;
+}
+.what-we-do-wrapper.white .what-we-do-services p{
+    color: black;
 }
 .about-us-wrapper p,
 .how-we-do-it-wrapper p {
@@ -786,9 +797,14 @@ html::-webkit-scrollbar {
 .product-catalog{
     position: relative;
     width: 100vw;
-    height: 600vh;
-    background: #000000;
+    height: 500vh;
+    background: black;
     display: flex;
+    justify-content: center;
+    transition: background-color 0.5s ease-in;
+}
+.product-catalog.white{
+    background-color: white;
 }
 .products-window{
     --gradient-first-color: #99DC70 0.52%;
@@ -798,12 +814,19 @@ html::-webkit-scrollbar {
     align-items: center;
     position: sticky;
     top: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 95vw;
+    height: 95vh;
     background-size: cover;
     overflow: hidden;
     background: linear-gradient(252.14deg, var(--gradient-first-color) 0.52%, var(--gradient-second-color) 79.19%);
     z-index: 99;
+    border-radius: 3vw;
+    transition: width 0.5s ease-in-out, height 0.5s ease-in-out, border-radius 0.5s ease-in-out;
+}
+.products-window.in-focus{
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
 }
 
 .product-contain{
@@ -847,7 +870,7 @@ html::-webkit-scrollbar {
 }
 .product-img {
     position: absolute;
-    transform: translate(-60%, -50%);
+    transform: translate(-70%, -50%);
     max-height: 35vw;
     max-width: 45vw;
     width: min(100%, 45vw);
@@ -855,7 +878,7 @@ html::-webkit-scrollbar {
     top: 45%;
     left: calc(50% + max(var(--shift) - 10%, 0%));
     display: block;
-    opacity: calc(120% - var(--shift)*4);
+    opacity: calc(140% - var(--shift)*4);
 }
 .product-contain.active .product-img,
 .product-img-wrapper.active .product-img{
@@ -876,12 +899,12 @@ html::-webkit-scrollbar {
 .product-img-mini{
     position: absolute;
     top: calc(45% + 13vw);
-    transform: translate(-40%, -50%);
+    transform: translate(-30%, -50%);
     left: calc(50% - 18vw - max(var(--shift) - 10%, 0%));
     width: 30%;
     max-width: 14.5vw;
     height: auto;
-    opacity: calc(120% - var(--shift)*4);
+    opacity: calc(140% - var(--shift)*4);
 }
 .product-contain.active .product-img-mini,
 .product-img-wrapper.active .product-img-mini{
@@ -894,7 +917,7 @@ html::-webkit-scrollbar {
     width: 100%;
     height: 100%;
     padding-left: 9vw;
-    opacity: calc(120% - var(--shift)*4);
+    opacity: calc(140% - var(--shift)*5);
 }
 .product-name,
 .product-moto {

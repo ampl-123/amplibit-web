@@ -586,8 +586,8 @@
             const background = document.querySelector(".products-window");
             document.documentElement.style.setProperty('--shift', 0 +'%');
             document.documentElement.style.setProperty('--rotate', 0 +'deg');
+            document.getElementsByClassName("products-window")[0].classList.remove("in-focus");
             products[0].classList.toggle("active");
-            document.body.classList.toggle("blue", catalog.getBoundingClientRect().top <= window.innerHeight && catalog.getBoundingClientRect().bottom >= 0);
             let targetProgress = 0;
             let currentProgress = 0;
             const easeFactor = 0.07;
@@ -596,7 +596,11 @@
             const logoVengo = document.getElementById("logo-vengo");
             const logoLibby = document.getElementById("logo-libby");
             document.addEventListener("scroll", () => {
-                document.body.classList.toggle("blue", catalog.getBoundingClientRect().top <= window.innerHeight && catalog.getBoundingClientRect().bottom >= 0);
+                document.querySelector(".what-we-do-wrapper").getBoundingClientRect().bottom < 0.7*window.innerHeight && document.querySelector(".what-we-do-wrapper").getBoundingClientRect().bottom > 0 ? document.body.classList.add("green") : document.body.classList.remove("green");
+                document.querySelector(".product-catalog").getBoundingClientRect().top <= 0 ? document.body.classList.add("blue") : document.body.classList.remove("blue");
+                document.getElementsByClassName("what-we-do-wrapper")[0].classList.toggle("white", catalog.getBoundingClientRect().top <= 0.7*window.innerHeight && catalog.getBoundingClientRect().bottom >= 0);
+                document.getElementsByClassName("product-catalog")[0].classList.toggle("white", catalog.getBoundingClientRect().top <= 0.7*window.innerHeight);
+                document.getElementsByClassName("products-window")[0].classList.toggle("in-focus", document.getElementsByClassName("product-catalog")[0].getBoundingClientRect().bottom > window.innerHeight && document.getElementsByClassName("product-catalog")[0].getBoundingClientRect().top < 0);
                 if (!catalog) return;
                 const catalogRect = catalog.getBoundingClientRect();
                 if (catalogRect.top <= 0 && catalogRect.bottom > window.innerHeight) {
