@@ -366,23 +366,23 @@ html::-webkit-scrollbar {
 
 .scrollbar-wrapper{
     position: fixed;
-    bottom: -3.2vw;
-    left: 3.4vw;
+    bottom: 3.2vw;
+    left: 3.2vw;
     width: 6.3vw;
     height: 1vw;
     z-index: 777;
-    transform-origin: bottom left;
-    transform: translateY(calc(-50% - 6.3vw)) translateX(calc(-3.8vw - 100%)) rotate(-90deg);
+    transform-origin: top left;
+    transform: translateX(calc(-3.2vw - 50%)) rotate(-90deg);
     mix-blend-mode: difference;
     animation: 1s 1s forwards scrollbar-wrapper;
 }
 
 @keyframes scrollbar-wrapper {
     0% {
-        transform: translateY(calc(-50% - 6.3vw)) translateX(calc(-3.8vw - 50%))  rotate(-90deg);
+        transform: translateX(calc(-3.2vw - 50%))  rotate(-90deg);
     }
     100% {
-        transform: translateY(calc(-50% - 6.3vw)) translateX(0)  rotate(-90deg);
+        transform: translateX(0)  rotate(-90deg);
     }
 }
 .contact-fixed,
@@ -809,6 +809,7 @@ html::-webkit-scrollbar {
 .products-window{
     --gradient-first-color: #99DC70 0.52%;
     --gradient-second-color: #63BE82 79.19%;
+    isolation: isolate;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -838,6 +839,7 @@ html::-webkit-scrollbar {
     padding-right: 5vw;
     padding-left: 5vw;
     opacity: 0;
+    background: rgba(255, 255, 255, 0.01);
     transition: opacity 1s ease-in;
 }
 /*#contain-1{
@@ -2446,14 +2448,14 @@ textarea {
         bottom: 10px;
     }
     .scrollbar-wrapper{
-        bottom: 4.8vw;
-        left: 4.8vw;
+        bottom: calc(3.2vw + 10px);
+        left: calc(3.2vw + 10px);
         height: 15px;
         width: 90px;
     }
     @keyframes scrollbar-wrapper {
         0% {
-            transform: translateX(calc(-4.8vw - 50%))  rotate(-90deg);
+            transform: translateX(calc(-3.2vw - 50%))  rotate(-90deg);
         }
         100% {
             transform: translateX(0)  rotate(-90deg);
