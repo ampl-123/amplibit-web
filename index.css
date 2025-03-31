@@ -328,7 +328,7 @@ html::-webkit-scrollbar {
 
 .scrollbar-thumb {
     position: absolute;
-    margin-top: 0.3vw;
+    margin-top: 0.32vw;
     width: 0.5vw;
     height: 0.5vw;
     background-color: white;
@@ -929,7 +929,7 @@ html::-webkit-scrollbar {
 .product-name{
     font-size: 4.1vw;
     text-align: left;
-    top: calc(50% - 8vw + max(var(--shift) - 10%, 0%));
+    top: calc(50% - 7vw + max(var(--shift) - 10%, 0%));
     position: absolute;
 }
 .product-moto{
