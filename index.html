@@ -175,7 +175,8 @@
 </div>
     <div class="transition">
         <div class="transition-window">
-            <h1 class="transition-text">Process digitalization.</h1>
+            <h1 id="digitalization" class="transition-text">Process digitalization.</h1>
+            <h1 id="our-products" class="transition-text">Our products.</h1>
             <canvas id="fluidSphere"></canvas>
         </div>
     </div>
@@ -602,6 +603,8 @@
     window.addEventListener('scroll', () => {
         document.getElementsByClassName("what-we-do-wrapper")[0].classList.toggle("white", canvas.getBoundingClientRect().top <= 0.8*window.innerHeight && canvas.getBoundingClientRect().bottom >= 0);
         document.getElementsByClassName("transition")[0].classList.toggle("white", canvas.getBoundingClientRect().top <= 0.8*window.innerHeight && canvas.getBoundingClientRect().bottom >= -window.innerHeight);
+        document.querySelector(".transition").getBoundingClientRect().top + window.innerHeight*0.5 > 0 ? document.getElementById("digitalization").classList.add("active") : document.getElementById("digitalization").classList.remove("active");
+        document.querySelector(".transition").getBoundingClientRect().top + window.innerHeight*0.5 < 0 ? document.getElementById("our-products").classList.add("active") : document.getElementById("our-products").classList.remove("active");
         checkVisibility();
         const transitionElement = document.querySelector(".transition");
         const scrollPos = window.scrollY;
@@ -682,7 +685,7 @@
     const logoLibby = document.getElementById("logo-libby");
     document.addEventListener("scroll", () => {
         document.querySelector(".transition").getBoundingClientRect().top < 0.3*window.innerHeight && document.querySelector(".transition").getBoundingClientRect().bottom > 0 ? document.body.classList.add("green") : document.body.classList.remove("green");
-        document.querySelector(".product-catalog").getBoundingClientRect().top <= 0 ? document.body.classList.add("blue") : document.body.classList.remove("blue");
+        document.querySelector(".product-catalog").getBoundingClientRect().top <= 0 && document.querySelector(".product-catalog").getBoundingClientRect().bottom > 0 ? document.body.classList.add("blue") : document.body.classList.remove("blue");
 /*
         document.getElementsByClassName("product-catalog")[0].classList.toggle("white", catalog.getBoundingClientRect().top <= 0.7*window.innerHeight);
 */

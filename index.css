@@ -857,6 +857,16 @@ html::-webkit-scrollbar {
     top: 45%;
     left: 25%;
     z-index:100;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in;
+}
+.transition-text.active{
+    opacity: 1;
+    transform: translateY(-40px);
+}
+#our-products{
+    left: 35%
 }
 .transition-window{
     width: 100vw;
