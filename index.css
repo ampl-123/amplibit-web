@@ -794,22 +794,92 @@ html::-webkit-scrollbar {
     font-weight: 700;
     color: inherit;
 }
+/*.catalog-transition{
+    display: flex;
+    justify-content: center;
+    background: black;
+    width: 100vw;
+    height: 220vh;
+}
+.logo-transition{
+    opacity: 0;
+}
+.logo-transition.active{
+    opacity: 100;
+}
+
+.logo-container {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10vw;
+    height: 10vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2vw;
+    font-weight: bold;
+    transition: transform 0.2s linear;
+}*/
 .product-catalog{
     position: relative;
     width: 100vw;
     height: 500vh;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    transition: background-color 0.5s ease-in, opacity ease-in-out;
+    opacity: 100;
+    z-index: 1;
+}
+/*.product-catalog.white{
+    background-color: white;
+}*/
+.transition {
+    position: relative;
+    overflow: visible;
+    margin: 0;
     background: black;
     display: flex;
     justify-content: center;
-    transition: background-color 0.5s ease-in;
+    align-items: start;
+    height: 200vh;
+    transition: background 0.5s ease-in;
+    z-index: 2;
 }
-.product-catalog.white{
-    background-color: white;
+.transition.white{
+    background: white;
 }
+.transition-text{
+    position: absolute;
+    font-size: 4.86vw;
+    top: 45%;
+    left: 25%;
+    z-index:100;
+}
+.transition-window{
+    width: 100vw;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    align-items: center;
+}
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+/*.product-catalog.active{
+    opacity: 100;
+}*/
 .products-window{
     --gradient-first-color: #99DC70 0.52%;
     --gradient-second-color: #63BE82 79.19%;
-    isolation: isolate;
+    /*isolation: isolate;*/
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -841,6 +911,7 @@ html::-webkit-scrollbar {
     opacity: 0;
     background: rgba(255, 255, 255, 0.01);
     transition: opacity 1s ease-in;
+    z-index: 1;
 }
 /*#contain-1{
     --offset: var(--progress);
