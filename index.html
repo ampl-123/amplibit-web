@@ -601,7 +601,7 @@
     }
     window.addEventListener('scroll', () => {
         document.getElementsByClassName("what-we-do-wrapper")[0].classList.toggle("white", canvas.getBoundingClientRect().top <= 0.8*window.innerHeight && canvas.getBoundingClientRect().bottom >= 0);
-        document.getElementsByClassName("transition")[0].classList.toggle("white", canvas.getBoundingClientRect().top <= 0.8*window.innerHeight && canvas.getBoundingClientRect().bottom >= 0);
+        document.getElementsByClassName("transition")[0].classList.toggle("white", canvas.getBoundingClientRect().top <= 0.8*window.innerHeight && canvas.getBoundingClientRect().bottom >= -window.innerHeight);
         checkVisibility();
         const transitionElement = document.querySelector(".transition");
         const scrollPos = window.scrollY;
@@ -681,7 +681,7 @@
     const logoVengo = document.getElementById("logo-vengo");
     const logoLibby = document.getElementById("logo-libby");
     document.addEventListener("scroll", () => {
-        document.querySelector(".what-we-do-wrapper").getBoundingClientRect().bottom < 0.7*window.innerHeight && document.querySelector(".what-we-do-wrapper").getBoundingClientRect().bottom > 0 ? document.body.classList.add("green") : document.body.classList.remove("green");
+        document.querySelector(".transition").getBoundingClientRect().top < 0.3*window.innerHeight && document.querySelector(".transition").getBoundingClientRect().bottom > 0 ? document.body.classList.add("green") : document.body.classList.remove("green");
         document.querySelector(".product-catalog").getBoundingClientRect().top <= 0 ? document.body.classList.add("blue") : document.body.classList.remove("blue");
 /*
         document.getElementsByClassName("product-catalog")[0].classList.toggle("white", catalog.getBoundingClientRect().top <= 0.7*window.innerHeight);
