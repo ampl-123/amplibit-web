@@ -866,7 +866,7 @@ html::-webkit-scrollbar {
     transform: translateY(-40px);
 }
 #our-products{
-    left: 35%
+    left: 35%;
 }
 .transition-window{
     width: 100vw;
@@ -909,7 +909,6 @@ canvas {
     height: 100vh;
     border-radius: 0;
 }
-
 .product-contain{
     position: absolute;
     width: 100%;
@@ -958,16 +957,16 @@ canvas {
     max-width: 45vw;
     width: min(100%, 45vw);
     height: auto;
-    top: 45%;
-    left: calc(50% + max(var(--shift) - 10%, 0%));
+    top: calc(45% + max(var(--shift) - 15%, 0%));
+    left: calc(65% /*+ max(var(--shift) - 10%, 0%)*/);
     display: block;
-    opacity: calc(140% - var(--shift)*4);
+    opacity: calc(150% - var(--shift)*4);
 }
-.product-contain.active .product-img,
+/*.product-contain.active .product-img,
 .product-img-wrapper.active .product-img{
     transform: translate(-50%, -50%) ;
     transition: transform 0.5s ease;
-}
+}*/
 #libby-img-1{
     top:40%
 }
@@ -981,26 +980,26 @@ canvas {
 }
 .product-img-mini{
     position: absolute;
-    top: calc(45% + 13vw);
+    top: calc(45% + 13vw + max(var(--shift) - 15%, 0%));
     transform: translate(-30%, -50%);
-    left: calc(50% - 18vw - max(var(--shift) - 10%, 0%));
+    left: calc(50% - 22vw /*- max(var(--shift) - 10%, 0%)*/);
     width: 30%;
     max-width: 14.5vw;
     height: auto;
-    opacity: calc(140% - var(--shift)*4);
+    opacity: calc(150% - var(--shift)*4);
 }
-.product-contain.active .product-img-mini,
+/*.product-contain.active .product-img-mini,
 .product-img-wrapper.active .product-img-mini{
     transform: translate(-50%, -50%) ;
     transition: transform 0.7s ease;
-}
+}*/
 .product-info{
     display: flex;
     flex-direction: column;
     width: 100%;
     height: 100%;
     padding-left: 9vw;
-    opacity: calc(140% - var(--shift)*5);
+    opacity: calc(150% - var(--shift)*5);
 }
 .product-name,
 .product-moto {
@@ -1010,13 +1009,13 @@ canvas {
 .product-name{
     font-size: 4.1vw;
     text-align: left;
-    top: calc(50% - 7vw + max(var(--shift) - 10%, 0%));
+    top: calc(50% - 7vw + max(var(--shift) - 15%, 0%));
     position: absolute;
 }
 .product-moto{
     position: absolute;
     width: 23vw;
-    top: calc(50% + max(var(--shift) - 10%, 0%));
+    top: calc(50% + max(var(--shift) - 15%, 0%));
 }
 .product-moto p{
     font-size: 1.5vw;
@@ -1031,10 +1030,12 @@ canvas {
     width: 4vw;
     height: 4vw;
     position: absolute;
-    top: calc(50% - 14vw);
+    top: calc(50% - 14vw + max(var(--shift) - 15%, 0%));
     left: 14%;
+    /*
     transform: rotateZ(min(calc(var(--rotate) - 0.1*var(--rotate)), 180deg)) scale(1.022);
-    transition: opacity 0.3s ease-in;
+    */
+    transition: opacity 1s ease-in-out;
 }
 .product-logo.active{
     opacity: 100;
@@ -1052,10 +1053,10 @@ canvas {
 #logo-arrango{
     transform: translate(-6px, -6px);
 */
-#logo-libby{
+/*#logo-libby{
    transform-origin: center calc(50%);
    transform: translateY(-21px) rotateZ(0deg) scale(1.05);
-}
+}*/
 .see-more{
     justify-content: center;
     align-items: center;
@@ -1089,67 +1090,112 @@ canvas {
         transform: translateY(20px);
     }
 }
-/*.product-contain:has(.fading-out) .product-name,
-.product-contain:has(.fading-out) .product-moto,
-.product-contain:has(.fading-out) .product-info a {
-    animation: fadeDown 0.8s ease-in-out forwards;
-}*/
-/*.products-wrapper {
-    position: static;
-    width: 100vw;
-    height: 200vh;
-    background-color: teal;
-    display: flex;
-}
-
-.product-window {
-    top: 0;
-    position: sticky;
-    width: 60%;
-    height: 100vh;
-    overflow: visible;
-    background: rgba(0, 0, 0, 0.8);
-    border: 1px #f0f0f0;
-    display: block;
-    align-items: center;
-    justify-content: center;
-}
-.product-info-window {
-    position: sticky;
-    width: 40%;
-    height: 100vh;
-    overflow: visible;
-    background: rgba(156, 0, 0, 0.8);
-    border: 1px #f0f0f0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.carousel-item {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/*#############################################################################################*/
+.product-section{
     position: relative;
-}
-
-
-
-
-.product-info-carousel {
     display: flex;
-    flex-direction: column;
-    width: 35vw;
-    height: 20%;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    transition: transform 0.5s ease-in-out;
-    cursor: grab;
-    padding-left: 6.9vw;
-}*/
-
+    height: 400vh;
+    justify-content: center;
+}
+.product-background{
+    --gradient-first-color: #99DC70 0.52%;
+    --gradient-second-color: #63BE82 79.19%;
+    background: linear-gradient(252.14deg, var(--gradient-first-color) 0.52%, var(--gradient-second-color) 79.19%);
+    width: 98vw;
+    height: 98vh;
+    position: sticky;
+    top: 0.5vw;
+    border-radius: 2.2vw;
+}
+.product{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.product-background-text{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    z-index: 100;
+    display: flex;
+    font-size: 9.7vw;
+    line-height: 9vw;
+    font-weight: 700;
+    text-align: center;
+    padding: 1vw 3vw 1vw;
+}
+.product-background-text div{
+    display: grid;
+    width: 100%;
+}
+.product-background-text div span{
+    font-size: 9.7vw;
+    transform-origin: bottom;
+    transition: transform 0.4s ease-in-out;
+}
+.product-background-text.active div span{
+    transform: scaleY(1);
+}
+.product-background-text:not(.active) div span{
+    transform: scaleY(0);
+}
+#background-text-vengo{
+    color: #FFFFFF;
+    opacity: 20%;
+}
+#background-text-catago{
+    color: #1B68DF;
+    opacity: 30%;
+}
+#background-text-arrango{
+    font-size: 9.375vw;
+    color: #FFFFFF;
+    opacity: 35%;
+}
+#background-text-libby{
+    color: #FFFFFF;
+    opacity: 30%;
+}
+.product-item-name{
+    position: absolute;
+    top: 4.3vw;
+    left: 5.5vw;
+    font-size: 3.5vw;
+    font-weight: 700;
+    color: #FFFFFF;
+}
+.product-item-logo{
+    position: absolute;
+    top: 4.3vw;
+    right: 5.5vw;
+    width: 3.125vw;
+}
+.product-item-logo svg{
+    width: 100%;
+    height: 100%;
+}
+.product-desc{
+    position: absolute;
+    bottom: 4.4vw;
+    left: 5.5vw;
+    max-width: 43vw;
+    color: #FFFFFF;
+    font-size: 1.52vw;
+    font-weight: 500;
+}
+.product-view-more{
+    position: absolute;
+    bottom: 4.4vw;
+    right: 5.5vw;
+    width: 11.3vw;
+    height: 3.6vw;
+}
+.product-view-more svg{
+    width: 100%;
+    height: 105%;
+}
+/*#############################################################################################*/
 .services-wrapper {
     width: 100%;
     padding: 6.94vw 0;
