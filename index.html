@@ -175,15 +175,21 @@
 </div>
     <div class="transition">
         <div class="transition-window">
-            <h1 id="digitalization" class="transition-text">Process digitalization.</h1>
-            <h1 id="our-products" class="transition-text">Our products.</h1>
-            <canvas id="fluidSphere"></canvas>
+            <div class="canvas-wrapper">
+                <canvas id="fluidSphere"></canvas>
+                <div class="changing-header">
+                    <h1 id="digitalization" class="transition-text">Process digitalization.</h1>
+                    <h1 id="centralisation" class="transition-text" style="left:35%;">Centralisation.</h1>
+                    <h1 id="amplification" class="transition-text">Business Amplification.</h1>
+                </div>
+                <h1 id="our-products" class="transition-text">Our products</h1>
+            </div>
         </div>
     </div>
 <!-- ########################################################################################################################## -->
-<div class="product-section">
+<!--<div class="product-section">
     <div class="product-background">
-<!--        <div class="product" style="background: linear-gradient(252.14deg, #99DC70 0.52%, #63BE82 99.48%);">
+&lt;!&ndash;        <div class="product" style="background: linear-gradient(252.14deg, #99DC70 0.52%, #63BE82 99.48%);">
             <div id="background-text-vengo" class="product-background-text">
                 <div>
                     <span>YOUR SINGLE</span>
@@ -220,7 +226,7 @@
                     </g>
                 </svg>
             </div>
-        </div>-->
+        </div>&ndash;&gt;
         <script>
             function toggleActiveClass() {
                 const div = document.getElementById("background-text-catago");
@@ -319,7 +325,7 @@
             </div>
         </div>
     </div>
-</div>
+</div>-->
 <!-- ########################################################################################################################## -->
 
 
@@ -341,49 +347,19 @@
                         <h1 class="product-name">Vengo</h1>
                         <div class="product-moto">
                             <p>Gain 360° Vendor Insight with unmatched ease and clarity.</p>
-                            <div class="see-more">
-                                <a href="/products.html#Vengo">VIEW MORE</a>
-                                <svg width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12.3327 14L10.6994 12.3083L14.841 8.16667H0.666016V5.83333H14.841L10.6994 1.69167L12.3327 0L19.3327 7L12.3327 14Z" fill="white"/>
+                            <a class="see-more" onclick="location.href='/products.html#Vengo'">
+                                <span>VIEW MORE</span>
+                                <svg width="20" height="14" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.3327 14L10.6994 12.3083L14.841 8.16667H0.666016V5.83333H14.841L10.6994 1.69167L12.3327 0L19.3327 7L12.3327 14Z" />
                                 </svg>
-                            </div>
+                            </a>
                         </div>
                     </div>
                     <div class="product-img-wrapper">
-                        <img class="product-img" src="img/vengo_table.webp" alt="Vengo" loading="lazy" style="width: 50vw"/>
-                        <img class="product-img-mini" src="img/vengo_kpi.webp" alt="Vengo" loading="lazy"/>
+                        <img id="vengo-img" class="product-img" src="img/vengo.png" alt="Vengo" loading="lazy"/>
                     </div>
                 </div>
                 <div id="contain-2" class="product-contain">
-                    <div class="product-info">
-                        <svg id="logo-catago" class="product-logo" width="54" height="60" viewBox="0 0 54 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_1204_1249)">
-                                <path d="M31.3851 29.9136L38.2639 26.0239V8.5969L0.171697 29.8176L0 29.9108L54 60V42.573L31.3851 29.9136Z" fill="white"/>
-                                <path opacity="0.6" d="M40.6973 32.3168L53.9997 39.9316V0.00022142L40.6973 7.53279V32.3168Z" fill="white"/>
-                            </g>
-                            <defs>
-                                <clipPath id="clip0_1204_1249">
-                                    <rect width="60" height="54" fill="white" transform="translate(0 60) rotate(-90)"/>
-                                </clipPath>
-                            </defs>
-                        </svg>
-                        <h1 class="product-name">Catago</h1>
-                        <div class="product-moto">
-                            <p>Streamline and tailor bank product management seamlessly.</p>
-                            <div class="see-more">
-                                <a href="/products.html#Vengo">VIEW MORE</a>
-                                <svg width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12.3327 14L10.6994 12.3083L14.841 8.16667H0.666016V5.83333H14.841L10.6994 1.69167L12.3327 0L19.3327 7L12.3327 14Z" fill="white"/>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-img-wrapper">
-                        <img class="product-img" src="img/catago_graph.webp" alt="Catago" loading="lazy"/>
-                        <img class="product-img-mini" src="img/catago_add.webp" alt="Catago" loading="lazy"/>
-                    </div>
-                </div>
-                <div id="contain-3" class="product-contain">
                     <div class="product-info">
                         <svg id="logo-arrango" class="product-logo" width="60" height="54" viewBox="0 0 60 54" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g clip-path="url(#clip0_1204_1392)">
@@ -399,16 +375,45 @@
                         <h1 class="product-name">Arrango</h1>
                         <div class="product-moto">
                             <p>Bank-ready platform which gives you insights and control of your bank's outsourced business. </p>
-                            <div class="see-more">
-                                <a href="/products.html#Vengo">VIEW MORE</a>
-                                <svg width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12.3327 14L10.6994 12.3083L14.841 8.16667H0.666016V5.83333H14.841L10.6994 1.69167L12.3327 0L19.3327 7L12.3327 14Z" fill="white"/>
+                            <a class="see-more" onclick="location.href='/products.html#Vengo'">
+                                <span>VIEW MORE</span>
+                                <svg width="20" height="14" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.3327 14L10.6994 12.3083L14.841 8.16667H0.666016V5.83333H14.841L10.6994 1.69167L12.3327 0L19.3327 7L12.3327 14Z" />
                                 </svg>
-                            </div>
+                            </a>
                         </div>
                     </div>
                     <div class="product-img-wrapper">
-                        <img class="product-img" src="img/arrango_table.webp" alt="Arrango" loading="lazy"/>
+                        <img id="arrango-1" class="product-img" src="img/arrango-1.png" alt="Arrango" loading="lazy"/>
+                        <img id="arrango-2" class="product-img-mini" src="img/arrango-2.png" alt="Arrango" loading="lazy"/>
+                    </div>
+                </div>
+                <div id="contain-3" class="product-contain">
+                    <div class="product-info">
+                        <svg id="logo-catago" class="product-logo" width="54" height="60" viewBox="0 0 54 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_1204_1249)">
+                                <path d="M31.3851 29.9136L38.2639 26.0239V8.5969L0.171697 29.8176L0 29.9108L54 60V42.573L31.3851 29.9136Z" fill="white"/>
+                                <path opacity="0.6" d="M40.6973 32.3168L53.9997 39.9316V0.00022142L40.6973 7.53279V32.3168Z" fill="white"/>
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_1204_1249">
+                                    <rect width="60" height="54" fill="white" transform="translate(0 60) rotate(-90)"/>
+                                </clipPath>
+                            </defs>
+                        </svg>
+                        <h1 class="product-name">Catago</h1>
+                        <div class="product-moto">
+                            <p>Streamline and tailor bank product management seamlessly.</p>
+                            <a class="see-more" onclick="location.href='/products.html#Vengo'">
+                                <span>VIEW MORE</span>
+                                <svg width="20" height="14" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.3327 14L10.6994 12.3083L14.841 8.16667H0.666016V5.83333H14.841L10.6994 1.69167L12.3327 0L19.3327 7L12.3327 14Z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product-img-wrapper">
+                        <img id="catago-img" class="product-img" src="img/catago.png" alt="Catago" loading="lazy">
                     </div>
                 </div>
                 <div id="contain-4" class="product-contain">
@@ -424,21 +429,21 @@
                                 </clipPath>
                             </defs>
                         </svg>
-                        <h1 class="product-name">LIBBY</h1>
+                        <h1 class="product-name">Libby</h1>
                         <div class="product-moto">
                             <p>Reduce costs and maximize efficiency with comprehensive, up-to-date credit risk insights.</p>
-                            <div class="see-more">
-                                <a href="/products.html#Vengo">VIEW MORE</a>
-                                <svg width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12.3327 14L10.6994 12.3083L14.841 8.16667H0.666016V5.83333H14.841L10.6994 1.69167L12.3327 0L19.3327 7L12.3327 14Z" fill="white"/>
+                            <a class="see-more" onclick="location.href='/products.html#Vengo'">
+                                <span>VIEW MORE</span>
+                                <svg width="20" height="14" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.3327 14L10.6994 12.3083L14.841 8.16667H0.666016V5.83333H14.841L10.6994 1.69167L12.3327 0L19.3327 7L12.3327 14Z" />
                                 </svg>
-                            </div>
+                            </a>
                         </div>
 
                     </div>
                     <div class="product-img-wrapper">
-                        <img id="libby-img-1" class="product-img" src="img/libby_drop.webp" alt="Libby" loading="lazy"/>
-                        <img id="libby-img-2" class="product-img" src="img/libby_file.webp" alt="Libby" loading="lazy" style="top: calc(35% + 18vw); max-width: 45vw"/>
+                        <img id="libby-img-1" class="product-img" src="img/libby-1.png" alt="Libby" loading="lazy"/>
+                        <img id="libby-img-2" class="product-img-mini" src="img/libby-2.png" alt="Libby" loading="lazy"/>
                     </div>
                 </div>
             </div>
@@ -718,8 +723,8 @@
             canvas.width / 2, canvas.height / 2, 0,
             canvas.width / 2, canvas.height / 2, canvas.width / 2
         );
-        gradient.addColorStop(0, "rgb(0,202,253)");
-        gradient.addColorStop(1, "rgba(255, 255, 255, 0.3)");
+        gradient.addColorStop(0, "rgb(148,217,113)");
+        gradient.addColorStop(1, "rgb(147,215,112)");
 
         precomputedGradient = gradient;
         return gradient;
@@ -746,7 +751,7 @@
         let centerX = canvas.width / 2;
         let centerY = canvas.height / 2;
 
-        let baseRadius = (Math.min(canvas.width, canvas.height) / 3.2 * scrollFactor);
+        let baseRadius = (Math.min(canvas.width, canvas.height) / 2.8 * scrollFactor);
         console.log(baseRadius)
         let offsetY = Math.sin(time * 0.1) * 0.5 * scrollFactor;
         drawSphere(centerX, centerY + offsetY, baseRadius, time);
@@ -767,8 +772,9 @@
     window.addEventListener('scroll', () => {
         document.getElementsByClassName("what-we-do-wrapper")[0].classList.toggle("white", canvas.getBoundingClientRect().top <= 0.8*window.innerHeight && canvas.getBoundingClientRect().bottom >= 0);
         document.getElementsByClassName("transition")[0].classList.toggle("white", canvas.getBoundingClientRect().top <= 0.8*window.innerHeight && canvas.getBoundingClientRect().bottom >= -window.innerHeight);
-        document.querySelector(".transition").getBoundingClientRect().top + window.innerHeight*0.5 > 0 ? document.getElementById("digitalization").classList.add("active") : document.getElementById("digitalization").classList.remove("active");
-        document.querySelector(".transition").getBoundingClientRect().top + window.innerHeight*0.5 < 0 ? document.getElementById("our-products").classList.add("active") : document.getElementById("our-products").classList.remove("active");
+        document.querySelector(".transition").getBoundingClientRect().top + window.innerHeight > 0 ? document.querySelector(".changing-header").classList.add("active") : document.querySelector(".changing-header").classList.remove("active");
+        document.querySelector(".transition").getBoundingClientRect().top + window.innerHeight < 0 ? (document.getElementById("our-products").classList.add("active"), document.body.classList.add("blue"), document.body.classList.remove("green")) : (document.getElementById("our-products").classList.remove("active"), document.body.classList.add("blue"), document.body.classList.add("green"));
+        document.querySelector(".transition").getBoundingClientRect().top - window.innerHeight < 0 && document.querySelector(".transition").getBoundingClientRect().bottom > 0 ? document.querySelector(".transition-window").classList.add("active") : document.querySelector(".transition-window").classList.remove("active");
         checkVisibility();
         const scrollPos = window.scrollY;
         scrollFactor = Math.max(1, (scrollPos - transitionElement.offsetTop + 1000) / 800);
@@ -802,6 +808,18 @@
 };
 </script>
 <script>
+    const sections = ["digitalization", "centralisation", "amplification"];
+    let currentIndex = 0;
+    setInterval(() => {
+        sections.forEach(id => {
+            document.getElementById(id)?.classList.remove("active");
+        });
+        const currentId = sections[currentIndex];
+        document.getElementById(currentId)?.classList.add("active");
+        currentIndex = (currentIndex + 1) % sections.length;
+    }, 1000);
+</script>
+<script>
 
 
             //0 > document.querySelector(".zero-service").getBoundingClientRect().top - 0.5 * window.innerHeight ? document.body.classList.add("green-first","black") : document.body.classList.remove("green-first","black"),
@@ -823,7 +841,7 @@
         const b = Math.round(b1 + (b2 - b1) * t);
         return `rgb(${r}, ${g}, ${b})`;
     };
-    const gradients = [[[153, 220, 112], [99, 190, 130]], [[63, 217, 255], [86, 171, 250]], [[35, 209, 146], [24, 197, 200]], [[53, 155, 255], [79, 107, 207]],[[53, 155, 255], [79, 107, 207]]];
+    const gradients = [/*[[153, 220, 112], [99, 190, 130]]*/ [[148,217,113], [148,217,113]], [[124, 230, 145], [66, 218, 181]], [[63, 217, 255], [86, 171, 250]], [[129, 167, 255], [59, 145, 245]],[[129, 167, 255], [59, 145, 245]]];
     const catalog = document.querySelector(".product-catalog");
     const products = document.querySelectorAll(".product-contain");
     const background = document.querySelector(".products-window");
@@ -832,7 +850,7 @@
     document.documentElement.style.setProperty('--rotate', 0 +'deg');
 */
     document.getElementsByClassName("products-window")[0].classList.remove("in-focus");
-    products[0].classList.toggle("active");
+/*    products[0].classList.toggle("active");*/
     let targetProgress = 0;
     let currentProgress = 0;
     const easeFactor = 0.07;
@@ -857,6 +875,10 @@
         document.querySelector(".product-catalog").getBoundingClientRect().top <= 0 && document.querySelector(".product-catalog").getBoundingClientRect().bottom > 0 ? document.body.classList.add("blue") : document.body.classList.remove("blue");
         document.getElementsByClassName("product-catalog")[0].classList.toggle("white", catalog.getBoundingClientRect().top <= 0.7*window.innerHeight);
         document.getElementsByClassName("products-window")[0].classList.toggle("in-focus", document.getElementsByClassName("product-catalog")[0].getBoundingClientRect().bottom > window.innerHeight && document.getElementsByClassName("product-catalog")[0].getBoundingClientRect().top < 0);
+/*
+        document.getElementsByClassName("products-window")[0].classList.toggle("active", document.getElementsByClassName("product-catalog")[0].getBoundingClientRect().bottom > window.innerHeight && document.getElementsByClassName("product-catalog")[0].getBoundingClientRect().top < 0);
+*/
+
         if (!catalog) return;
         const catalogRect = catalog.getBoundingClientRect();
         if (catalogRect.top <= 0 && catalogRect.bottom > window.innerHeight) {
@@ -888,11 +910,11 @@
         if (logoVengo) {
             logoVengo.classList.toggle("active", currentProgress <= 0.25);
         }
-        if (logoCatago) {
-            logoCatago.classList.toggle("active", currentProgress < 0.5 && currentProgress > 0.25);
-        }
         if (logoArrango) {
-            logoArrango.classList.toggle("active", currentProgress < 0.745 && currentProgress > 0.5);
+            logoArrango.classList.toggle("active", currentProgress < 0.5 && currentProgress > 0.25);
+        }
+        if (logoCatago) {
+            logoCatago.classList.toggle("active", currentProgress < 0.745 && currentProgress > 0.5);
         }
         if (logoLibby) {
             logoLibby.classList.toggle("active", currentProgress > 0.745);
