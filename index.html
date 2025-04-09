@@ -235,13 +235,20 @@
                 }
             }
             // Toggle class every 1 second (1000ms)
-            setInterval(toggleActiveClass, 1000);        </script>
+            ////setInterval(toggleActiveClass, 1000);        </script>
         <div class="product" style="background: linear-gradient(252.14deg, #3FD9FF 0.52%, #56ABFA 99.48%);">
             <div id="background-text-catago" class="product-background-text">
                 <div>
-                    <span>PRODUCT</span>
-                    <span>CATALOG AT ITS</span>
-                    <span>BEST</span>
+                    <div>
+                        <span>PRODUCT</span>
+                    </div>
+                    <div>
+                        <span>CATALOG AT ITS</span>
+                    </div>
+                    <div>
+                        <span>BEST</span>
+                    </div>
+
                 </div>
 
             </div>
@@ -706,7 +713,7 @@
     </div>
 </footer>
 <script>
-    const transitionElement = document.querySelector(".transition");
+/*    const transitionElement = document.querySelector(".transition");
     const canvas = document.getElementById("fluidSphere");
     const ctx = canvas.getContext("2d");
     canvas.width = window.innerWidth;
@@ -724,7 +731,7 @@
             canvas.width / 2, canvas.height / 2, canvas.width / 2
         );
         gradient.addColorStop(0, "rgb(148,217,113)");
-        gradient.addColorStop(1, "rgb(147,215,112)");
+        gradient.addColorStop(1, "rgb(148,217,113)");
 
         precomputedGradient = gradient;
         return gradient;
@@ -785,6 +792,94 @@
         precomputedGradient = null;
         checkVisibility();
     });
+    checkVisibility();*/
+    const transitionElement = document.querySelector(".transition");
+    const canvas = document.getElementById("fluidSphere");
+    const ctx = canvas.getContext("2d");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    let time = 0, scrollFactor = 1, isAnimating = false;
+
+    function enhancedWave(x, t) {
+        return Math.sin(x * 0.05 + t) * 18 + Math.cos(x * 0.1 + t) * 3;
+    }
+
+    function drawSphere(centerX, centerY, radius, t) {
+        ctx.beginPath();
+        for (let angle = 0; angle < Math.PI * 2; angle += 0.1) {
+            let xOff = Math.cos(angle);
+            let yOff = Math.sin(angle);
+            let noiseFactor = enhancedWave(xOff * 50 + yOff * 50, t);
+            let x = centerX + (radius + noiseFactor) * xOff;
+            let y = centerY + (radius + noiseFactor) * yOff;
+            if (angle === 0) ctx.moveTo(x, y);
+            else ctx.lineTo(x, y);
+        }
+        ctx.closePath();
+        ctx.fillStyle = "rgb(148,217,113)"; // Solid color fill
+        ctx.fill();
+    }
+
+    function draw() {
+        if (!isAnimating) return;
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        let centerX = canvas.width / 2;
+        let centerY = canvas.height / 2;
+
+        let baseRadius = (Math.min(canvas.width, canvas.height) / 4 * scrollFactor);
+        console.log(baseRadius)
+        let offsetY = Math.sin(time * 0.1) * 5 * scrollFactor;
+        drawSphere(centerX, centerY + offsetY, baseRadius, time);
+        time += 0.02;
+        requestAnimationFrame(draw);
+    }
+
+    function checkVisibility() {
+        const transitionElement = document.querySelector(".transition");
+        const rect = transitionElement.getBoundingClientRect();
+        const inView = rect.top <= window.innerHeight * 0.8 && rect.bottom >= 0;
+        if (inView && !isAnimating) {
+            isAnimating = true;
+            draw();
+        } else if (!inView) {
+            isAnimating = false;
+        }
+    }
+
+    window.addEventListener('scroll', () => {
+        document.querySelector(".what-we-do-wrapper").classList.toggle("white", canvas.getBoundingClientRect().top <= 0.8 * window.innerHeight && canvas.getBoundingClientRect().bottom >= 0);
+        document.querySelector(".transition").classList.toggle("white", canvas.getBoundingClientRect().top <= 0.8 * window.innerHeight && canvas.getBoundingClientRect().bottom >= -window.innerHeight);
+
+        document.querySelector(".transition").getBoundingClientRect().top + window.innerHeight > 0
+            ? document.querySelector(".changing-header").classList.add("active")
+            : document.querySelector(".changing-header").classList.remove("active");
+        document.querySelector(".transition").getBoundingClientRect().top + window.innerHeight < 0
+            ? document.getElementById("our-products").classList.add("active")
+            : document.getElementById("our-products").classList.remove("active");
+        document.querySelector(".transition").getBoundingClientRect().top + window.innerHeight < 0
+            ? document.body.classList.add("blue")
+            : document.body.classList.remove("blue");
+        document.querySelector(".transition").classList.contains("white") && document.querySelector(".transition-window").getBoundingClientRect().bottom > window.innerHeight
+            ? document.body.classList.add("green")
+            : document.body.classList.remove("green")
+        document.querySelector(".transition").getBoundingClientRect().top - window.innerHeight < 0 && document.querySelector(".transition").getBoundingClientRect().bottom > 0
+            ? (document.querySelector(".transition-window").classList.add("active"))
+            : document.querySelector(".transition-window").classList.remove("active");
+
+        checkVisibility();
+        const scrollPos = window.scrollY - transitionElement.offsetTop;
+        const viewportMax = Math.max(window.innerWidth, window.innerHeight);
+        const relativeScroll = (scrollPos/viewportMax);
+        scrollFactor = Math.max(1, relativeScroll * 7);
+    });
+
+    window.addEventListener('resize', () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        checkVisibility();
+    });
+
     checkVisibility();
 </script>
 
@@ -850,7 +945,7 @@
     document.documentElement.style.setProperty('--rotate', 0 +'deg');
 */
     document.getElementsByClassName("products-window")[0].classList.remove("in-focus");
-/*    products[0].classList.toggle("active");*/
+    products[0].classList.toggle("active");
     let targetProgress = 0;
     let currentProgress = 0;
     const easeFactor = 0.07;
@@ -890,7 +985,7 @@
     });
     function updateProgress() {
         currentProgress += (targetProgress - currentProgress) * easeFactor;
-        /*console.log(currentProgress)*/
+        //console.log(currentProgress)
         if (Math.abs(targetProgress - currentProgress) < threshold) {
             cancelAnimationFrame(animationFrame);
             animationFrame = null;
@@ -898,6 +993,7 @@
         }
         let index = Math.min(Math.max(Math.floor(currentProgress / 0.25), 0), products.length - 1);
         let shift = currentProgress * 100 - index * 25;
+        console.log(shift)
         document.documentElement.style.setProperty('--shift', index < 3 ? `${shift}%` : '0%');
 /*
         document.documentElement.style.setProperty('--rotate', `${currentProgress * 360}deg`);

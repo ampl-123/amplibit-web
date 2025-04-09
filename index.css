@@ -844,12 +844,18 @@ html::-webkit-scrollbar {
     display: flex;
     justify-content: center;
     align-items: start;
-    height: 200vh;
+    height: 210vh;
+    padding-top: 10vh;
     transition: background 0.5s ease-in;
     z-index: 2;
 }
 .transition.white{
     background: white;
+}
+body.blue .transition.white {
+    --gradient-first-color: var();
+    background: #93d770;
+    transition: background 0s;
 }
 .transition-text{
     position: absolute;
@@ -872,7 +878,7 @@ html::-webkit-scrollbar {
 .transition-window{
     opacity: 0;
     width: 100vw;
-    height: 350vh;
+    height: 210vh;
     position: relative;
     top: 0;
     align-items: center;
@@ -908,8 +914,8 @@ canvas {
     opacity: 100;
 }*/
 .products-window{
-    --gradient-first-color: #99DC70 0.52%;
-    --gradient-second-color: #63BE82 79.19%;
+    --gradient-first-color: rgba(148,217,113);
+    --gradient-second-color: rgba(148,217,113);
     /*isolation: isolate;*/
     display: flex;
     flex-direction: column;
@@ -979,7 +985,7 @@ canvas {
     max-width: 45vw;*/
     width: min(130%, 50vw);
     height: auto;
-    top: calc(45% + max(var(--shift) - 15%, 0%));
+    top: calc(45% - max(var(--shift) - 15%, 0%));
     left: calc(50% /*+ max(var(--shift) - 10%, 0%)*/);
     display: block;
     opacity: calc(150% - var(--shift)*4);
@@ -999,7 +1005,7 @@ canvas {
 }
 .product-img-mini{
     position: absolute;
-    top: calc(45% + 11vw + max(var(--shift) - 15%, 0%));
+    top: calc(45% + 11vw - max(var(--shift) - 15%, 0%));
     transform: translate(-30%, -50%);
     left: calc(50%  /*- max(var(--shift) - 10%, 0%)*/);
     width: min(100%, 28vw);
@@ -1036,13 +1042,13 @@ canvas {
 .product-name{
     font-size: 3.8vw;
     text-align: left;
-    top: calc(50% - 7vw + max(var(--shift) - 15%, 0%));
+    top: calc(50% - 7vw - max(var(--shift) - 15%, 0%));
     position: absolute;
 }
 .product-moto{
     position: absolute;
     width: 23vw;
-    top: calc(50% + max(var(--shift) - 15%, 0%));
+    top: calc(50% - max(var(--shift) - 15%, 0%));
     pointer-events: none;
 }
 .product-moto p{
@@ -1058,7 +1064,7 @@ canvas {
     width: 4vw;
     height: 4vw;
     position: absolute;
-    top: calc(50% - 12vw + max(var(--shift) - 15%, 0%));
+    top: calc(50% - 12vw - max(var(--shift) - 15%, 0%));
     left: 14%;
     transition: opacity 1s ease-in-out;
 }
@@ -1172,20 +1178,25 @@ canvas {
     text-align: center;
     padding: 1vw 3vw 1vw;
 }
-.product-background-text div{
+.product-background-text div {
     display: grid;
     width: 100%;
 }
-.product-background-text div span{
+.product-background-text div div{
+    overflow: hidden;
+    display: grid;
+    width: 100%;
+}
+.product-background-text div div span{
     font-size: 9.7vw;
     transform-origin: bottom;
     transition: transform 0.4s ease-in-out;
 }
-.product-background-text.active div span{
-    transform: scaleY(1);
-}
+/*.product-background-text.active div div span{
+    transform: translateY(100%);
+}*/
 .product-background-text:not(.active) div span{
-    transform: scaleY(0);
+    transform: translateY(0);
 }
 #background-text-vengo{
     color: #FFFFFF;
