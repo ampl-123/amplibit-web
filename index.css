@@ -825,11 +825,11 @@ html::-webkit-scrollbar {
 .product-catalog{
     position: relative;
     width: 100vw;
-    height: 500vh;
+    height: 400vh;
     background-color: white;
     display: flex;
     justify-content: center;
-    transition: background-color 0.5s ease-in, opacity ease-in-out;
+/*    transition: background-color 0.5s ease-in, opacity ease-in-out;*/
     opacity: 100;
     z-index: 1;
 }
@@ -879,10 +879,11 @@ body.blue .transition.white {
     opacity: 0;
     width: 100vw;
     height: 210vh;
-    position: relative;
+    position: sticky;
     top: 0;
     align-items: center;
     transition: opacity 0.5s ease-in;
+    z-index: 0;
 }
 .transition-window.active{
     opacity: 1;
@@ -927,7 +928,7 @@ canvas {
     background-size: cover;
     overflow: hidden;
     background: linear-gradient(252.14deg, var(--gradient-first-color) 0.52%, var(--gradient-second-color) 79.19%);
-    z-index: 99;
+    z-index: 0;
     /*border-radius: 3vw;*/
     transition: width 0.5s ease-in-out, height 0.5s ease-in-out, border-radius 0.5s ease-in-out;
 }
@@ -936,18 +937,37 @@ canvas {
     height: 100vh;
     border-radius: 0;
 }
-.product-contain{
+.scrollable-products{
     position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    z-index: 1;
+}
+.fixed-info{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-left: 5vw;
+    width: 50%;
+    z-index: 1;
+    height: 100%;
+}
+.info-wrapper{
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+.product-contain{
+    position: relative;
     width: 100%;
     height: 100vh;
     display: flex;
     flex-flow: row;
-    padding-right: 5vw;
-    padding-left: 5vw;
-    opacity: 0;
+    opacity: 1;
     background: rgba(255, 255, 255, 0.01);
     transition: opacity 1s ease-in;
-    z-index: 1;
+/*    z-index: 1;*/
 }
 /*#contain-1{
     width: 100vw;
@@ -985,11 +1005,31 @@ canvas {
     max-width: 45vw;*/
     width: min(130%, 50vw);
     height: auto;
-    top: calc(45% - max(var(--shift) - 15%, 0%));
+    top: calc(45%/* - max(var(--shift)*2 - 15%*/));
     left: calc(50% /*+ max(var(--shift) - 10%, 0%)*/);
     display: block;
-    opacity: calc(150% - var(--shift)*4);
+    opacity: 1 /*calc(150% - var(--shift)*6)*/;
 }
+/*.wiggle path{
+    !*
+    animation: subtleMove 3s ease-in-out infinite alternate;
+    *!
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}*/
+/*.wiggle path:hover {
+    transform: scale(1.2);
+}*/
+/*.wiggle g{
+    animation: subtleMove 3s ease-in-out infinite alternate;
+    transform-origin: center;
+}*/
+
+/*@keyframes subtleMove {
+    0% { transform: translate(0px, 0px) rotate(0deg); }
+    100% { transform: translate(2px, -2px) rotate(1deg); }
+}*/
+
 /*.product-contain.active .product-img,
 .product-img-wrapper.active .product-img{
     transform: translate(-50%, -50%) ;
@@ -1005,12 +1045,12 @@ canvas {
 }
 .product-img-mini{
     position: absolute;
-    top: calc(45% + 11vw - max(var(--shift) - 15%, 0%));
+    top: calc(45% + 11vw/* - max(var(--shift)) - 15%*/);
     transform: translate(-30%, -50%);
     left: calc(50%  /*- max(var(--shift) - 10%, 0%)*/);
     width: min(100%, 28vw);
     height: auto;
-    opacity: calc(150% - var(--shift)*4);
+    opacity: calc(100%/* - var(--shift)*4*/);
 }
 #vengo-img{
     width: min(130%, 45vw);
@@ -1027,12 +1067,22 @@ canvas {
     width: min(100%, 26vw);
 }
 .product-info{
+    position: absolute;
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     padding-left: 9vw;
-    opacity: calc(150% - var(--shift)*5);
+    opacity: calc(150%/* - var(--shift)*5*/);
+    transition: opacity 0.5s ease-in-out;
+/*    pointer-events: none;*/
+}
+.product-info:not(.active){
+    opacity: 0;
+    pointer-events: none;
+}
+.product-info.active{
+    opacity: 1;
 }
 .product-name,
 .product-moto {
@@ -1042,14 +1092,13 @@ canvas {
 .product-name{
     font-size: 3.8vw;
     text-align: left;
-    top: calc(50% - 7vw - max(var(--shift) - 15%, 0%));
+    top: calc(50% - 7vw/* - max(var(--shift) - 15%, 0%)*/);
     position: absolute;
 }
 .product-moto{
     position: absolute;
     width: 23vw;
-    top: calc(50% - max(var(--shift) - 15%, 0%));
-    pointer-events: none;
+    top: calc(50%/* - max(var(--shift) - 15%, 0%)*/);
 }
 .product-moto p{
     font-size: 1.3vw;
@@ -1058,25 +1107,23 @@ canvas {
 .product-moto svg{
     width: 1.9vw;
     height: 1.9vw;
+    pointer-events: none;
 }
 .product-logo{
     transform-origin: center calc(50% - 10px);
     width: 4vw;
     height: 4vw;
     position: absolute;
-    top: calc(50% - 12vw - max(var(--shift) - 15%, 0%));
-    left: 14%;
-    transition: opacity 1s ease-in-out;
+    top: calc(50% - 12vw/* - max(var(--shift) - 15%, 0%)*/);
+    opacity: 1;
+/*    transition: opacity 1s ease-in-out;*/
 }
 .product-logo.active{
     opacity: 100;
 }
-.product-logo:not(.active){
-    opacity: 0;
-}
-.product-moto .see-more {
+/*.product-moto .see-more {
     pointer-events: auto;
-}
+}*/
 .button-wrapper {
     position: absolute;
     bottom: 20px;
@@ -1085,7 +1132,9 @@ canvas {
     z-index: 999;
 }
 .see-more {
+    /*
     pointer-events: auto;
+    */
     display: flex;
     width: 12vw;
     height: 3.6vw;
@@ -3171,11 +3220,11 @@ textarea {
     .product-catalog{
         height: 500vh;
     }
-    .product-contain{
+/*    .product-contain{
         justify-content: center;
         align-content: flex-start;
-        flex-flow: column-reverse;
-    }
+   !*     flex-flow: column-reverse;*!
+    }*/
     .product-logo{
         transform-origin: center calc(55% - 2px);
         transform: rotateZ(min(calc(var(--rotate) - 0.1*var(--rotate)), 180deg)) scale(2);
@@ -3200,9 +3249,11 @@ textarea {
         font-size: 50px;
     }
     .product-moto{
-        display: flex;
+/*        display: flex;*/
         flex-flow: column;
+        /*
         width: 90%;
+        */
         margin-top: 40px;
     }
     .product-moto p{
@@ -3233,7 +3284,8 @@ textarea {
         justify-content: space-between;*/
         min-height: 35vw;
         height: 30%;
-        position: relative;
+        position: sticky;
+        top: 0;
     }
 /*    .product-img-mini{
         max-width: 40%;
