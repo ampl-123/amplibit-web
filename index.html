@@ -1452,9 +1452,7 @@
     products[3].classList.toggle("active");
     let targetProgress = 0;
     let currentProgress = 0;
-/*
-    const easeFactor = 0.004;
-*/
+    let easeFactor = 0.04;
     let animationFrame = null;
     const threshold = 0.002;
     const Vengo = document.getElementById("Vengo");
@@ -1536,18 +1534,23 @@
     }
 </script>
 <script>
-    let lastScroll = 0;
+/*    let lastScroll = 0;
     let targetScroll = 0;
     let easeFactor = 0.055;
     let isMouseWheel = false;
+    let lastDeltaY;
     function isTrackPad(e) {
         const { deltaY } = e;
-        if (deltaY && !Number.isInteger(deltaY)) {
+        console.log("moj delta", deltaY)
+        if (deltaY && (!Number.isInteger(deltaY) || Math.abs(deltaY) < 50)) {
+            console.log("is trackpad", deltaY)
             return true;
         }
+        console.log("is mouse", deltaY)
         return false;
     }
     function smoothScroll(event) {
+        console.log("uso")
         const isTrackpad = isTrackPad(event);
         if (isTrackpad) {
             return;
@@ -1566,7 +1569,7 @@
         }
         requestAnimationFrame(scrollLoop);
     }
-    window.addEventListener('wheel', smoothScroll, { passive: false });
+    window.addEventListener('wheel', smoothScroll);*/
 </script>
 <script>
     document.documentElement.style.overflowY = 'scroll';
