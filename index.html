@@ -1688,7 +1688,7 @@
     });
     function updateProgress() {
         currentProgress += (targetProgress - currentProgress) * easeFactor;
-        /*console.log(currentProgress)*/
+        console.log(currentProgress)
         if (Math.abs(targetProgress - currentProgress) < threshold) {
             cancelAnimationFrame(animationFrame);
             animationFrame = null;
