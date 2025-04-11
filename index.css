@@ -1173,7 +1173,6 @@ canvas {
     position: relative;
     z-index: 4;
 }
-
 .see-more::before {
     content: '';
     position: absolute;
@@ -1246,6 +1245,10 @@ canvas {
     display: flex;
     height: 400vh;
     justify-content: center;
+    background: black;
+}
+.product{
+    border-radius: 2.2vw;
 }
 .product-background{
     --gradient-first-color: #99DC70 0.52%;
@@ -1274,6 +1277,7 @@ canvas {
     font-weight: 700;
     text-align: center;
     padding: 1vw 3vw 1vw;
+    z-index: 1;
 }
 .product-background-text div {
     display: grid;
@@ -1321,6 +1325,47 @@ canvas {
     font-weight: 700;
     color: #FFFFFF;
 }
+.product-img-container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+.product-page-img{
+    width: 50%;
+}
+#vengo-gqi-2{
+    width:25%;
+    position: absolute;
+    transform: translate(70%, 30%);
+}
+#arrango-list{
+    width: 40%;
+    transform: translate(10%, -10%);
+}
+#arrango-RA{
+    width:25%;
+    position: absolute;
+    transform: translate(-50%, 20%);
+}
+#libby-portfolio{
+    width: 55%;
+    transform: translate(0, -10%);
+}
+#libby-late{
+    width:25%;
+    position: absolute;
+    transform: translate(70%, 20%);
+}
+.product-img-svg-wrapper {
+    width: 50vw;
+}
+.product-img-svg-wrapper svg{
+    width: 100%;
+}
 .product-item-logo{
     position: absolute;
     top: 4.3vw;
@@ -1342,14 +1387,10 @@ canvas {
 }
 .product-view-more{
     position: absolute;
-    bottom: 4.4vw;
+    bottom: 5.5vw;
     right: 5.5vw;
     width: 11.3vw;
     height: 3.6vw;
-}
-.product-view-more svg{
-    width: 100%;
-    height: 105%;
 }
 /*#############################################################################################*/
 .services-wrapper {
