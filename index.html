@@ -184,7 +184,7 @@
                 <canvas id="fluidSphere"></canvas>
                 <div class="changing-header">
                     <h1 id="digitalization" class="transition-text">Process digitalization.</h1>
-                    <h1 id="centralisation" class="transition-text" style="left:35%;">Centralisation.</h1>
+                    <h1 id="centralisation" class="transition-text">Centralisation.</h1>
                     <h1 id="amplification" class="transition-text">Business Amplification.</h1>
                 </div>
                 <h1 id="our-products" class="transition-text">Our products</h1>
@@ -1526,7 +1526,7 @@
         let centerX = canvas.width / 2;
         let centerY = canvas.height / 2;
 
-        let baseRadius = (Math.min(canvas.width, canvas.height) / 4 * scrollFactor*1.8);
+        let baseRadius = (Math.min(canvas.width, canvas.height) / 5 * scrollFactor*1.8);
         /*console.log(baseRadius)*/
         let offsetY = Math.sin(time * 0.1) * 5 * scrollFactor;
         drawSphere(centerX, centerY + offsetY, baseRadius, time);
@@ -1559,7 +1559,7 @@
         document.querySelector(".transition").getBoundingClientRect().top + window.innerHeight < 0
             ? document.body.classList.add("blue")
             : document.body.classList.remove("blue");
-        document.querySelector(".transition").classList.contains("white") && document.querySelector(".transition-window").getBoundingClientRect().bottom > window.innerHeight
+        document.querySelector(".transition").classList.contains("white") && document.querySelector(".transition-window").getBoundingClientRect().bottom > window.innerHeight*1.2
             ? document.body.classList.add("green")
             : document.body.classList.remove("green")
         document.querySelector(".transition").getBoundingClientRect().top - window.innerHeight < 0 && document.querySelector(".transition").getBoundingClientRect().bottom > 0
