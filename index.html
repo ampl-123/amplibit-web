@@ -557,7 +557,7 @@
                         <h1 class="product-name">Vengo</h1>
                         <div class="product-moto">
                             <p>Gain 360° Vendor Insight with unmatched ease and clarity.</p>
-                            <a class="see-more" onclick="location.href='/products.html#Vengo'">
+                            <a class="see-more" onclick="location.href='/products.html'">
                                 <span>VIEW MORE</span>
                                 <svg width="20" height="14" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M12.3327 14L10.6994 12.3083L14.841 8.16667H0.666016V5.83333H14.841L10.6994 1.69167L12.3327 0L19.3327 7L12.3327 14Z" />
@@ -582,7 +582,7 @@
                         <h1 class="product-name">Arrango</h1>
                         <div class="product-moto">
                             <p>A bank-ready solution for full control and governance over outsourced services.</p>
-                            <a class="see-more" onclick="location.href='/products.html#Vengo'">
+                            <a class="see-more" onclick="location.href='/products.html'">
                                 <span>VIEW MORE</span>
                                 <svg width="20" height="14" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M12.3327 14L10.6994 12.3083L14.841 8.16667H0.666016V5.83333H14.841L10.6994 1.69167L12.3327 0L19.3327 7L12.3327 14Z" />
@@ -607,7 +607,7 @@
                         <h1 class="product-name">Catago</h1>
                         <div class="product-moto">
                             <p>Streamline and tailor bank product management seamlessly.</p>
-                            <a class="see-more" onclick="location.href='/products.html#Vengo'">
+                            <a class="see-more" onclick="location.href='/products.html'">
                                 <span>VIEW MORE</span>
                                 <svg width="20" height="14" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M12.3327 14L10.6994 12.3083L14.841 8.16667H0.666016V5.83333H14.841L10.6994 1.69167L12.3327 0L19.3327 7L12.3327 14Z" />
@@ -632,7 +632,7 @@
                         <h1 class="product-name">Libby</h1>
                         <div class="product-moto">
                             <p>Reduce costs and maximize efficiency with comprehensive, up-to-date credit risk insights.</p>
-                            <a class="see-more" onclick="location.href='/products.html#Vengo'">
+                            <a class="see-more" onclick="location.href='/products.html'">
                                 <span>VIEW MORE</span>
                                 <svg width="20" height="14" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M12.3327 14L10.6994 12.3083L14.841 8.16667H0.666016V5.83333H14.841L10.6994 1.69167L12.3327 0L19.3327 7L12.3327 14Z" />
@@ -1516,7 +1516,7 @@
             else ctx.lineTo(x, y);
         }
         ctx.closePath();
-        ctx.fillStyle = "rgb(148,217,113)"; // Solid color fill
+        ctx.fillStyle = "rgb(148,217,113)";
         ctx.fill();
     }
 
@@ -1584,9 +1584,6 @@
 
 <script>document.addEventListener("DOMContentLoaded",function(){var a=document.querySelectorAll("h2.amplify-benefits");setInterval(function(){var c=Array.from(a).findIndex(function(b){return b.classList.contains("active")});Array.from(a).forEach(function(b){b.classList.remove("active")});a[(c+1)%a.length].classList.add("active")},2300)});</script>
 <script>document.addEventListener("DOMContentLoaded",function(){function c(){d.classList.add("hover")}function e(){d.classList.remove("hover")}var d=document.getElementById("cursor"),a=document.querySelector(".hamby"),b=document.querySelector(".lets-talk"),g=document.querySelector(".logo"),f=document.querySelectorAll("a");document.body.addEventListener("mousemove",function(h){d.style.left=h.clientX+"px";d.style.top=h.clientY+"px"});a.addEventListener("click",function(){a.classList.contains("active")?(a.classList.remove("active"),document.body.classList.remove("navigationActive"),setTimeout(function(){a.classList.remove("ready")},700)):(a.classList.add("active"),document.body.classList.add("navigationActive"),setTimeout(function(){a.classList.add("ready")},700))});a.addEventListener("mouseenter",c);a.addEventListener("mouseleave",e);b.addEventListener("mouseenter",c);b.addEventListener("mouseleave",e);g.addEventListener("mouseenter",c);g.addEventListener("mouseleave",e);for(b=0;b<f.length;b++)f[b].addEventListener("mouseenter",c),f[b].addEventListener("mouseleave",e)});</script>
-<!--
-        <script>document.addEventListener("scroll",function(e){0>document.querySelector(".first-service").getBoundingClientRect().top-.5*window.innerHeight?document.body.classList.add("blue"):document.body.classList.remove("blue"),0>document.querySelector(".second-service").getBoundingClientRect().top-.5*window.innerHeight?document.body.classList.add("green"):document.body.classList.remove("green"),0>document.querySelector(".second-service").getBoundingClientRect().bottom&&document.body.classList.remove("green"),0>document.querySelector(".first-service").getBoundingClientRect().bottom&&document.body.classList.remove("blue"),0>document.querySelector(".first-service").getBoundingClientRect().bottom?document.body.classList.add("black"):document.body.classList.remove("black")});</script>
--->
 <script src="funct/test-slim.js"></script>
 <script src="funct/ripple.js"></script>
 <script>window.onload = function() {
@@ -1614,35 +1611,17 @@
     }, 1000);
 </script>
 <script>
-
-
-            //0 > document.querySelector(".zero-service").getBoundingClientRect().top - 0.5 * window.innerHeight ? document.body.classList.add("green-first","black") : document.body.classList.remove("green-first","black"),
-
-            //0 > document.querySelector(".first-service").getBoundingClientRect().top - 0.5 * window.innerHeight ? document.body.classList.add("blue") : document.body.classList.remove("blue"),
-            //0 > document.querySelector(".second-service").getBoundingClientRect().top - 0.5 * window.innerHeight ? document.body.classList.add("green") : document.body.classList.remove("green"),
-            //0 > document.querySelector(".second-service").getBoundingClientRect().bottom && document.body.classList.remove("green"),
-            //0 > document.querySelector(".first-service").getBoundingClientRect().bottom && document.body.classList.remove("blue"),
-            //0 > document.querySelector(".first-service").getBoundingClientRect().bottom ? document.body.classList.add("black") : document.body.classList.remove("black"),
-        /*
-                        0 > document.querySelector(".product-catalog").getBoundingClientRect().bottom ? document.body.classList.add("black") : document.body.classList.remove("black");
-        */
-
-</script>
-<script>
     const lerp = (r1, r2, g1, g2, b1, b2, t) => {
         const r = Math.round(r1 + (r2 - r1) * t);
         const g = Math.round(g1 + (g2 - g1) * t);
         const b = Math.round(b1 + (b2 - b1) * t);
         return `rgb(${r}, ${g}, ${b})`;
     };
-    const gradients = [/*[[153, 220, 112], [99, 190, 130]]*/ [[148,217,113], [148,217,113]], [[124, 230, 145], [66, 218, 181]], [[63, 217, 255], [86, 171, 250]], [[129, 167, 255], [59, 145, 245]],[[129, 167, 255], [59, 145, 245]]];
+    const gradients = [[[148,217,113], [148,217,113]], [[124, 230, 145], [66, 218, 181]], [[63, 217, 255], [86, 171, 250]], [[129, 167, 255], [59, 145, 245]],[[129, 167, 255], [59, 145, 245]]];
     const catalog = document.querySelector(".product-catalog");
     const products = document.querySelectorAll(".product-contain");
     const background = document.querySelector(".products-window");
     document.documentElement.style.setProperty('--shift', 0 +'%');
-/*
-    document.documentElement.style.setProperty('--rotate', 0 +'deg');
-*/
     document.getElementsByClassName("products-window")[0].classList.remove("in-focus");
     products[0].classList.toggle("active");
     products[1].classList.toggle("active");
@@ -1673,10 +1652,12 @@
         document.querySelector(".product-catalog").getBoundingClientRect().top <= 0 && document.querySelector(".product-catalog").getBoundingClientRect().bottom > 0 ? document.body.classList.add("blue") : document.body.classList.remove("blue");
         document.getElementsByClassName("product-catalog")[0].classList.toggle("white", catalog.getBoundingClientRect().top <= 0.7*window.innerHeight);
         document.getElementsByClassName("products-window")[0].classList.toggle("in-focus", document.getElementsByClassName("product-catalog")[0].getBoundingClientRect().bottom > window.innerHeight && document.getElementsByClassName("product-catalog")[0].getBoundingClientRect().top < 0);
-/*
-        document.getElementsByClassName("products-window")[0].classList.toggle("active", document.getElementsByClassName("product-catalog")[0].getBoundingClientRect().bottom > window.innerHeight && document.getElementsByClassName("product-catalog")[0].getBoundingClientRect().top < 0);
-*/
 
+        if (background.getBoundingClientRect().top >= 0) {
+            background.style.setProperty('--gradient-first-color', 'rgb(148,217,113)');
+            background.style.setProperty('--gradient-second-color', "rgb(148,217,113)");
+
+        }
         if (!catalog) return;
         const catalogRect = catalog.getBoundingClientRect();
         if (catalogRect.top <= 0 && catalogRect.bottom > window.innerHeight) {
@@ -1685,6 +1666,7 @@
                 animationFrame = requestAnimationFrame(updateProgress);
             }
         }
+
     });
     function updateProgress() {
         currentProgress += (targetProgress - currentProgress) * easeFactor;
@@ -1694,19 +1676,8 @@
             animationFrame = null;
             return;
         }
-        if (background.top > window.innerHeight || background.bottom < 0) {
-            background.style.setProperty('--gradient-first-color', 'rgb(148,217,113)');
-            background.style.setProperty('--gradient-second-color', 'rgb(148,217,113)');
-            return;
-        }
         let index = Math.min(Math.max(Math.floor(currentProgress / 0.25), 0), products.length - 1);
         let shift = currentProgress * 100 - index * 25;
-        /*console.log(shift)*/
-        //document.documentElement.style.setProperty('--shift', index < 3 ? `${currentProgress*100}%` : '0%');
-/*
-        document.documentElement.style.setProperty('--rotate', `${currentProgress * 360}deg`);
-*/
-        //products.forEach((p, i) => i === index ? p.classList.add("active") : p.classList.remove("active"));
         if (background) {
             background.style.setProperty('--gradient-first-color', lerp(gradients[index][0][0], gradients[index + 1][0][0], gradients[index][0][1], gradients[index + 1][0][1], gradients[index][0][2], gradients[index + 1][0][2], shift/25));
             background.style.setProperty('--gradient-second-color', lerp(gradients[index][1][0], gradients[index + 1][1][0], gradients[index][1][1], gradients[index + 1][1][1], gradients[index][1][2], gradients[index + 1][1][2], shift/25));
@@ -1716,18 +1687,6 @@
         Arrango.classList.toggle("active", currentProgress < 0.4 && currentProgress > 0.18);
         Catago.classList.toggle("active", currentProgress < 0.7 && currentProgress > 0.4);
         Libby.classList.toggle("active", currentProgress > 0.7);
-/*       if (logoVengo) {
-            logoVengo.classList.toggle("active", currentProgress <= 0.25);
-        }
-        if (logoArrango) {
-            logoArrango.classList.toggle("active", currentProgress < 0.5 && currentProgress > 0.25);
-        }
-        if (logoCatago) {
-            logoCatago.classList.toggle("active", currentProgress < 0.745 && currentProgress > 0.5);
-        }
-        if (logoLibby) {
-            logoLibby.classList.toggle("active", currentProgress > 0.745);
-        }*/
         animationFrame = requestAnimationFrame(updateProgress);
     }
 </script>
@@ -1844,7 +1803,7 @@
             rootMargin
         });
 
-        const targets = document.querySelectorAll(".product-contain");
+        const targets = document.querySelectorAll(".scroll-smooth-snap");
         targets.forEach(target => observer.observe(target));
 
     }
