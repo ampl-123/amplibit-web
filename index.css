@@ -1026,18 +1026,18 @@ canvas {
     opacity: calc(100%/* - var(--shift)*4*/);
 }
 #vengo-img{
-    width: min(130%, 45vw);
+    width: 45vw;
 }
 #catago-img{
-    width: min(130%, 45vw);
+    width: 45vw;
 }
 #arrango-1{
-    width: min(130%, 55vw);
+    width: 55vw;
     left: 65%;
 }
 #arrango-2{
     left: -5%;
-    width: min(100%, 26vw);
+    width: 26vw;
 }
 .product-info{
 
