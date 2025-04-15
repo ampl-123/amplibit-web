@@ -24,6 +24,11 @@
             as="style"
             onload="this.onload=null;this.rel='stylesheet'"
         >
+        <link
+                rel="preload"
+                href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap"
+                as="style"
+                onload="this.onload=null;this.rel='stylesheet'">
         <noscript>
             <link
                 href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
@@ -111,342 +116,18 @@
             </div>
         </header>
         <a href="/contact.html" class="contact-fixed">Let's talk</a>
-        <div class="what-we-do-wrapper">
-            <h1 class="what-we-do-title">What we do</h1>
-            <div class="what-we-do-services">
-                <div>
-                    <h2>Bank-ready solutions</h2>
-                    <p>If you are looking for a quick and efficient <b>bank solution</b> that requires minimal customization, our ready-made offerings are perfect for you. Carefully composed by <b>IT experts with banking industry background</b>, these pre-built software packages are designed to meet a broad range of needs, providing swift implementation.</p>
-                </div>
-                <div>
-                    <h2>Tailor-made solutions</h2>
-                    <p>When it comes to Tailor-made software solutions, our strength lies in approaching your business with a <b>complete understanding</b>. Working closely with you, we analyze your specific requirements, business objectives, and challenges to create a fully functional and customized solution.</p>
-                </div>
-            </div>
-        </div>
-        <div class="background" id="bg"></div>
-<!--        <script>
-            const NUM_LEAKS = 10;
-            const bg = document.getElementById('bg');
-
-            for (let i = 0; i < NUM_LEAKS; i++) {
-                const leak = document.createElement('div');
-                leak.classList.add('leak');
-                leak.style.left = `${Math.random() * 100}%`;
-                leak.style.top = `${Math.random() * 100}%`;
-                leak.style.animationDuration = `${15 + Math.random() * 10}s`;
-                bg.appendChild(leak);
-
-                setInterval(() => {
-                    const opacity = 0.2 + Math.random() * 0.5;
-                    const brightness = 0.8 + Math.random() * 0.6;
-                    leak.style.opacity = `opacity(${opacity})`;
-                    leak.style.filter = `blur(40) brightness(${brightness})`;
-                }, 500 + Math.random() * 2000);
-            }
-        </script>-->
-<!--
-        <div class="services-wrapper">
-            <div class="single-service-wrapper zero-service" id="Vengo">
-                <div class="single-service">
-                    <div>
-                        <h2>Your single point of truth for vendor management</h2>
-                        <h1>Vengo</h1>
-                        <p>Our vendor management platform provides comprehensive 360° Vendor Insight while delivering unparallel simplicity.</p>
-
-                        <p>Vengo gives you insight and control of your outsourced business by consolidating all your supplier information and data, scatterd across different systems, into one Hub. Thus enabling easy access for all members included in your procurement & supply chain and complete overview of your suppliers in areas like Performance, Risk, Compliance, Budgeting, Evaluation &amp; Reporting and many more.</p>
-                    </div>
-                    <img src="img/vengo.webp" alt="Vengo" loading="lazy">
-                </div>
-                <div class="single-service-details">
-                    <div>
-                        <p>With our actionable insights, notifications, workflows and real-time cooperation functions you have the right tools to:
-                        <ul>
-                            <li>Automate processes and enable innovation</li>
-                            <li>Truly get to know your suppliers and improve relationship</li>
-                            <li>Increase internal efficiency</li>
-                            <li>Enhance your negotiation power</li>
-                            <li>Ensures compliance with global regulations such as DORA</li>
-                            <li>Spot risks on time</li>
-                            <li>Ultimately, build better products and services</li>
-                        </ul>
-                        <p>In essence, Vengo has proven to be the cornerstone of effective vendor management, enabling you to maximize supplier relationships!</p>
-                    </div>
-                    <div>
-                        <p>Vengo’s Key Features:</p>
-                        <ul>
-                            <li>Onboarding and Information Management</li>
-                            <li>Ticketing Management - incidents and request</li>
-                            <li>Performance Management - SLA related KPIs</li>
-                            <li>Risk Management</li>
-                            <li>Reporting and Survey Management</li>
-                            <li>Real-Time Cooperation and Access control</li>
-                            <li>Bidding and Purchase Order process Management</li>
-                        </ul>
-                        <p>Sounds good? <a href="/contact.html">Let’s talk</a>.</p>
-                    </div>
-                </div>
-                <div class="product-details">
-                    <h2>It's unique because</h2>
-                    <div class="product-icons">
-                        <div>
-                            <div class="product-icon">
-                                <p>01</p>
-                                <svg viewBox="0 0 49 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M48.2082 18.267L48.1809 17.3886L24.0904 35.3413L0.0273134 17.3886L0 18.267V31.9649L24.0358 49.8902V50L24.0904 49.9451L24.1724 50V49.8902L48.2082 31.9649V18.267Z" fill="white"/>
-                                    <path d="M23.7821 21.2683C29.6552 21.2683 34.4163 16.5072 34.4163 10.6342C34.4163 4.76107 29.6552 0 23.7821 0C17.909 0 13.1479 4.76107 13.1479 10.6342C13.1479 16.5072 17.909 21.2683 23.7821 21.2683Z" fill="white"/>
-                                </svg>
-                            </div>
-                            <h4>Vendor Lifecycle Single Point</h4>
-                        </div>
-                        <div>
-                            <div class="product-icon">
-                                <p>02</p>
-                                <svg viewBox="0 0 50 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <g clip-path="url(#clip0_76_289)">
-                                        <path d="M0.706247 0L0 0.0226629L14.8995 19.9887L0 39.9773L0.706247 40H12.0973L26.9741 20.0567H27.0424L27.0196 19.9887L27.0424 19.9433H26.9741L12.0973 0H0.706247Z" fill="white"/>
-                                        <path d="M23.4885 0L22.7822 0.0226629L37.6818 19.9887L22.7822 39.9773L23.4885 40H34.8795L49.7563 20.0567H49.8246L49.8019 19.9887L49.8246 19.9433H49.7563L34.8795 0H23.4885Z" fill="white"/>
-                                    </g>
-                                    <defs>
-                                        <clipPath id="clip0_76_289">
-                                            <rect width="49.8246" height="40" fill="white"/>
-                                        </clipPath>
-                                    </defs>
-                                </svg>
-                            </div>
-                            <h4>Centralized Hub</h4>
-                        </div>
-                        <div>
-                            <div class="product-icon">
-                                <p>03</p>
-                                <svg viewBox="0 0 71 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <g clip-path="url(#clip0_76_294)">
-                                        <path d="M26.3629 40L27.0699 39.9773L12.1552 19.9887L27.0699 0.0226629L26.3629 0H14.9831L0.0912213 19.9433H0L0.0456106 19.9887L0 20.0567H0.0912213L14.9831 40H26.3629Z" fill="white"/>
-                                        <path d="M35.2112 29.7111C40.6145 29.7111 44.9947 25.3582 44.9947 19.9887C44.9947 14.6192 40.6145 10.2663 35.2112 10.2663C29.8079 10.2663 25.4277 14.6192 25.4277 19.9887C25.4277 25.3582 29.8079 29.7111 35.2112 29.7111Z" fill="white"/>
-                                        <path d="M44.037 0L43.3301 0.0226629L58.2448 19.9887L43.3301 39.9773L44.037 40H55.4397L70.3316 20.0567H70.4L70.3772 19.9887L70.4 19.9433H70.3316L55.4397 0H44.037Z" fill="white"/>
-                                    </g>
-                                    <defs>
-                                        <clipPath id="clip0_76_294">
-                                            <rect width="70.4" height="40" fill="white"/>
-                                        </clipPath>
-                                    </defs>
-                                </svg>
-                            </div>
-                            <h4>Intelligence for decision-making</h4>
-                        </div>
-                        <div>
-                            <div class="product-icon">
-                                <p>04</p>
-                                <svg viewBox="0 0 50 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <g clip-path="url(#clip0_76_298)">
-                                        <path d="M49.6 0H0V12H49.6V0Z" fill="white"/>
-                                        <path d="M49.6 28H0V40H49.6V28Z" fill="white"/>
-                                    </g>
-                                    <defs>
-                                        <clipPath id="clip0_76_298">
-                                            <rect width="49.6" height="40" fill="white"/>
-                                        </clipPath>
-                                    </defs>
-                                </svg>
-                            </div>
-                            <h4>Best products and services</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="single-service-wrapper first-service" id="Catago">
-                <div class="single-service">
-                    <img src="img/catago.webp" alt="Product Catalog" loading="lazy">
-                    <div>
-                        <h2>Product catalog at its best</h2>
-                        <h1>Catago</h1>
-                        <p>After 30+ years of experience in banking industry, we've seen it all.<br>Headaches with frequent changes to an existing products with product-specific requirements, decentralized systems each with their own problems,...<br>Catago solves them all!</p>
-                    </div>
-                </div>
-                <div class="single-service-details">
-                    <div>
-                        <p>Catago is built by IT experts with banking background, its sole purpose is to centralize all your Products.</p>
-                        <p>All banks find trouble dealing with decentralized systems they've been using for decades, and if we add the maintenance to consideration,... it's a challenge at its best.</p>
-                        <p><a href="/contact.html">Contact us</a> and find out why some of the biggest Croatian banks use Catago.</p>
-                    </div>
-                    <div>
-                        <p>What's in it for you:</p>
-                        <ul>
-                            <li>Product Standardization</li>
-                            <li>Product Preview</li>
-                            <li>Customized Product Replication</li>
-                            <li>Product Versioning</li>
-                            <li>Product Packages</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="product-details">
-                    <h2>It's unique because</h2>
-                    <div class="product-icons">
-                        <div>
-                            <div class="product-icon">
-                                <p>01</p>
-                                <svg viewBox="0 0 49 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M48.2082 18.267L48.1809 17.3886L24.0904 35.3413L0.0273134 17.3886L0 18.267V31.9649L24.0358 49.8902V50L24.0904 49.9451L24.1724 50V49.8902L48.2082 31.9649V18.267Z" fill="white"/>
-                                    <path d="M23.7821 21.2683C29.6552 21.2683 34.4163 16.5072 34.4163 10.6342C34.4163 4.76107 29.6552 0 23.7821 0C17.909 0 13.1479 4.76107 13.1479 10.6342C13.1479 16.5072 17.909 21.2683 23.7821 21.2683Z" fill="white"/>
-                                </svg>
-                            </div>
-                            <h4>Centralized system</h4>
-                        </div>
-                        <div>
-                            <div class="product-icon">
-                                <p>02</p>
-                                <svg viewBox="0 0 50 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <g clip-path="url(#clip0_76_289)">
-                                    <path d="M0.706247 0L0 0.0226629L14.8995 19.9887L0 39.9773L0.706247 40H12.0973L26.9741 20.0567H27.0424L27.0196 19.9887L27.0424 19.9433H26.9741L12.0973 0H0.706247Z" fill="white"/>
-                                    <path d="M23.4885 0L22.7822 0.0226629L37.6818 19.9887L22.7822 39.9773L23.4885 40H34.8795L49.7563 20.0567H49.8246L49.8019 19.9887L49.8246 19.9433H49.7563L34.8795 0H23.4885Z" fill="white"/>
-                                    </g>
-                                    <defs>
-                                    <clipPath id="clip0_76_289">
-                                    <rect width="49.8246" height="40" fill="white"/>
-                                    </clipPath>
-                                    </defs>
-                                </svg>
-                            </div>
-                            <h4>Decision-making system</h4>
-                        </div>
-                        <div>
-                            <div class="product-icon">
-                                <p>03</p>
-                                <svg viewBox="0 0 71 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <g clip-path="url(#clip0_76_294)">
-                                    <path d="M26.3629 40L27.0699 39.9773L12.1552 19.9887L27.0699 0.0226629L26.3629 0H14.9831L0.0912213 19.9433H0L0.0456106 19.9887L0 20.0567H0.0912213L14.9831 40H26.3629Z" fill="white"/>
-                                    <path d="M35.2112 29.7111C40.6145 29.7111 44.9947 25.3582 44.9947 19.9887C44.9947 14.6192 40.6145 10.2663 35.2112 10.2663C29.8079 10.2663 25.4277 14.6192 25.4277 19.9887C25.4277 25.3582 29.8079 29.7111 35.2112 29.7111Z" fill="white"/>
-                                    <path d="M44.037 0L43.3301 0.0226629L58.2448 19.9887L43.3301 39.9773L44.037 40H55.4397L70.3316 20.0567H70.4L70.3772 19.9887L70.4 19.9433H70.3316L55.4397 0H44.037Z" fill="white"/>
-                                    </g>
-                                    <defs>
-                                    <clipPath id="clip0_76_294">
-                                    <rect width="70.4" height="40" fill="white"/>
-                                    </clipPath>
-                                    </defs>
-                                </svg>
-                            </div>
-                            <h4>Time-determined products</h4>
-                        </div>
-                        <div>
-                            <div class="product-icon">
-                                <p>04</p>
-                                <svg viewBox="0 0 50 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <g clip-path="url(#clip0_76_298)">
-                                    <path d="M49.6 0H0V12H49.6V0Z" fill="white"/>
-                                    <path d="M49.6 28H0V40H49.6V28Z" fill="white"/>
-                                    </g>
-                                    <defs>
-                                    <clipPath id="clip0_76_298">
-                                    <rect width="49.6" height="40" fill="white"/>
-                                    </clipPath>
-                                    </defs>
-                                </svg>
-                            </div>
-                            <h4>Modern UI</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="single-service-wrapper second-service" id="Arrango">
-                <div class="single-service">
-                    <div>
-                        <h2>Outsourcing Arrangements</h2>
-                        <h1>Arrango</h1>
-                        <p>Bank-ready platform which gives you insights and control of your bank's outsourced business. As the externalisation of business in financial institutions reduces costs, improves flexibility and efficiency, the platform will facilitate risk management of your external business providers.</p>
-                    </div>
-                    <img src="img/arango.webp" alt="Arrango" loading="lazy">
-                </div>
-                <div class="single-service-details">
-                    <div>
-                        <p>Manage your outsourcing services and documentation easily within one single platform. Completely eliminate the demanding traditional process of doing tedious excel spreadsheets, e-mail threads and desk drop-byes.</p>
-                        <p>Ensure compliance with regulatory guidelines and provide your supervision authorities with necessary reports aligned with set criteria. Easily find and deliver reports on progress in due time, annual risk outsources services revisions and control practices with no fear of possible penalties.</p>
-                    </div>
-                    <div>
-                        <p>Arrango advantages:</p>
-                        <ul>
-                            <li><b>Full compliance</b> with ECB outsourcing regulation</li>
-                            <li>Simplified, digitalized and faster internal outsourcing process</li>
-                            <li>User activities log</li>
-                            <li>Flexible system, tailored to the specific organizational needs</li>
-                            <li><b>One-click</b> to risk and  regulatory reporting</li>
-                        </ul>
-                        <p><a href="/contact.html">Get in touch</a> to explore everything that Arrango has to offer.</p>
-                    </div>
-                </div>
-                <div class="product-details">
-                    <h2>It's unique because</h2>
-                    <div class="product-icons">
-                        <div>
-                            <div class="product-icon">
-                                <p>01</p>
-                                <svg viewBox="0 0 49 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M48.2082 18.267L48.1809 17.3886L24.0904 35.3413L0.0273134 17.3886L0 18.267V31.9649L24.0358 49.8902V50L24.0904 49.9451L24.1724 50V49.8902L48.2082 31.9649V18.267Z" fill="white"/>
-                                    <path d="M23.7821 21.2683C29.6552 21.2683 34.4163 16.5072 34.4163 10.6342C34.4163 4.76107 29.6552 0 23.7821 0C17.909 0 13.1479 4.76107 13.1479 10.6342C13.1479 16.5072 17.909 21.2683 23.7821 21.2683Z" fill="white"/>
-                                </svg>
-                            </div>
-                            <h4>Contracting process transformation</h4>
-                        </div>
-                        <div>
-                            <div class="product-icon">
-                                <p>02</p>
-                                <svg viewBox="0 0 50 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <g clip-path="url(#clip0_76_289)">
-                                    <path d="M0.706247 0L0 0.0226629L14.8995 19.9887L0 39.9773L0.706247 40H12.0973L26.9741 20.0567H27.0424L27.0196 19.9887L27.0424 19.9433H26.9741L12.0973 0H0.706247Z" fill="white"/>
-                                    <path d="M23.4885 0L22.7822 0.0226629L37.6818 19.9887L22.7822 39.9773L23.4885 40H34.8795L49.7563 20.0567H49.8246L49.8019 19.9887L49.8246 19.9433H49.7563L34.8795 0H23.4885Z" fill="white"/>
-                                    </g>
-                                    <defs>
-                                    <clipPath id="clip0_76_289">
-                                    <rect width="49.8246" height="40" fill="white"/>
-                                    </clipPath>
-                                    </defs>
-                                </svg>
-                            </div>
-                            <h4>Centralized data</h4>
-                        </div>
-                        <div>
-                            <div class="product-icon">
-                                <p>03</p>
-                                <svg viewBox="0 0 71 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <g clip-path="url(#clip0_76_294)">
-                                    <path d="M26.3629 40L27.0699 39.9773L12.1552 19.9887L27.0699 0.0226629L26.3629 0H14.9831L0.0912213 19.9433H0L0.0456106 19.9887L0 20.0567H0.0912213L14.9831 40H26.3629Z" fill="white"/>
-                                    <path d="M35.2112 29.7111C40.6145 29.7111 44.9947 25.3582 44.9947 19.9887C44.9947 14.6192 40.6145 10.2663 35.2112 10.2663C29.8079 10.2663 25.4277 14.6192 25.4277 19.9887C25.4277 25.3582 29.8079 29.7111 35.2112 29.7111Z" fill="white"/>
-                                    <path d="M44.037 0L43.3301 0.0226629L58.2448 19.9887L43.3301 39.9773L44.037 40H55.4397L70.3316 20.0567H70.4L70.3772 19.9887L70.4 19.9433H70.3316L55.4397 0H44.037Z" fill="white"/>
-                                    </g>
-                                    <defs>
-                                    <clipPath id="clip0_76_294">
-                                    <rect width="70.4" height="40" fill="white"/>
-                                    </clipPath>
-                                    </defs>
-                                </svg>
-                            </div>
-                            <h4>Tracking and risk assessment</h4>
-                        </div>
-                        <div>
-                            <div class="product-icon">
-                                <p>04</p>
-                                <svg viewBox="0 0 50 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <g clip-path="url(#clip0_76_298)">
-                                    <path d="M49.6 0H0V12H49.6V0Z" fill="white"/>
-                                    <path d="M49.6 28H0V40H49.6V28Z" fill="white"/>
-                                    </g>
-                                    <defs>
-                                    <clipPath id="clip0_76_298">
-                                    <rect width="49.6" height="40" fill="white"/>
-                                    </clipPath>
-                                    </defs>
-                                </svg>
-                            </div>
-                            <h4>Outsourcing registry managment</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
--->
 <div class="product-section">
+    <div class="solution-wrapper">
+        <div class="h1-wrapper">
+            <h1>Solutions.</h1>
+        </div>
+        <div class="h2-wrapper">
+            <h2>Solutions to amplify your business through process digitalization, optimization, and a single source of truth.</h2>
+        </div>
+    </div>
+    <div class="canvas-wrapper">
+        <canvas id="glcanvas"></canvas>
+    </div>
     <div class="product-background">
         <div class="product" style="background: linear-gradient(252.14deg, #99DC70 0.52%, #63BE82 99.48%);">
             <div id="background-text-vengo" class="product-background-text">
@@ -487,12 +168,14 @@
                 </a>
             </div>
         </div>
+    </div>
+    <div class="product-background">
         <div class="product" style="background: linear-gradient(252.14deg, #3FD9FF 0.52%, #56ABFA 99.48%);">
             <div id="background-text-catago" class="product-background-text">
                 <div>
-                        <span>PRODUCT</span>
-                        <span>CATALOG AT ITS</span>
-                        <span>BEST</span>
+                    <span>PRODUCT</span>
+                    <span>CATALOG AT ITS</span>
+                    <span>BEST</span>
                 </div>
 
             </div>
@@ -512,7 +195,7 @@
             </div>
             <div class="product-img-container">
                 <div class="product-img-svg-wrapper">
-                    <svg width="599" height="570" viewBox="0 0 599 570" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="750" height="733" viewBox="0 0 599 570" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g filter="url(#filter0_d_1204_6487)">
                             <path d="M239.012 280.222C232.502 279.919 226.012 281.749 220.928 285.873C202.01 301.225 211.875 331.626 235.797 333H362.499C382.202 331.538 396.93 314.618 393.503 294.387C390.504 276.701 373.835 264.794 356.278 267.545C356.449 248.114 342.134 231.312 323.151 228.435C308.362 226.192 293.285 232.755 284.907 245.179C283.993 246.53 283.273 247.995 282.344 249.335C274.428 246.694 265.796 247.008 258.168 250.437C246.662 255.606 238.943 267.422 239.012 280.222Z" fill="white"/>
                             <path d="M239.512 280.219L239.514 280.746L238.988 280.721C232.585 280.424 226.22 282.224 221.243 286.262C202.679 301.326 212.362 331.142 235.811 332.5H362.481C381.905 331.049 396.383 314.381 393.01 294.471C390.057 277.055 373.642 265.33 356.356 268.039L355.773 268.13L355.778 267.54C355.947 248.357 341.811 231.769 323.076 228.929L323.151 228.435L323.076 228.929C308.477 226.715 293.591 233.195 285.321 245.459L285.321 245.459C284.892 246.093 284.506 246.755 284.109 247.433L284.063 247.513C283.653 248.214 283.232 248.932 282.755 249.62L282.541 249.928L282.186 249.809C274.384 247.207 265.882 247.518 258.373 250.893L258.168 250.437L258.373 250.893C247.046 255.982 239.444 267.619 239.512 280.219Z" stroke="white"/>
@@ -728,6 +411,8 @@
                 </svg>
             </div>
         </div>
+    </div>
+    <div class="product-background">
         <div class="product" style="background: linear-gradient(257.44deg, #23D192 0.58%, #18C5C8 99.42%);">
             <div id="background-text-arrango" class="product-background-text">
                 <div>
@@ -767,6 +452,8 @@
                 </a>
             </div>
         </div>
+    </div>
+    <div class="product-background">
         <div class="product" style="background: linear-gradient(252.14deg, #359BFF 0.52%, #4F6BCF 99.48%);">
             <div id="background-text-libby" class="product-background-text">
                 <div>
@@ -806,9 +493,9 @@
                 </a>
             </div>
         </div>
+
     </div>
 </div>
-
         <footer>
             <div class="tell-us-about-it">
                 <h1>Have an idea?</h1>
@@ -846,6 +533,150 @@
             </div>
         </footer>
         <script>
+
+            const canvas = document.getElementById("glcanvas");
+            const gl = canvas.getContext("webgl");
+            if (!gl) {
+                document.body.style.backgroundColor = "black";
+                canvas.style.display = "none";
+            } else {
+                function resizeCanvas() {
+                    canvas.width = window.innerWidth;
+                    canvas.height = window.innerHeight;
+                    gl.viewport(0, 0, gl.drawingBufferWidth, gl.drawingBufferHeight);
+                }
+                resizeCanvas();
+                window.addEventListener("resize", resizeCanvas);
+                const vertexShaderSource = `
+    attribute vec2 a_position;
+    void main() {
+      gl_Position = vec4(a_position, 0, 1);
+    }
+    `;
+                const fragmentShaderSource = `
+    precision mediump float;
+
+    uniform vec2 u_resolution;
+    uniform float u_time;
+
+    vec2 curl(vec2 uv, float t) {
+        float x = uv.x;
+        float y = uv.y;
+
+        float dx = sin(y * 3.5 + t * 0.4) * 0.6 +
+                   sin((x + y) * 1.3 + t * 0.6) * 0.3;
+
+        float dy = cos(x * 3.5 - t * 0.4) * 0.6 +
+                   cos((x - y) * 1.4 - t * 0.3) * 0.3;
+
+        return vec2(dx, dy);
+    }
+
+    float flow(vec2 uv, float t) {
+        uv += 0.35 * curl(uv, t);
+
+        float w = 0.0;
+
+        // Classic horizontal & vertical waves
+        w += sin(uv.x * 6.0 + t * 0.9);
+        w += sin(uv.y * 8.0 - t * 1.1);
+
+        w += sin((uv.x + uv.y) * 3.5 + t * 0.7);
+        w += sin((uv.x - uv.y) * 4.5 - t * 0.6);
+
+        w += sin((uv.x * 1.5 + uv.y * 0.8) + t * 0.9);
+        w += cos((uv.x * 0.5 + uv.y * 2.3) + t * 0.4);
+
+        return w / 5.0;
+    }
+
+    void main() {
+        vec2 uv = gl_FragCoord.xy / u_resolution.xy;
+        uv = uv * 2.0 - 1.0;
+        uv.x *= u_resolution.x / u_resolution.y;
+
+        float t = u_time * 2.3;
+
+        float wave = flow(uv, t);
+
+        float brightness = smoothstep(0.45, 0.95, wave);
+        brightness = pow(brightness, 1.8);
+
+        gl_FragColor = vec4(vec3(brightness), 1.0);
+    }
+    `;
+
+                function createShader(type, source) {
+                    const shader = gl.createShader(type);
+                    gl.shaderSource(shader, source);
+                    gl.compileShader(shader);
+                    return shader;
+                }
+
+                const vertexShader = createShader(gl.VERTEX_SHADER, vertexShaderSource);
+                const fragmentShader = createShader(gl.FRAGMENT_SHADER, fragmentShaderSource);
+
+                const program = gl.createProgram();
+                gl.attachShader(program, vertexShader);
+                gl.attachShader(program, fragmentShader);
+                gl.linkProgram(program);
+                gl.useProgram(program);
+
+                const positionBuffer = gl.createBuffer();
+                gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
+                gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([
+                    -1, -1, 1, -1, -1, 1,
+                    -1, 1, 1, -1, 1, 1
+                ]), gl.STATIC_DRAW);
+
+                const a_position = gl.getAttribLocation(program, "a_position");
+                gl.enableVertexAttribArray(a_position);
+                gl.vertexAttribPointer(a_position, 2, gl.FLOAT, false, 0, 0);
+
+                const u_time = gl.getUniformLocation(program, "u_time");
+                const u_resolution = gl.getUniformLocation(program, "u_resolution");
+
+                let startTime = performance.now();
+                function render() {
+                    const now = performance.now();
+                    const elapsed = (now - startTime) / 1000;
+
+                    gl.uniform1f(u_time, elapsed);
+                    gl.uniform2f(u_resolution, canvas.width, canvas.height);
+
+                    gl.drawArrays(gl.TRIANGLES, 0, 6);
+                    requestAnimationFrame(render);
+                }
+                render();
+            }
+
+        </script>
+        <script>
+            function handleScrollFade() {
+                const scrollY = window.scrollY;
+
+                const h1 = document.querySelector('.h1-wrapper');
+                const h2 = document.querySelector('.h2-wrapper');
+
+                const hideH1Start = 100;
+                const showH2Start = 200;
+
+                if (scrollY < hideH1Start) {
+                    h1.classList.add('show');
+                    h2.classList.remove('show');
+                } else if (scrollY >= hideH1Start && scrollY < showH2Start) {
+                    h1.classList.remove('show');
+                    h2.classList.remove('show');
+                } else {
+                    h1.classList.remove('show');
+                    h2.classList.add('show');
+                }
+            }
+
+            window.addEventListener('scroll', handleScrollFade);
+            window.addEventListener('load', handleScrollFade);
+        </script>
+        <script>
             document.addEventListener("DOMContentLoaded", function () {
                 function c() {
                     d.classList.add("hover");
@@ -882,10 +713,10 @@
             });
         </script>
         <script>
-            setTimeout(()=> {
+/*            setTimeout(()=> {
                 document.querySelector(".what-we-do-title").classList.add("active");
                 document.querySelector(".what-we-do-services").classList.add("active");
-            }, 100);
+            }, 100);*/
 
             document.addEventListener("scroll", function (e) {
                 0 > document.querySelector(".tell-us-about-it").getBoundingClientRect().bottom - window.innerHeight ? document.querySelector(".tell-us-about-it").classList.add("active") : document.querySelector(".tell-us-about-it").classList.remove("active");

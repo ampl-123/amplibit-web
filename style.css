@@ -570,27 +570,74 @@ html {
 
 /*##################################################################################################*/
 /*#############################################################################################*/
+canvas {
+    position: sticky;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+}
+.canvas-wrapper{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+}
+.solution-wrapper{
+    width: 100vw;
+    height: 120vh;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    z-index: 2;
+}
+.h1-wrapper.show {
+    opacity: 1;
+}
+.h2-wrapper.show {
+    opacity: 1;
+}
+.h1-wrapper{
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+.h1-wrapper h1{
+    font-family: Figtree, sans-serif;
+    font-weight: 500;
+    font-size: 6.7vw;
+}
+.h2-wrapper{
+    opacity: 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    transition: opacity 0.3s ease;
+}
+.h2-wrapper h2{
+    font-family: Figtree, sans-serif;
+    font-weight: 450;
+    font-size: 2.5vw;
+    width: 70%;
+}
 .product-section{
     position: relative;
     display: flex;
-    height: 400vh;
-    justify-content: center;
+    flex-flow: column;
     background: black;
+    align-items: center;
+    height: 500vh;
+    gap: 2vw;
 }
 .product{
     border-radius: 2.2vw;
 }
 .product-background{
-    --gradient-first-color: #99DC70 0.52%;
-    --gradient-second-color: #63BE82 79.19%;
-    background: linear-gradient(252.14deg, var(--gradient-first-color) 0.52%, var(--gradient-second-color) 79.19%);
-    width: 98vw;
+    width: 99vw;
     height: 98vh;
-    /*
-    position: sticky;
-    */
-    top: 0.5vw;
     border-radius: 2.2vw;
+    z-index: 2;
 }
 .product{
     position: relative;
@@ -608,7 +655,7 @@ html {
     font-weight: 700;
     text-align: center;
     padding: 1vw 3vw 1vw;
-    z-index: 1;
+    z-index: 2;
 }
 .product-background-text div {
     display: grid;
