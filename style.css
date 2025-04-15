@@ -627,7 +627,7 @@ canvas {
     flex-flow: column;
     background: black;
     align-items: center;
-    height: 500vh;
+    height: 520vh;
     gap: 2vw;
 }
 .product{
