@@ -125,9 +125,9 @@
             <h2>Solutions to amplify your business through process digitalization, optimization, and a single source of truth.</h2>
         </div>
     </div>
-<!--    <div class="canvas-wrapper">
+    <div class="canvas-wrapper">
         <canvas id="glcanvas"></canvas>
-    </div>-->
+    </div>
     <div class="product-background">
         <div class="product" style="background: linear-gradient(252.14deg, #99DC70 0.52%, #63BE82 99.48%);">
             <div id="background-text-vengo" class="product-background-text">
@@ -775,7 +775,7 @@
         <p>Amplibit 2024. All rights reserved.</p>
     </div>
 </footer>
-<!--<script>
+<script>
 
     const canvas = document.getElementById("glcanvas");
     const gl = canvas.getContext("webgl");
@@ -891,10 +891,16 @@
             gl.drawArrays(gl.TRIANGLES, 0, 6);
             requestAnimationFrame(render);
         }
-        render();
+
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.querySelector(".canvas-wrapper").classList.add("active");
+                render();
+            }, 500);
+        });
     }
 
-</script>-->
+</script>
 <script>
     function handleScrollFade() {
         const scrollY = window.scrollY;

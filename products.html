@@ -722,8 +722,8 @@
             </div>
             <div class="product-img-container">
                 <div class="product-img-wrapper">
-                    <img id="libby-1" class="product-page-img" src="img/libby-1.png" alt="Arrango" loading="lazy"/>
-                    <img id="libby-2" class="product-page-img" src="img/libby-2.png" alt="Arrango" loading="lazy"/>
+                    <img id="libby-1" class="product-page-img" src="img/libby-1.png" alt="Libby" loading="lazy"/>
+                    <img id="libby-2" class="product-page-img" src="img/libby-2.png" alt="Libby" loading="lazy"/>
                 </div>
             </div>
             <div class="product-desc">Reduce costs and maximize efficiency with comprehensive, up-to-date credit risk insights.</div>
@@ -844,7 +844,7 @@
         float brightness = smoothstep(0.45, 0.95, wave);
         brightness = pow(brightness, 1.8);
 
-        gl_FragColor = vec4(vec3(brightness*0.5), 1.0);
+        gl_FragColor = vec4(vec3(brightness*0.7), 1.0);
     }
     `;
 
@@ -889,7 +889,13 @@
                     gl.drawArrays(gl.TRIANGLES, 0, 6);
                     requestAnimationFrame(render);
                 }
-                render();
+                
+                window.addEventListener('load', () => {
+                    setTimeout(() => {
+                        document.querySelector(".canvas-wrapper").classList.add("active");
+                        render();
+                    }, 500);
+                });
             }
 
         </script>
