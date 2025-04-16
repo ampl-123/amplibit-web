@@ -902,39 +902,29 @@
 
         </script>
         <script>
-            (function () {
+            function handleScrollFade() {
+                const scrollY = window.scrollY;
+
                 const h1 = document.querySelector('.h1-wrapper');
                 const h2 = document.querySelector('.h2-wrapper');
+
                 const hideH1Start = 100;
                 const showH2Start = 200;
 
-                let ticking = false;
-
-                function updateFade() {
-                    const scrollY = window.scrollY;
-                    const showH1 = scrollY < hideH1Start;
-                    const showH2 = scrollY >= showH2Start;
-
-                    h1.classList.toggle('show', showH1);
-                    h2.classList.toggle('show', showH2);
-
-                    ticking = false;
+                if (scrollY < hideH1Start) {
+                    h1.classList.add('show');
+                    h2.classList.remove('show');
+                } else if (scrollY >= hideH1Start && scrollY < showH2Start) {
+                    h1.classList.remove('show');
+                    h2.classList.remove('show');
+                } else {
+                    h1.classList.remove('show');
+                    h2.classList.add('show');
                 }
+            }
 
-                function onScroll() {
-                    if (!ticking) {
-                        requestAnimationFrame(updateFade);
-                        ticking = true;
-                    }
-                }
-
-                window.addEventListener('scroll', onScroll, { passive: true });
-                window.addEventListener('load', () => {
-                    setTimeout(() => {
-                        updateFade();
-                    }, 150);
-                });
-            })();
+            window.addEventListener('scroll', handleScrollFade);
+            window.addEventListener('load', handleScrollFade);
         </script>
         <script>
             document.addEventListener("DOMContentLoaded", function () {

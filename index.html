@@ -913,28 +913,30 @@
 
         function updateFade() {
             const scrollY = window.scrollY;
-            const showH1 = scrollY < hideH1Start;
-            const showH2 = scrollY >= showH2Start;
 
-            h1.classList.toggle('show', showH1);
-            h2.classList.toggle('show', showH2);
+            if (scrollY < hideH1Start) {
+                h1.classList.add('show');
+                h2.classList.remove('show');
+            } else if (scrollY < showH2Start) {
+                h1.classList.remove('show');
+                h2.classList.remove('show');
+            } else {
+                h1.classList.remove('show');
+                h2.classList.add('show');
+            }
 
             ticking = false;
         }
 
         function onScroll() {
             if (!ticking) {
-                requestAnimationFrame(updateFade);
+                window.requestAnimationFrame(updateFade);
                 ticking = true;
             }
         }
 
         window.addEventListener('scroll', onScroll, { passive: true });
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                updateFade();
-            }, 150);
-        });
+        window.addEventListener('load', updateFade);
     })();
 
 </script>
