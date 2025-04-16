@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <!-- Google tag (gtag.js) -->
-<!--    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JKNPHCXQEX"></script>-->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JKNPHCXQEX"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -776,6 +776,7 @@
     </div>
 </footer>
 <script>
+
     const canvas = document.getElementById("glcanvas");
     const gl = canvas.getContext("webgl");
     if (!gl) {
@@ -890,55 +891,34 @@
             gl.drawArrays(gl.TRIANGLES, 0, 6);
             requestAnimationFrame(render);
         }
-
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                requestIdleCallback(() => {
-                    document.querySelector(".canvas-wrapper").classList.add("active");
-                    render();
-                });
-            }, 2000);
-        });
+        render();
     }
 
 </script>
 <script>
-    (function () {
+    function handleScrollFade() {
+        const scrollY = window.scrollY;
+
         const h1 = document.querySelector('.h1-wrapper');
         const h2 = document.querySelector('.h2-wrapper');
+
         const hideH1Start = 100;
         const showH2Start = 200;
 
-        let ticking = false;
-
-        function updateFade() {
-            const scrollY = window.scrollY;
-
-            if (scrollY < hideH1Start) {
-                h1.classList.add('show');
-                h2.classList.remove('show');
-            } else if (scrollY < showH2Start) {
-                h1.classList.remove('show');
-                h2.classList.remove('show');
-            } else {
-                h1.classList.remove('show');
-                h2.classList.add('show');
-            }
-
-            ticking = false;
+        if (scrollY < hideH1Start) {
+            h1.classList.add('show');
+            h2.classList.remove('show');
+        } else if (scrollY >= hideH1Start && scrollY < showH2Start) {
+            h1.classList.remove('show');
+            h2.classList.remove('show');
+        } else {
+            h1.classList.remove('show');
+            h2.classList.add('show');
         }
+    }
 
-        function onScroll() {
-            if (!ticking) {
-                window.requestAnimationFrame(updateFade);
-                ticking = true;
-            }
-        }
-
-        window.addEventListener('scroll', onScroll, { passive: true });
-        window.addEventListener('load', updateFade);
-    })();
-
+    window.addEventListener('scroll', handleScrollFade);
+    window.addEventListener('load', handleScrollFade);
 </script>
 <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -984,6 +964,28 @@
 
     document.addEventListener("scroll", function (e) {
         0 > document.querySelector(".tell-us-about-it").getBoundingClientRect().bottom - window.innerHeight ? document.querySelector(".tell-us-about-it").classList.add("active") : document.querySelector(".tell-us-about-it").classList.remove("active");
+        /*
+
+                        0 > document.querySelector(".zero-service").getBoundingClientRect().top - 0.5 * window.innerHeight ? document.body.classList.add("green-first","black") : document.body.classList.remove("green-first","black"),
+
+                        0 > document.querySelector(".first-service").getBoundingClientRect().top - 0.5 * window.innerHeight ? document.body.classList.add("blue") : document.body.classList.remove("blue"),
+                        0 > document.querySelector(".second-service").getBoundingClientRect().top - 0.5 * window.innerHeight ? document.body.classList.add("green") : document.body.classList.remove("green"),
+                        0 > document.querySelector(".second-service").getBoundingClientRect().bottom && document.body.classList.remove("green"),
+                        0 > document.querySelector(".zero-service").getBoundingClientRect().bottom && document.body.classList.remove("green-first"),
+                        0 > document.querySelector(".first-service").getBoundingClientRect().bottom && document.body.classList.remove("blue"),
+                        0 > document.querySelector(".first-service").getBoundingClientRect().bottom ? document.body.classList.add("black") : document.body.classList.remove("black"),
+        */
+
+        /*
+                        0 > document.querySelector("#Vengo .product-details").getBoundingClientRect().top - 0.9 * window.innerHeight ? document.querySelector(".zero-service").classList.add("active") : document.querySelector(".zero-service").classList.remove("active"),
+        */
+        /*
+                        0 > document.querySelector("#Catago .product-details").getBoundingClientRect().top - 0.9 * window.innerHeight ? document.querySelector(".first-service").classList.add("active") : document.querySelector(".first-service").classList.remove("active"),
+        */
+        /*
+                        0 > document.querySelector("#Arrango .product-details").getBoundingClientRect().top - 0.9 * window.innerHeight ? document.querySelector(".second-service").classList.add("active") : document.querySelector(".second-service").classList.remove("active");
+        */
+
     });
 </script>
 </body>
