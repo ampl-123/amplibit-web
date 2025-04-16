@@ -889,12 +889,14 @@
                     gl.drawArrays(gl.TRIANGLES, 0, 6);
                     requestAnimationFrame(render);
                 }
-                
+
                 window.addEventListener('load', () => {
                     setTimeout(() => {
-                        document.querySelector(".canvas-wrapper").classList.add("active");
-                        render();
-                    }, 500);
+                        requestIdleCallback(() => {
+                            document.querySelector(".canvas-wrapper").classList.add("active");
+                            render();
+                        });
+                    }, 1000);
                 });
             }
 
