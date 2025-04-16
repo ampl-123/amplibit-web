@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JKNPHCXQEX"></script>
+<!--    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JKNPHCXQEX"></script>-->
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -118,7 +118,7 @@
 <a href="/contact.html" class="contact-fixed">Let's talk</a>
 <div class="product-section">
     <div class="solution-wrapper">
-        <div class="h1-wrapper">
+        <div class="h1-wrapper show">
             <h1>Solutions.</h1>
         </div>
         <div class="h2-wrapper">
@@ -897,35 +897,46 @@
                     document.querySelector(".canvas-wrapper").classList.add("active");
                     render();
                 });
-            }, 1000);
+            }, 2000);
         });
     }
 
 </script>
 <script>
-    function handleScrollFade() {
-        const scrollY = window.scrollY;
-
+    (function () {
         const h1 = document.querySelector('.h1-wrapper');
         const h2 = document.querySelector('.h2-wrapper');
-
         const hideH1Start = 100;
         const showH2Start = 200;
 
-        if (scrollY < hideH1Start) {
-            h1.classList.add('show');
-            h2.classList.remove('show');
-        } else if (scrollY >= hideH1Start && scrollY < showH2Start) {
-            h1.classList.remove('show');
-            h2.classList.remove('show');
-        } else {
-            h1.classList.remove('show');
-            h2.classList.add('show');
-        }
-    }
+        let ticking = false;
 
-    window.addEventListener('scroll', handleScrollFade);
-    window.addEventListener('load', handleScrollFade);
+        function updateFade() {
+            const scrollY = window.scrollY;
+            const showH1 = scrollY < hideH1Start;
+            const showH2 = scrollY >= showH2Start;
+
+            h1.classList.toggle('show', showH1);
+            h2.classList.toggle('show', showH2);
+
+            ticking = false;
+        }
+
+        function onScroll() {
+            if (!ticking) {
+                requestAnimationFrame(updateFade);
+                ticking = true;
+            }
+        }
+
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                updateFade();
+            }, 150);
+        });
+    })();
+
 </script>
 <script>
     document.addEventListener("DOMContentLoaded", function () {
