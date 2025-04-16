@@ -776,7 +776,6 @@
             </div>
         </footer>
         <script>
-
             const canvas = document.getElementById("glcanvas");
             const gl = canvas.getContext("webgl");
             if (!gl) {
@@ -797,7 +796,7 @@
     }
     `;
                 const fragmentShaderSource = `
-    precision mediump float;
+    precision highp float;
 
     uniform vec2 u_resolution;
     uniform float u_time;
@@ -838,14 +837,14 @@
         uv = uv * 2.0 - 1.0;
         uv.x *= u_resolution.x / u_resolution.y;
 
-        float t = u_time * 2.3;
+        float t = mod(u_time + 13.37, 60.0) * 2.3;
 
         float wave = flow(uv, t);
 
         float brightness = smoothstep(0.45, 0.95, wave);
         brightness = pow(brightness, 1.8);
 
-        gl_FragColor = vec4(vec3(brightness), 1.0);
+        gl_FragColor = vec4(vec3(brightness*0.5), 1.0);
     }
     `;
 
