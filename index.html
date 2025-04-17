@@ -894,10 +894,12 @@
         window.addEventListener('load', () => {
             setTimeout(() => {
                 requestIdleCallback(() => {
-                    document.querySelector(".canvas-wrapper").classList.add("active");
-                    render();
+                    requestAnimationFrame(() => {
+                        document.querySelector(".canvas-wrapper").classList.add("active");
+                        requestAnimationFrame(render); // 2nd frame to avoid load clash
+                    });
                 });
-            }, 1000);
+            }, 1500);
         });
     }
 
