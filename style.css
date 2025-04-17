@@ -650,8 +650,7 @@ canvas {
     flex-flow: column;
     background: black;
     align-items: center;
-    justify-content: center;
-    height: 520vh;
+    height: 540vh;
     width: 100%;
     gap: 2vw;
 }

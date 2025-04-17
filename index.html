@@ -885,38 +885,10 @@
             requestAnimationFrame(render);
         }
 
-        function waitForLCP() {
-            return new Promise((resolve) => {
-                if ("PerformanceObserver" in window) {
-                    const observer = new PerformanceObserver((entryList) => {
-                        for (const entry of entryList.getEntries()) {
-                            if (entry.name === 'largest-contentful-paint') {
-                                observer.disconnect();
-                                resolve();
-                            }
-                        }
-                    });
-                    observer.observe({type: "largest-contentful-paint", buffered: true});
-                    setTimeout(resolve, 2000);
-                } else {
-                    setTimeout(resolve, 1000);
-                }
-            });
-        }
-
-        async function initWebGLGracefully() {
-            await Promise.all([
-                waitForLCP(),
-            ]);
-
-            requestAnimationFrame(() => {
-                document.querySelector(".canvas-wrapper")?.classList.add("active");
-                render();
-            });
-        }
 
         window.addEventListener("load", () => {
-            setTimeout(initWebGLGracefully, 500);
+            document.querySelector(".canvas-wrapper").classList.add("active");
+            render();
         });
     }
 </script>
