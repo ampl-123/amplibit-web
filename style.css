@@ -6,6 +6,14 @@
     cursor: none;
     font-style: normal;
 }
+/*body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}*/
 .cursor-wrapper {
     position: absolute;
     top: 0;
@@ -577,7 +585,7 @@ html {
 canvas {
     position: sticky;
     top: 0;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     z-index: 1;
 }
@@ -595,7 +603,7 @@ canvas {
     opacity: 1;
 }
 .solution-wrapper{
-    width: 100vw;
+    width: 100%;
     height: 120vh;
     display: flex;
     flex-flow: column;
@@ -615,7 +623,7 @@ canvas {
     transition: opacity 0.5s ease;
 }
 .h1-wrapper h1{
-    font-family: Figtree, sans-serif;
+    font-family: Inter, sans-serif;
     font-weight: 500;
     font-size: 6.7vw;
 }
@@ -633,12 +641,15 @@ canvas {
     width: 70%;
 }
 .product-section{
+    margin: 0;
     position: relative;
     display: flex;
     flex-flow: column;
     background: black;
     align-items: center;
+    justify-content: center;
     height: 520vh;
+    width: 100%;
     gap: 2vw;
 }
 .product{
@@ -654,6 +665,30 @@ canvas {
     position: relative;
     width: 100%;
     height: 100%;
+}
+.product.visible .product-img-container {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+.product.visible .product-background-text div span{
+    animation: riseIn 0.8s ease-in-out;
+}
+.product-background.visible .product-background-text { animation-delay: 0.8s; }
+.product.visible .product-img-container { animation-delay: 1.4s; }
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes riseIn {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
 }
 .product-background-text{
     position: absolute;
@@ -685,10 +720,11 @@ canvas {
     font-size: 9.7vw;
     transform-origin: bottom;
     transition: transform 0.4s ease-in-out;
+    overflow: hidden;
 }
-/*.product-background-text.active div div span{
+.product-background-text.active div div span{
     transform: translateY(100%);
-}*/
+}
 .product-background-text:not(.active) div span{
     transform: translateY(0);
 }
@@ -724,6 +760,7 @@ canvas {
     justify-content: center;
     align-items: center;
     z-index: 2;
+    opacity: 0;
 }
 .product-img-wrapper {
     display: flex;
@@ -830,7 +867,6 @@ canvas {
     transition: height 0.8s ease-in-out, width 0.8s ease-in-out, top 0.8s ease-in-out;
     z-index: 0;
 }
-
 .see-more span {
     position: relative;
     z-index: 1;
@@ -839,7 +875,6 @@ canvas {
     font-size: 1vw;
     font-weight: 700;
 }
-
 .see-more svg {
     position: relative;
     height: 1vw;
@@ -848,21 +883,17 @@ canvas {
     transition: fill 0.4s ease;
     z-index: 10;
 }
-
 .see-more:hover {
     background-color: transparent;
 }
-
 .see-more:hover span {
     color: var(--gradient-first-color);
     background-clip: text;
     -webkit-background-clip: text;
 }
-
 .see-more:hover svg {
     fill: var(--gradient-first-color);
 }
-
 .see-more:hover::before {
     top: -50%;
     width: 150%;
@@ -3041,13 +3072,32 @@ footer .text-hello span:nth-of-type(even),
     .product-background-text{
         line-height: 100px;
         font-size: 20vw;
+        overflow-x: visible;
     }
     .product-background-text div{
-        transform: translate(-50%, -40%);
+        transform: translate(-50%, -20%);
         text-align: center;
+        justify-items: center;
         width: auto;
+        height: 50vh;
         left: 50%;
-        position: inherit;
+        position: relative;
+        overflow-x: visible;
+    }
+    .product-background-text div div {
+        overflow-x: visible;
+        height: fit-content;
+    }
+    .product-background-text div div span{
+        width: fit-content;
+        white-space: nowrap;
+        overflow-y: hidden;
+        overflow-x: visible;
+        font-size: 20vw;
+        /*
+        display: inline-block;
+        */
+        height: fit-content;
     }
     .product-item-name{
         left: 15vw;

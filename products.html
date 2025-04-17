@@ -132,10 +132,10 @@
         <div class="product" style="background: linear-gradient(252.14deg, #99DC70 0.52%, #63BE82 99.48%);">
             <div id="background-text-vengo" class="product-background-text">
                 <div>
-                    <span>YOUR SINGLE</span>
-                    <span>POINT OF TRUTH</span>
-                    <span>FOR VENDOR</span>
-                    <span>MANAGEMENT</span>
+                    <div><span>YOUR SINGLE</span></div>
+                    <div><span>POINT OF TRUTH</span></div>
+                    <div><span>FOR VENDOR</span></div>
+                    <div><span>MANAGEMENT</span></div>
                 </div>
             </div>
             <div class="product-item-name">Vengo</div>
@@ -416,9 +416,9 @@
         <div class="product" style="background: linear-gradient(252.14deg, #3FD9FF 0.52%, #56ABFA 99.48%);">
             <div id="background-text-catago" class="product-background-text">
                 <div>
-                    <span>PRODUCT</span>
-                    <span>CATALOG AT ITS</span>
-                    <span>BEST</span>
+                    <div><span>PRODUCT</span></div>
+                    <div><span>CATALOG AT ITS</span></div>
+                    <div><span>BEST</span></div>
                 </div>
 
             </div>
@@ -659,9 +659,9 @@
         <div class="product" style="background: linear-gradient(257.44deg, #23D192 0.58%, #18C5C8 99.42%);">
             <div id="background-text-arrango" class="product-background-text">
                 <div>
-                    <span>OUTSOURCING</span>
-                    <span>MANAGEMENT</span>
-                    <span>SYSTEM</span>
+                    <div><span>OUTSOURCING</span></div>
+                    <div><span>MANAGEMENT</span></div>
+                    <div><span>SYSTEM</span></div>
                 </div>
             </div>
             <div class="product-item-name">Arrango</div>
@@ -700,9 +700,9 @@
         <div class="product" style="background: linear-gradient(252.14deg, #359BFF 0.52%, #4F6BCF 99.48%);">
             <div id="background-text-libby" class="product-background-text">
                 <div>
-                    <span>LIABILITY</span>
-                    <span>MANAGEMENT</span>
-                    <span>PLATFORM</span>
+                    <div><span>LIABILITY</span></div>
+                    <div><span>MANAGEMENT</span></div>
+                    <div><span>PLATFORM</span></div>
                 </div>
             </div>
             <div class="product-item-name">Libby</div>
@@ -736,7 +736,6 @@
                 </a>
             </div>
         </div>
-
     </div>
 </div>
         <footer>
@@ -776,8 +775,10 @@
             </div>
         </footer>
         <script>
+
             const canvas = document.getElementById("glcanvas");
             const gl = canvas.getContext("webgl");
+
             if (!gl) {
                 document.body.style.backgroundColor = "black";
                 canvas.style.display = "none";
@@ -789,63 +790,57 @@
                 }
                 resizeCanvas();
                 window.addEventListener("resize", resizeCanvas);
+
                 const vertexShaderSource = `
-    attribute vec2 a_position;
-    void main() {
-      gl_Position = vec4(a_position, 0, 1);
-    }
+        attribute vec2 a_position;
+        void main() {
+          gl_Position = vec4(a_position, 0, 1);
+        }
     `;
+
                 const fragmentShaderSource = `
-    precision highp float;
+        precision highp float;
 
-    uniform vec2 u_resolution;
-    uniform float u_time;
+        uniform vec2 u_resolution;
+        uniform float u_time;
 
-    vec2 curl(vec2 uv, float t) {
-        float x = uv.x;
-        float y = uv.y;
+        vec2 curl(vec2 uv, float t) {
+            float x = uv.x;
+            float y = uv.y;
 
-        float dx = sin(y * 3.5 + t * 0.4) * 0.6 +
-                   sin((x + y) * 1.3 + t * 0.6) * 0.3;
+            float dx = sin(y * 3.5 + t * 0.4) * 0.6 +
+                       sin((x + y) * 1.3 + t * 0.6) * 0.3;
 
-        float dy = cos(x * 3.5 - t * 0.4) * 0.6 +
-                   cos((x - y) * 1.4 - t * 0.3) * 0.3;
+            float dy = cos(x * 3.5 - t * 0.4) * 0.6 +
+                       cos((x - y) * 1.4 - t * 0.3) * 0.3;
 
-        return vec2(dx, dy);
-    }
+            return vec2(dx, dy);
+        }
 
-    float flow(vec2 uv, float t) {
-        uv += 0.35 * curl(uv, t);
+        float flow(vec2 uv, float t) {
+            uv += 0.35 * curl(uv, t);
 
-        float w = 0.0;
+            float w = 0.0;
+            w += sin(uv.x * 6.0 + t * 0.9);
+            w += sin(uv.y * 8.0 - t * 1.1);
+            w += sin((uv.x + uv.y) * 3.5 + t * 0.7);
+            w += sin((uv.x - uv.y) * 4.5 - t * 0.6);
+            w += sin((uv.x * 1.5 + uv.y * 0.8) + t * 0.9);
+            w += cos((uv.x * 0.5 + uv.y * 2.3) + t * 0.4);
+            return w / 5.0;
+        }
 
-        // Classic horizontal & vertical waves
-        w += sin(uv.x * 6.0 + t * 0.9);
-        w += sin(uv.y * 8.0 - t * 1.1);
+        void main() {
+            vec2 uv = gl_FragCoord.xy / u_resolution.xy;
+            uv = uv * 2.0 - 1.0;
+            uv.x *= u_resolution.x / u_resolution.y;
 
-        w += sin((uv.x + uv.y) * 3.5 + t * 0.7);
-        w += sin((uv.x - uv.y) * 4.5 - t * 0.6);
-
-        w += sin((uv.x * 1.5 + uv.y * 0.8) + t * 0.9);
-        w += cos((uv.x * 0.5 + uv.y * 2.3) + t * 0.4);
-
-        return w / 5.0;
-    }
-
-    void main() {
-        vec2 uv = gl_FragCoord.xy / u_resolution.xy;
-        uv = uv * 2.0 - 1.0;
-        uv.x *= u_resolution.x / u_resolution.y;
-
-        float t = mod(u_time + 13.37, 60.0) * 2.3;
-
-        float wave = flow(uv, t);
-
-        float brightness = smoothstep(0.45, 0.95, wave);
-        brightness = pow(brightness, 1.8);
-
-        gl_FragColor = vec4(vec3(brightness*0.7), 1.0);
-    }
+            float t = mod(u_time + 13.37, 60.0) * 2.3;
+            float wave = flow(uv, t);
+            float brightness = smoothstep(0.45, 0.95, wave);
+            brightness = pow(brightness, 1.8);
+            gl_FragColor = vec4(vec3(brightness * 0.7), 1.0);
+        }
     `;
 
                 function createShader(type, source) {
@@ -890,16 +885,40 @@
                     requestAnimationFrame(render);
                 }
 
-                window.addEventListener('load', () => {
-                    setTimeout(() => {
-                        requestIdleCallback(() => {
-                            document.querySelector(".canvas-wrapper").classList.add("active");
-                            render();
-                        });
-                    }, 1000);
+                function waitForLCP() {
+                    return new Promise((resolve) => {
+                        if ("PerformanceObserver" in window) {
+                            const observer = new PerformanceObserver((entryList) => {
+                                for (const entry of entryList.getEntries()) {
+                                    if (entry.name === 'largest-contentful-paint') {
+                                        observer.disconnect();
+                                        resolve();
+                                    }
+                                }
+                            });
+                            observer.observe({type: "largest-contentful-paint", buffered: true});
+                            setTimeout(resolve, 2000);
+                        } else {
+                            setTimeout(resolve, 1000);
+                        }
+                    });
+                }
+
+                async function initWebGLGracefully() {
+                    await Promise.all([
+                        waitForLCP(),
+                    ]);
+
+                    requestAnimationFrame(() => {
+                        document.querySelector(".canvas-wrapper")?.classList.add("active");
+                        render();
+                    });
+                }
+
+                window.addEventListener("load", () => {
+                    setTimeout(initWebGLGracefully, 500);
                 });
             }
-
         </script>
         <script>
             function handleScrollFade() {
@@ -963,36 +982,31 @@
             });
         </script>
         <script>
-/*            setTimeout(()=> {
-                document.querySelector(".what-we-do-title").classList.add("active");
-                document.querySelector(".what-we-do-services").classList.add("active");
-            }, 100);*/
-
             document.addEventListener("scroll", function (e) {
                 0 > document.querySelector(".tell-us-about-it").getBoundingClientRect().bottom - window.innerHeight ? document.querySelector(".tell-us-about-it").classList.add("active") : document.querySelector(".tell-us-about-it").classList.remove("active");
-/*
-
-                0 > document.querySelector(".zero-service").getBoundingClientRect().top - 0.5 * window.innerHeight ? document.body.classList.add("green-first","black") : document.body.classList.remove("green-first","black"),
-
-                0 > document.querySelector(".first-service").getBoundingClientRect().top - 0.5 * window.innerHeight ? document.body.classList.add("blue") : document.body.classList.remove("blue"),
-                0 > document.querySelector(".second-service").getBoundingClientRect().top - 0.5 * window.innerHeight ? document.body.classList.add("green") : document.body.classList.remove("green"),
-                0 > document.querySelector(".second-service").getBoundingClientRect().bottom && document.body.classList.remove("green"),
-                0 > document.querySelector(".zero-service").getBoundingClientRect().bottom && document.body.classList.remove("green-first"),
-                0 > document.querySelector(".first-service").getBoundingClientRect().bottom && document.body.classList.remove("blue"),
-                0 > document.querySelector(".first-service").getBoundingClientRect().bottom ? document.body.classList.add("black") : document.body.classList.remove("black"),
-*/
-
-/*
-                0 > document.querySelector("#Vengo .product-details").getBoundingClientRect().top - 0.9 * window.innerHeight ? document.querySelector(".zero-service").classList.add("active") : document.querySelector(".zero-service").classList.remove("active"),
-*/
-/*
-                0 > document.querySelector("#Catago .product-details").getBoundingClientRect().top - 0.9 * window.innerHeight ? document.querySelector(".first-service").classList.add("active") : document.querySelector(".first-service").classList.remove("active"),
-*/
-/*
-                0 > document.querySelector("#Arrango .product-details").getBoundingClientRect().top - 0.9 * window.innerHeight ? document.querySelector(".second-service").classList.add("active") : document.querySelector(".second-service").classList.remove("active");
-*/
 
             });
         </script>
+    <script>
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const bg = entry.target;
+                    const product = bg.querySelector('.product');
+
+                    bg.classList.add('visible');
+                    product.classList.add('visible');
+
+                    obs.unobserve(bg);
+                }
+            });
+        }, {
+            threshold: 0.3
+        });
+
+        document.querySelectorAll('.product-background').forEach(bg => {
+            observer.observe(bg);
+        });
+    </script>
     </body>
 </html>
