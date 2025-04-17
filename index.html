@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JKNPHCXQEX"></script>
+<!--    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JKNPHCXQEX"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
 
         gtag('config', 'G-JKNPHCXQEX');
-    </script>
+    </script>-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Amplibit is a software development company based in Zagreb, Croatia. Amplify your potential with our tailor-made solutions and solution drive team.">
@@ -891,7 +891,14 @@
             gl.drawArrays(gl.TRIANGLES, 0, 6);
             requestAnimationFrame(render);
         }
-        render();
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                requestIdleCallback(() => {
+                    document.querySelector(".canvas-wrapper").classList.add("active");
+                    render();
+                });
+            }, 1000);
+        });
     }
 
 </script>
