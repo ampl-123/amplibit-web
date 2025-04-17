@@ -611,6 +611,9 @@ canvas {
     align-items: center;
     color: white;
     z-index: 2;
+    /*
+    background-color: #9BE545;
+    */
 }
 .h1-wrapper.show {
     opacity: 1;
@@ -619,15 +622,15 @@ canvas {
     opacity: 1;
 }
 .h1-wrapper{
-    opacity: 0;
     transition: opacity 0.5s ease;
 }
 .h1-wrapper h1{
-    font-family: Inter, sans-serif;
+    font-family:  Figtree, sans-serif;
     font-weight: 500;
     font-size: 6.7vw;
 }
 .h2-wrapper{
+    font-family: Figtree, sans-serif;
     opacity: 0;
     text-align: center;
     display: flex;
@@ -718,15 +721,15 @@ canvas {
 .product-background-text div div span{
     font-family: Figtree, sans-serif;
     font-size: 9.7vw;
-    transform-origin: bottom;
-    transition: transform 0.4s ease-in-out;
+    transform-origin: bottom;transition: transform 0.4s ease-in-out;
     overflow: hidden;
+    opacity: 1;
 }
-.product-background-text.active div div span{
-    transform: translateY(100%);
+.product:not(.visible) .product-background-text div div span{
+    opacity: 0;
 }
-.product-background-text:not(.active) div span{
-    transform: translateY(0);
+.product.visible .product-background-text.visible div div span{
+    opacity: 1;
 }
 #background-text-vengo{
     color: #FFFFFF;
@@ -3072,7 +3075,6 @@ footer .text-hello span:nth-of-type(even),
     .product-background-text{
         line-height: 100px;
         font-size: 20vw;
-        overflow-x: visible;
     }
     .product-background-text div{
         transform: translate(-50%, -20%);
@@ -3082,21 +3084,16 @@ footer .text-hello span:nth-of-type(even),
         height: 50vh;
         left: 50%;
         position: relative;
-        overflow-x: visible;
     }
     .product-background-text div div {
-        overflow-x: visible;
-        height: fit-content;
+        height: 25vw;
+        width: 120%;
     }
     .product-background-text div div span{
-        width: fit-content;
         white-space: nowrap;
         overflow-y: hidden;
         overflow-x: visible;
         font-size: 20vw;
-        /*
-        display: inline-block;
-        */
         height: fit-content;
     }
     .product-item-name{
