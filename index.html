@@ -118,7 +118,7 @@
 <a href="/contact.html" class="contact-fixed">Let's talk</a>
 <div class="product-section">
     <div class="solution-wrapper">
-        <div class="h1-wrapper show">
+        <div class="h1-wrapper">
             <h1>Solutions.</h1>
         </div>
         <div class="h2-wrapper">
@@ -774,10 +774,10 @@
         <p>Amplibit 2024. All rights reserved.</p>
     </div>
 </footer>
-<script type="module" defer>
+<!--
+<script type="module">
     const canvas = document.getElementById("glcanvas");
     const gl = canvas.getContext("webgl");
-
     if (!gl) {
         document.body.style.backgroundColor = "black";
         canvas.style.display = "none";
@@ -884,21 +884,35 @@
             requestAnimationFrame(render);
         }
 
-        requestIdleCallback(() => {
-            if (window.innerWidth > 680) {
-                document.querySelector(".canvas-wrapper").classList.add("active");
-                initAndRender();
-            }
-        });
+        let animationStarted = false;
 
-        function initAndRender() {
-            // Everything from shader setup to buffer creation here...
-            // (move existing WebGL setup code into this function)
-
-            render(); // start rendering loop
+        function startAnimation() {
+            if (animationStarted) return;
+            animationStarted = true;
+            render();
         }
+
+// 1. Observe future LCP entries
+        new PerformanceObserver((entryList) => {
+            for (const entry of entryList.getEntries()) {
+                if (entry.element?.tagName === "H1") {
+                    requestIdleCallback(startAnimation);
+                }
+            }
+        }).observe({ type: "largest-contentful-paint", buffered: true });
+
+// 2. Catch already-recorded LCP (in case this script runs late)
+        const lcpEntries = performance.getEntriesByType('largest-contentful-paint');
+        if (lcpEntries.length > 0) {
+            requestIdleCallback(startAnimation);
+        }
+
+// 3. Fallback: start after 3 seconds anyway
+        setTimeout(startAnimation, 3000);
+
     }
 </script>
+-->
 <script>
     function handleScrollFade() {
         const scrollY = window.scrollY;
