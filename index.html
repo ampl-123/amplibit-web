@@ -885,10 +885,11 @@
             requestAnimationFrame(render);
         }
 
-
         window.addEventListener("load", () => {
-            document.querySelector(".canvas-wrapper").classList.add("active");
-            render();
+            if (window.innerWidth > 680) {
+                document.querySelector(".canvas-wrapper").classList.add("active");
+                render();
+            }
         });
     }
 </script>
@@ -955,6 +956,7 @@
 </script>
 <script>
     document.addEventListener("scroll", function (e) {
+        document.querySelector(".product-section").getBoundingClientRect().bottom < window.scrollY - window.innerHeight ? document.querySelector(".canvas-wrapper").classList.remove("active") : document.querySelector(".canvas-wrapper").classList.add("active");
         0 > document.querySelector(".tell-us-about-it").getBoundingClientRect().bottom - window.innerHeight ? document.querySelector(".tell-us-about-it").classList.add("active") : document.querySelector(".tell-us-about-it").classList.remove("active");
 
     });

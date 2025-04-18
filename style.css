@@ -622,6 +622,7 @@ canvas {
     opacity: 1;
 }
 .h1-wrapper{
+    opacity: 0;
     transition: opacity 0.5s ease;
 }
 .h1-wrapper h1{
@@ -3304,7 +3305,13 @@ footer .text-hello span:nth-of-type(even),
     .contact-info-container {
         margin-bottom: 100px;
     }
-
+    .h1-wrapper h1 {
+        font-size: 40px;
+    }
+    .h2-wrapper h2 {
+        font-size: 20px;
+        width: 80%;
+    }
     .product-desc{
         bottom: calc(25vh);
         font-size: 4.0vw;
