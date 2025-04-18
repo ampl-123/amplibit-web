@@ -774,8 +774,7 @@
         <p>Amplibit 2024. All rights reserved.</p>
     </div>
 </footer>
-<script>
-
+<script type="module" defer>
     const canvas = document.getElementById("glcanvas");
     const gl = canvas.getContext("webgl");
 
@@ -888,9 +887,20 @@
         window.addEventListener("load", () => {
             if (window.innerWidth > 680) {
                 document.querySelector(".canvas-wrapper").classList.add("active");
-                render();
+
+                requestAnimationFrame(() => {
+                    // Delay heavy setup by a tick to avoid blocking
+                    initAndRender();
+                });
             }
         });
+
+        function initAndRender() {
+            // Everything from shader setup to buffer creation here...
+            // (move existing WebGL setup code into this function)
+
+            render(); // start rendering loop
+        }
     }
 </script>
 <script>
