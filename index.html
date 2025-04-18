@@ -884,14 +884,10 @@
             requestAnimationFrame(render);
         }
 
-        window.addEventListener("load", () => {
+        requestIdleCallback(() => {
             if (window.innerWidth > 680) {
                 document.querySelector(".canvas-wrapper").classList.add("active");
-
-                requestAnimationFrame(() => {
-                    // Delay heavy setup by a tick to avoid blocking
-                    initAndRender();
-                });
+                initAndRender();
             }
         });
 
