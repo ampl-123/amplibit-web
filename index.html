@@ -118,7 +118,7 @@
 <a href="/contact.html" class="contact-fixed">Let's talk</a>
 <div class="product-section">
     <div class="solution-wrapper">
-        <div class="h1-wrapper">
+        <div class="h1-wrapper show">
             <h1>Solutions.</h1>
         </div>
         <div class="h2-wrapper">
@@ -774,10 +774,11 @@
         <p>Amplibit 2024. All rights reserved.</p>
     </div>
 </footer>
-<!--
-<script type="module">
+<script>
+
     const canvas = document.getElementById("glcanvas");
     const gl = canvas.getContext("webgl");
+
     if (!gl) {
         document.body.style.backgroundColor = "black";
         canvas.style.display = "none";
@@ -884,35 +885,14 @@
             requestAnimationFrame(render);
         }
 
-        let animationStarted = false;
-
-        function startAnimation() {
-            if (animationStarted) return;
-            animationStarted = true;
-            render();
-        }
-
-// 1. Observe future LCP entries
-        new PerformanceObserver((entryList) => {
-            for (const entry of entryList.getEntries()) {
-                if (entry.element?.tagName === "H1") {
-                    requestIdleCallback(startAnimation);
-                }
+        requestIdleCallback(() => {
+            if (window.innerWidth > 680) {
+                document.querySelector(".canvas-wrapper").classList.add("active");
+                render();
             }
-        }).observe({ type: "largest-contentful-paint", buffered: true });
-
-// 2. Catch already-recorded LCP (in case this script runs late)
-        const lcpEntries = performance.getEntriesByType('largest-contentful-paint');
-        if (lcpEntries.length > 0) {
-            requestIdleCallback(startAnimation);
-        }
-
-// 3. Fallback: start after 3 seconds anyway
-        setTimeout(startAnimation, 3000);
-
+        });
     }
 </script>
--->
 <script>
     function handleScrollFade() {
         const scrollY = window.scrollY;
@@ -2190,7 +2170,7 @@
         const b = Math.round(b1 + (b2 - b1) * t);
         return `rgb(${r}, ${g}, ${b})`;
     };
-    const gradients = [[[148,217,113], [148,217,113]], [[124, 230, 145], [66, 218, 181]], [[63, 217, 255], [86, 171, 250]], [[129, 167, 255], [59, 145, 245]],[[129, 167, 255], [59, 145, 245]]];
+    const gradients = [[[148,217,113], [148,217,113]], [[0, 214, 225], [0, 195, 170]], [[63, 217, 255], [86, 171, 250]], [[129, 167, 255], [59, 145, 245]],[[129, 167, 255], [59, 145, 245]]];
     const catalog = document.querySelector(".product-catalog");
     const products = document.querySelectorAll(".product-contain");
     const background = document.querySelector(".products-window");

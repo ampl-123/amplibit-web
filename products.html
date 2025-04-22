@@ -885,7 +885,7 @@
             requestAnimationFrame(render);
         }
 
-        window.addEventListener("load", () => {
+        requestIdleCallback(() => {
             if (window.innerWidth > 680) {
                 document.querySelector(".canvas-wrapper").classList.add("active");
                 render();
