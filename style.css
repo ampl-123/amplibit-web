@@ -611,9 +611,6 @@ canvas {
     align-items: center;
     color: white;
     z-index: 2;
-    /*
-    background-color: #9BE545;
-    */
 }
 .h1-wrapper.show {
     opacity: 1;
@@ -677,11 +674,6 @@ canvas {
 .product.visible .product-img-container {
     animation: fadeIn 0.8s ease-out forwards;
 }
-.product.visible .product-background-text div span{
-    animation: riseIn 0.8s ease-in-out;
-}
-.product-background.visible .product-background-text { animation-delay: 0.8s; }
-.product.visible .product-img-container { animation-delay: 1.0s; }
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -930,12 +922,33 @@ canvas {
     width: 150%;
     height: 300%;
 }
-
-.see-more:hover {
-    color: black;
+#see-more-vengo:hover{
+    color: #8dd574;
 }
-
-
+#see-more-vengo:hover svg{
+    fill: #8dd574;
+}
+#see-more-arrango:hover{
+    color: #20cc9e;
+}
+#see-more-arrango:hover svg{
+    fill: #20cc9e;
+}
+#see-more-catago:hover{
+    color: #43d1fe;
+}
+#see-more-catago:hover svg{
+    fill: #43d1fe;
+}
+#see-more-libby:hover{
+    color: #3a91f5;
+}
+#see-more-libby:hover{
+    fill: #3a91f5;
+}
+.see-more:hover {
+    color: #20cc9e;
+}
 .background {
     position: relative;
     width: 100vw;

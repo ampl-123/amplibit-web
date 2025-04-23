@@ -1058,18 +1058,27 @@ canvas {
 .product-info.active{
     opacity: 1;
 }
-.product-name {
-    font-family: Figtree, sans-serif;
-}
 .product-moto,
 .product-name{
     color: #f0f0f0;
 }
+.product-header{
+    position: absolute;
+    top:calc(50% - 7vw);
+    display: flex;
+    gap: 20px;
+}
 .product-name{
+    font-family: Figtree, sans-serif;
     font-size: 3.8vw;
     text-align: left;
-    top: calc(50% - 7vw/* - max(var(--shift) - 15%, 0%)*/);
+    /*
+    top: calc(50% - 7vw!* - max(var(--shift) - 15%, 0%)*!);
+    */
+    left: 180px;
+    /*
     position: absolute;
+    */
 }
 .product-moto{
     position: absolute;
@@ -1089,8 +1098,13 @@ canvas {
     transform-origin: center calc(50% - 10px);
     width: 4vw;
     height: 4vw;
+    /*
     position: absolute;
-    top: calc(50% - 12vw/* - max(var(--shift) - 15%, 0%)*/);
+    */
+    /*
+    top: calc(56% - 12vw);
+    */
+    /*top: calc(50% - 12vw!* - max(var(--shift) - 15%, 0%)*!);*/
     opacity: 1;
 /*    transition: opacity 1s ease-in-out;*/
 }
