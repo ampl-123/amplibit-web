@@ -798,7 +798,7 @@ html::-webkit-scrollbar {
     position: relative;
     width: 100vw;
     height: 400vh;
-    background-color: white;
+    background-color: black;
     display: flex;
     justify-content: center;
     opacity: 100;
