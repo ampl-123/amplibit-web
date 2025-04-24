@@ -943,7 +943,7 @@ canvas {
 #see-more-libby:hover{
     color: #3a91f5;
 }
-#see-more-libby:hover{
+#see-more-libby:hover svg{
     fill: #3a91f5;
 }
 .see-more:hover {

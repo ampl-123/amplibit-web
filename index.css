@@ -1066,7 +1066,7 @@ canvas {
     position: absolute;
     top:calc(50% - 7vw);
     display: flex;
-    gap: 20px;
+    gap: 10px;
 }
 .product-name{
     font-family: Figtree, sans-serif;
