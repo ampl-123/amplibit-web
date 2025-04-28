@@ -821,7 +821,7 @@ html::-webkit-scrollbar {
     background: white;
 }
 body.blue .transition.white {
-    background: rgb(148,217,113);
+    background: rgb(128,211,124);
     transition: background 0s;
 }
 .transition-text{
