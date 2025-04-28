@@ -650,10 +650,7 @@ canvas {
     align-items: center;
     height: 540vh;
     width: 100%;
-    gap: 2vw;
-}
-.product{
-    border-radius: 2.2vw;
+    gap: max(2vw, 2vh);
 }
 .product-background{
     width: 98.5vw;
@@ -664,12 +661,14 @@ canvas {
 .product-background-text svg{
     width: 100%;
     height: 100%;
-    transform: translate(20%);
 }
 .product{
     position: relative;
+    display: flex;
+    border-radius: 2.2vw;
+    overflow: hidden;
     width: 100%;
-    height: 100%;
+    height: 100vh;
 }
 .product.visible .product-img-container {
     animation: fadeIn 0.8s ease-out forwards;
@@ -682,47 +681,11 @@ canvas {
         opacity: 1;
     }
 }
-@keyframes riseIn {
-    from {
-        transform: translateY(-100%);
-    }
-    to {
-        transform: translateY(0);
-    }
-}
 .product-background-text{
     position: absolute;
     width: 100%;
     height: 100%;
-    align-items: center;
-    display: flex;
-    font-size: min(9.7vw, 200px);
-    line-height: 9vw;
-    font-weight: 700;
-    text-align: center;
-    /*
-    padding: 1vw 3vw 1vw;
-    */
-    overflow-x: hidden;
     z-index: 0;
-}
-.product-background-text div {
-    display: flex;
-    flex-flow: column;
-    width: 100%;
-    text-align: center;
-}
-.product-background-text div div{
-    overflow: hidden;
-    display: grid;
-    width: 100%;
-}
-.product-background-text div div span{
-    font-family: Figtree, sans-serif;
-    font-size: 9.7vw;
-    transform-origin: bottom;transition: transform 0.4s ease-in-out;
-    overflow: hidden;
-    opacity: 1;
 }
 .product:not(.visible) .product-background-text div div span{
     opacity: 0;
@@ -730,53 +693,57 @@ canvas {
 .product.visible .product-background-text.visible div div span{
     opacity: 1;
 }
-#background-text-vengo{
-    color: #FFFFFF;
-    /*opacity: 20%;*/
-}
-#background-text-catago{
-    color: #1B68DF;
-    /*
-    opacity: 30%;
-    */
-}
-#background-text-arrango{
-    color: #FFFFFF;
-    /*
-    opacity: 35%;
-    */
-}
-#background-text-libby{
-    color: #FFFFFF;
-    /*
-    opacity: 30%;
-    */
-}
-.item-header{
+#background-logo-vengo svg{
+    height: 100%;
     width: 100%;
-    height: 20%;
+    transform: translate(-23%);
 }
-.item-content {
-    width: auto;
-    height: 60%;
+#background-logo-catago svg{
+    height: 100%;
+    width: 100%;
+    transform: translate(30%);
+}
+#background-logo-arrango svg{
+    height: 100%;
+    width: 100%;
+    transform: translate(-30%);
+}
+#background-logo-libby svg{
+/*    height: 100%;
+    width: 100%;*/
+    transform: translate(20%);
+}
+.item-info{
+    position: relative;
+    width: 35%;
+    height: 100%;
+    align-content: center;
+    padding-left: 8.125vw;
+}
+#catago-info{
+    padding-left: min(8.125vw, 50px);
+    width: 35%
+}
+#libby-info{
+    padding-left: min(8.125vw, 50px);
+    width: 35%
+}
+#libby-img{
+    padding-right: 3vw;
+}
+.item-img {
+    width: 65%;
+    height: 100%;
     align-content: center;
 }
-.item-footer {
-    width: 100%;
-    height: 20%;
-}
 .product-item-name{
-    position: absolute;
-    top: 6.8vw;
-    left: 6.8vw;
-    font-size: 3.5vw;
+    position: relative;
+    font-size: 6.7vw;
     font-weight: 700;
     color: #FFFFFF;
+    margin-bottom: 1vw;
 }
 .product-img-container{
-    /*
-    position: absolute;
-    */
     width: 100%;
     height: 100%;
     display: flex;
@@ -845,16 +812,14 @@ canvas {
     height: 100%;
 }
 .product-desc{
-    position: absolute;
-    bottom: 4.4vw;
-    left: 5.5vw;
     max-width: 43vw;
     color: #FFFFFF;
     font-size: 1.52vw;
     font-weight: 500;
+    margin-bottom: 30px;
+    width: 90%;
 }
 .product-view-more{
-    position: absolute;
     bottom: 6.5vw;
     right: 7.2vw;
     width: 11.3vw;
@@ -862,7 +827,7 @@ canvas {
 }
 .see-more {
     display: flex;
-    width: 12vw;
+    width: 11.5vw;
     height: 3.6vw;
     align-items: center;
     gap: 0.55vw;
@@ -923,16 +888,16 @@ canvas {
     height: 300%;
 }
 #see-more-vengo:hover{
-    color: #8dd574;
+    color: #50c371;
 }
 #see-more-vengo:hover svg{
-    fill: #8dd574;
+    fill: #50c371;
 }
 #see-more-arrango:hover{
-    color: #20cc9e;
+    color: #1bc6b8;
 }
 #see-more-arrango:hover svg{
-    fill: #20cc9e;
+    fill: #1bc6b8;
 }
 #see-more-catago:hover{
     color: #43d1fe;
@@ -941,10 +906,10 @@ canvas {
     fill: #43d1fe;
 }
 #see-more-libby:hover{
-    color: #3a91f5;
+    color: #3c8ef0;
 }
 #see-more-libby:hover svg{
-    fill: #3a91f5;
+    fill: #3c8ef0;
 }
 .see-more:hover {
     color: #20cc9e;
@@ -3113,38 +3078,41 @@ footer .text-hello span:nth-of-type(even),
     }
 
     /*##########################################################################*/
-    .product-background-text{
-        line-height: 100px;
-        font-size: 20vw;
+    .product-section{
+        overflow-x: hidden;
     }
-    .product-background-text div{
-        transform: translate(-50%, -20%);
-        text-align: center;
-        justify-items: center;
-        width: auto;
-        height: 50vh;
-        left: 50%;
-        position: relative;
+    .product{
+        flex-flow: column-reverse;
     }
-    .product-background-text div div {
-        height: 25vw;
-        width: 120%;
+    #catago-product{
+        flex-flow: column;
     }
-    .product-background-text div div span{
-        white-space: nowrap;
-        overflow-y: hidden;
-        overflow-x: visible;
-        font-size: 20vw;
-        height: fit-content;
+    #libby-product{
+        flex-flow: column;
+    }
+    .item-info{
+        width: 100%;
+        height: 40%;
+        gap: 15px;
+        align-content: flex-start;
+    }
+    #catago-info{
+        padding-left: 8.125vw;
+        width: 100%;
+    }
+    #libby-info{
+        width: 100%;
+    }
+    .item-img{
+        width: 100%;
+        height: 60%;
+        align-content: center;
     }
     .product-item-name{
-        left: 16vw;
-        top: 60vh;
+        height: 20%;
         font-size: 8vw;
     }
     .product-item-logo{
-        top: 60vh;
-        right: 85vw;
         width: 9vw;
     }
     .product-img-wrapper{
@@ -3152,14 +3120,22 @@ footer .text-hello span:nth-of-type(even),
         top: 10vh;
     }
     .product-img-svg-wrapper{
-        transform: translateY(-20vh);
         width: 90%;
     }
     .product-page-img{
         width: 100%;
     }
-    #background-text-vengo{
-        line-height: 20vw;
+    #background-logo-vengo svg{
+        transform: translate(0, -10%);
+    }
+    #background-logo-catago svg{
+        transform: translate(0%, -10%);
+    }
+    #background-logo-arrango svg{
+        transform: translate(-10%, -20%);
+    }
+    #background-logo-libby{
+        transform: translate(10%, -20%);
     }
     #vengo-gqi-1{
         width: 100%;
@@ -3201,14 +3177,13 @@ footer .text-hello span:nth-of-type(even),
         height: 15px;
     }
     .product-desc{
-        bottom: 20vh;
-        width: 80vw;
+        width: 80%;
+        height: 20%;
         max-width: 80vw;
         font-size: 4vw;
     }
     .product-view-more{
-        left: 5.5vw;
-        bottom: 15vh;
+
     }
     /*##########################################################################*/
 }
