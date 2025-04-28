@@ -888,22 +888,22 @@ canvas {
     height: 300%;
 }
 #see-more-vengo:hover{
-    color: #50c371;
+    color: #52c36f;
 }
 #see-more-vengo:hover svg{
-    fill: #50c371;
+    fill: #52c36f;
 }
 #see-more-arrango:hover{
-    color: #1bc6b8;
+    color: #0fbcb3;
 }
 #see-more-arrango:hover svg{
-    fill: #1bc6b8;
+    fill: #0fbcb3;
 }
 #see-more-catago:hover{
-    color: #43d1fe;
+    color: #34b0fd;
 }
 #see-more-catago:hover svg{
-    fill: #43d1fe;
+    fill: #34b0fd;
 }
 #see-more-libby:hover{
     color: #3c8ef0;
