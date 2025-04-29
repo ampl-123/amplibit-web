@@ -728,7 +728,7 @@ canvas {
     width: 35%
 }
 #libby-info{
-    padding-left: min(8.125vw, 50px);
+    padding-left: min(8.125vw, 30px);
     width: 35%
 }
 #libby-img{
@@ -820,7 +820,7 @@ canvas {
     font-size: 1.52vw;
     font-weight: 500;
     margin-bottom: 30px;
-    width: 90%;
+    width: 80%;
 }
 .product-view-more{
     bottom: 6.5vw;

@@ -794,6 +794,11 @@ html::-webkit-scrollbar {
     font-weight: 700;
     color: inherit;
 }
+.canvas-wrapper{
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+}
 .product-catalog{
     position: relative;
     width: 100vw;
@@ -968,46 +973,11 @@ canvas {
     max-width: 45vw;*/
     width: min(130%, 50vw);
     height: auto;
-    top: calc(45%/* - max(var(--shift)*2 - 15%*/));
+    top: calc(45%/* - max(var(--shift)*2 - 15%*/);
     left: calc(50% /*+ max(var(--shift) - 10%, 0%)*/);
     display: block;
     opacity: 1 /*calc(150% - var(--shift)*6)*/;
 }
-/*.wiggle{
-    overflow: visible;
-}
-.wiggle g{
-    overflow: visible;
-    animation: subtleMove 5s ease-in-out infinite alternate;
-    transform-origin: center;
-    transition: transform 0.3s ease;
-}
-.wiggle path{
-    overflow: visible;
-    animation: subtleMove 3s ease-in-out infinite alternate;
-    transform-origin: center;
-    transition: transform 0.3s ease;
-}*/
-
-/*.wiggle path:hover {
-    transform-origin: center;
-    transform: scale(1.1);
-}*/
-/*.wiggle g{
-    animation: subtleMove 3s ease-in-out infinite alternate;
-    transform-origin: center;
-}*/
-
-/*@keyframes subtleMove {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(2deg); }
-}*/
-
-/*.product-contain.active .product-img,
-.product-img-wrapper.active .product-img{
-    transform: translate(-50%, -50%) ;
-    transition: transform 0.5s ease;
-}*/
 #libby-img-2{
     right:calc(50%);
 }
@@ -3407,21 +3377,6 @@ textarea {
 .green-first .scrollbar-wrapper{
     mix-blend-mode: unset;
 }
-/*.deloitte-banner {
-    display: flex;
-    position: relative;
-}
-.deloitte-banner img {
-    width: 100%;
-}
-.deloitte-banner .shadow {
-    display: flex;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    box-shadow: inset 10px 0 10px 5px #000;
-}*/
+
 
 
