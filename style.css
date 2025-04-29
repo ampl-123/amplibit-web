@@ -841,7 +841,7 @@ canvas {
     background-color: transparent;
     transition: color 0.4s ease;
     overflow: hidden;
-    margin-top: 2vw;
+    margin-top: 0.5vw;
     position: relative;
     z-index: 4;
 }
