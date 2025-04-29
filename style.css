@@ -714,6 +714,8 @@ canvas {
     transform: translate(20%);
 }
 .item-info{
+    display: flex;
+    flex-flow: column;
     position: relative;
     width: 35%;
     height: 100%;
