@@ -721,6 +721,7 @@ canvas {
     height: 100%;
     align-content: center;
     padding-left: 8.125vw;
+    justify-content: center;
 }
 #catago-info{
     padding-left: min(8.125vw, 50px);
