@@ -3340,6 +3340,7 @@ textarea {
         align-items: center;
     }
     .product-img{
+        top: 0;
         width: 80vw;
         position: relative;
         left: 0;
