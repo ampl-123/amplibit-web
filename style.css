@@ -14,6 +14,8 @@
     align-items: center;
     justify-content: center;
 }*/
+
+
 .cursor-wrapper {
     position: absolute;
     top: 0;
@@ -34,9 +36,7 @@
     border: 3px solid #fff;
     height: 25px;
     width: 25px;
-    /*
-    mix-blend-mode: difference;
-    */
+    mix-blend-mode: exclusion;
     transition:
     width 0.3s ease,
     height 0.3s ease,
@@ -865,7 +865,9 @@ canvas {
 .product-view-more{
     bottom: 6.5vw;
     right: 7.2vw;
+    /*
     width: 11.3vw;
+    */
     height: 3.6vw;
 }
 .see-more {
@@ -986,6 +988,108 @@ canvas {
 
 /*products-page*/
 /**/
+.contact-link-wrapper{
+    width: 10vw;
+}
+.contact-link {
+    display: flex;
+    width: max-content;
+    height: 3.6vw;
+    align-items: center;
+    gap: 0.55vw;
+    padding: 0.8vw 1.5vw;
+    border: 1px solid white;
+    border-radius: 2.78vw;
+    color: white;
+    background-color: transparent;
+    transition: color 0.4s ease;
+    overflow: hidden;
+    margin-top: 0.5vw;
+    position: relative;
+    z-index: 4;
+}
+
+.contact-link-big{
+    border: 2px solid white;
+    padding: 3vw 4vw;
+}
+.contact-link.contact-link-big span{
+    font-size: 1.5vw;
+}
+.contact-link::before {
+    content: '';
+    position: absolute;
+    transform-origin: center;
+    top: -50%;
+    width: 0;
+    height: 150%;
+    left: -10%;
+    background: white;
+    border-radius: 50%;
+    transition: height 0.4s ease-in-out, width 0.4s ease-in-out, top 0.4s ease-in-out;
+    z-index: 0;
+}
+.contact-link span {
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    color: white;
+    transition: color 0.3s ease;
+    font-size: 1vw;
+    font-weight: 700;
+}
+.contact-link svg {
+    position: relative;
+    height: 1vw;
+    width: 1.4vw;
+    fill: white;
+    transition: fill 0.2s ease;
+    z-index: 10;
+}
+.contact-link:hover {
+    background-color: transparent;
+}
+.contact-link:hover span {
+    color: var(--gradient-first-color);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+.contact-link:hover svg {
+    fill: var(--gradient-first-color);
+}
+.contact-link:hover::before {
+    top: -50%;
+    width: 130%;
+    height: 300%;
+}
+#contact-link-vengo:hover{
+    color: #52c36f;
+}
+#contact-link-vengo:hover svg{
+    fill: #52c36f;
+}
+#contact-link-arrango:hover{
+    color: #0fbcb3;
+}
+#contact-link-arrango:hover svg{
+    fill: #0fbcb3;
+}
+#contact-link-catago:hover{
+    color: #34b0fd;
+}
+#contact-link-catago:hover svg{
+    fill: #34b0fd;
+}
+#contact-link-libby:hover{
+    color: #3c8ef0;
+}
+#contact-link-libby:hover svg{
+    fill: #3c8ef0;
+}
+.contact-link:hover {
+    color: #20cc9e;
+}
+
 .hero-section{
     display: flex;
     flex-flow: row;
@@ -1006,11 +1110,11 @@ canvas {
 }
 
 .hero-background-logo{
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
 }
 
-.hero-background-logo svg{
+.hero-background-logo-wrapper svg{
     position: absolute;
     width: 100%;
     height: 100%;
@@ -1036,7 +1140,7 @@ canvas {
     width: 40%;
     align-content: center;
     z-index: 2;
-    padding-left: 7vw;
+    padding-left: 6.5vw;
 }
 
 .hero-header{
@@ -1087,13 +1191,13 @@ canvas {
 
 #arrango-product-big{
     transform: translate(-50%, -60%);
-    width: 42vw;
+    width: 47vw;
     height: auto;
 }
 
 #arrango-product-small{
     transform: translate(-95%, -15%);
-    width: 26vw;
+    width: 31vw;
     height: auto;
 }
 
@@ -1167,34 +1271,36 @@ canvas {
     align-self: center;
 }
 
-.screen-header-image-wrapper{
-
-}
-
 .screen-mini-image{
     position: absolute;
-    width: 25vw;
+    width: 18vw;
     height: auto;
     box-shadow: 0 4px 50px 0 #0000001A;
     border-radius: 16px;
 }
+
 #arrango-screen-mini-1{
-    transform: translate(-175%, -105%) rotate(-20deg);
+    transform: translate(-39vw, -7vw) rotate(-20deg);
     z-index: 0;
 }
 #arrango-screen-mini-2{
-    transform: translate(65%, -130%) rotate(12deg);
+    transform: translate(20vw, -9vw) rotate(12deg);
     z-index: 5;
 }
 
 .screen-content{
     width: 100%;
     height: 100%;
-    padding: 0 5vw 5vw;
 }
 
 .screen-image-wrapper{
     width:100%;
+    height: 100%;
+    padding: 0 2.5vw 0;
+}
+
+.screen-image-wrapper svg{
+    width: 100%;
     height: 100%;
 }
 .screen{
@@ -1204,7 +1310,7 @@ canvas {
 
 .features-section{
     width: 100vw;
-    padding: 5vw 6vw 0;
+    padding: 5vw 7.6vw 0;
 }
 .section-gray{
     background: #F2F4FD;
@@ -1223,7 +1329,7 @@ canvas {
 .feature{
     display: flex;
     flex-flow: row;
-    gap: 10vw;
+    gap: 7vw;
     padding-bottom: 7vw;
 }
 .feature-flipped{
@@ -1235,7 +1341,7 @@ canvas {
     align-content: center;
 }
 .feature-image-section{
-    width: 50%;
+    width: 64%;
     align-content: center;
 }
 
@@ -1294,9 +1400,8 @@ canvas {
 .benefits-section{
     position: relative;
     width: 100vw;
-    height: max(100vh, 60vw);
     background: #FFFFFF;
-    padding: 5vw 0 15vw;
+    padding: 10vw 0 15vw;
     overflow: hidden;
 }
 
@@ -1333,25 +1438,25 @@ canvas {
 #arrango-benefits-background-logo-left{
     left: 0;
     --x-offset: -30%;
-    --y-offset: -70%;
+    --y-offset: -50%;
 }
 
 #arrango-benefits-background-logo-right{
     right: 0;
-    --x-offset: 30%;
-    --y-offset: -70%;
+    --x-offset: 20%;
+    --y-offset: -50%;
 
 }
 #vengo-benefits-background-logo-left{
     left: 0;
-    --x-offset: -30%;
-    --y-offset: 20%;
+    --x-offset: -26%;
+    --y-offset: 40%;
     --scale: 1.5;
 }
 #vengo-benefits-background-logo-right{
     right: 0;
     --x-offset: 20%;
-    --y-offset: -90%;
+    --y-offset: -80%;
     --scale: 0.85;
 }
 
@@ -1364,18 +1469,23 @@ canvas {
     font-family: Figtree, sans-serif;
     font-weight: 700;
     font-size: 4.86vw;
+    padding-bottom: 8.5vw;
     line-height: 100%;
     text-align: center;
     align-self: flex-start;
 }
 
 .benefits-content{
+    position: relative;
     width: 100%;
     height: 100%;
     justify-items: center;
     align-content: center;
 }
 
+.benefits-center-logo{
+    justify-self: center;
+}
 .benefits-center-logo-wrapper{
     position: relative;
     width: 41vw;
@@ -1402,7 +1512,7 @@ canvas {
     background: #E6E8F380;
     padding: 1.52vw 1.8vw 1.8vw;
     border-radius: 20px;
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(30px);
     font-weight: 400;
     font-size: 1.1vw;
     line-height: 110%;
@@ -1425,34 +1535,35 @@ canvas {
 }
 
 #arrango-benefits-card-1{
-    transform: translate(-15vw, -5vw);
+    transform: translate(-14vw, -4vw);
 }
 #arrango-benefits-card-2{
-    transform: translate(15vw, -5vw);
+    transform: translate(13vw, -3vw);
 }
 #arrango-benefits-card-3{
-    transform: translate(-25vw, 15vw);
+    transform: translate(-25vw, 23vw);
 }
 #arrango-benefits-card-4{
-    transform: translate(18vw, 17vw);
+    transform: translate(19vw, 23vw);
 }
 #vengo-benefits-card-1{
-    transform: translate(-15vw, 5vw);
+    transform: translate(-16vw, 10vw);
 }
 #vengo-benefits-card-2{
-    transform: translate(13vw, 9vw);
+    transform: translate(13vw, 13vw);
 }
 #vengo-benefits-card-3{
-    transform: translate(-20vw, -18vw);
+    transform: translate(-21vw, -13vw);
 }
 #vengo-benefits-card-4{
-    transform: translate(22vw, -17vw);
+    transform: translate(24vw, -12vw);
 }
 
 .request-a-demo-section{
     display: flex;
     width: 100vw;
     height: max(50vh, 30vw);
+    padding: 20vh 13.889vw 0;
 }
 
 .arrango-background{
@@ -1462,8 +1573,6 @@ canvas {
     background: linear-gradient(252.14deg, #79E55C 0.52%, #15B04A 99.48%);
 }
 .request-a-demo-text{
-    align-content: center;
-    justify-items: center;
     width: 70%;
     font-family: Figtree, sans-serif;
     font-weight: 500;
@@ -1477,7 +1586,6 @@ canvas {
 }
 
 .request-a-demo-button{
-    align-content: center;
     width: 30%;
 }
 #book-a-demo-arrango:hover{
@@ -1485,6 +1593,12 @@ canvas {
 }
 #book-a-demo-arrango:hover svg{
     fill: #1eca9a;
+}
+#book-a-demo-vengo:hover{
+    color: #5ed557;
+}
+#book-a-demo-vengo:hover svg{
+    fill: #5ed557;
 }
 /**/
 .lets-talk {
