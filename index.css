@@ -1111,6 +1111,7 @@ canvas {
     margin-top: 2vw;
     position: relative;
     z-index: 4;
+    text-decoration: none;
 }
 .see-more::before {
     content: '';

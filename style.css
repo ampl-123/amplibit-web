@@ -775,7 +775,7 @@ canvas {
     max-width: 90vh;
 }
 .product-page-img.no-transition {
-    transition: none !important;
+    transition: none;
 }
 #vengo-3{
     width: 90%;
@@ -843,6 +843,11 @@ canvas {
     max-height: 75vh;
 }
 .parallax{
+    --parallax-y: 0px;
+    will-change: transform;
+    transform: translateY(var(--parallax-y, 0));
+    /* Optional: smooth out the movement */
+    transition: transform 0.1s linear;
 }
 .product-item-logo{
     position: absolute;
@@ -886,6 +891,7 @@ canvas {
     margin-top: 0.5vw;
     position: relative;
     z-index: 4;
+    text-decoration: none;
 }
 .see-more::before {
     content: '';
@@ -989,7 +995,7 @@ canvas {
 /*products-page*/
 /**/
 .contact-link-wrapper{
-    width: 10vw;
+    width: 100%;
 }
 .contact-link {
     display: flex;
@@ -999,14 +1005,14 @@ canvas {
     gap: 0.55vw;
     padding: 0.8vw 1.5vw;
     border: 1px solid white;
-    border-radius: 2.78vw;
+    border-radius: 5vw;
     color: white;
     background-color: transparent;
     transition: color 0.4s ease;
     overflow: hidden;
-    margin-top: 0.5vw;
     position: relative;
     z-index: 4;
+    text-decoration: none;
 }
 
 .contact-link-big{
@@ -1045,6 +1051,9 @@ canvas {
     fill: white;
     transition: fill 0.2s ease;
     z-index: 10;
+}
+.contact-link a{
+    text-decoration: none;
 }
 .contact-link:hover {
     background-color: transparent;
@@ -1088,6 +1097,11 @@ canvas {
 }
 .contact-link:hover {
     color: #20cc9e;
+}
+
+
+.light-background .hamby-wrapper {
+    mix-blend-mode: difference;
 }
 
 .hero-section{
@@ -1201,6 +1215,10 @@ canvas {
     height: auto;
 }
 
+#vengo-product-big{
+    width: 41vw;
+}
+
 .screen-section{
     width: 100vw;
     height: 100%;
@@ -1284,6 +1302,10 @@ canvas {
     z-index: 0;
 }
 #arrango-screen-mini-2{
+    transform: translate(20vw, -9vw) rotate(12deg);
+    z-index: 5;
+}
+#vengo-screen-mini-2{
     transform: translate(20vw, -9vw) rotate(12deg);
     z-index: 5;
 }
@@ -1518,7 +1540,7 @@ canvas {
     line-height: 110%;
     gap: 0.7vw;
     color: #3D3D4F;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) translateY(var(--parallax-y, 0));
     width: max-content;
 }
 
@@ -1535,28 +1557,28 @@ canvas {
 }
 
 #arrango-benefits-card-1{
-    transform: translate(-14vw, -4vw);
+    transform: translate(-14vw, -4vw) translateY(var(--parallax-y, 0));
 }
 #arrango-benefits-card-2{
-    transform: translate(13vw, -3vw);
+    transform: translate(13vw, -3vw) translateY(var(--parallax-y, 0));
 }
 #arrango-benefits-card-3{
-    transform: translate(-25vw, 23vw);
+    transform: translate(-25vw, 23vw) translateY(var(--parallax-y, 0));
 }
 #arrango-benefits-card-4{
-    transform: translate(19vw, 23vw);
+    transform: translate(19vw, 23vw) translateY(var(--parallax-y, 0));
 }
 #vengo-benefits-card-1{
-    transform: translate(-16vw, 10vw);
+    transform: translate(-16vw, 10vw) translateY(var(--parallax-y, 0));
 }
 #vengo-benefits-card-2{
-    transform: translate(13vw, 13vw);
+    transform: translate(13vw, 13vw) translateY(var(--parallax-y, 0));
 }
 #vengo-benefits-card-3{
-    transform: translate(-21vw, -13vw);
+    transform: translate(-21vw, -13vw) translateY(var(--parallax-y, 0));
 }
 #vengo-benefits-card-4{
-    transform: translate(24vw, -12vw);
+    transform: translate(24vw, -12vw) translateY(var(--parallax-y, 0));
 }
 
 .request-a-demo-section{
@@ -1573,7 +1595,7 @@ canvas {
     background: linear-gradient(252.14deg, #79E55C 0.52%, #15B04A 99.48%);
 }
 .request-a-demo-text{
-    width: 70%;
+    width: 65%;
     font-family: Figtree, sans-serif;
     font-weight: 500;
     font-size: 1.8vw;
@@ -1586,7 +1608,7 @@ canvas {
 }
 
 .request-a-demo-button{
-    width: 30%;
+    width: 35%;
 }
 #book-a-demo-arrango:hover{
     color: #1eca9a;
