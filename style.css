@@ -1,3 +1,6 @@
+:root {
+    --parallax-multiplier: 1;
+}
 * {
     margin: 0;
     padding: 0;
@@ -1200,17 +1203,17 @@ canvas {
 }
 .hero-image{
     position: absolute;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) translateY(var(--parallax-y, 0));
 }
 
 #arrango-product-big{
-    transform: translate(-50%, -60%);
+    transform: translate(-50%, -60%) translateY(var(--parallax-y, 0));
     width: 47vw;
     height: auto;
 }
 
 #arrango-product-small{
-    transform: translate(-95%, -15%);
+    transform: translate(-95%, -15%) translateY(var(--parallax-y, 0));
     width: 31vw;
     height: auto;
 }
@@ -1298,15 +1301,15 @@ canvas {
 }
 
 #arrango-screen-mini-1{
-    transform: translate(-39vw, -7vw) rotate(-20deg);
+    transform: translate(-39vw, -7vw) rotate(-20deg) translateY(var(--parallax-y, 0));
     z-index: 0;
 }
 #arrango-screen-mini-2{
-    transform: translate(20vw, -9vw) rotate(12deg);
+    transform: translate(20vw, -9vw) rotate(12deg) translateY(var(--parallax-y, 0));
     z-index: 5;
 }
 #vengo-screen-mini-2{
-    transform: translate(20vw, -9vw) rotate(12deg);
+    transform: translate(20vw, -9vw) rotate(12deg) translateY(var(--parallax-y, 0));
     z-index: 5;
 }
 
@@ -1413,7 +1416,7 @@ canvas {
 }
 
 .feature-text span{
-    font-weight: 600;
+    font-weight: 700;
     font-size: 1.53vw;
     line-height: 2.3vw;
     color: #3d3d4f
@@ -1540,7 +1543,7 @@ canvas {
     line-height: 110%;
     gap: 0.7vw;
     color: #3D3D4F;
-    transform: translate(-50%, -50%) translateY(var(--parallax-y, 0));
+    transform: translate(-50%, -50%) translateY(calc(var(--parallax-y, 0)));
     width: max-content;
 }
 
@@ -1602,9 +1605,14 @@ canvas {
     color: white;
     line-height: 150%;
 }
+.request-a-demo-text-wrapper{
+    display: flex;
+    flex-flow: column;
+    gap: 1vw;
+}
 .request-a-demo-text span{
     font-size: 3vw;
-    line-height: 100%;
+    line-height: 110%;
 }
 
 .request-a-demo-button{
