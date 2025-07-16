@@ -782,7 +782,7 @@
 
         <div id="vengo-benefits-card-3" class="benefits-cards-wrapper">
             <div class="benefits-card parallax" data-speed="0.2">
-                <h1>70%</h1>
+                <h1 data-t="70">0%</h1>
                 <span>Time reduction<br></span>
                 From vendor onboarding to<br>
                 daily management operations
@@ -790,7 +790,7 @@
         </div>
         <div id="vengo-benefits-card-4" class="benefits-cards-wrapper">
             <div class="benefits-card parallax" data-speed="0.2">
-                <h1>100%</h1>
+                <h1 data-t="100">0%</h1>
                 <span>Audit Ready<br></span>
                 Always prepared with<br>
                 complete documentation<br>
@@ -950,6 +950,46 @@
 
         window.Parallax = { init };
     })();
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const e = entry.target;
+
+                    if (e.dataset.animated) return;
+                    e.dataset.animated = 'true';
+
+                    const t = +e.dataset.t,
+                        duration = 2000, // <-- duration in ms (2 seconds)
+                        s = performance.now(),
+                        original = e.textContent.trim(),
+                        unit = original.replace(/^[\d.,\s]+/, '');
+
+                    function easeInOutCubic(p) {
+                        return p < 0.5
+                            ? 4 * p * p * p
+                            : 1 - Math.pow(-2 * p + 2, 3) / 2;
+                    }
+
+                    (function u(n) {
+                        let p = (n - s) / duration;
+                        if (p > 1) p = 1;
+                        p = easeInOutCubic(p);
+                        e.textContent = ~~(t * p) + unit;
+                        p < 1 && requestAnimationFrame(u);
+                    })(s);
+
+                    observer.unobserve(e);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.benefits-card h1[data-t]').forEach(e => {
+            observer.observe(e);
+        });
+    });
 </script>
 </body>
 </html>
