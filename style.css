@@ -1007,7 +1007,7 @@ canvas {
     align-items: center;
     gap: 0.55vw;
     padding: 0.8vw 1.5vw;
-    border: 1px solid white;
+    border: 2px solid white;
     border-radius: 5vw;
     color: white;
     background-color: transparent;
@@ -1135,18 +1135,35 @@ canvas {
     position: absolute;
     width: 100%;
     height: 100%;
-    right: 15%;
 }
 
 #arrango-hero {
     background: linear-gradient(257.44deg, #23D192 0.58%, #0CB9BC 99.42%);
 }
+#arrango-hero svg{
+    left: -10vw;
+}
 
 #vengo-hero {
     background: linear-gradient(252.14deg, #79E55C 0.52%, #15B04A 99.48%);
 }
+#vengo-hero svg{
+    left: -15vw;
+}
 
-#arrango hero-background-logo svg{
+#catago-hero {
+    background: linear-gradient(252.14deg, #3FD9FF 0.52%, #56ABFA 99.48%);
+}
+#catago-hero svg{
+    left: -20vw;
+}
+
+#arrango-hero hero-background-logo svg{
+    position: absolute;
+    left: 40%;
+    align-content: center;
+}
+#catago-hero hero-background-logo svg{
     position: absolute;
     left: 40%;
     align-content: center;
@@ -1160,7 +1177,7 @@ canvas {
     padding-left: 6.5vw;
 }
 
-.hero-header{
+.hero-header h2{
     font-weight: 600;
     font-size: 1.1vw;
     line-height: 100%;
@@ -1169,7 +1186,7 @@ canvas {
     color: #FFFFFF;
 }
 
-.hero-title{
+.hero-title h1{
     font-family: Figtree, sans-serif;
     font-weight: 700;
     font-size: 6.67vw;
@@ -1178,7 +1195,7 @@ canvas {
     margin-top: 1.38vw;
 }
 
-.hero-seller{
+.hero-seller p{
     font-weight: 500;
     font-size: 1.38vw;
     line-height: 2.08vw;
@@ -1245,14 +1262,16 @@ canvas {
 }
 .screen-header-title {
     font-family: Figtree, sans-serif;
-    font-weight: 700;
-    font-size: 4.86vw;
-    line-height: 111%;
-    text-align: center;
-    width: fit-content;
+
     position: relative;
     color: #000000;
     z-index: 2;
+}
+.screen-header-title h1{
+    font-weight: 700;
+    font-size: 4.86vw;
+    text-align: center;
+    line-height: 111%;
 }
 
 #arrango-screen-title-background{
@@ -1262,6 +1281,11 @@ canvas {
 }
 #vengo-screen-title-background{
     background: linear-gradient(252.14deg, #79E55C 0.52%, #15B04A 99.48%);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+#vengo-screen-title-background{
+    background: linear-gradient(90deg, #2BCFE4 0%, #23CDFB 94.75%);
     -webkit-background-clip: text;
     background-clip: text;
 }
@@ -1307,7 +1331,6 @@ canvas {
 #arrango-screen-mini-2{
     transform: translate(20vw, -9vw) rotate(12deg) translateY(var(--parallax-y, 0));
     z-index: 5;
-    box-shadow: none;
 }
 #vengo-screen-mini-1{
     transform: scale(1.5) translate(-21vw, -8vw) rotate(-20deg) translateY(var(--parallax-y, 0));
@@ -1357,6 +1380,16 @@ canvas {
 #arrango-screen-small-2{
     transform: translate(21vw, 27vw);
 }
+#vengo-screen-small-1{
+    transform: translate(21vw, 6vw);
+}
+#vengo-screen-small-2{
+    width: 23.5vw;
+    transform: translate(73vw, 8vw);
+}
+#vengo-screen-small-3{
+    transform: translate(21vw, 13vw);
+}
 
 .screen{
     width: 100%;
@@ -1376,10 +1409,12 @@ canvas {
 
 .feature-section-title{
     font-family: Figtree, sans-serif;
-    font-weight: 600;
-    font-size: 3.47vw;
     line-height: 110.00000000000001%;
     padding-bottom: 5vw;
+}
+.feature-section-title h1{
+    font-weight: 600;
+    font-size: 3.47vw;
 }
 .feature{
     display: flex;
@@ -1418,11 +1453,13 @@ canvas {
 
 .feature-header{
     font-family: Figtree, sans-serif;
-    font-weight: 600;
     font-size: 2.61vw;
     line-height: 110%;
     margin-bottom: 2vw;
     color: #3d3d4f;
+}
+.feature-header h4{
+    font-weight: 600;
 }
 .arrango-feature-header{
     background: linear-gradient(257.44deg, #23D192 0.58%, #18C5C8 99.42%);
@@ -1431,6 +1468,11 @@ canvas {
 }
 .vengo-feature-header{
     background: linear-gradient(90deg, #4AD5B0 0%, #84E67F 94.75%);
+    -webkit-background-clip: text;
+    background-clip: text
+}
+.catago-feature-header{
+    background: linear-gradient(90deg, #2BCFE4 0%, #23CDFB 94.75%);
     -webkit-background-clip: text;
     background-clip: text
 }
@@ -1445,7 +1487,7 @@ canvas {
     line-height: 2.3vw;
 }
 
-.feature-text span{
+.feature-text strong{
     font-weight: 700;
     font-size: 1.53vw;
     line-height: 2.3vw;
@@ -1514,6 +1556,18 @@ canvas {
     --y-offset: -80%;
     --scale: 0.85;
 }
+#catago-benefits-background-logo-left{
+    left: 0;
+    --x-offset: -56%;
+    --y-offset: 7%;
+    --scale: 1.5;
+}
+#catago-benefits-background-logo-right{
+    right: 0;
+    --x-offset: 20%;
+    --y-offset: -80%;
+    --scale: 0.85;
+}
 
 .benefits-background-logo{
     width: 100%;
@@ -1522,14 +1576,15 @@ canvas {
 
 .benefits-title{
     font-family: Figtree, sans-serif;
-    font-weight: 700;
-    font-size: 4.86vw;
     padding-bottom: 8.5vw;
     line-height: 100%;
     text-align: center;
     align-self: flex-start;
 }
-
+.benefits-title h1{
+    font-weight: 600;
+    font-size: 4.86vw;
+}
 .benefits-content{
     position: relative;
     width: 100%;
@@ -1577,7 +1632,7 @@ canvas {
     width: max-content;
 }
 
-.benefits-card span{
+.benefits-card strong{
     font-weight: 600;
     font-size: 1.4vw;
     line-height: 100%;
@@ -1587,6 +1642,14 @@ canvas {
     font-weight: 600;
     font-size: 3.05vw;
     line-height: 100%;
+}
+.benefits-card-svg-wrapper{
+    width: 3vw;
+    height: 3vw;
+}
+.benefits-card-svg-wrapper svg{
+    width: 100%;
+    height: 100%;
 }
 
 #arrango-benefits-card-1{
@@ -1613,12 +1676,25 @@ canvas {
 #vengo-benefits-card-4{
     transform: translate(24vw, -12vw) translateY(var(--parallax-y, 0));
 }
+#catago-benefits-card-1{
+    transform: translate(-14vw, 14vw) translateY(var(--parallax-y, 0));
+}
+#catago-benefits-card-2{
+    transform: translate(17vw, 19vw) translateY(var(--parallax-y, 0));
+}
+#catago-benefits-card-3{
+    transform: translate(-17vw, -6vw) translateY(var(--parallax-y, 0));
+}
+#catago-benefits-card-4{
+    transform: translate(25vw, -13vw) translateY(var(--parallax-y, 0));
+}
 
 .request-demo-section{
     display: flex;
+    align-items: center;
     width: 100vw;
     height: max(50vh, 30vw);
-    padding: 20vh 13.889vw 0;
+    padding: 0 13.889vw;
 }
 
 .arrango-background{
@@ -1626,6 +1702,9 @@ canvas {
 }
 .vengo-background{
     background: linear-gradient(252.14deg, #79E55C 0.52%, #15B04A 99.48%);
+}
+.catago-background{
+    background: linear-gradient(252.14deg, #3FD9FF 0.52%, #56ABFA 99.48%);
 }
 .request-demo-text-section{
     width: 65%;
@@ -1640,9 +1719,14 @@ canvas {
     flex-flow: column;
     gap: 1vw;
 }
-.request-demo-text-section span{
+
+.request-demo-text-section h3{
+    font-weight: 500;
     font-size: 3vw;
     line-height: 110%;
+}
+.request-demo-text-section p{
+    font-weight: 450;
 }
 .request-demo-button{
     width: 35%;
@@ -1658,6 +1742,12 @@ canvas {
 }
 #book-a-demo-vengo:hover svg{
     fill: #5ed557;
+}
+#book-a-demo-catago:hover{
+    color: #44cafc;
+}
+#book-a-demo-catago:hover svg{
+    fill: #44cafc;
 }
 
 .request-demo-button-section{
