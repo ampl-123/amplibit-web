@@ -343,7 +343,7 @@
     </div>
   </div>
   <div class="request-demo-button-section">
-    <div class="contact-link-wrapper">
+    <div class="contact-link-wrapper request-demo-contact">
       <a id="book-a-demo-catago" class="contact-link contact-link-big" href="contact.html">
         <span>REQUEST A DEMO</span>
         <svg width="20" height="14" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg">
@@ -389,8 +389,34 @@
     <p>Amplibit 2024. All rights reserved.</p>
   </div>
 </footer>
-<script>document.addEventListener("DOMContentLoaded",function(){function c(){d.classList.add("hover")}function e(){d.classList.remove("hover")}var d=document.getElementById("cursor"),a=document.querySelector(".hamby"),b=document.querySelector(".lets-talk"),g=document.querySelector(".logo"),f=document.querySelectorAll("a");document.body.addEventListener("mousemove",function(h){d.style.left=h.clientX+"px";d.style.top=h.clientY+"px"});a.addEventListener("click",function(){a.classList.contains("active")?(a.classList.remove("active"),document.body.classList.remove("navigationActive"),setTimeout(function(){a.classList.remove("ready")},700)):(a.classList.add("active"),document.body.classList.add("navigationActive"),setTimeout(function(){a.classList.add("ready")},700))});a.addEventListener("mouseenter",c);a.addEventListener("mouseleave",e);b.addEventListener("mouseenter",c);b.addEventListener("mouseleave",e);g.addEventListener("mouseenter",c);g.addEventListener("mouseleave",e);for(b=0;b<f.length;b++)f[b].addEventListener("mouseenter",c),f[b].addEventListener("mouseleave",e)});</script>
+<script>document.addEventListener("DOMContentLoaded", function() {
+    function c() {
+        d.classList.add("hover")
+    }
 
+    function e() {
+        d.classList.remove("hover")
+    }
+    var d = document.getElementById("cursor"),
+        a = document.querySelector(".hamby"),
+        g = document.querySelector(".logo");
+    document.body.addEventListener("mousemove", function(h) {
+        d.style.left = h.clientX + "px";
+        d.style.top = h.clientY + "px"
+    });
+    a.addEventListener("click", function() {
+        a.classList.contains("active") ? (a.classList.remove("active"), document.body.classList.remove("navigationActive"), setTimeout(function() {
+            a.classList.remove("ready")
+        }, 700)) : (a.classList.add("active"), document.body.classList.add("navigationActive"), setTimeout(function() {
+            a.classList.add("ready")
+        }, 700))
+    });
+    a.addEventListener("mouseenter", c);
+    a.addEventListener("mouseleave", e);
+    g.addEventListener("mouseenter", c);
+    g.addEventListener("mouseleave", e);
+});
+</script>
 <script>document.addEventListener("scroll", () => {
     document.body.classList.remove("blue", "green");
 
@@ -411,6 +437,16 @@
         (document.querySelector(".footer").getBoundingClientRect().top <= 0 &&
             document.querySelector(".footer").getBoundingClientRect().bottom > 0)) {
         document.body.classList.add("blue");
+    }
+
+    const textWrapper = document.querySelector(".request-demo-text-wrapper");
+    const linkWrapper = document.querySelector(".request-demo-button-section")
+    if (textWrapper) {
+        const rect = textWrapper.getBoundingClientRect();
+        if (rect.top < window.innerHeight) {
+            textWrapper.classList.add("active");
+            linkWrapper.classList.add("active");
+        }
     }
 });
 </script>
@@ -474,59 +510,39 @@
     })();
 </script>
 <script>
-    const counters = document.querySelectorAll('counter');
-    const animatedElements = new Set();
+    document.addEventListener("DOMContentLoaded", () => {
 
-    const easeInOutCubic = (t) => {
-        return t < 0.5
-            ? 4 * t * t * t
-            : 1 - Math.pow(-2 * t + 2, 3) / 2;
-    };
+        const animationLength = 2000;
 
-    const animateCounter = (element) => {
-        const endNr = parseInt(element.dataset.end) || 100;
-        const duration = 2000;
-        const startTime = Date.now();
+        function count(element){
 
-        const updateCount = () => {
-            const elapsed = Date.now() - startTime;
-            const progress = Math.min(elapsed / duration, 1);
+            if (element.dataset.animated) return;
+            element.dataset.animated = 'true';
 
-            const easedProgress = easeInOutCubic(progress);
-            const currentValue = Math.floor(endNr * easedProgress);
 
-            element.innerHTML = currentValue;
+            const target = element.dataset.t;
+            const text = element.textContent.trim();
+            const suffix = text.replace(/^[\d.,\s]+/, '');
 
-            if (progress < 1) {
-                requestAnimationFrame(updateCount);
-            } else {
-                element.innerHTML = endNr;
+            const start = performance.now();
+
+            function updateValue(currentTime) {
+
+                let t = (currentTime - start) / animationLength;
+                t = Math.min(t, 1);
+
+                const ease = easeInOutCubic(t);
+                const currentValue = Math.floor(target * ease);
+
+                element.textContent = currentValue + suffix;
+
+                if (t < 1) {
+                    requestAnimationFrame(updateValue);
+                }
             }
-        };
 
-        updateCount();
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting && !animatedElements.has(entry.target)) {
-                animatedElements.add(entry.target);
-                animateCounter(entry.target);
-            }
-        });
-    }, {
-        threshold: 0.2
-    });
-
-    counters.forEach(counter => {
-        counter.classList.add('counter');
-        observer.observe(counter);
-    });
-</script>
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const ANIMATION_DURATION = 2000;
-        const VISIBILITY_THRESHOLD = 0.1;
+            requestAnimationFrame(updateValue);
+        }
 
         function easeInOutCubic(progress) {
             if (progress < 0.5) {
@@ -536,45 +552,16 @@
             }
         }
 
-        function animateCounter(element) {
-
-            if (element.dataset.animated) return;
-            element.dataset.animated = 'true';
-
-            const targetValue = Number(element.dataset.t);
-            const originalText = element.textContent.trim();
-            const suffix = originalText.replace(/^[\d.,\s]+/, '');
-
-            const startTime = performance.now();
-
-            function updateValue(currentTime) {
-
-                let progress = (currentTime - startTime) / ANIMATION_DURATION;
-                progress = Math.min(progress, 1);
-
-                const easedProgress = easeInOutCubic(progress);
-                const currentValue = Math.floor(targetValue * easedProgress);
-
-                element.textContent = currentValue + suffix;
-
-                if (progress < 1) {
-                    requestAnimationFrame(updateValue);
-                }
-            }
-
-            requestAnimationFrame(updateValue);
-        }
-
         const observer = new IntersectionObserver(
             (entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        animateCounter(entry.target);
+                        count(entry.target);
                         observer.unobserve(entry.target);
                     }
                 });
             },
-            { threshold: VISIBILITY_THRESHOLD }
+            { threshold: 0.01 }
         );
 
         const counters = document.querySelectorAll('.benefits-card h1[data-t]');

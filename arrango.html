@@ -44,9 +44,10 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.ripples/0.5.3/jquery.ripples.min.js"></script>
+
 </head>
 <body>
-<div class='cursor' id="cursor"></div>
+<div class="cursor" id="cursor"></div>
 
 <div class="overlay-wrapper">
     <img src="img/team.webp" alt="navigation image" loading="lazy">
@@ -310,7 +311,7 @@
         </div>
     </div>
     <div class="request-demo-button-section">
-        <div class="contact-link-wrapper">
+        <div class="contact-link-wrapper request-demo-contact">
             <a id="book-a-demo-arrango" class="contact-link contact-link-big" href="contact.html">
                 <span>REQUEST A DEMO</span>
                 <svg width="20" height="14" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg">
@@ -357,7 +358,13 @@
     </div>
 </footer>
 <script>document.addEventListener("DOMContentLoaded",function(){function c(){d.classList.add("hover")}function e(){d.classList.remove("hover")}var d=document.getElementById("cursor"),a=document.querySelector(".hamby"),b=document.querySelector(".lets-talk"),g=document.querySelector(".logo"),f=document.querySelectorAll("a");document.body.addEventListener("mousemove",function(h){d.style.left=h.clientX+"px";d.style.top=h.clientY+"px"});a.addEventListener("click",function(){a.classList.contains("active")?(a.classList.remove("active"),document.body.classList.remove("navigationActive"),setTimeout(function(){a.classList.remove("ready")},700)):(a.classList.add("active"),document.body.classList.add("navigationActive"),setTimeout(function(){a.classList.add("ready")},700))});a.addEventListener("mouseenter",c);a.addEventListener("mouseleave",e);b.addEventListener("mouseenter",c);b.addEventListener("mouseleave",e);g.addEventListener("mouseenter",c);g.addEventListener("mouseleave",e);for(b=0;b<f.length;b++)f[b].addEventListener("mouseenter",c),f[b].addEventListener("mouseleave",e)});</script>
-<script>document.addEventListener("scroll", () => {
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        document.body.classList.add("blue")
+    });
+
+
+    document.addEventListener("scroll", () => {
     document.body.classList.remove("blue", "green");
 
     if (document.querySelector(".hero-section").getBoundingClientRect().top <= 0 &&
@@ -377,6 +384,15 @@
         (document.querySelector(".footer").getBoundingClientRect().top <= 0 &&
             document.querySelector(".footer").getBoundingClientRect().bottom > 0)) {
         document.body.classList.add("blue");
+    }
+    const textWrapper = document.querySelector(".request-demo-text-wrapper");
+    const linkWrapper = document.querySelector(".request-demo-button-section")
+    if (textWrapper) {
+        const rect = textWrapper.getBoundingClientRect();
+        if (rect.top < window.innerHeight) {
+            textWrapper.classList.add("active");
+            linkWrapper.classList.add("active");
+        }
     }
 });
 </script>

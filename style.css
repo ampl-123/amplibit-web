@@ -1718,8 +1718,16 @@ canvas {
     display: flex;
     flex-flow: column;
     gap: 1vw;
+    transform-style: preserve-3d;
+    transform: rotateX(90deg) translateZ(-50px);
+    opacity: 0;
+    transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-origin: center bottom;
 }
-
+.request-demo-text-wrapper.active {
+    transform: rotateX(0deg) translateZ(0);
+    opacity: 1;
+}
 .request-demo-text-section h3{
     font-weight: 500;
     font-size: 3vw;
@@ -1730,6 +1738,20 @@ canvas {
 }
 .request-demo-button{
     width: 35%;
+}
+.request-demo-button-section.active .request-demo-contact {
+    transform: rotateX(0deg) translateZ(0);
+    opacity: 1;
+}
+
+/* Initial state for the button wrapper */
+.request-demo-contact {
+    transform-style: preserve-3d;
+    transform: rotateX(90deg) translateZ(-50px);
+    opacity: 0;
+    transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-origin: center bottom;
+    transition-delay: 0.3s;
 }
 #book-a-demo-arrango:hover{
     color: #1eca9a;
