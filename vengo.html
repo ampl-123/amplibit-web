@@ -443,32 +443,41 @@
 
         let elements = [];
         let ticking = false;
+        let resizeTimer;
 
         function init() {
+            // Collect all elements first without measuring
             const items = document.querySelectorAll('.parallax');
 
-            elements = Array.from(items).map(el => {
-                el.style.setProperty('--parallax-y', '0px');
+            // Batch all DOM reads together
+            elements = Array.from(items).map(el => ({
+                el: el,
+                speed: parseFloat(el.dataset.speed) || 0.5,
+                offset: parseFloat(el.dataset.offset) || 0,
+                top: 0 // Will be calculated later
+            }));
 
-                const rect = el.getBoundingClientRect();
+            // Single reflow for all measurements
+            updateElementPositions();
+        }
 
-                return {
-                    el: el,
-                    speed: parseFloat(el.dataset.speed) || 0.5,
-                    offset: parseFloat(el.dataset.offset) || 0,
-                    top: rect.top + window.scrollY
-                };
+        function updateElementPositions() {
+            // Batch all getBoundingClientRect calls
+            elements.forEach(item => {
+                const rect = item.el.getBoundingClientRect();
+                item.top = rect.top + window.scrollY;
             });
         }
 
-        function updateElements() {
-            const scrolled = window.scrollY;
-            const vh = window.innerHeight;
+        function updateParallax() {
+            const scrollY = window.scrollY;
+            const viewportHeight = window.innerHeight;
+            const screenMultiplier = Math.min(window.innerWidth / 1920, 1);
 
             elements.forEach(({ el, speed, offset, top }) => {
-                if (top < scrolled + vh && top > scrolled - vh) {
-                    const multiplier = Math.max(0.1, Math.min(window.innerWidth / 1920, 1));
-                    const parallaxY = (-(scrolled - top) * speed + offset) * multiplier;
+                // Check if element is in viewport
+                if (top < scrollY + viewportHeight && top > scrollY - viewportHeight) {
+                    const parallaxY = (-(scrollY - top) * speed + offset) * screenMultiplier;
                     el.style.setProperty('--parallax-y', `${parallaxY}px`);
                 }
             });
@@ -478,22 +487,37 @@
 
         function onScroll() {
             if (!ticking) {
-                window.requestAnimationFrame(updateElements);
+                window.requestAnimationFrame(updateParallax);
                 ticking = true;
             }
         }
 
-        if (window.innerWidth > 768) {
-            init();
-            updateElements();
-            window.addEventListener('scroll', onScroll, { passive: true });
-            window.addEventListener('resize', () => {
-                init();
-                updateElements();
-            });
+        function onResize() {
+            // Debounce resize events
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                updateElementPositions();
+                updateParallax();
+            }, 250);
         }
 
-        window.Parallax = { init };
+        // Initialize only on desktop
+        if (window.innerWidth > 768) {
+            // Wait for DOM to be fully loaded and styles applied
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', () => {
+                    init();
+                    updateParallax();
+                });
+            } else {
+                // DOM already loaded
+                init();
+                updateParallax();
+            }
+
+            window.addEventListener('scroll', onScroll, { passive: true });
+            window.addEventListener('resize', onResize, { passive: true });
+        }
     })();
 </script>
 <script>
