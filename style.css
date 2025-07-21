@@ -1285,7 +1285,7 @@ canvas {
     -webkit-background-clip: text;
     background-clip: text;
 }
-#vengo-screen-title-background{
+#catago-screen-title-background{
     background: linear-gradient(90deg, #2BCFE4 0%, #23CDFB 94.75%);
     -webkit-background-clip: text;
     background-clip: text;
@@ -1414,7 +1414,7 @@ canvas {
     line-height: 110.00000000000001%;
     padding-bottom: 5vw;
 }
-.feature-section-title h1{
+.feature-section-title h3{
     font-weight: 600;
     font-size: 3.47vw;
 }
@@ -1460,7 +1460,7 @@ canvas {
     margin-bottom: 2vw;
     color: #3d3d4f;
 }
-.feature-header h4{
+.feature-header h2{
     font-weight: 600;
 }
 .arrango-feature-header{
@@ -1469,7 +1469,7 @@ canvas {
     background-clip: text
 }
 .vengo-feature-header{
-    background: linear-gradient(90deg, #4AD5B0 0%, #84E67F 94.75%);
+    background: linear-gradient(252.14deg, #79E55C 0.52%, #15B04A 99.48%);
     -webkit-background-clip: text;
     background-clip: text
 }
