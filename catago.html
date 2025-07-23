@@ -147,7 +147,7 @@
       </div>
       <div class="hero-book-a-demo">
         <div class="contact-link-wrapper">
-          <a id="contact-link-vengo" class="contact-link" href="contact.html">
+          <a id="contact-link-catago" class="contact-link" href="contact.html">
             <span>BOOK A DEMO</span>
             <svg width="20" height="14" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg">
               <path d="M12.3327 14L10.6994 12.3083L14.841 8.16667H0.666016V5.83333H14.841L10.6994 1.69167L12.3327 0L19.3327 7L12.3327 14Z" />
@@ -159,7 +159,7 @@
   </div>
   <div class="hero-image-container">
     <div class="hero-image-wrapper">
-      <img class="hero-image" src="img/catago-hero.svg" alt="catago" loading="lazy"/>
+      <img class="hero-image" src="img/catago-hero.svg" alt="catago"/>
     </div>
   </div>
 </div>
@@ -197,7 +197,7 @@
 
 <div class="features-section section-gray">
   <div class="feature-section-title">
-      <h3>Main features</h3>
+      <h1>Main features</h1>
   </div>
   <div class="feature">
     <div class="feature-image-section">
@@ -207,7 +207,7 @@
     </div>
     <div class="feature-text-section">
       <div class="feature-header catago-feature-header">
-          <h4>Automated <span>Product Publishing</span></h4>
+          <h2>Automated <span>Product Publishing</span></h2>
       </div>
       <div class="feature-text">
           <p><strong>Scheduled Go-Live Management </strong>Configure product launches for specific dates with automatic system propagation. Built-in rollback capabilities and dependency checking ensure error-free deployments.
@@ -224,7 +224,7 @@
     </div>
     <div class="feature-text-section">
       <div class="feature-header catago-feature-header">
-          <h4><span>Rule-Based</span> Product<br> Variants</h4>
+          <h2><span>Rule-Based</span> Product<br> Variants</h2>
       </div>
       <div class="feature-text">
           <p><strong>Dynamic Product Configuration </strong>Create product variants using configurable business rules. Conditional logic enables automatic product selection based on customer profile, channel, geography, or campaign parameters.
@@ -241,7 +241,7 @@
     </div>
     <div class="feature-text-section">
       <div class="feature-header catago-feature-header">
-          <h4><span>API-First </span> Architecture</h4>
+          <h2><span>API-First </span> Architecture</h2>
       </div>
       <div class="feature-text">
           <p><strong>Seamless Integration </strong>Through restful API architecture with pre-built connectors for major core banking platforms and custom integration support for legacy systems.
@@ -258,7 +258,7 @@
     </div>
     <div class="feature-text-section">
       <div class="feature-header catago-feature-header">
-          <h4>Modular <span>Product Assembly</span></h4>
+          <h2>Modular <span>Product Assembly</span></h2>
       </div>
       <div class="feature-text">
           <p><strong>Package Configuration Engine </strong>Combine products from different categories using visual workflow builder. Dynamic pricing calculation with cross- selling optimization and regulatory compliance checks.</p>
@@ -274,7 +274,7 @@
       </div>
      <div class="feature-text-section">
        <div class="feature-header catago-feature-header">
-           <h4><span>Real-Time</span> Synchronization</h4>
+           <h2><span>Real-Time</span> Synchronization</h2>
           </div>
           <div class="feature-text">
               <p><strong>Cross-System Consistency </strong>Modify product attributes once, propagate instantly across all connected systems. Event-driven architecture ensures data consistency with conflict resolution and audit trails.</p>
@@ -332,8 +332,6 @@
         <img class="benefits-center-logo" src="img/catago-benefits-logo.svg" alt="catago-benefits-1" loading="lazy"/>
       </div>
     </div>
-
-
 </div>
 <div class="request-demo-section catago-background">
   <div class="request-demo-text-section">
@@ -566,6 +564,24 @@
 
         const counters = document.querySelectorAll('.benefits-card h1[data-t]');
         counters.forEach(counter => observer.observe(counter));
+    });
+</script>
+<script>
+    window.addEventListener("load", function() {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px'
+        });
+
+        document.querySelectorAll('.feature').forEach(feature => {
+            observer.observe(feature);
+        });
     });
 </script>
 </body>

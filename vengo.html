@@ -132,7 +132,6 @@
             <path d="M438.229 223.154L568.824 0.00253296L-116 0.00259283L13.1833 223.154L438.229 223.154Z" fill="white"/>
           </g>
         </svg>
-
     </div>
   </div>
   <div class="hero-headline-container">
@@ -160,7 +159,7 @@
   </div>
   <div class="hero-image-container">
     <div class="hero-image-wrapper">
-      <img class="hero-image" id="vengo-product-big" src="img/vengo-hero-2.svg" alt="arrango" fetchpriority="high"/>
+      <img class="hero-image parallax" data-speed="0.1" id="vengo-product-big" src="img/vengo-hero-2.svg" alt="arrango" loading="lazy"/>
     </div>
   </div>
 </div>
@@ -197,7 +196,7 @@
 
 <div class="features-section section-gray">
   <div class="feature-section-title">
-      <h3>Main features</h3>
+      <h1>Main features</h1>
   </div>
   <div class="feature">
     <div class="feature-image-section">
@@ -207,14 +206,14 @@
     </div>
     <div class="feature-text-section">
       <div class="feature-header vengo-feature-header">
-          <h4><span>AI-Powered</span> Vendor<br>Intelligence</h4>
+          <h2><span>AI-Powered </span>Vendor<br>Intelligence</h2>
       </div>
       <div class="feature-text">
           <p><strong>Instant Information Retrieval </strong>Advanced AI search capabilities provide immediate access to any vendor information. Ask questions in natural language, generate automated reports, and leverage intelligent data visualization dashboards to get answers in seconds, not hours.</p>
       </div>
     </div>
-
   </div>
+
   <div class="feature feature-flipped">
     <div class="feature-image-section">
       <div class="feature-image-background">
@@ -223,14 +222,14 @@
     </div>
     <div class="feature-text-section">
       <div class="feature-header vengo-feature-header">
-          <h4>Complete Digital <span>Lifecycle</span></h4>
+          <h2>Complete Digital <span>Lifecycle</span></h2>
       </div>
       <div class="feature-text">
           <p><strong>Request-to-Payment Automation </strong>Digitize your entire vendor lifecycle from initial requests through invoice processing. Automated workflows with built-in approvals ensure nothing falls through the cracks.</p>
       </div>
     </div>
-
   </div>
+
   <div class="feature">
     <div class="feature-image-section">
       <div class="feature-image-background">
@@ -239,14 +238,14 @@
     </div>
     <div class="feature-text-section">
       <div class="feature-header vengo-feature-header">
-          <h4><span>360° </span>Performance Monitoring</h4>
+          <h2><span>360° </span>Performance Monitoring</h2>
       </div>
       <div class="feature-text">
           <p><strong>Real-Time KPI Tracking </strong>Monitor vendor performance against agreed SLAs and KPIs with automated alerts. Visual dashboards provide instant insights for proactive vendor management.</p>
       </div>
     </div>
-
   </div>
+
   <div class="feature feature-flipped">
     <div class="feature-image-section">
       <div class="feature-image-background">
@@ -255,13 +254,12 @@
     </div>
     <div class="feature-text-section">
       <div class="feature-header vengo-feature-header">
-          <h4><span>Vendor </span>Portal</h4>
+          <h2><span>Vendor </span>Portal</h2>
       </div>
       <div class="feature-text">
           <p><strong>Real-Time Client-Vendor Interaction </strong>A centralized access point where vendors can interact directly with your systems. Streamline communication, reduce email clutter, and maintain complete audit trails.</p>
       </div>
     </div>
-
   </div>
 
 </div>
@@ -443,41 +441,32 @@
 
         let elements = [];
         let ticking = false;
-        let resizeTimer;
 
         function init() {
-            // Collect all elements first without measuring
             const items = document.querySelectorAll('.parallax');
 
-            // Batch all DOM reads together
-            elements = Array.from(items).map(el => ({
-                el: el,
-                speed: parseFloat(el.dataset.speed) || 0.5,
-                offset: parseFloat(el.dataset.offset) || 0,
-                top: 0 // Will be calculated later
-            }));
+            elements = Array.from(items).map(el => {
+                el.style.setProperty('--parallax-y', '0px');
 
-            // Single reflow for all measurements
-            updateElementPositions();
-        }
+                const rect = el.getBoundingClientRect();
 
-        function updateElementPositions() {
-            // Batch all getBoundingClientRect calls
-            elements.forEach(item => {
-                const rect = item.el.getBoundingClientRect();
-                item.top = rect.top + window.scrollY;
+                return {
+                    el: el,
+                    speed: parseFloat(el.dataset.speed) || 0.5,
+                    offset: parseFloat(el.dataset.offset) || 0,
+                    top: rect.top + window.scrollY
+                };
             });
         }
 
-        function updateParallax() {
-            const scrollY = window.scrollY;
-            const viewportHeight = window.innerHeight;
-            const screenMultiplier = Math.min(window.innerWidth / 1920, 1);
+        function updateElements() {
+            const scrolled = window.scrollY;
+            const vh = window.innerHeight;
 
             elements.forEach(({ el, speed, offset, top }) => {
-                // Check if element is in viewport
-                if (top < scrollY + viewportHeight && top > scrollY - viewportHeight) {
-                    const parallaxY = (-(scrollY - top) * speed + offset) * screenMultiplier;
+                if (top < scrolled + vh && top > scrolled - vh) {
+                    const multiplier = Math.max(0.1, Math.min(window.innerWidth / 1920, 1));
+                    const parallaxY = (-(scrolled - top) * speed + offset) * multiplier;
                     el.style.setProperty('--parallax-y', `${parallaxY}px`);
                 }
             });
@@ -487,37 +476,22 @@
 
         function onScroll() {
             if (!ticking) {
-                window.requestAnimationFrame(updateParallax);
+                window.requestAnimationFrame(updateElements);
                 ticking = true;
             }
         }
 
-        function onResize() {
-            // Debounce resize events
-            clearTimeout(resizeTimer);
-            resizeTimer = setTimeout(() => {
-                updateElementPositions();
-                updateParallax();
-            }, 250);
-        }
-
-        // Initialize only on desktop
         if (window.innerWidth > 768) {
-            // Wait for DOM to be fully loaded and styles applied
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', () => {
-                    init();
-                    updateParallax();
-                });
-            } else {
-                // DOM already loaded
-                init();
-                updateParallax();
-            }
-
+            init();
+            updateElements();
             window.addEventListener('scroll', onScroll, { passive: true });
-            window.addEventListener('resize', onResize, { passive: true });
+            window.addEventListener('resize', () => {
+                init();
+                updateElements();
+            });
         }
+
+        window.Parallax = { init };
     })();
 </script>
 <script>
@@ -577,6 +551,25 @@
 
         const counters = document.querySelectorAll('.benefits-card h1[data-t]');
         counters.forEach(counter => observer.observe(counter));
+    });
+</script>
+<script>
+    const observerOptions = {
+        threshold: 0.4,
+        rootMargin: '0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.feature').forEach(feature => {
+        observer.observe(feature);
     });
 </script>
 </body>
