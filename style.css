@@ -1021,7 +1021,7 @@ canvas {
 
 .contact-link-big{
     border: 2px solid white;
-    padding: 3vw 4vw;
+    padding: 2.5vw 3.6vw;
 }
 
 .contact-link.contact-link-big span{
@@ -1852,7 +1852,7 @@ canvas {
     transform-style: preserve-3d;
     transform: rotateX(90deg) translateZ(0);
     opacity: 0;
-    transition: all 0.6s ease-in-out;
+    transition: all 0.4s linear;
     transform-origin: center bottom;
 }
 
@@ -1884,7 +1884,7 @@ canvas {
     transform-style: preserve-3d;
     transform: rotateX(90deg) translateZ(0);
     opacity: 0;
-    transition: all 0.6s ease-out;
+    transition: all 0.4s linear;
     transform-origin: center bottom;
 }
 
@@ -1914,6 +1914,7 @@ canvas {
 
 .request-demo-button-section{
     padding-top: 1px;
+    background:
 }
 /**/
 .lets-talk {
