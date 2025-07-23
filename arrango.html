@@ -42,8 +42,8 @@
         >
     </noscript>
     <link rel="stylesheet" href="style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.ripples/0.5.3/jquery.ripples.min.js"></script>
+    <script rel="preconnect" src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script rel="preconnect" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.ripples/0.5.3/jquery.ripples.min.js"></script>
 
 </head>
 <body>
@@ -357,44 +357,68 @@
         <p>Amplibit 2024. All rights reserved.</p>
     </div>
 </footer>
-<script>document.addEventListener("DOMContentLoaded",function(){function c(){d.classList.add("hover")}function e(){d.classList.remove("hover")}var d=document.getElementById("cursor"),a=document.querySelector(".hamby"),b=document.querySelector(".lets-talk"),g=document.querySelector(".logo"),f=document.querySelectorAll("a");document.body.addEventListener("mousemove",function(h){d.style.left=h.clientX+"px";d.style.top=h.clientY+"px"});a.addEventListener("click",function(){a.classList.contains("active")?(a.classList.remove("active"),document.body.classList.remove("navigationActive"),setTimeout(function(){a.classList.remove("ready")},700)):(a.classList.add("active"),document.body.classList.add("navigationActive"),setTimeout(function(){a.classList.add("ready")},700))});a.addEventListener("mouseenter",c);a.addEventListener("mouseleave",e);b.addEventListener("mouseenter",c);b.addEventListener("mouseleave",e);g.addEventListener("mouseenter",c);g.addEventListener("mouseleave",e);for(b=0;b<f.length;b++)f[b].addEventListener("mouseenter",c),f[b].addEventListener("mouseleave",e)});</script>
 <script>
-    document.addEventListener("DOMContentLoaded", () => {
-        document.body.classList.add("blue")
-    });
-
-
-    document.addEventListener("scroll", () => {
-    document.body.classList.remove("blue", "green");
-
-    if (document.querySelector(".hero-section").getBoundingClientRect().top <= 0 &&
-        document.querySelector(".hero-section").getBoundingClientRect().bottom > 0) {
-        document.body.classList.add("blue");
-    }
-    else if ((document.querySelector(".screen-section").getBoundingClientRect().top <= 0 &&
-            document.querySelector(".screen-section").getBoundingClientRect().bottom > 0) ||
-        (document.querySelector(".features-section").getBoundingClientRect().top <= 0 &&
-            document.querySelector(".features-section").getBoundingClientRect().bottom > 0) ||
-        (document.querySelector(".benefits-section").getBoundingClientRect().top <= 0 &&
-            document.querySelector(".benefits-section").getBoundingClientRect().bottom > 0)) {
-        document.body.classList.add("green");
-    }
-    else if ((document.querySelector(".request-a-demo-section").getBoundingClientRect().top <= 0 &&
-            document.querySelector(".request-a-demo-section").getBoundingClientRect().bottom > 0) ||
-        (document.querySelector(".footer").getBoundingClientRect().top <= 0 &&
-            document.querySelector(".footer").getBoundingClientRect().bottom > 0)) {
-        document.body.classList.add("blue");
-    }
-    const textWrapper = document.querySelector(".request-demo-text-wrapper");
-    const linkWrapper = document.querySelector(".request-demo-button-section")
-    if (textWrapper) {
-        const rect = textWrapper.getBoundingClientRect();
-        if (rect.top < window.innerHeight) {
-            textWrapper.classList.add("active");
-            linkWrapper.classList.add("active");
+    document.addEventListener("DOMContentLoaded", function() {
+        function c() {
+            d.classList.add("hover")
         }
-    }
-});
+
+        function e() {
+            d.classList.remove("hover")
+        }
+        var d = document.getElementById("cursor"),
+            a = document.querySelector(".hamby"),
+            g = document.querySelector(".logo");
+        document.body.addEventListener("mousemove", function(h) {
+            d.style.left = h.clientX + "px";
+            d.style.top = h.clientY + "px"
+        });
+        a.addEventListener("click", function() {
+            a.classList.contains("active") ? (a.classList.remove("active"), document.body.classList.remove("navigationActive"), setTimeout(function() {
+                a.classList.remove("ready")
+            }, 700)) : (a.classList.add("active"), document.body.classList.add("navigationActive"), setTimeout(function() {
+                a.classList.add("ready")
+            }, 700))
+        });
+        a.addEventListener("mouseenter", c);
+        a.addEventListener("mouseleave", e);
+        g.addEventListener("mouseenter", c);
+        g.addEventListener("mouseleave", e);
+    });
+</script>
+<script>
+    document.addEventListener("scroll", () => {
+        document.body.classList.remove("blue", "green");
+
+        if (document.querySelector(".hero-section").getBoundingClientRect().top <= 0 &&
+            document.querySelector(".hero-section").getBoundingClientRect().bottom > 0) {
+            document.body.classList.add("blue");
+        }
+        else if ((document.querySelector(".screen-section").getBoundingClientRect().top <= 0 &&
+                document.querySelector(".screen-section").getBoundingClientRect().bottom > 0) ||
+            (document.querySelector(".features-section").getBoundingClientRect().top <= 0 &&
+                document.querySelector(".features-section").getBoundingClientRect().bottom > 0) ||
+            (document.querySelector(".benefits-section").getBoundingClientRect().top <= 0 &&
+                document.querySelector(".benefits-section").getBoundingClientRect().bottom > 0)) {
+            document.body.classList.add("green");
+        }
+        else if ((document.querySelector(".request-demo-section").getBoundingClientRect().top <= 0 &&
+                document.querySelector(".request-demo-section").getBoundingClientRect().bottom > 0) ||
+            (document.querySelector(".footer").getBoundingClientRect().top <= 0 &&
+                document.querySelector(".footer").getBoundingClientRect().bottom > 0)) {
+            document.body.classList.add("blue");
+        }
+
+        const textWrapper = document.querySelector(".request-demo-text-wrapper");
+        const linkWrapper = document.querySelector(".request-demo-button-section")
+        if (textWrapper) {
+            const rect = textWrapper.getBoundingClientRect();
+            if (rect.top < window.innerHeight) {
+                textWrapper.classList.add("active");
+                linkWrapper.classList.add("active");
+            }
+        }
+    });
 </script>
 <script>
     // Parallax using CSS Custom Properties (Much simpler!)
