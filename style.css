@@ -651,7 +651,7 @@ canvas {
     flex-flow: column;
     background: black;
     align-items: center;
-    height: 540vh;
+    height: 500vh;
     width: 100%;
     gap: max(2vw, 2vh);
 }
