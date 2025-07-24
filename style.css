@@ -607,7 +607,7 @@ canvas {
 }
 .solution-wrapper{
     width: 100%;
-    height: 120vh;
+    height: 100vh;
     display: flex;
     flex-flow: column;
     justify-content: center;
@@ -657,7 +657,7 @@ canvas {
 }
 .product-background{
     width: 98.5vw;
-    height: 99vh;
+    height: 98vh;
     border-radius: 2.2vw;
     z-index: 2;
 }
@@ -671,7 +671,7 @@ canvas {
     border-radius: 2.2vw;
     overflow: hidden;
     width: 100%;
-    height: 100vh;
+    height: 100%;
 }
 .product.visible .product-img-container {
     animation: fadeIn 0.8s ease-out forwards;
@@ -711,37 +711,43 @@ canvas {
     width: 100%;
     transform: translate(-30%);
 }
+
 #background-logo-libby svg{
-/*    height: 100%;
-    width: 100%;*/
     transform: translate(20%);
 }
+
 .item-info{
     display: flex;
     flex-flow: column;
     position: relative;
+    gap: 1vw;
     width: 35%;
     height: 100%;
     align-content: center;
     padding-left: 8.125vw;
     justify-content: center;
 }
+
 #catago-info{
     padding-left: min(8.125vw, 50px);
     width: 35%
 }
+
 #libby-info{
     padding-left: min(8.125vw, 30px);
     width: 35%
 }
+
 #libby-img{
     padding-right: 3vw;
 }
+
 .item-img {
     width: 65%;
     height: 100%;
     align-content: center;
 }
+
 .product-item-name{
     position: relative;
     font-size: 5.6vw;
@@ -749,6 +755,7 @@ canvas {
     color: #FFFFFF;
     margin-bottom: 1vw;
 }
+
 .product-img-container{
     width: 100%;
     height: 100%;
@@ -759,6 +766,7 @@ canvas {
     opacity: 0;
     position: relative;
 }
+
 .product-img-wrapper {
     width: 80%;
     height: 100%;
@@ -767,19 +775,22 @@ canvas {
     align-content: center;
     justify-content: center;
 }
+
 .product-page-img{
     height: auto;
     position: absolute;
     top:50%;
     left: 50%;
-    transition: transform 0.4s ease-in-out;
     transform: translate(-50%, -50%);
+    transition: transform 0.4s ease-in-out;
     will-change: transform;
     max-width: 90vh;
 }
+
 .product-page-img.no-transition {
     transition: none;
 }
+
 #vengo-3{
     width: 90%;
     z-index:1;
@@ -814,28 +825,32 @@ canvas {
 #vengo-gqi-2{
     width:25%;
     position: absolute;
-    transform: translate(70%, 30%);
+    transform: translate(-50%, -50%) translate(70%, 30%);
 }
 #arrango-1{
+    top: 40%;
+    left: 55%;
     width: 90%;
     z-index:3;
 }
 #arrango-2{
+    top: 40%;
+    left: 55%;
     width: 50%;
-    transform: translate(10%, 20%);
+    transform: translate(-50%, -50%) translate(10%, 20%);
     z-index:3;
 }
 #libby-1{
     width: 55vw;
     max-width: 90vh;
     height: auto;
-    transform: translate(0, -10%);
+    transform: translate(-50%, -50%) translate(0, -10%);
 }
 #libby-2{
     width:30vw;
     max-width: 50vh;
     position: absolute;
-    transform: translate(70%, 40%);
+    transform: translate(-50%, -50%) translate(70%, 40%);
 }
 .product-img-svg-wrapper {
     width: 60vw;
@@ -849,7 +864,6 @@ canvas {
     --parallax-y: 0px;
     will-change: transform;
     transform: translateY(var(--parallax-y, 0));
-    /* Optional: smooth out the movement */
     transition: transform 0.1s linear;
 }
 .product-item-logo{
@@ -867,16 +881,11 @@ canvas {
     color: #FFFFFF;
     font-size: 1.52vw;
     font-weight: 500;
-    margin-bottom: 30px;
     width: 80%;
 }
 .product-view-more{
     bottom: 6.5vw;
     right: 7.2vw;
-    /*
-    width: 11.3vw;
-    */
-    height: 3.6vw;
 }
 .see-more {
     display: flex;
@@ -1440,6 +1449,16 @@ canvas {
     transform: translate(21vw, 12vw);
 }
 
+
+#catago-screen-small-1{
+    width: 31.32vw;
+    transform: translate(65vw, 1vw);
+}
+
+#catago-screen-small-2{
+    width: 30.69vw;
+    transform: translate(-27vw, 28vw);
+}
 .screen{
     width: 100%;
     height: 100%;
@@ -1734,7 +1753,7 @@ canvas {
     flex-flow: column;
     background: #E6E8F380;
     padding: 1.52vw 1.8vw 1.8vw;
-    border-radius: 20px;
+    border-radius: min(1.38vw, 20px);
     backdrop-filter: blur(30px);
     font-weight: 400;
     font-size: 1.1vw;
@@ -1805,7 +1824,7 @@ canvas {
 }
 
 #catago-benefits-card-2{
-    transform: translate(17vw, 19vw) translateY(var(--parallax-y, 0));
+    transform: translate(20vw, 20vw) translateY(var(--parallax-y, 0));
 }
 
 #catago-benefits-card-3{

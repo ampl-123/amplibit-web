@@ -172,8 +172,8 @@
       </div>
       <div class="screen-header-background-images">
         <div class="screen-header-image-container">
-          <img class="screen-mini-image parallax" data-speed="0.05" id="vengo-screen-mini-1" src="img/vengo-screen-mini-1.svg" alt="arrango" loading="lazy" width="357" height="254"/>
-          <img class="screen-mini-image parallax" data-speed="0.05" id="vengo-screen-mini-2" src="img/vengo-screen-mini-2.svg" alt="arrango" loading="lazy"/>
+          <img class="screen-mini-image parallax" data-speed="0.05" id="vengo-screen-mini-1" src="img/vengo-screen-mini-1.svg" alt="catago" loading="lazy" width="357" height="254"/>
+          <img class="screen-mini-image parallax" data-speed="0.05" id="vengo-screen-mini-2" src="img/vengo-screen-mini-2.svg" alt="catago" loading="lazy"/>
 
         </div>
       </div>
@@ -185,11 +185,13 @@
   </div>
   <div class="screen-content">
     <div class="screen-image-wrapper">
-        <img class="parallax" data-speed="0.03" id="vengo-screen-big" src="img/vengo-screen-big.svg" alt="arrango" loading="lazy"/>
+        <img class="parallax" data-speed="0.03" id="catago-screen-big" src="img/catago-screen-big.svg" alt="catago" loading="lazy"/>
         <div class="screen-small-images-wrapper">
-            <img class="parallax" data-speed="0.05" id="vengo-screen-small-1" src="img/vengo-screen-small-1.svg" alt="arrango" loading="lazy"/>
-            <img class="parallax" data-speed="0.05" id="vengo-screen-small-2" src="img/vengo-screen-small-2.svg" alt="arrango" loading="lazy"/>
-            <img class="parallax" data-speed="0.05" id="vengo-screen-small-3" src="img/vengo-screen-small-3.svg" alt="arrango" loading="lazy"/>
+            <img class="parallax" data-speed="0.05" id="catago-screen-small-1" src="img/catago-screen-small-1.svg" alt="catago" loading="lazy"/>
+            <img class="parallax" data-speed="0.05" id="catago-screen-small-2" src="img/catago-screen-small-2.svg" alt="catago" loading="lazy"/>
+<!--
+            <img class="parallax" data-speed="0.05" id="vengo-screen-small-3" src="img/vengo-screen-small-3.svg" alt="catago" loading="lazy"/>
+-->
         </div>
     </div>
   </div>
@@ -202,7 +204,7 @@
   <div class="feature">
     <div class="feature-image-section">
       <div class="feature-image-background">
-        <img class="feature-image" src="img/vengo-feature-1.svg" alt="arrango-feature-1" loading="lazy" />
+        <img class="feature-image" src="img/catago-feature-1.svg" alt="catago-feature-1" loading="lazy" />
       </div>
     </div>
     <div class="feature-text-section">
@@ -219,7 +221,7 @@
   <div class="feature feature-flipped">
     <div class="feature-image-section">
       <div class="feature-image-background">
-        <img class="feature-image" src="img/vengo-feature-2.svg" alt="arrango-feature-2" loading="lazy"/>
+        <img class="feature-image" src="img/vengo-feature-2.svg" alt="catago-feature-2" loading="lazy"/>
       </div>
     </div>
     <div class="feature-text-section">
@@ -236,7 +238,7 @@
   <div class="feature">
     <div class="feature-image-section">
       <div class="feature-image-background">
-        <img class="feature-image" src="img/vengo-feature-3.svg" alt="arrango-feature-3" loading="lazy"/>
+        <img class="feature-image" src="img/vengo-feature-3.svg" alt="catago-feature-3" loading="lazy"/>
       </div>
     </div>
     <div class="feature-text-section">
@@ -253,7 +255,7 @@
   <div class="feature feature-flipped">
     <div class="feature-image-section">
       <div class="feature-image-background">
-        <img class="feature-image" src="img/vengo-feature-4.svg" alt="arrango-feature-4" loading="lazy"/>
+        <img class="feature-image" src="img/vengo-feature-4.svg" alt="catago-feature-4" loading="lazy"/>
       </div>
     </div>
     <div class="feature-text-section">
@@ -269,7 +271,7 @@
   <div class="feature">
      <div class="feature-image-section">
          <div class="feature-image-background">
-            <img class="feature-image" src="img/vengo-feature-3.svg" alt="arrango-feature-3" loading="lazy"/>
+            <img class="feature-image" src="img/vengo-feature-3.svg" alt="catago-feature-3" loading="lazy"/>
          </div>
       </div>
      <div class="feature-text-section">
@@ -306,21 +308,21 @@
             </div>
         </div>
         <div id="catago-benefits-card-2" class="benefits-cards-wrapper">
-            <div class="benefits-card parallax" data-speed="0.15">
+            <div class="benefits-card parallax" data-speed="0.1">
                 <h1>-</h1>
                 <h2><strong>Advanced Product<br>Personalization</strong></h2>
                 <p>Targeted variants for different<br>customer segments and<br>automated campaign scheduling</p>
             </div>
         </div>
         <div id="catago-benefits-card-3" class="benefits-cards-wrapper">
-            <div class="benefits-card parallax" data-speed="0.1">
+            <div class="benefits-card parallax" data-speed="0.15">
                 <h1 data-t="80">0%</h1>
                 <h2><strong>Reduction in Time-to-<br>Market<br></strong></h2>
                 <p>From 2-3 weeks to 2-3 days<br>for new product launches with<br>95% fewer deployment errors</p>
             </div>
         </div>
         <div id="catago-benefits-card-4" class="benefits-cards-wrapper">
-            <div class="benefits-card parallax" data-speed="0.1">
+            <div class="benefits-card parallax" data-speed="0.15">
                 <h1>-</h1>
                 <h2><strong>Real-Time Product<br>Updates<br></strong></h2>
                 <p>Instant propagation across<br>all systems with zero<br>downtime and automated<br>regulatory compliance</p>
@@ -494,7 +496,7 @@
             }
         }
 
-        if (window.innerWidth > 768) {
+        if (window.innerWidth > 1200) {
             init();
             updateElements();
             window.addEventListener('scroll', onScroll, { passive: true });
