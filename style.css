@@ -1916,6 +1916,8 @@ canvas {
     padding-bottom: 8.5vw;
     line-height: 100%;
     text-align: center;
+    z-index: 100;
+    position: relative;
 }
 
 .benefits-title h1{
@@ -2173,7 +2175,6 @@ canvas {
 
 .request-demo-button-section{
     padding-top: 1px;
-    background:
 }
 /**/
 .lets-talk {
@@ -4502,6 +4503,7 @@ footer .text-hello span:nth-of-type(even),
     .screen-header-text br {
         display: none;
     }
+
 }
 
 @media screen and (max-width: 680px) {
@@ -4912,7 +4914,7 @@ footer .text-hello span:nth-of-type(even),
     }
     .screen-header-title h1,
     .feature-section-title h1{
-        font-size: 10vw;
+        font-size: 9vw;
     }
     .feature-section-title {
         line-height: unset;
@@ -4967,6 +4969,127 @@ footer .text-hello span:nth-of-type(even),
     .feature-image-background {
         padding: 2vw;
         border-radius: 4vw;
+    }
+
+    .benefits-section{
+        height: 100vh;
+    }
+
+    .benefits-title h1{
+        font-weight: 600;
+        font-size: 9vw;
+    }
+
+    .benefits-cards-container{
+        flex-flow: column;
+        gap: 20px;
+        padding: 3vw 5vw 3vw;
+    }
+    .benefits-card{
+        position: relative;
+        font-size: 3.5vw;
+        transform: none;
+        padding: 15px;
+    }
+
+    .benefits-card-svg-wrapper{
+        width: 8vw;
+        height: 8vw;
+    }
+    #arrango-benefits-card-1{
+        transform: none;
+        align-self: flex-start;
+    }
+
+    #arrango-benefits-card-2{
+        transform: none;
+        align-self: flex-end;
+    }
+
+    #arrango-benefits-card-3{
+        transform: none;
+        align-self: flex-start;
+    }
+
+    #arrango-benefits-card-4{
+        transform: none;
+        align-self: flex-end;
+    }
+
+    #vengo-benefits-card-1{
+        transform: none;
+        align-self: flex-start;
+    }
+
+    #vengo-benefits-card-2{
+        transform: none;
+        align-self: flex-end;
+    }
+
+    #vengo-benefits-card-3{
+        transform: none;
+        align-self: flex-start;
+    }
+
+    #vengo-benefits-card-4{
+        transform: none;
+        align-self: flex-end;
+    }
+
+    #catago-benefits-card-1{
+        transform: none;
+        align-self: flex-start;
+    }
+
+    #catago-benefits-card-2{
+        transform: none;
+        align-self: flex-end;
+    }
+
+    #catago-benefits-card-3{
+        transform: none;
+        align-self: flex-start;
+    }
+
+    #catago-benefits-card-4{
+        transform: none;
+        align-self: flex-end;
+    }
+
+    #libby-benefits-card-1{
+        transform: none;
+        align-self: flex-start;
+    }
+
+    #libby-benefits-card-2{
+        transform: none;
+        align-self: flex-end;
+    }
+
+    #libby-benefits-card-3{
+        transform: none;
+        align-self: flex-start;
+    }
+
+    #libby-benefits-card-4{
+        transform: none;
+        align-self: flex-end;
+    }
+
+    .benefits-card h1{
+        font-size: 6vw;
+    }
+
+    .benefits-center-logo{
+        height: 100%;
+    }
+
+    .benefits-center-logo-wrapper{
+        width:80%;
+    }
+    .benefits-background-logo-wrapper{
+        width: 100%;
+
     }
     .request-demo-section{
         flex-flow: column;
