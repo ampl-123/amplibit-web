@@ -1274,6 +1274,7 @@ canvas {
     flex-flow: row;
     width: 100vw;
     height: 100vh;
+    overflow-x: hidden;
 }
 
 .hero-background{
@@ -1281,6 +1282,7 @@ canvas {
     top: 0;
     width: 100vw;
     height: 100vh;
+    overflow-x: hidden;
 }
 
 .hero-background-logo-wrapper{
@@ -2065,7 +2067,7 @@ canvas {
     display: flex;
     align-items: center;
     width: 100vw;
-    height: max(50vh, 30vw);
+    height: max(40vh, 30vw);
     padding: 0 13.889vw;
 }
 
@@ -4965,6 +4967,24 @@ footer .text-hello span:nth-of-type(even),
     .feature-image-background {
         padding: 2vw;
         border-radius: 4vw;
+    }
+    .request-demo-section{
+        flex-flow: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 30px;
+    }
+    .request-demo-text-section{
+        font-size: 4vw;
+        width: 100%;
+
+    }
+    .request-demo-text-section h3{
+        font-size: 5vw;
+    }
+    .contact-link.contact-link-big span{
+        font-size: 3vw;
+        font-weight: 700;
     }
     /*##########################################################################*/
 }
