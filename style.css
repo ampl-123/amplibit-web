@@ -1674,7 +1674,7 @@ canvas {
 
 .feature-section-title{
     font-family: Figtree, sans-serif;
-    line-height: 110.00000000000001%;
+    line-height: 110%;
     padding-bottom: 5vw;
 }
 
@@ -4425,6 +4425,7 @@ footer .text-hello span:nth-of-type(even),
 
     .hero-section{
         flex-flow: column-reverse;
+        height: 100svh;
     }
     .hero-image-container {
         width: 100%;
