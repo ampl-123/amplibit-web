@@ -1659,6 +1659,7 @@ canvas {
 .features-section{
     width: 100vw;
     padding: 5vw 6.94vw 0;
+    overflow-x: hidden;
 }
 
 .section-gray{
