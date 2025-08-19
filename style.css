@@ -4424,8 +4424,7 @@ footer .text-hello span:nth-of-type(even),
     }
 
     .hero-section{
-        flex-flow: column-reverse;
-        height: 100svh;
+
     }
     .hero-image-container {
         width: 100%;
@@ -4862,6 +4861,14 @@ footer .text-hello span:nth-of-type(even),
         font-size: 4vw;
     }
 
+    .hero-section{
+        flex-flow: column-reverse;
+        height: 100svh;
+    }
+
+    #libby-hero-section{
+        padding-bottom: 5vh;
+    }
     .hero-header h2{
         font-size: 4.5vw;
     }
