@@ -4867,7 +4867,7 @@ footer .text-hello span:nth-of-type(even),
     }
 
     #libby-hero-section{
-        padding-bottom: 5vh;
+
     }
     .hero-header h2{
         font-size: 4.5vw;
@@ -4915,7 +4915,7 @@ footer .text-hello span:nth-of-type(even),
 
     #libby-product-small{
         width: 50%;
-        transform: translate(-20%, 150%);
+        transform: translate(-20%, 130%);
     }
 
     .contact-link {
@@ -5049,6 +5049,30 @@ footer .text-hello span:nth-of-type(even),
     #arrango-benefits-card-4{
         transform: none;
         align-self: flex-end;
+    }
+
+    #arrango-benefits-background-logo-left{
+        left: 0;
+        --x-offset: -30%;
+        --y-offset: 20%;
+    }
+
+    #arrango-benefits-background-logo-right{
+        right: 0;
+        --x-offset: 40%;
+        --y-offset: -90%;
+    }
+
+    #libby-benefits-background-logo-left{
+        left: 0;
+        --x-offset: -30%;
+        --y-offset: 20%;
+    }
+
+    #libby-benefits-background-logo-right{
+        right: 0;
+        --x-offset: 40%;
+        --y-offset: -90%;
     }
 
     #vengo-benefits-card-1{
