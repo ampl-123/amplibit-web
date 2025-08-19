@@ -740,7 +740,7 @@ canvas {
     align-items: center;
     height: 500vh;
     width: 100%;
-    gap: max(2vw, 2vh);
+    gap: max(1vw, 1vh);
 }
 
 .product-background{
@@ -877,6 +877,7 @@ canvas {
 .product-page-img{
     height: auto;
     position: absolute;
+    width: 100%;
     top:50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -1354,7 +1355,7 @@ canvas {
 .hero-headline-container{
     height: 100%;
     width: 40%;
-    align-content: center;
+    align-content: flex-start;
     z-index: 2;
     padding: 0 6.5vw;
 }
@@ -1426,13 +1427,13 @@ canvas {
 }
 
 #libby-product-big{
-    transform: translateY(var(--parallax-y, 0));
+    transform: translate(-10%, 0);
     width: 44vw;
     height: auto;
 }
 
 #libby-product-small{
-    transform: translate(-40%, 55%) translateY(var(--parallax-y, 0));
+    transform: translate(60%, 55%) translateY(var(--parallax-y, 0));
     width: 31vw;
     height: auto;
 }
@@ -1637,6 +1638,11 @@ canvas {
 #catago-screen-small-2{
     width: 30.69vw;
     transform: translate(-27vw, 28vw);
+}
+
+#catago-screen-small-3{
+    width: 45.14vw;
+    transform: translate(55vw, 18vw);
 }
 
 #libby-screen-small-1{
@@ -4468,7 +4474,7 @@ footer .text-hello span:nth-of-type(even),
         gap: 0.55vw;
         padding: 2vw 3vw;
         border: 2px solid white;
-        border-radius: 5vw;
+        border-radius: 7vw;
         color: white;
         background-color: transparent;
         transition: color 0.4s ease;
@@ -4485,7 +4491,7 @@ footer .text-hello span:nth-of-type(even),
         z-index: 1;
         color: white;
         transition: color 0.3s ease;
-        font-size: 2.3vw;
+        font-size: 4vw;
         font-weight: 500;
     }
 
@@ -4732,6 +4738,7 @@ footer .text-hello span:nth-of-type(even),
 
     .product{
         flex-flow: column-reverse;
+        border-radius: 5vw;
     }
 
     .product-background{
@@ -4789,6 +4796,7 @@ footer .text-hello span:nth-of-type(even),
 
     .product-page-img{
         width: 100%;
+        top: 40%;
     }
 
     #background-logo-vengo svg{
@@ -4881,7 +4889,7 @@ footer .text-hello span:nth-of-type(even),
 
     .hero-seller p{
         font-size: 4.5vw;
-        line-height: 7vw;
+        line-height: 6vw;
         margin-top: 6vw;
     }
 
@@ -4916,7 +4924,7 @@ footer .text-hello span:nth-of-type(even),
 
     #libby-product-small{
         width: 50%;
-        transform: translate(-20%, 130%);
+        transform: translate(120%, 130%);
     }
 
     .contact-link {
@@ -4924,9 +4932,9 @@ footer .text-hello span:nth-of-type(even),
         width: max-content;
         align-items: center;
         gap: 0.55vw;
-        padding: 4vw 6vw;
+        padding: 5vw 7vw;
         border: 2px solid white;
-        border-radius: 6vw;
+        border-radius: 7vw;
         color: white;
         background-color: transparent;
         transition: color 0.4s ease;
@@ -4961,8 +4969,15 @@ footer .text-hello span:nth-of-type(even),
     .features-section {
         padding: 20vw 6vw;
     }
+    .feature{
+        gap: 3vw;
+        padding-bottom: 12vw;
+    }
+    .features-section > div:last-child{
+        padding-bottom: 0;
+    }
     .screen-header-text {
-        font-size: 6vw;
+        font-size: 4.5vw;
         line-height: 6vw;
         margin-top: 2vw;
         width: 100%;
@@ -5000,7 +5015,7 @@ footer .text-hello span:nth-of-type(even),
     }
     .feature-text {
         font-size: 4vw;
-        line-height: normal;
+        line-height: 6vw;
     }
     .feature-image-background {
         padding: 2vw;
@@ -5009,6 +5024,7 @@ footer .text-hello span:nth-of-type(even),
 
     .benefits-section{
         height: 110vh;
+        padding: 20vw 0;
     }
 
     .benefits-title h1{
@@ -5163,10 +5179,10 @@ footer .text-hello span:nth-of-type(even),
 
     }
     .request-demo-text-section h3{
-        font-size: 5vw;
+        font-size: 6vw;
     }
     .contact-link.contact-link-big span{
-        font-size: 3vw;
+        font-size: 3.5vw;
         font-weight: 700;
     }
     /*##########################################################################*/

@@ -1349,7 +1349,7 @@ canvas {
     background: #fff;
     align-items: center;
     width: 100%;
-    gap: max(2vw, 2vh);
+    gap: max(1vw, 1vh);
 }
 
 .product-background{
@@ -3899,6 +3899,7 @@ textarea {
 
         .product{
             flex-flow: column-reverse;
+            border-radius: 5vw;
         }
 
         #catago-product{
@@ -3994,7 +3995,7 @@ textarea {
         }
 
         #libby-1{
-            width: 90%;
+            width: 85%;
             transform: translate(0, 30%);
         }
 
