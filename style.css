@@ -882,7 +882,7 @@ canvas {
     transform: translate(-50%, -50%);
     transition: transform 0.4s ease-in-out;
     will-change: transform;
-    max-width: 90vh;
+    max-width: 70vh;
 }
 
 .product-page-img.no-transition {
