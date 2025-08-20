@@ -4948,7 +4948,7 @@ footer .text-hello span:nth-of-type(even),
     #catago-product-big{
         display: flex;
         position: relative;
-        align-content: center;
+        height: 100%;
     }
     #arrango-product-big{
         transform: none;
