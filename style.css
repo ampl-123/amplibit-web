@@ -4933,9 +4933,9 @@ footer .text-hello span:nth-of-type(even),
         display: none;
     }
 
-    .hero-image-wrapper{
+/*    .hero-image-wrapper{
         align-content: center;
-    }
+    }*/
 
     .hero-image {
         position: absolute;
