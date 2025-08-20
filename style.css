@@ -3471,6 +3471,7 @@ footer .contact-info p {
 
 .contact-form-wrapper img {
     width: 100%;
+    border-radius: 2vw;
 }
 
 .contact-form-wrapper form {
@@ -4422,6 +4423,9 @@ footer .text-hello span:nth-of-type(even),
         margin-bottom: 100px;
     }
 
+    .contact-form-wrapper img {
+        border-radius: 4vw;
+    }
     .contact-info-container {
         margin-bottom: 100px;
         width: 100%;
