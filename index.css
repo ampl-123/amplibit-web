@@ -779,6 +779,7 @@ html::-webkit-scrollbar {
     justify-content: center;
     box-shadow: inset 0 0 0 transparent;
     transition: box-shadow 0.2s ease-in-out, color 0.2s ease-in-out, bottom 0.3s ease-in, opacity 0.3s ease-in;
+    border-radius: 5vw;
 }
 
 .lets-talk:hover {
@@ -2389,6 +2390,7 @@ footer {
     min-width: 100%;
     width: 100%;
     min-height: 100%;
+    border-radius: 2vw;
 }
 
 .team-mosaic > div > div:hover {
@@ -2444,6 +2446,7 @@ footer {
     height: 100%;
     padding: 10%;
     text-decoration: none;
+    border-radius: 2vw;
 }
 
 .contact-fixed::before,
@@ -2991,6 +2994,7 @@ textarea {
         width: 180px;
         text-transform: uppercase;
         height: 50px;
+        border-radius: 15vw;
     }
 
     .about-us-wrapper h1,
@@ -3821,6 +3825,14 @@ textarea {
         .team-goals-wrapper p {
             padding-left: 40px;
             width: 90%;
+        }
+
+        .team-mosaic img{
+            border-radius: 4vw;
+        }
+
+        .team-mosaic .join-us{
+            border-radius: 4vw;
         }
 
         .careers-wrapper {

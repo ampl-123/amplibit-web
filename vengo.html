@@ -402,7 +402,8 @@
 });
 </script>
 <script>document.addEventListener("scroll", () => {
-    document.body.classList.remove("blue", "green");
+    0 > document.querySelector(".tell-us-about-it").getBoundingClientRect().bottom - window.innerHeight ? document.querySelector(".tell-us-about-it").classList.add("active") : document.querySelector(".tell-us-about-it").classList.remove("active")
+        document.body.classList.remove("blue", "green");
 
     if (document.querySelector(".hero-section").getBoundingClientRect().top <= 0 &&
         document.querySelector(".hero-section").getBoundingClientRect().bottom > 0) {

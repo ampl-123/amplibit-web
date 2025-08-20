@@ -899,9 +899,9 @@ body.green-first{
     font-weight: 700; 
     text-decoration: none;
 }
-.single-service-v2-wrapper:last-of-type a {
+/*.single-service-v2-wrapper:last-of-type a {
     background-color: #9BE545;
-}
+}*/
 
 .product-details {
     display: flex;

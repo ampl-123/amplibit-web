@@ -159,7 +159,7 @@
   </div>
   <div class="hero-image-container">
     <div class="hero-image-wrapper">
-      <img class="hero-image" src="img/catago-hero.svg" alt="catago"fetchpriority="high"/>
+      <img class="hero-image" id="catago-product-big" src="img/catago-hero.svg" alt="catago"fetchpriority="high"/>
     </div>
   </div>
 </div>
@@ -172,9 +172,8 @@
       </div>
       <div class="screen-header-background-images">
         <div class="screen-header-image-container">
-          <img class="screen-mini-image parallax" data-speed="0.05" id="vengo-screen-mini-1" src="img/vengo-screen-mini-1.svg" alt="catago" loading="lazy" width="357" height="254"/>
-          <img class="screen-mini-image parallax" data-speed="0.05" id="vengo-screen-mini-2" src="img/vengo-screen-mini-2.svg" alt="catago" loading="lazy"/>
-          <img class="screen-mini-image parallax" data-speed="0.05" id="vengo-screen-mini-3" src="img/catago-screen-mini-3.svg" alt="catago" loading="lazy"/>
+          <img class="screen-mini-image parallax" data-speed="0.05" id="catago-screen-mini-1" src="img/catago-screen-mini-1.svg" alt="catago" loading="lazy" width="357" height="254"/>
+          <img class="screen-mini-image parallax" data-speed="0.05" id="catago-screen-mini-2" src="img/catago-screen-mini-2.svg" alt="catago" loading="lazy"/>
         </div>
       </div>
     </div>
@@ -436,7 +435,8 @@
 });
 </script>
 <script>document.addEventListener("scroll", () => {
-    document.body.classList.remove("blue", "green");
+    0 > document.querySelector(".tell-us-about-it").getBoundingClientRect().bottom - window.innerHeight ? document.querySelector(".tell-us-about-it").classList.add("active") : document.querySelector(".tell-us-about-it").classList.remove("active")
+        document.body.classList.remove("blue", "green");
 
     if (document.querySelector(".hero-section").getBoundingClientRect().top <= 0 &&
         document.querySelector(".hero-section").getBoundingClientRect().bottom > 0) {
