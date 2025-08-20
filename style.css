@@ -2346,6 +2346,12 @@ canvas {
     padding-left: 6.95vw;
 }
 
+#about-us-hamby-wrapper,
+#about-us-logo-wrapper,
+#about-us-contact-fixed{
+    mix-blend-mode: difference;
+}
+
 .how-we-do-it-wrapper a {
     text-decoration: none;
     font-weight: 700;
