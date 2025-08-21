@@ -121,6 +121,13 @@
             <span></span>
         </div>
     </div>
+    <div class="scrollbar-wrapper">
+        <div class="scrollbar-track"></div>
+        <div class="scrollbar-thumbbox">
+            <div class="scrollbar-thumb"></div>
+        </div>
+        <p class="scrollbar-text">scroll</p>
+    </div>
 </header>
 <a href="/contact.html" class="contact-fixed">Let's talk</a>
 
@@ -212,7 +219,7 @@
                 <h2><span>Risk Assessment</span><br>Dashboard</h2>
             </div>
             <div class="feature-text">
-                <p><strong>Automated Risk Monitoring </strong>Continuous <br>assessment of outsourcing arrangements with<br>real-time risk scoring and automated alerts for<br>critical thresholds.</p>
+                <p><strong>Automated Risk Monitoring </strong>Continuous assessment of outsourcing arrangements with real-time risk scoring and automated alerts for critical thresholds.</p>
             </div>
         </div>
 
@@ -228,7 +235,7 @@
                 <h2>Digital Process<br><span>Management</span></h2>
             </div>
             <div class="feature-text">
-                <p><strong>5-Step Digital Workflow </strong>Streamline the entire<br>outsourcing lifecycle from initiation to registry<br>completion with guided digital processes and<br>automatic handoffs.</p>
+                <p><strong>5-Step Digital Workflow </strong>Streamline the entire outsourcing lifecycle from initiation to registry completion with guided digital processes and automatic handoffs.</p>
             </div>
         </div>
 
@@ -244,7 +251,7 @@
                 <h2>Compliance <span>Analytics</span><br></h2>
             </div>
             <div class="feature-text">
-                <p><strong>Regulatory Reporting </strong>Generate EU-compliant<br>reports with one click. Monitor compliance<br>status across all arrangements with visual<br>dashboards and automated alerts.</p>
+                <p><strong>Regulatory Reporting </strong>Generate EU-compliant reports with one click. Monitor compliance status across all arrangements with visual dashboards and automated alerts.</p>
             </div>
         </div>
 
@@ -357,6 +364,23 @@
         <p>Amplibit 2024. All rights reserved.</p>
     </div>
 </footer>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.documentElement.style.overflowY = 'scroll';
+        const thumb = document.querySelector('.scrollbar-thumb');
+        const track = document.querySelector('.scrollbar-track');
+
+        function updateThumbPosition() {
+            const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercentage = Math.max(0, Math.min(1, 1 - (window.scrollY / pageHeight)));
+            thumb.style.left = `${scrollPercentage * 100}%`;
+        }
+
+        window.addEventListener("scroll", updateThumbPosition);
+        window.addEventListener('resize', updateThumbPosition);
+        updateThumbPosition();
+    });
+</script>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         function c() {

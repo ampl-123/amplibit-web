@@ -76,7 +76,7 @@
         </div>
 
         <header>
-            <div class="logo-wrapper">
+            <div class="logo-wrapper" id="about-us-logo-wrapper">
                 <a href="/" class="logo" aria-label="Logo">
                     <svg viewBox="0 0 160 31" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clip-path="url(#clip0_13_860)">
@@ -102,14 +102,21 @@
                     </svg>
                 </a>
             </div>
-            <div class="hamby-wrapper">
+            <div class="hamby-wrapper" id="about-us-hamby-wrapper">
                 <div class="hamby">
                     <span></span>
                     <span></span>
                 </div>
             </div>
+            <div class="scrollbar-wrapper" id="about-us-scrollbar">
+                <div class="scrollbar-track"></div>
+                <div class="scrollbar-thumbbox">
+                    <div class="scrollbar-thumb"></div>
+                </div>
+                <p class="scrollbar-text">scroll</p>
+            </div>
         </header>
-        <a href="/contact.html" class="contact-fixed">Let's talk</a>
+        <a href="/contact.html" class="contact-fixed" id="about-us-contact-fixed">Let's talk</a>
 
         <div class="how-we-do-it-wrapper">
             <h1>Join our team!</h1>
@@ -258,7 +265,7 @@
                 <h1 class="partners-title">Trusted by</h1>
                 <div class="partners-container">
                     <a href="#" aria-label="OTP">
-                        <img src="img/otp-bank-monochrome.svg" alt="OTP Bank">
+                        <img src="img/otp-bank-monochrome-cro.svg" alt="OTP Bank">
                     </a>
                     <a href="#">
                         <img src="img/raiffeisenbank-monochrome.svg" alt="">
@@ -315,6 +322,23 @@
                 <p>Amplibit 2024. All rights reserved.</p>
             </div>
         </footer>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                document.documentElement.style.overflowY = 'scroll';
+                const thumb = document.querySelector('.scrollbar-thumb');
+                const track = document.querySelector('.scrollbar-track');
+
+                function updateThumbPosition() {
+                    const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
+                    const scrollPercentage = Math.max(0, Math.min(1, 1 - (window.scrollY / pageHeight)));
+                    thumb.style.left = `${scrollPercentage * 100}%`;
+                }
+
+                window.addEventListener("scroll", updateThumbPosition);
+                window.addEventListener('resize', updateThumbPosition);
+                updateThumbPosition();
+            });
+        </script>
         <script>document.addEventListener("DOMContentLoaded",function(){function c(){d.classList.add("hover")}function e(){d.classList.remove("hover")}var d=document.getElementById("cursor"),a=document.querySelector(".hamby"),b=document.querySelector(".lets-talk"),g=document.querySelector(".logo"),f=document.querySelectorAll("a");document.body.addEventListener("mousemove",function(h){d.style.left=h.clientX+"px";d.style.top=h.clientY+"px"});a.addEventListener("click",function(){a.classList.contains("active")?(a.classList.remove("active"),document.body.classList.remove("navigationActive"),setTimeout(function(){a.classList.remove("ready")},700)):(a.classList.add("active"),document.body.classList.add("navigationActive"),setTimeout(function(){a.classList.add("ready")},700))});a.addEventListener("mouseenter",c);a.addEventListener("mouseleave",e);b.addEventListener("mouseenter",c);b.addEventListener("mouseleave",e);g.addEventListener("mouseenter",c);g.addEventListener("mouseleave",e);for(b=0;b<f.length;b++)f[b].addEventListener("mouseenter",c),f[b].addEventListener("mouseleave",e)});</script>
         
         <script>var buttons=document.querySelectorAll(".career-opening h3"),containers=document.querySelectorAll(".career-description");buttons.forEach(function(b,c){b.addEventListener("click",function(){var a=containers[c];if(a.classList.contains("active"))a.style.height="0px",a.addEventListener("transitionend",function(){a.classList.remove("active")},{once:!0});else{a.classList.add("active");a.style.height="auto";var d=a.clientHeight+"px";a.style.height="0px";setTimeout(function(){a.style.height=d},0)}})});</script>

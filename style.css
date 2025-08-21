@@ -11,6 +11,10 @@
     font-style: normal;
 }
 
+html::-webkit-scrollbar {
+    display: none;
+}
+
 /*body {
     margin: 0;
     height: 100vh;
@@ -84,6 +88,79 @@
 
 .cursor-black.cursor:after {
     background-color: #000;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollbar-track {
+    position: absolute;
+    margin-top: 0.5vw;
+    height: 2px;
+    width: 3.5vw;
+    background-color: white;
+    border-radius: 0.7vw;
+    z-index: 777;
+}
+
+.scrollbar-thumb {
+    position: absolute;
+    margin-top: 0.32vw;
+    width: 0.5vw;
+    height: 0.5vw;
+    background-color: white;
+    border-radius: 50%;
+    z-index: 777;
+    transform-origin: center left;
+}
+
+.scrollbar-thumbbox{
+    position: relative;
+    width: 3.5vw;
+}
+
+.scrollbar-thumb::before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    bottom: -3px;
+    left: -3px;
+    right: -3px;
+}
+
+.scrollbar-text {
+    position: absolute;
+    left: 67%;
+    width: 0.5vw;
+    height: 0.5vw;
+    font-size: 0.83vw;
+    font-weight: 450;
+    line-height: normal;
+    text-decoration: none;
+    z-index: 777;
+    color: white;
+}
+
+.scrollbar-wrapper{
+    position: fixed;
+    bottom: 3.2vw;
+    left: 3.2vw;
+    width: 6.3vw;
+    height: 1vw;
+    z-index: 777;
+    transform-origin: top left;
+    transform: translateX(calc(-3.2vw - 50%)) rotate(-90deg);
+    animation: 1s 1s forwards scrollbar-wrapper;
+}
+
+@keyframes scrollbar-wrapper {
+    0% {
+        transform: translateX(calc(-3.2vw - 50%))  rotate(-90deg);
+    }
+    100% {
+        transform: translateX(0)  rotate(-90deg);
+    }
 }
 
 body {
@@ -201,13 +278,31 @@ html {
 
 .blue header .logo-wrapper,
 .blue header .hamby-wrapper,
+.blue header .scrollbar-wrapper,
 .green header .logo-wrapper,
 .green header .hamby-wrapper,
+.green header .scrollbar-wrapper,
+.green header .scrollbar-track,
+.green header .scrollbar-wrapper,
 .green-back-only header .logo-wrapper,
 .green-back-only header .hamby-wrapper,
+.green-back-only header .scrollbar-wrapper,
 .green-first header .logo-wrapper,
-.green-first header .hamby-wrapper {
+.green-first header .hamby-wrapper,
+.green-first header .scrollbar-wrapper {
     mix-blend-mode: unset;
+}
+
+.green .scrollbar-text{
+    color: black;
+}
+
+.green .scrollbar-track{
+    background-color: black;
+}
+
+.green .scrollbar-thumb{
+    background-color: black;
 }
 
 .green header path{
@@ -2348,6 +2443,7 @@ canvas {
 }
 
 #about-us-hamby-wrapper,
+#about-us-scrollbar,
 #about-us-logo-wrapper,
 #about-us-contact-fixed{
     mix-blend-mode: difference;
@@ -3245,7 +3341,8 @@ footer .contact-info p {
     mix-blend-mode: unset;
 }
 
-.green .contact-fixed{
+.green .contact-fixed,
+.green .scrollbar-wrapper{
     color: #000;
     mix-blend-mode: unset;
 }
@@ -4461,6 +4558,10 @@ footer .text-hello span:nth-of-type(even),
         padding: 40px 0 0;
     }
 
+    .scrollbar-wrapper{
+        display: none;
+    }
+
     .hero-section{
 
     }
@@ -4993,17 +5094,17 @@ footer .text-hello span:nth-of-type(even),
     }
 
     #libby-product-big{
+        position: relative;
         transform: none;
-        left: 5%;
         width: 80%;
         height: 100%;
     }
 
     #libby-product-small{
-        top: 35%;
-        left: 30%;
+        top: 30%;
+        left: 35%;
         width: 40%;
-        position: relative;
+        position: absolute;
     }
 
     .contact-link {
@@ -5043,10 +5144,10 @@ footer .text-hello span:nth-of-type(even),
         line-height: unset;
     }
     .feature-section-title h1 {
-        margin-bottom: 6vw;
+        font-size: 9vw;
     }
     .features-section {
-        padding: 20vw 6vw;
+        padding: 15vw 6vw;
     }
     .feature{
         gap: 3vw;
@@ -5074,19 +5175,23 @@ footer .text-hello span:nth-of-type(even),
 
     .feature {
         flex-flow: column;
+        gap: 6vw;
+        padding-bottom: 12vw;
     }
+
     .feature-image-section {
         width: 100%;
     }
     .feature-text-section {
         width: 100%;
+        padding: 0 2vw;
     }
     .feature-image-background {
         width: 100%;
         height: auto;
     }
     .feature-header h2 {
-        font-size: 8vw;
+        font-size: 7vw;
     }
     .feature-text strong {
         font-size: 4vw;
@@ -5102,7 +5207,7 @@ footer .text-hello span:nth-of-type(even),
     }
 
     .benefits-section{
-        padding: 20vw 0;
+        padding: 15vw 0;
     }
 
     .benefits-title{

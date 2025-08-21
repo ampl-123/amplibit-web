@@ -120,6 +120,13 @@
       <span></span>
     </div>
   </div>
+    <div class="scrollbar-wrapper">
+        <div class="scrollbar-track"></div>
+        <div class="scrollbar-thumbbox">
+            <div class="scrollbar-thumb"></div>
+        </div>
+        <p class="scrollbar-text">scroll</p>
+    </div>
 </header>
 <a href="/contact.html" class="contact-fixed">Let's talk</a>
 
@@ -373,6 +380,23 @@
     <p>Amplibit 2024. All rights reserved.</p>
   </div>
 </footer>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.documentElement.style.overflowY = 'scroll';
+        const thumb = document.querySelector('.scrollbar-thumb');
+        const track = document.querySelector('.scrollbar-track');
+
+        function updateThumbPosition() {
+            const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercentage = Math.max(0, Math.min(1, 1 - (window.scrollY / pageHeight)));
+            thumb.style.left = `${scrollPercentage * 100}%`;
+        }
+
+        window.addEventListener("scroll", updateThumbPosition);
+        window.addEventListener('resize', updateThumbPosition);
+        updateThumbPosition();
+    });
+</script>
 <script>document.addEventListener("DOMContentLoaded", function() {
     function c() {
         d.classList.add("hover")

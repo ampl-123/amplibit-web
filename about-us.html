@@ -109,6 +109,13 @@
                     <span></span>
                 </div>
             </div>
+            <div class="scrollbar-wrapper" id="about-us-scrollbar">
+                <div class="scrollbar-track"></div>
+                <div class="scrollbar-thumbbox">
+                    <div class="scrollbar-thumb"></div>
+                </div>
+                <p class="scrollbar-text">scroll</p>
+            </div>
         </header>
         <a href="/contact.html" class="contact-fixed" id="about-us-contact-fixed" >Let's talk</a>
 
@@ -322,7 +329,7 @@
                 <h1 class="partners-title">Trusted by</h1>
                 <div class="partners-container">
                     <a href="#" aria-label="OTP">
-                        <img src="img/otp-bank-monochrome.svg" alt="OTP Bank">
+                        <img src="img/otp-bank-monochrome-cro.svg" alt="OTP Bank">
                     </a>
                     <a href="#">
                         <img src="img/raiffeisenbank-monochrome.svg" alt="">
@@ -379,6 +386,23 @@
                 <p>Amplibit 2024. All rights reserved.</p>
             </div>
         </footer>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                document.documentElement.style.overflowY = 'scroll';
+                const thumb = document.querySelector('.scrollbar-thumb');
+                const track = document.querySelector('.scrollbar-track');
+
+                function updateThumbPosition() {
+                    const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
+                    const scrollPercentage = Math.max(0, Math.min(1, 1 - (window.scrollY / pageHeight)));
+                    thumb.style.left = `${scrollPercentage * 100}%`;
+                }
+
+                window.addEventListener("scroll", updateThumbPosition);
+                window.addEventListener('resize', updateThumbPosition);
+                updateThumbPosition();
+            });
+        </script>
         <script>document.addEventListener("DOMContentLoaded",function(){function c(){d.classList.add("hover")}function e(){d.classList.remove("hover")}var d=document.getElementById("cursor"),a=document.querySelector(".hamby"),b=document.querySelector(".lets-talk"),g=document.querySelector(".logo"),f=document.querySelectorAll("a");h=document.querySelectorAll(".single-process");k=document.querySelectorAll(".process-icon");document.body.addEventListener("mousemove",function(l){d.style.left=l.clientX+"px";d.style.top=
             l.clientY+"px"});a.addEventListener("click",function(){a.classList.contains("active")?(a.classList.remove("active"),document.body.classList.remove("navigationActive"),setTimeout(function(){a.classList.remove("ready")},700)):(a.classList.add("active"),document.body.classList.add("navigationActive"),setTimeout(function(){a.classList.add("ready")},700))});a.addEventListener("mouseenter",c);a.addEventListener("mouseleave",e);b.addEventListener("mouseenter",c);b.addEventListener("mouseleave",e);g.addEventListener("mouseenter",
             c);g.addEventListener("mouseleave",e);for(b=0;b<f.length;b++)f[b].addEventListener("mouseenter",c),f[b].addEventListener("mouseleave",e)});</script>
