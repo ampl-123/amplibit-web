@@ -926,8 +926,9 @@ canvas {
     z-index:4;
 }
 
-#vengo-gqi-1{
-    width: 45.625vw;
+#products-vengo-img{
+    width: 80%;
+    max-width: 60vh;
 }
 
 #vengo-gqi-2{
@@ -946,21 +947,22 @@ canvas {
 #arrango-2{
     top: 40%;
     left: 55%;
-    width: 50%;
+    width: 45%;
+    max-width: 55vh;
     transform: translate(-50%, -50%) translate(10%, 20%);
     z-index:3;
 }
 
 #libby-1{
-    width: 55vw;
-    max-width: 90vh;
+    width: 90%;
+    max-width: 70vh;
     height: auto;
     transform: translate(-50%, -50%) translate(0, -10%);
 }
 
 #libby-2{
-    width:30vw;
-    max-width: 50vh;
+    width: 50%;
+    max-width: 40vh;
     position: absolute;
     transform: translate(-50%, -50%) translate(70%, 40%);
 }
@@ -1010,10 +1012,9 @@ canvas {
 .see-more {
     display: flex;
     width: max-content;
-    height: 3.6vw;
     align-items: center;
     gap: 0.55vw;
-    padding: 0.8vw 1.5vw;
+    padding: 1.1vw 1.5vw;
     border: 1px solid white;
     border-radius: 2.78vw;
     color: white;
@@ -1036,7 +1037,7 @@ canvas {
     left: -10%;
     background: white;
     border-radius: 50%;
-    transition: height 0.8s ease-in-out, width 0.8s ease-in-out, top 0.8s ease-in-out;
+    transition: height 0.4s ease-in-out, width 0.4s ease-in-out, top 0.4s ease-in-out;
     z-index: 0;
 }
 
@@ -2208,7 +2209,7 @@ canvas {
     text-decoration: none;
     width: 14vw;
     text-transform: uppercase;
-    height: 6vh;
+    height: 4vw;
     transition: border-radius 0.3s ease;
     display: flex;
     align-items: center;
@@ -2218,7 +2219,7 @@ canvas {
 }
 
 .lets-talk:hover {
-    box-shadow: inset 0 6vh 0px #000;
+    box-shadow: inset 20vw 0 0 #000;
 }
 
 .what-we-do-wrapper,
@@ -3663,13 +3664,13 @@ textarea:focus {
     color: #fff;
     text-transform: uppercase;
     border: 0.14vw solid #000;
-    box-shadow: inset 0 0 0px transparent;
+    box-shadow: inset 0 0 0 transparent;
     transition: box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
     border-radius: 5vw;
 }
 
 .submit-button:hover {
-    box-shadow: inset 0 4.16vw 0px #fff;
+    box-shadow: inset 20vw 0 0px #fff;
     color: #000;
 }
 
@@ -4426,6 +4427,7 @@ footer .text-hello span:nth-of-type(even),
     .contact-form-wrapper img {
         border-radius: 4vw;
     }
+
     .contact-info-container {
         margin-bottom: 100px;
         width: 100%;
@@ -4967,19 +4969,23 @@ footer .text-hello span:nth-of-type(even),
     }
 
     #arrango-product-small{
-        width: 50%;
-        transform: translate(-3vw, 58vw);
+        top: 40%;
+        left: 15%;
+        position: relative;
     }
 
     #libby-product-big{
         transform: none;
-        width: 100%;
+        left: 5%;
+        width: 80%;
         height: 100%;
     }
 
     #libby-product-small{
-        width: 50%;
-        transform: translate(47vw, 58vw);
+        top: 35%;
+        left: 30%;
+        width: 40%;
+        position: relative;
     }
 
     .contact-link {
@@ -5078,30 +5084,42 @@ footer .text-hello span:nth-of-type(even),
     }
 
     .benefits-section{
-        height: 110vh;
         padding: 20vw 0;
+    }
+
+    .benefits-title{
+        line-height: unset;
     }
 
     .benefits-title h1{
         font-weight: 600;
-        font-size: 9vw;
+        font-size: 10vw;
     }
 
     .benefits-cards-container{
+        position: relative;
         flex-flow: column;
-        gap: 4vh;
-        padding: 15vw 5vw 3vw;
+        gap: 3vw;
+        padding: 3vw 5vw 3vw;
     }
+
+    .benefits-cards-wrapper{
+        width: 100%;
+    }
+
     .benefits-card{
         position: relative;
-        font-size: 3.5vw;
+        font-size: 4.5vw;
+        text-align: center;
         transform: none;
-        padding: 15px;
+        padding: 20px 15px 20px;
+        width: 100%;
+        align-items: center;
     }
 
     .benefits-card-svg-wrapper{
-        width: 8vw;
-        height: 8vw;
+        width: 12vw;
+        height: 12vw;
     }
     #arrango-benefits-card-1{
         transform: none;
@@ -5208,10 +5226,16 @@ footer .text-hello span:nth-of-type(even),
     }
 
     .benefits-card h1{
-        font-size: 6vw;
+        font-size: 9vw;
     }
 
-    .benefits-center-logo{
+    .benefits-center-logo {
+        justify-content: center;
+        display: flex;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
         height: 100%;
     }
 
