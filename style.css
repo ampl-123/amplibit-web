@@ -4471,12 +4471,14 @@ footer .text-hello span:nth-of-type(even),
         width: 100%;
     }
     .hero-image-wrapper {
+        display: flex;
         width: 80%;
         height: 100%;
-
+        justify-content: center;
+        padding: 5vw 0;
     }
     #vengo-product-big {
-        width: 100%;
+        width: 80%;
         aspect-ratio: 1;
         height: 100%;
     }
@@ -4912,7 +4914,22 @@ footer .text-hello span:nth-of-type(even),
 
     .hero-section{
         flex-flow: column-reverse;
-        height: 100svh;
+        min-height: 100svh;
+        position: relative;
+        padding: 5vw 0;
+        height: fit-content;
+        justify-content: center;
+        gap: 10vw;
+    }
+
+    .hero-background {
+        width: 100%;
+        height: 100%;
+    }
+
+    .hero-background-logo-wrapper{
+        width: 100%;
+        height: 100%;
     }
 
     .hero-headline-container{
@@ -4963,6 +4980,7 @@ footer .text-hello span:nth-of-type(even),
         height: 100%;
     }
     #arrango-product-big{
+        position: relative;
         transform: none;
         width: 100%;
         height: 100%;
@@ -4971,7 +4989,7 @@ footer .text-hello span:nth-of-type(even),
     #arrango-product-small{
         top: 40%;
         left: 15%;
-        position: relative;
+        position: absolute;
     }
 
     #libby-product-big{
@@ -5112,7 +5130,7 @@ footer .text-hello span:nth-of-type(even),
         font-size: 4.5vw;
         text-align: center;
         transform: none;
-        padding: 20px 15px 20px;
+        padding: 5vw 3vw 5vw;
         width: 100%;
         align-items: center;
     }
