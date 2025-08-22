@@ -5434,6 +5434,10 @@ footer .text-hello span:nth-of-type(even),
         font-size: 3.5vw;
         font-weight: 700;
     }
+    footer{
+        z-index: 5;
+        position: relative;
+    }
     /*##########################################################################*/
 }
 
@@ -5502,10 +5506,6 @@ footer .text-hello span:nth-of-type(even),
         font-size: 40px;
     }
 
-    footer{
-        z-index: 5;
-        position: relative;
-    }
 
     footer .contact-info p.text-hello {
         font-size: 20px;
