@@ -4581,6 +4581,9 @@ footer .text-hello span:nth-of-type(even),
         justify-content: center;
         padding: 5vw 0;
     }
+    .hero-image{
+        position: relative;
+    }
     #vengo-product-big {
         width: 80%;
         aspect-ratio: 1;
