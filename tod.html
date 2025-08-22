@@ -98,6 +98,13 @@
       <span></span>
     </div>
   </div>
+  <div class="scrollbar-wrapper">
+    <div class="scrollbar-track"></div>
+    <div class="scrollbar-thumbbox">
+      <div class="scrollbar-thumb"></div>
+    </div>
+    <p class="scrollbar-text">scroll</p>
+  </div>
 </header>
 <a href="/contact.html" class="contact-fixed">Let's talk</a>
 
@@ -201,6 +208,23 @@
     <p>Amplibit 2024. All rights reserved.</p>
   </div>
 </footer>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    document.documentElement.style.overflowY = 'scroll';
+    const thumb = document.querySelector('.scrollbar-thumb');
+    const track = document.querySelector('.scrollbar-track');
+
+    function updateThumbPosition() {
+      const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercentage = Math.max(0, Math.min(1, 1 - (window.scrollY / pageHeight)));
+      thumb.style.left = `${scrollPercentage * 100}%`;
+    }
+
+    window.addEventListener("scroll", updateThumbPosition);
+    window.addEventListener('resize', updateThumbPosition);
+    updateThumbPosition();
+  });
+</script>
 <script>document.addEventListener("DOMContentLoaded",function(){function c(){e.classList.add("hover")}function d(){e.classList.remove("hover")}var e=document.getElementById("cursor"),a=document.querySelector(".hamby"),g=document.querySelector(".logo"),f=document.querySelectorAll("a");h=document.querySelectorAll(".single-process");k=document.querySelectorAll(".process-icon");document.body.addEventListener("mousemove",function(l){e.style.left=l.clientX+"px";e.style.top=l.clientY+"px"});a.addEventListener("click",
     function(){a.classList.contains("active")?(a.classList.remove("active"),document.body.classList.remove("navigationActive"),setTimeout(function(){a.classList.remove("ready")},700)):(a.classList.add("active"),document.body.classList.add("navigationActive"),setTimeout(function(){a.classList.add("ready")},700))});a.addEventListener("mouseenter",c);a.addEventListener("mouseleave",d);g.addEventListener("mouseenter",c);g.addEventListener("mouseleave",d);for(b=0;b<f.length;b++)f[b].addEventListener("mouseenter",
     c),f[b].addEventListener("mouseleave",d);for(b=0;b<h.length;b++)h[b].addEventListener("mouseenter",c),h[b].addEventListener("mouseleave",d);for(b=0;b<k.length;b++)k[b].addEventListener("mouseenter",c),k[b].addEventListener("mouseleave",d)});</script>

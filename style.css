@@ -1517,29 +1517,34 @@ canvas {
 #arrango-product-big{
     transform: translateY(var(--parallax-y, 0));
     width: 47vw;
+    max-width: 100vh;
     height: auto;
 }
 
 #arrango-product-small{
-    transform: translate(-40%, 55%) translateY(var(--parallax-y, 0));
-    width: 31vw;
+    transform: translate(-40%, 60%) translateY(var(--parallax-y, 0));
+    width: 30vw;
+    max-width: 55vh;
     height: auto;
 }
 
 #libby-product-big{
-    transform: translate(-10%, 0);
+    transform: translate(-10%, 15%);
     width: 44vw;
+    max-width: 100vh;
     height: auto;
 }
 
 #libby-product-small{
     transform: translate(60%, 55%) translateY(var(--parallax-y, 0));
     width: 31vw;
+    max-width: 70vh;
     height: auto;
 }
 
 #vengo-product-big{
-    width: 41vw;
+    width: 40vw;
+    max-width: 80vh;
 }
 
 .screen-section{
