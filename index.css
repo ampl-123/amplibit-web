@@ -4021,9 +4021,9 @@ textarea {
         }
 
         .see-more{
-            border-radius: 25px;
-            height: 45px;
-            padding: 0 20px;
+            border-radius: 20vw;
+            height: 15vw;
+            padding: 2vw 8vw;
             gap: 8px;
             justify-items: center;
         }
