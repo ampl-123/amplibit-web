@@ -4894,7 +4894,7 @@ footer .text-hello span:nth-of-type(even),
     /*##########################################################################*/
     .product-section{
         overflow-x: hidden;
-        height: 500vh;
+        height: 450vh;
     }
 
     .product{
@@ -5016,7 +5016,7 @@ footer .text-hello span:nth-of-type(even),
     }
 
     .see-more span {
-        font-size: 14px;
+        font-size: 4vw;
         font-weight: 700;
     }
 
