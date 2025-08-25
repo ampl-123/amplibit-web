@@ -1242,80 +1242,6 @@ canvas {
     z-index: 999;
 }
 
-.see-more {
-    display: flex;
-    width: 12vw;
-    height: 3.6vw;
-    align-items: center;
-    gap: 0.55vw;
-    padding: 0.8vw 1.5vw;
-    border: 1px solid white;
-    border-radius: 2.78vw;
-    color: white;
-    background-color: transparent;
-    transition: color 0.4s ease;
-    overflow: hidden;
-    position: relative;
-    z-index: 4;
-    text-decoration: none;
-}
-
-.see-more::before {
-    content: '';
-    position: absolute;
-    transform-origin: center;
-    top: -50%;
-    width: 0;
-    height: 150%;
-    left: -10%;
-    background: white;
-    border-radius: 50%;
-    transition: height 0.8s ease-in-out, width 0.8s ease-in-out, top 0.8s ease-in-out;
-    z-index: 0;
-}
-
-.see-more span {
-    position: relative;
-    z-index: 1;
-    color: white;
-    transition: color 0.6s ease;
-    font-size: 1vw;
-    font-weight: 700;
-}
-
-.see-more svg {
-    position: relative;
-    height: 1vw;
-    width: 1.4vw;
-    fill: white;
-    transition: fill 0.4s ease;
-    z-index: 10;
-}
-
-.see-more:hover {
-    background-color: transparent;
-}
-
-.see-more:hover span {
-    color: var(--gradient-first-color);
-    background-clip: text;
-    -webkit-background-clip: text;
-}
-
-.see-more:hover svg {
-    fill: var(--gradient-first-color);
-}
-
-.see-more:hover::before {
-    top: -50%; /* Move the pseudo-element into the component */
-    width: 150%; /* Increase the width */
-    height: 300%; /* Increase the height */
-}
-
-.see-more:hover {
-    color: black;
-}
-
 @keyframes fadeDown {
     0% {
 
@@ -4022,8 +3948,8 @@ textarea {
 
         .see-more{
             border-radius: 20vw;
-            height: 15vw;
-            padding: 2vw 8vw;
+            height: max-content;
+            padding: 3vw 4vw;
             gap: 8px;
             justify-items: center;
         }
