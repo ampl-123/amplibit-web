@@ -2487,14 +2487,16 @@ canvas {
 
 body.blue,
 body.blue.green-first{
-    background-color: #0CF;
+    /*background-color: #0CF;*/
+    background-color: black;
 }
 
 body.green,
 body.blue.green,
 body.blue.green-back-only,
 body.green-first{
-    background-color: #9BE545;
+   /* background-color: #9BE545;*/
+    background-color: black;
 }
 
 .single-service,
