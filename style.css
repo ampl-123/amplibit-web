@@ -2097,6 +2097,7 @@ canvas {
     background: #E6E8F380;
     padding: 1.52vw 1.8vw 1.8vw;
     border-radius: min(1.38vw, 20px);
+    -webkit-backdrop-filter: blur(30px);
     backdrop-filter: blur(30px);
     font-weight: 400;
     font-size: 1.1vw;
