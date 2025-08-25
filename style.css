@@ -5429,7 +5429,10 @@ footer .text-hello span:nth-of-type(even),
 
     }
     .request-demo-text-section h3{
-        font-size: 6vw;
+        font-size: 7vw;
+    }
+    .request-demo-text-section br{
+        display: none;
     }
     .contact-link.contact-link-big span{
         font-size: 3.5vw;
