@@ -1519,6 +1519,7 @@ canvas {
     width: 47vw;
     max-width: 100vh;
     height: auto;
+    position: absolute;
 }
 
 #arrango-product-small{
@@ -1533,6 +1534,7 @@ canvas {
     width: 44vw;
     max-width: 100vh;
     height: auto;
+    position: absolute;
 }
 
 #libby-product-small{
@@ -5241,7 +5243,7 @@ footer .text-hello span:nth-of-type(even),
         position: relative;
         flex-flow: column;
         gap: 3vw;
-        padding: 3vw 5vw 3vw;
+        padding: 3vw 8vw 3vw;
     }
 
     .benefits-cards-wrapper{
@@ -5257,6 +5259,7 @@ footer .text-hello span:nth-of-type(even),
         gap: 3vw;
         width: 100%;
         align-items: center;
+        border-radius: 5vw;
     }
 
     .benefits-card-svg-wrapper{
@@ -5413,6 +5416,7 @@ footer .text-hello span:nth-of-type(even),
         position: fixed;
         align-content: center;
         z-index: 2;
+        padding: 0 2vw;
     }
 
     .benefits-fixed-logo{
@@ -5690,7 +5694,7 @@ footer .text-hello span:nth-of-type(even),
     }
     #libby-product-small{
         width: 50%;
-        transform: translate(20vw, 16vw);
+        transform: translate(12vw, 17vw);
     }
     #vengo-product-big{
         position: relative;
