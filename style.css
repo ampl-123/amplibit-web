@@ -1456,9 +1456,10 @@ canvas {
 .hero-headline-container{
     height: 100%;
     width: 40%;
-    align-content: center;
+    align-items: center;
     z-index: 2;
     padding: 0 6.5vw;
+    display: flex;
 }
 
 .hero-header h2{
@@ -4581,9 +4582,11 @@ footer .text-hello span:nth-of-type(even),
     }
     .hero-image-container {
         width: 100%;
+        height: auto;
     }
     .hero-headline-container {
         width: 100%;
+        height: auto;
     }
     .hero-image-wrapper {
         display: flex;
@@ -5685,7 +5688,7 @@ footer .text-hello span:nth-of-type(even),
         margin-top: 3vw;
     }
     .hero-image-wrapper{
-        align-content: center;
+        align-items: center;
     }
     #libby-product-small{
         width: 50%;
