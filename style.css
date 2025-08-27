@@ -3303,6 +3303,7 @@ footer .contact-info p {
     display: flex;
     justify-content: space-between;
     margin-bottom: 6vh;
+    z-index: 100;
 }
 
 .post-footer a{

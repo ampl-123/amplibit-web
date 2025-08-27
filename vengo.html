@@ -501,7 +501,6 @@
         }
 
         function onScroll() {
-            console.log("rokamo innerF")
             if (!ticking) {
                 window.requestAnimationFrame(updateElements);
                 ticking = true;
@@ -509,7 +508,6 @@
         }
 
         if (window.innerWidth > 1200) {
-            console.log("rokamo glavni if")
             init();
             updateElements();
             window.addEventListener('scroll', onScroll, { passive: true });
