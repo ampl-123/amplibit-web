@@ -1208,6 +1208,14 @@ canvas {
     fill: #3c8ef0;
 }
 
+#see-more-libby:hover{
+    color: #6f4ed5;
+}
+
+#see-more-libby:hover svg{
+    fill: #6f4ed5;
+}
+
 .see-more:hover {
     color: #20cc9e;
 }
@@ -1360,6 +1368,14 @@ canvas {
     fill: #3c8ef0;
 }
 
+#contact-link-amplihire:hover{
+    color: #6f4ed5;
+}
+
+#contact-link-amplihire:hover svg{
+    fill: #6f4ed5;
+}
+
 .contact-link:hover {
     color: #20cc9e;
 }
@@ -1433,6 +1449,10 @@ canvas {
 
 #libby-hero svg{
     left: 23vw;
+}
+
+#amplihire-hero {
+    background: linear-gradient(252.14deg, #8950EB 0.52%, #664FCF 99.48%);
 }
 
 #arrango-hero hero-background-logo svg{
@@ -1614,6 +1634,12 @@ canvas {
     background-clip: text;
 }
 
+#amplihire-screen-title-background{
+    background: linear-gradient(252.14deg, #8950EB 0.52%, #664FCF 99.48%);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
 .screen-header-title span {
     -webkit-text-fill-color: transparent;
     color: transparent;
@@ -1670,6 +1696,19 @@ canvas {
 
 #vengo-screen-mini-2{
     transform: scale(1.5) translate(9vw, -8vw) rotate(12deg) translateY(var(--parallax-y, 0));
+    z-index: 5;
+    box-shadow: none;
+}
+
+#amplihire-screen-mini-1{
+    transform: scale(1.5) translate(-23vw, -9vw) rotate(-20deg) translateY(var(--parallax-y, 0));
+    z-index: 0;
+    box-shadow: none;
+
+}
+
+#amplihire-screen-mini-2{
+    transform: scale(1.5) translate(11vw, -9vw) rotate(12deg) translateY(var(--parallax-y, 0));
     z-index: 5;
     box-shadow: none;
 }
@@ -1782,6 +1821,21 @@ canvas {
     width: 20.14vw;
     transform: translate(-32vw, 26vw);
 }
+
+#amplihire-screen-small-1{
+    transform: translate(21vw, 6vw);
+}
+
+#amplihire-screen-small-2{
+    width: 42vw;
+    transform: translate(55vw, 21vw);
+}
+
+#amplihire-screen-small-3{
+    width: 30vw;
+    transform: translate(-39vw, 10vw);
+}
+
 .screen{
     width: 100%;
     height: 100%;
@@ -1921,6 +1975,12 @@ canvas {
 
 .libby-feature-header{
     background: linear-gradient(252.14deg, #359BFF 0.52%, #4F6BCF 99.48%);
+    -webkit-background-clip: text;
+    background-clip: text
+}
+
+.amplihire-feature-header{
+    background: linear-gradient(252.14deg, #8950EB 0.52%, #664FCF 99.48%);
     -webkit-background-clip: text;
     background-clip: text
 }
@@ -2131,6 +2191,11 @@ canvas {
     height: 100%;
 }
 
+#amplihire-benefits-logo{
+    width: 70vw;
+    padding: 15vw 0;
+}
+
 #arrango-benefits-card-1{
     transform: translate(-14vw, -4vw) translateY(var(--parallax-y, 0));
 }
@@ -2195,6 +2260,22 @@ canvas {
     transform: translate(14vw, 0vw) translateY(var(--parallax-y, 0));
 }
 
+#amplihire-benefits-card-1{
+    transform: translate(-16vw, 13vw) translateY(var(--parallax-y, 0));
+}
+
+#amplihire-benefits-card-2{
+    transform: translate(14vw, 12vw) translateY(var(--parallax-y, 0));
+}
+
+#amplihire-benefits-card-3{
+    transform: translate(-25vw, -7vw) translateY(var(--parallax-y, 0));
+}
+
+#amplihire-benefits-card-4{
+    transform: translate(25vw, -7vw) translateY(var(--parallax-y, 0));
+}
+
 .request-demo-section{
     display: flex;
     align-items: center;
@@ -2217,6 +2298,10 @@ canvas {
 
 .libby-background{
     background: linear-gradient(252.14deg, #359BFF 0.52%, #4F6BCF 99.48%);
+}
+
+.amplihire-background{
+    background: linear-gradient(252.14deg, #8950EB 0.52%, #664FCF 99.48%);
 }
 
 .request-demo-text-section{
@@ -2301,6 +2386,14 @@ canvas {
 
 #book-a-demo-libby:hover svg{
     fill: #3e8cee;
+}
+
+#book-a-demo-amplihire:hover{
+    color: #6f4ed5;
+}
+
+#book-a-demo-amplihire:hover svg{
+    fill: #6f4ed5;
 }
 
 .request-demo-button-section{
@@ -5098,6 +5191,11 @@ footer .text-hello span:nth-of-type(even),
     #vengo-product-big{
         position: relative;
     }
+
+    #amplihire-product-big{
+        position: relative;
+    }
+
     #catago-product-big{
         display: flex;
         position: relative;
@@ -5283,30 +5381,6 @@ footer .text-hello span:nth-of-type(even),
         display: none;
     }
 
-    /*#arrango-benefits-background-logo-left{
-        left: 0;
-        --x-offset: -30%;
-        --y-offset: 20%;
-    }
-
-    #arrango-benefits-background-logo-right{
-        right: 0;
-        --x-offset: 40%;
-        --y-offset: -90%;
-    }
-
-    #libby-benefits-background-logo-left{
-        left: 0;
-        --x-offset: -30%;
-        --y-offset: 20%;
-    }
-
-    #libby-benefits-background-logo-right{
-        right: 0;
-        --x-offset: 40%;
-        --y-offset: -90%;
-    }*/
-
     #arrango-benefits-card-2{
         transform: none;
         align-self: flex-end;
@@ -5378,6 +5452,26 @@ footer .text-hello span:nth-of-type(even),
     }
 
     #libby-benefits-card-4{
+        transform: none;
+        align-self: flex-end;
+    }
+
+    #amplihire-benefits-card-1{
+        transform: none;
+        align-self: flex-start;
+    }
+
+    #amplihire-benefits-card-2{
+        transform: none;
+        align-self: flex-end;
+    }
+
+    #amplihire-benefits-card-3{
+        transform: none;
+        align-self: flex-start;
+    }
+
+    #amplihire-benefits-card-4{
         transform: none;
         align-self: flex-end;
     }
@@ -5696,6 +5790,9 @@ footer .text-hello span:nth-of-type(even),
         transform: translate(12vw, 17vw);
     }
     #vengo-product-big{
+        position: relative;
+    }
+    #amplihire-product-big{
         position: relative;
     }
     #arrango-product-small{
