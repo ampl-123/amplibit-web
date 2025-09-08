@@ -1597,7 +1597,7 @@ canvas {
 
 .screen-header-title {
     font-family: Figtree, sans-serif;
-
+    padding: 5px;
     position: relative;
     color: #000000;
     z-index: 2;
