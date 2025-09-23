@@ -924,13 +924,13 @@ canvas {
 }
 
 #catago-info{
-    padding-left: min(8.125vw, 50px);
+    padding-left: 0;
     width: 35%
 }
 
 #libby-info{
-    padding-left: min(8.125vw, 30px);
-    width: 35%
+    width: 35%;
+    padding-left: 0;
 }
 
 #libby-img{
@@ -1100,82 +1100,6 @@ canvas {
     width: 80%;
 }
 
-.product-view-more{
-    bottom: 6.5vw;
-    right: 7.2vw;
-}
-
-.see-more {
-    display: flex;
-    width: max-content;
-    align-items: center;
-    gap: 0.55vw;
-    padding: 1.1vw 1.5vw;
-    border: 1px solid white;
-    border-radius: 2.78vw;
-    color: white;
-    background-color: transparent;
-    transition: color 0.4s ease;
-    overflow: hidden;
-    margin-top: 0.5vw;
-    position: relative;
-    z-index: 4;
-    text-decoration: none;
-}
-
-.see-more::before {
-    content: '';
-    position: absolute;
-    transform-origin: center;
-    top: -50%;
-    width: 0;
-    height: 150%;
-    left: -10%;
-    background: white;
-    border-radius: 50%;
-    transition: height 0.4s ease-in-out, width 0.4s ease-in-out, top 0.4s ease-in-out;
-    z-index: 0;
-}
-
-.see-more span {
-    position: relative;
-    width: 100%;
-    z-index: 1;
-    color: white;
-    transition: color 0.6s ease;
-    font-size: 1vw;
-    font-weight: 700;
-}
-
-.see-more svg {
-    position: relative;
-    height: 1vw;
-    width: 1.4vw;
-    fill: white;
-    transition: fill 0.4s ease;
-    z-index: 10;
-}
-
-.see-more:hover {
-    background-color: transparent;
-}
-
-.see-more:hover span {
-    color: var(--gradient-first-color);
-    background-clip: text;
-    -webkit-background-clip: text;
-}
-
-.see-more:hover svg {
-    fill: var(--gradient-first-color);
-}
-
-.see-more:hover::before {
-    top: -50%;
-    width: 150%;
-    height: 300%;
-}
-
 #see-more-vengo:hover{
     color: #52c36f;
 }
@@ -1209,15 +1133,11 @@ canvas {
 }
 
 #see-more-libby:hover{
-    color: #6f4ed5;
+    color: #3c8ef0;
 }
 
 #see-more-libby:hover svg{
-    fill: #6f4ed5;
-}
-
-.see-more:hover {
-    color: #20cc9e;
+    fill: #3c8ef0;
 }
 
 .background {
@@ -1255,10 +1175,9 @@ canvas {
 .contact-link {
     display: flex;
     width: max-content;
-    height: 3.6vw;
     align-items: center;
     gap: 0.55vw;
-    padding: 0.8vw 1.5vw;
+    padding: 1.2vw 1.8vw;
     border: 1px solid white;
     border-radius: 5vw;
     color: white;
@@ -1268,6 +1187,7 @@ canvas {
     position: relative;
     z-index: 4;
     text-decoration: none;
+    text-transform: uppercase;
 }
 
 .contact-link-big{
@@ -4270,6 +4190,12 @@ footer .text-hello span:nth-of-type(even),
         font-size: 16px;
     }
 
+    .item-info .contact-link{
+        margin-top: 15px;
+        padding: 15px 20px;
+        border-radius: 30px;
+    }
+
     .input-container {
         margin-bottom: 18px;
     }
@@ -4749,6 +4675,19 @@ footer .text-hello span:nth-of-type(even),
         width: 4vw;
         height: 4vw;
     }
+
+    .item-info .contact-link{
+        padding: 20px 25px;
+        border-radius: 30px;
+    }
+    .item-info .contact-link span{
+        font-size: 15px;
+    }
+
+    .item-info .contact-link svg{
+        width: 15px;
+        height: 15px;
+    }
     .screen-header-title h1 {
         font-size: 6vw;
     }
@@ -5027,6 +4966,7 @@ footer .text-hello span:nth-of-type(even),
 
     #libby-info{
         width: 100%;
+        padding-left: 8.125vw;
     }
 
     .item-img{
@@ -5104,23 +5044,6 @@ footer .text-hello span:nth-of-type(even),
         transform: translate(60%, 90%);
     }
 
-    .see-more{
-        border-radius: 20vw;
-        height: max-content;
-        padding: 3vw 4vw;
-        gap: 8px;
-        justify-items: center;
-    }
-
-    .see-more span {
-        font-size: 4vw;
-        font-weight: 700;
-    }
-
-    .see-more svg {
-        width: 15px;
-        height: 15px;
-    }
 
     .product-desc{
         width: 80%;

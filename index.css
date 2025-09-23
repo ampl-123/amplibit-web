@@ -895,6 +895,7 @@ html::-webkit-scrollbar {
     font-weight: 500;
     line-height: 188%;
     transition: color 0.5s ease-in;
+    margin-bottom: 2vw;
 }
 
 .what-we-do-wrapper.white .what-we-do-services p{
@@ -913,6 +914,113 @@ html::-webkit-scrollbar {
     color: inherit;
 }
 
+.contact-link-wrapper{
+    width: 100%;
+}
+
+.contact-link {
+    display: flex;
+    width: max-content;
+    align-items: center;
+    gap: 0.55vw;
+    padding: 1.2vw 1.8vw;
+    border: 1px solid white;
+    border-radius: 5vw;
+    color: white;
+    background-color: transparent;
+    transition: color 0.4s ease;
+    overflow: hidden;
+    position: relative;
+    z-index: 4;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.contact-link-big{
+    border: 3px solid white;
+    padding: 2.5vw 3.6vw;
+}
+
+.contact-link.contact-link-big span{
+    font-size: 1.5vw;
+}
+
+.contact-link::before {
+    content: '';
+    position: absolute;
+    transform-origin: center;
+    top: -50%;
+    width: 0;
+    height: 150%;
+    left: -10%;
+    background: white;
+    border-radius: 50%;
+    transition: height 0.4s ease-in-out, width 0.4s ease-in-out, top 0.4s ease-in-out;
+    z-index: 0;
+}
+
+.contact-link span {
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    color: white;
+    transition: color 0.3s ease;
+    font-size: 1vw;
+    font-weight: 700;
+}
+
+.contact-link svg {
+    position: relative;
+    height: 1vw;
+    width: 1.4vw;
+    fill: white;
+    transition: fill 0.2s ease;
+    z-index: 10;
+}
+
+.contact-link a{
+    text-decoration: none;
+}
+
+.contact-link:hover {
+    background-color: transparent;
+}
+
+.contact-link:hover span {
+    color: black;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.contact-link:hover svg {
+    fill: black;
+}
+
+.contact-link:hover::before {
+    top: -50%;
+    width: 130%;
+    height: 300%;
+}
+
+.item-info .contact-link{
+    font-size: 1.5vw;
+}
+
+#products-link {
+    border: 0;
+    background: transparent;
+    font-size: 2vw;
+    padding: 3vw;
+}
+
+#products-link span{
+    font-size: 2.5vw;
+}
+
+#products-link svg{
+    width: 3vw;
+    height: 3vw;
+}
 .canvas-wrapper{
     width: 100vw;
     height: 100vh;
@@ -1363,12 +1471,12 @@ canvas {
 }
 
 #catago-info{
-    padding-left: min(8.125vw, 50px);
+    padding-left: 0;
     width: 35%
 }
 
 #libby-info{
-    padding-left: min(8.125vw, 30px);
+    padding-left: 0;
     width: 35%
 }
 
@@ -1536,6 +1644,7 @@ canvas {
     font-size: 1.52vw;
     font-weight: 500;
     width: 80%;
+    margin-bottom: 2vw
 }
 
 .product-view-more{
@@ -1543,78 +1652,11 @@ canvas {
     right: 7.2vw;
 }
 
-.see-more {
-    display: flex;
-    width: max-content;
-    align-items: center;
-    gap: 0.55vw;
-    padding: 1.1vw 1.5vw;
-    border: 1px solid white;
-    border-radius: 2.78vw;
-    color: white;
-    background-color: transparent;
-    transition: color 0.4s ease;
-    overflow: hidden;
-    margin-top: 0.5vw;
-    position: relative;
-    z-index: 4;
-    text-decoration: none;
-}
-
-.see-more::before {
-    content: '';
-    position: absolute;
-    transform-origin: center;
-    top: -50%;
-    width: 0;
-    height: 150%;
-    left: -10%;
-    background: white;
-    border-radius: 50%;
-    transition: height 0.4s ease-in-out, width 0.4s ease-in-out, top 0.4s ease-in-out;
-    z-index: 0;
-}
-
-.see-more span {
-    position: relative;
-    width: 100%;
-    z-index: 1;
-    color: white;
-    transition: color 0.6s ease;
-    font-size: 1vw;
-    font-weight: 700;
-}
-
-.see-more svg {
-    position: relative;
-    height: 1vw;
-    width: 1.4vw;
-    fill: white;
-    transition: fill 0.4s ease;
-    z-index: 10;
-}
-
-.see-more:hover {
-    background-color: transparent;
-}
-
-.see-more:hover span {
-    color: var(--gradient-first-color);
-    background-clip: text;
-    -webkit-background-clip: text;
-}
-
-.see-more:hover svg {
-    fill: var(--gradient-first-color);
-}
-
-.see-more:hover::before {
-    top: -50%;
-    width: 150%;
-    height: 300%;
-}
-
 #see-more-vengo:hover{
+    color: #52c36f;
+}
+
+#see-more-vengo:hover span{
     color: #52c36f;
 }
 
@@ -1626,11 +1668,19 @@ canvas {
     color: #0fbcb3;
 }
 
+#see-more-arrango:hover span{
+    color: #0fbcb3;
+}
+
 #see-more-arrango:hover svg{
     fill: #0fbcb3;
 }
 
 #see-more-catago:hover{
+    color: #34b0fd;
+}
+
+#see-more-catago:hover span{
     color: #34b0fd;
 }
 
@@ -1642,13 +1692,14 @@ canvas {
     color: #3c8ef0;
 }
 
+#see-more-libby:hover span{
+    color: #3c8ef0;
+}
+
 #see-more-libby:hover svg{
     fill: #3c8ef0;
 }
 
-.see-more:hover {
-    color: #20cc9e;
-}
 
 .background {
     position: relative;
@@ -2911,6 +2962,7 @@ textarea {
     .single-process p,
     .what-we-do-services p {
         font-size: 18px;
+        margin-bottom: 30px;
     }
 
     .partners-title {
@@ -3366,6 +3418,24 @@ textarea {
     .product-img {
         object-position: top left;
         border-radius: 25px;
+    }
+
+    .contact-link{
+        padding: 20px 25px;
+        border-radius: 30px;
+    }
+
+    .item-info .contact-link{
+        padding: 20px 25px;
+        border-radius: 30px;
+    }
+    .contact-link span{
+        font-size: 15px;
+    }
+
+    .contact-link svg{
+       width: 15px;
+        height: 15px;
     }
 
 }
@@ -3864,6 +3934,7 @@ textarea {
         }
 
         #libby-info{
+            padding-left: 8.125vw;
             width: 100%;
         }
 
