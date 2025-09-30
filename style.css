@@ -915,7 +915,7 @@ canvas {
     display: flex;
     flex-flow: column;
     position: relative;
-    gap: 1vw;
+    gap: 2vw;
     width: 35%;
     height: 100%;
     align-content: center;
@@ -948,7 +948,7 @@ canvas {
     font-size: 5.6vw;
     font-weight: 700;
     color: #FFFFFF;
-    margin-bottom: 1vw;
+    line-height: 100%;
 }
 
 .product-img-container{
@@ -2407,6 +2407,7 @@ canvas {
     width: 100%;
     margin-bottom: 10vh;
 }
+
 .about-us-wrapper h1 {
     color: #000;
 }
