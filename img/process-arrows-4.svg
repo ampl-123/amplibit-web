@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-15.934 15.025 360.687 330.182">
+  <defs>
+    <clipPath id="clip0_3487_2197">
+      <rect width="36.28" height="52.22" fill="white" transform="translate(290.539 11.0742) rotate(-17.0349)"/>
+    </clipPath>
+    <clipPath id="clip1_3487_2197">
+      <rect width="36.28" height="52.22" fill="white" transform="translate(333.104 331.049) rotate(85.592)"/>
+    </clipPath>
+    <clipPath id="clip2_3487_2197">
+      <rect width="36.28" height="52.22" fill="white" transform="translate(67.002 350.902) rotate(170.128)"/>
+    </clipPath>
+    <clipPath id="clip3_3487_2197">
+      <rect width="36.28" height="52.22" fill="white" transform="translate(10.2627 85.2051) rotate(-104.841)"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#clip0_3487_2197)" transform="matrix(0, -1, 1, 0, -309.882634, 8.89168)" style="transform-origin: 315.003px 30.7347px;">
+    <path d="M332.039 40.0166C321.005 27.3534 307.448 17.3458 292.136 10.585L291.143 13.0438C306.269 19.7779 319.402 29.6329 329.93 41.6352L325.703 44.9387L338.862 50.8845L336.337 36.6706L332.048 40.0137L332.039 40.0166Z" fill="black"/>
+  </g>
+  <g clip-path="url(#clip1_3487_2197)" transform="matrix(0, -1, 1, 0, 16.602127, -304.502568)" style="transform-origin: 308.462px 350.676px;">
+    <path d="M295.789 365.218C310.558 357.219 323.287 346.178 333.232 332.714L331.05 331.207C321.172 344.496 308.684 355.157 294.671 362.807L292.371 357.959L283.693 369.5L298.115 370.144L295.79 365.228L295.789 365.218Z" fill="black"/>
+  </g>
+  <g clip-path="url(#clip2_3487_2197)" transform="matrix(0, -1, 1, 0, 257.3335, -4.985376)" style="transform-origin: 45.3346px 328.283px;">
+    <path d="M29.4351 317.011C38.8038 330.952 51.0068 342.571 65.3567 351.189L66.6488 348.873C52.48 340.305 40.6781 328.89 31.7288 315.668L36.3354 312.918L24.0203 305.377L24.7531 319.795L29.4252 317.013L29.4351 317.011Z" fill="black"/>
+  </g>
+  <g clip-path="url(#clip3_3487_2197)" transform="matrix(0, -1, 1, 0, -1.919726, 262.208531)" style="transform-origin: 30.8644px 61.5597px;">
+    <path d="M40.7727 44.8441C27.6964 55.385 17.177 68.5485 9.83495 83.5908L12.254 84.6774C19.5623 69.8199 29.9128 57.0736 42.3095 47.0128L45.4486 51.3639L51.8939 38.4421L37.5937 40.4208L40.7702 44.8344L40.7727 44.8441Z" fill="black"/>
+  </g>
+</svg>
