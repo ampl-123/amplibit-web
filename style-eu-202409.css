@@ -539,11 +539,13 @@ canvas {
     font-weight: 400;
     line-height: 150%;
     width: 100%;
+    margin-bottom: 1vw;
 }
 
 .product-item-name{
     position: relative;
     font-size: 3.47vw;
+    line-height: 1;
     font-weight: 500;
     color: #FFFFFF;
     margin-bottom: 1vw;
@@ -1588,6 +1590,7 @@ body.green-first{
     font-weight: 500;
     line-height: 110%;
     margin-bottom: 0.69vw;
+    display: none;
 }
 
 .single-process h2 {
@@ -1603,7 +1606,7 @@ body.green-first{
     color: #000;
     font-size: 1.25vw;
     font-weight: 400;
-    line-height: 2; 
+    line-height: 1.5;
     transition: height 0.5s ease;
     height: 0;
     overflow: hidden;
@@ -2687,7 +2690,7 @@ footer .text-hello span:nth-of-type(even),
 
     .single-process:not(:last-of-type) {
         margin-bottom: 20px;
-        border-bottom: 1 solid #d9d9d9;
+        border-bottom: 1px solid #d9d9d9;
         padding-bottom: 20px;
     }
 
