@@ -677,6 +677,73 @@ canvas {
     fill: #1eca9a;
 }
 
+.eu-modal-screen {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    justify-content: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    align-items: center;
+    z-index: 100;
+    background: #00000033;
+    backdrop-filter: blur(6px);
+
+    &.visible {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .eu-modal-window {
+        padding: min(2.78vw, 40px);
+        font-size: 1.11vw;
+        width: 45.5vw;
+        height: 39.4vw;
+        border-radius: 1.8vw;
+        z-index: 1000;
+        background: #FFFFFF;
+    }
+    .eu-modal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 1.5vw;
+
+        .eu-modal-logo-wrapper {
+            width: 22.7vw;
+            height: auto;
+
+            svg {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        .eu-modal-close-wrapper {
+            width: 1.94vw;
+            height: auto;
+
+            svg {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+
+    .eu-modal-info {
+        display: flex;
+        flex-flow: column;
+        gap: 1vw;
+
+        span:last-child {
+            font-style: italic;
+        }
+    }
+}
+
 /* overlay navigation */
 .overlay-wrapper {
     position: fixed;
@@ -3109,6 +3176,9 @@ footer .text-hello span:nth-of-type(even),
         margin: auto;
         padding: 40px 0 0;
     }
+    .scrollbar-wrapper{
+        display: none;
+    }
 }
 
 @media screen and (max-width: 680px) {
@@ -3437,4 +3507,24 @@ footer .text-hello span:nth-of-type(even),
     #services-landing-link{
         margin-left: 0;
     }
+
+    .h1-wrapper h1 {
+        font-size: 40px;
+    }
+
+    .h2-wrapper h2 {
+        font-size: 20px;
+        width: 80%;
+    }
+
+    .what-we-built-wrapper {
+        h1 {
+            font-size: 40px;
+        }
+
+        h2 {
+            font-size: 20px;
+        }
+    }
+
 }
