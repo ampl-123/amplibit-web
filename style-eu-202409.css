@@ -467,7 +467,7 @@ canvas {
 .what-we-built-section h2 {
     opacity: 0;
     transition: opacity 1s ease-in-out;
-    transition-delay: 1s;
+    transition-delay: 0.5s;
 
     &.fade-in {
         opacity: 1;
@@ -535,7 +535,7 @@ canvas {
 .product-desc{
     max-width: 43vw;
     color: #FFFFFF;
-    font-size: 1.38vw;
+    font-size: min(30px, 1.38vw);
     font-weight: 400;
     line-height: 150%;
     width: 100%;
@@ -701,7 +701,7 @@ canvas {
         padding: min(2.78vw, 40px);
         font-size: 1.11vw;
         width: 45.5vw;
-        height: 39.4vw;
+        height: auto;
         border-radius: 1.8vw;
         z-index: 1000;
         background: #FFFFFF;
@@ -1468,6 +1468,33 @@ body.green-first{
     margin-bottom: 64px;
 }
 
+#contact-link-services {
+    margin-top: 2vw;
+    border: 1px solid black;
+
+    svg {
+        fill: black;
+    }
+
+    span {
+        color: black;
+    }
+
+    &:hover span {
+        color: white;
+        background-clip: text;
+        -webkit-background-clip: text;
+    }
+
+    &:hover svg {
+        fill: white;
+    }
+}
+
+#contact-link-services::before {
+    background: black;
+}
+
 .product-details {
     display: flex;
     flex-flow: column;
@@ -1631,6 +1658,7 @@ body.green-first{
     width: 35%;
     display: flex;
     flex-flow: column;
+    gap: 1vw;
 }
 
 .process-description h1 {
@@ -1663,9 +1691,15 @@ body.green-first{
 .single-process h2 {
     color: #000;
     font-size: 2.36vw;
-    font-weight: 500; 
-    margin-bottom: 1.042vw;
+    font-weight: 500;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    padding-right: 40px;
 }
+
 .single-process h2 span {
     display: none
 }
@@ -1677,7 +1711,28 @@ body.green-first{
     transition: height 0.5s ease;
     height: 0;
     overflow: hidden;
+    margin-top: 1.042vw;
 }
+
+.single-process h2::after {
+    content: "";
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-70%) rotate(45deg);
+    border-right: 2px solid #000;
+    border-bottom: 2px solid #000;
+    margin-right: 0;
+    width: 0.5vw;
+    height: 0.5vw;
+    transition: transform 0.3s ease;
+}
+
+.single-process.active h2:after {
+    transform: translateY(-30%) rotate(225deg);
+}
+
 .single-service-v2-wrapper {
     background-color: #F4F6FA;
     padding: 6.9vw;
@@ -2287,7 +2342,6 @@ footer .contact-info p {
     transform: translate(-50%, 50%) rotate(270deg);
 }
 
-
 .process-icons-mobile {
     display: none;
     height: 200px;
@@ -2830,6 +2884,7 @@ footer .text-hello span:nth-of-type(even),
     }
     .process-description {
         width: 45%;
+        gap: 0;
     }
     .contact-info-container p.text-hello {
         font-size: 20px;
@@ -3115,7 +3170,7 @@ footer .text-hello span:nth-of-type(even),
         display: flex;
         align-items: center;
         position: relative;
-        width: fit-content;
+        width: 100%;
         padding-right: 40px;
     }
     .single-process h2 span {
@@ -3179,6 +3234,40 @@ footer .text-hello span:nth-of-type(even),
     .scrollbar-wrapper{
         display: none;
     }
+
+    .contact-link {
+        display: flex;
+        width: max-content;
+        align-items: center;
+        gap: 0.55vw;
+        padding: 2vw 3vw;
+        border: 2px solid white;
+        border-radius: 7vw;
+        color: white;
+        background-color: transparent;
+        transition: color 0.4s ease;
+        overflow: hidden;
+        position: relative;
+        z-index: 4;
+        text-decoration: none;
+        height: unset;
+    }
+
+    .contact-link span {
+        position: relative;
+        width: 100%;
+        z-index: 1;
+        color: white;
+        transition: color 0.3s ease;
+        font-size: 2vw;
+        font-weight: 700;
+    }
+
+    .contact-link svg{
+        width: 4vw;
+        height: 4vw;
+    }
+
 }
 
 @media screen and (max-width: 680px) {
@@ -3365,6 +3454,139 @@ footer .text-hello span:nth-of-type(even),
     }
     .amplibit-team-wrapper:after {
         bottom: 100px;
+    }
+
+    .services-list {
+        align-items: center;
+    }
+    .product {
+        flex-flow: column-reverse;
+        border-radius: 5vw;
+
+        &.flipped {
+            flex-flow: column-reverse;
+        }
+    }
+
+    .product-background{
+        width: 95vw;
+        min-height: 100vh;
+    }
+
+    .item-info {
+        width: 100%;
+        height: 50%;
+        gap: 15px;
+        align-content: flex-start;
+        padding-bottom: 20px;
+
+        &.flipped {
+            padding-left: 8.125vw;
+            padding-right: 0;
+            height: 100%;
+        }
+
+        .product-desc {
+            width: 100%;
+        }
+    }
+
+    .funded-by-eu {
+        width: 100%;
+        padding-bottom: 10px;
+    }
+
+    .eu-modal-screen {
+
+        .eu-modal-window {
+            width: 85vw;
+            font-size: 12px;
+
+            .eu-modal-logo-wrapper {
+                width: 150px;
+            }
+
+            .eu-modal-close-wrapper {
+                width: 20px;
+            }
+        }
+    }
+
+    .item-img{
+        width: 100%;
+        height: 100%;
+        align-content: center;
+    }
+
+    .product-item-name{
+        font-size: 8vw;
+        margin-bottom: 0;
+    }
+
+    .product-item-logo{
+        width: 9vw;
+    }
+
+    .product-img-wrapper{
+        position: absolute;
+        top: 5vh;
+    }
+
+    .product-img-svg-wrapper{
+        width: 90%;
+    }
+
+    .product-page-img{
+        width: 100%;
+        top: 40%;
+    }
+
+    .product-desc{
+        width: 80%;
+        max-width: 80vw;
+        font-size: 4vw;
+    }
+
+    .contact-link {
+        display: flex;
+        width: max-content;
+        align-items: center;
+        gap: max(8px, 0.55vw);
+        padding: 3.5vw 7vw;
+        border: 1px solid white;
+        border-radius: 10vw;
+    }
+    .contact-link span {
+        font-size: 4vw;
+        font-weight: 700;
+    }
+
+    .contact-link.contact-link-big span{
+        font-size: 3.5vw;
+        font-weight: 700;
+    }
+
+    .request-demo-section{
+        flex-flow: column;
+        width: 95vw;
+        border-radius: 5vw;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 30px;
+        position: relative;
+        z-index: 5;
+    }
+    .request-demo-text-section{
+        font-size: 4vw;
+        width: 100%;
+
+    }
+    .request-demo-text-section h3{
+        width: 100%;
+        font-size: 7.5vw;
+    }
+    .request-demo-text-section br{
+        display: none;
     }
 }
 

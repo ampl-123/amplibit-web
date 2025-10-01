@@ -454,6 +454,14 @@
                             <h2><span>04</span>Continuous Evolution</h2>
                             <p>We don’t stop at launch. Through ongoing collaboration, we <strong>refine and expand your solution</strong> as your business grows.</p>
                         </div>
+                        <div class="contact-link-wrapper">
+                            <a id="contact-link-services" class="contact-link" href="contact.html">
+                                <span>START PROJECT</span>
+                                <svg width="20" height="14" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.3327 14L10.6994 12.3083L14.841 8.16667H0.666016V5.83333H14.841L10.6994 1.69167L12.3327 0L19.3327 7L12.3327 14Z" />
+                                </svg>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -470,7 +478,7 @@
                     <div class="product" style="background: linear-gradient(252.14deg, #28D4FF 0.52%, #1A91FF 99.48%);">
                         <div class="item-info">
                             <div class="product-item-name">Virtual Diabetologist</div>
-                            <div class="product-desc"><strong>Treatment Oriented Decision</strong> An <strong>EU-funded</strong> medical decision platform bringing specialist expertise to family physicians. Developed with diabetologists, it analyzes patient data and generates personalized therapy recommendations with automated HZZO compliance. The system reduces time to treatment while preventing costly complications — transforming diabetes care for over 310,000 patients in Croatia.</div>
+                            <div class="product-desc"><strong>Treatment Oriented Decision</strong> An <strong class="openModalLink">EU-funded</strong> medical decision platform bringing specialist expertise to family physicians. Developed with diabetologists, it analyzes patient data and generates personalized therapy recommendations with automated HZZO compliance. The system reduces time to treatment while preventing costly complications — transforming diabetes care for over 310,000 patients in Croatia.</div>
                             <div class="funded-by-eu" id="openModalBtn">
                                 <svg width="310" height="59" viewBox="0 0 310 59" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <g clip-path="url(#clip0_3437_3690)">
@@ -548,7 +556,7 @@
                     </div>
                     <div class="request-demo-button-section">
                         <div class="contact-link-wrapper request-demo-contact">
-                            <a id="book-a-demo-arrango" class="contact-link" href="contact.html">
+                            <a id="book-a-demo-arrango" class="contact-link contact-link-big" href="contact.html">
                                 <span>LET'S BUILD</span>
                                 <svg width="20" height="14" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M12.3327 14L10.6994 12.3083L14.841 8.16667H0.666016V5.83333H14.841L10.6994 1.69167L12.3327 0L19.3327 7L12.3327 14Z" />
@@ -841,6 +849,10 @@
                 modalScreen.classList.add("visible");
             });
 
+            document.querySelector(".openModalLink").addEventListener("click", function() {
+                modalScreen.classList.add("visible");
+            });
+
             document.querySelector(".close").addEventListener("click", function() {
                 modalScreen.classList.remove("visible");
             });
@@ -851,9 +863,59 @@
                 }
             });
         </script>
-        <script>document.addEventListener("DOMContentLoaded",function(){function c(){e.classList.add("hover")}function d(){e.classList.remove("hover")}var e=document.getElementById("cursor"),a=document.querySelector(".hamby"),g=document.querySelector(".logo"),f=document.querySelectorAll("a");h=document.querySelectorAll(".single-process");k=document.querySelectorAll(".process-icon");document.body.addEventListener("mousemove",function(l){e.style.left=l.clientX+"px";e.style.top=l.clientY+"px"});a.addEventListener("click",
-            function(){a.classList.contains("active")?(a.classList.remove("active"),document.body.classList.remove("navigationActive"),setTimeout(function(){a.classList.remove("ready")},700)):(a.classList.add("active"),document.body.classList.add("navigationActive"),setTimeout(function(){a.classList.add("ready")},700))});a.addEventListener("mouseenter",c);a.addEventListener("mouseleave",d);g.addEventListener("mouseenter",c);g.addEventListener("mouseleave",d);for(b=0;b<f.length;b++)f[b].addEventListener("mouseenter",
-            c),f[b].addEventListener("mouseleave",d);for(b=0;b<h.length;b++)h[b].addEventListener("mouseenter",c),h[b].addEventListener("mouseleave",d);for(b=0;b<k.length;b++)k[b].addEventListener("mouseenter",c),k[b].addEventListener("mouseleave",d)});</script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                function c() {
+                    e.classList.add("hover");
+                }
+                function d() {
+                    e.classList.remove("hover");
+                }
+                var e = document.getElementById("cursor"),
+                    a = document.querySelector(".hamby"),
+                    g = document.querySelector(".logo"),
+                    f = document.querySelectorAll("a"),
+                    h = document.querySelectorAll(".single-process"),
+                    k = document.querySelectorAll(".process-icon"),
+                    m = document.getElementById("openModalBtn"),
+                    n = document.querySelector(".close"),
+                    o = document.querySelectorAll(".openModalLink");
+
+                document.body.addEventListener("mousemove", function (l) {
+                    e.style.left = l.clientX + "px";
+                    e.style.top = l.clientY + "px";
+                });
+
+                a.addEventListener("click", function () {
+                    a.classList.contains("active")
+                        ? (a.classList.remove("active"),
+                            document.body.classList.remove("navigationActive"),
+                            setTimeout(function () {
+                                a.classList.remove("ready");
+                            }, 700))
+                        : (a.classList.add("active"),
+                            document.body.classList.add("navigationActive"),
+                            setTimeout(function () {
+                                a.classList.add("ready");
+                            }, 700));
+                });
+
+                a.addEventListener("mouseenter", c);
+                a.addEventListener("mouseleave", d);
+                g.addEventListener("mouseenter", c);
+                g.addEventListener("mouseleave", d);
+
+                for (b = 0; b < f.length; b++) f[b].addEventListener("mouseenter", c), f[b].addEventListener("mouseleave", d);
+                for (b = 0; b < h.length; b++) h[b].addEventListener("mouseenter", c), h[b].addEventListener("mouseleave", d);
+                for (b = 0; b < k.length; b++) k[b].addEventListener("mouseenter", c), k[b].addEventListener("mouseleave", d);
+
+                m && (m.addEventListener("mouseenter", c), m.addEventListener("mouseleave", d));
+                n && (n.addEventListener("mouseenter", c), n.addEventListener("mouseleave", d));
+
+                for (b = 0; b < o.length; b++) o[b].addEventListener("mouseenter", c), o[b].addEventListener("mouseleave", d);
+            });
+        </script>
+
         <script>var processActive=1,processElements=document.querySelectorAll(".single-process"),containerProcesses=document.querySelectorAll(".process-icon"),mobileProcesses=document.querySelectorAll(".process-icons-mobile div");function slideDown(a){a.style.height="auto";var b=a.clientHeight+"px";a.style.height="0px";setTimeout(function(){a.style.height=b},0)}
             function slideUp(a){a.style.height=a.clientHeight+"px";a.addEventListener("transitionend",function(b){"height"===b.propertyName&&"0px"===a.style.height&&(a.style.height=null)},{once:!0});a.style.height="0px"}
             function updateActiveStatus(a){processElements.forEach(function(c){slideUp(c.querySelector("p"));c.classList.remove("active")});var b=processElements[a-1];b.classList.add("active");processActive=a;document.querySelector(".process-cycle").setAttribute("data-active",processActive);containerProcesses.forEach(function(c,d){d===processActive-1?c.classList.add("active"):c.classList.remove("active")});mobileProcesses.forEach(function(c,d){d===processActive-1?c.classList.add("active"):c.classList.remove("active")});
