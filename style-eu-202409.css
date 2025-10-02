@@ -3470,7 +3470,7 @@ footer .text-hello span:nth-of-type(even),
 
     .product-background{
         width: 95vw;
-        min-height: 100vh;
+        height: auto;
     }
 
     .item-info {
@@ -3486,14 +3486,11 @@ footer .text-hello span:nth-of-type(even),
             height: 100%;
         }
 
-        .product-desc {
-            width: 100%;
-        }
     }
 
     .funded-by-eu {
         width: 100%;
-        padding-bottom: 10px;
+        padding-bottom: 30px;
     }
 
     .eu-modal-screen {
@@ -3501,6 +3498,7 @@ footer .text-hello span:nth-of-type(even),
         .eu-modal-window {
             width: 85vw;
             font-size: 12px;
+            padding: 15px;
 
             .eu-modal-logo-wrapper {
                 width: 150px;
@@ -3515,6 +3513,7 @@ footer .text-hello span:nth-of-type(even),
     .item-img{
         width: 100%;
         height: 100%;
+        min-height: 50vh;
         align-content: center;
     }
 
@@ -3529,7 +3528,6 @@ footer .text-hello span:nth-of-type(even),
 
     .product-img-wrapper{
         position: absolute;
-        top: 5vh;
     }
 
     .product-img-svg-wrapper{
@@ -3545,6 +3543,7 @@ footer .text-hello span:nth-of-type(even),
         width: 80%;
         max-width: 80vw;
         font-size: 4vw;
+        line-height: 1.4;
     }
 
     .contact-link {
