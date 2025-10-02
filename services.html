@@ -916,11 +916,65 @@
             });
         </script>
 
-        <script>var processActive=1,processElements=document.querySelectorAll(".single-process"),containerProcesses=document.querySelectorAll(".process-icon"),mobileProcesses=document.querySelectorAll(".process-icons-mobile div");function slideDown(a){a.style.height="auto";var b=a.clientHeight+"px";a.style.height="0px";setTimeout(function(){a.style.height=b},0)}
-            function slideUp(a){a.style.height=a.clientHeight+"px";a.addEventListener("transitionend",function(b){"height"===b.propertyName&&"0px"===a.style.height&&(a.style.height=null)},{once:!0});a.style.height="0px"}
-            function updateActiveStatus(a){processElements.forEach(function(c){slideUp(c.querySelector("p"));c.classList.remove("active")});var b=processElements[a-1];b.classList.add("active");processActive=a;document.querySelector(".process-cycle").setAttribute("data-active",processActive);containerProcesses.forEach(function(c,d){d===processActive-1?c.classList.add("active"):c.classList.remove("active")});mobileProcesses.forEach(function(c,d){d===processActive-1?c.classList.add("active"):c.classList.remove("active")});
-            slideDown(b.querySelector("p"))}processElements.forEach(function(a){a.addEventListener("click",function(){a.classList.contains("active")||updateActiveStatus(parseInt(a.querySelector("h4").textContent))})});containerProcesses.forEach(function(a,b){a.addEventListener("click",function(){a.classList.contains("active")||updateActiveStatus(b+1)})});updateActiveStatus(1);
+        <script>
+            var processActive = 1,
+                processElements = document.querySelectorAll(".single-process"),
+                containerProcesses = document.querySelectorAll(".process-icon"),
+                mobileProcesses = document.querySelectorAll(".process-icons-mobile div");
+            function slideDown(a) {
+                a.style.height = "auto";
+                a.style.marginTop = "1.042vw";
+                var b = a.clientHeight + "px";
+                var c = a.style.marginTop;
+                console.log(c)
+                a.style.height = "0px";
+                setTimeout(function () {
+                    a.style.height = b;
+                    a.style.marginTop = c;
+                }, 0);
+            }
+            function slideUp(a) {
+                a.style.height = a.clientHeight + a.style.marginBottom + "px";
+                a.addEventListener(
+                    "transitionend",
+                    function (b) {
+                        "height" === b.propertyName && "0px" === a.style.height && (a.style.height = null);
+                    },
+                    { once: !0 }
+                );
+                a.style.height = "0px";
+                a.style.marginTop = "0px"
+            }
+            function updateActiveStatus(a) {
+                processElements.forEach(function (c) {
+                    slideUp(c.querySelector("p"));
+                    c.classList.remove("active");
+                });
+                var b = processElements[a - 1];
+                b.classList.add("active");
+                processActive = a;
+                document.querySelector(".process-cycle").setAttribute("data-active", processActive);
+                containerProcesses.forEach(function (c, d) {
+                    d === processActive - 1 ? c.classList.add("active") : c.classList.remove("active");
+                });
+                mobileProcesses.forEach(function (c, d) {
+                    d === processActive - 1 ? c.classList.add("active") : c.classList.remove("active");
+                });
+                slideDown(b.querySelector("p"));
+            }
+            processElements.forEach(function (a) {
+                a.addEventListener("click", function () {
+                    a.classList.contains("active") || updateActiveStatus(parseInt(a.querySelector("h4").textContent));
+                });
+            });
+            containerProcesses.forEach(function (a, b) {
+                a.addEventListener("click", function () {
+                    a.classList.contains("active") || updateActiveStatus(b + 1);
+                });
+            });
+            updateActiveStatus(1);
         </script>
+
         <script>
             setTimeout(()=> {
                 document.addEventListener("scroll", function (e) {
