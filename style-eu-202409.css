@@ -566,7 +566,7 @@ canvas {
     height: 100%;
     position: relative;
     display: flex;
-    align-content: center;
+    align-items: center;
     justify-content: center;
 }
 
@@ -586,11 +586,11 @@ canvas {
 
 .product-page-img{
     height: auto;
-    position: absolute;
+    position: relative;
     width: 100%;
-    top:50%;
+/*    top:50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);*/
     transition: transform 0.4s ease-in-out;
     will-change: transform;
     max-width: 70vh;
