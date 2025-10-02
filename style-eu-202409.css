@@ -1468,7 +1468,6 @@ body.green-first{
     margin-bottom: 64px;
 
 }
-
 #contact-link-services {
     border: 1px solid black;
 
@@ -1478,18 +1477,19 @@ body.green-first{
 
     span {
         color: black;
+        -webkit-text-fill-color: black;
     }
 
     &:hover span {
         color: white;
-        background-clip: text;
-        -webkit-background-clip: text;
+        -webkit-text-fill-color: white;
     }
 
     &:hover svg {
         fill: white;
     }
 }
+
 
 #contact-link-services::before {
     background: black;
