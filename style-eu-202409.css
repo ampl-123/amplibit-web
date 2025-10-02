@@ -3536,9 +3536,11 @@ footer .text-hello span:nth-of-type(even),
         width: 9vw;
     }
 
+    /*
     .product-img-wrapper{
         position: absolute;
     }
+    */
 
     .product-img-svg-wrapper{
         width: 90%;
