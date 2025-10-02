@@ -752,8 +752,8 @@
                 const h1 = document.querySelector('.h1-wrapper');
                 const h2 = document.querySelector('.h2-wrapper');
 
-                const hideH1Start = 100;
-                const showH2Start = 200;
+                const hideH1Start = 50;
+                const showH2Start = 70;
 
                 if (scrollY < hideH1Start) {
                     h1.classList.add('show');
@@ -844,25 +844,34 @@
         </script>
         <script>
             const modalScreen = document.querySelector(".eu-modal-screen");
+            const openModalBtn = document.getElementById("openModalBtn");
+            const openModalLink = document.querySelector(".openModalLink");
+            const closeBtn = document.querySelector(".close");
 
-            document.getElementById("openModalBtn").addEventListener("click", function() {
+            function addModalVisible() {
                 modalScreen.classList.add("visible");
-            });
+            }
 
-            document.querySelector(".openModalLink").addEventListener("click", function() {
-                modalScreen.classList.add("visible");
-            });
-
-            document.querySelector(".close").addEventListener("click", function() {
+            function removeModalVisible() {
                 modalScreen.classList.remove("visible");
-            });
+            }
 
-            modalScreen.addEventListener("click", function(e) {
+            const isMobile = window.innerWidth <= 768;
+            const openEvent = isMobile ? "touchstart" : "click";
+            const closeEvent = isMobile ? "touchstart" : "click";
+
+            if (openModalBtn) openModalBtn.addEventListener(openEvent, addModalVisible);
+            if (openModalLink) openModalLink.addEventListener(openEvent, addModalVisible);
+
+            if (closeBtn) closeBtn.addEventListener(closeEvent, removeModalVisible);
+
+            modalScreen.addEventListener(isMobile ? "touchstart" : "click", function(e) {
                 if (e.target === modalScreen) {
-                    modalScreen.classList.remove("visible");
+                    removeModalVisible();
                 }
             });
         </script>
+
         <script>
             document.addEventListener("DOMContentLoaded", function () {
                 function c() {
