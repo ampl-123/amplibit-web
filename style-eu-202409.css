@@ -3505,8 +3505,9 @@ footer .text-hello span:nth-of-type(even),
 
         .eu-modal-window {
             width: 85vw;
-            font-size: 16px;
+            font-size: 14px;
             padding: 16px;
+            border-radius: 5vw;
 
             .eu-modal-logo-wrapper {
                 width: 200px;
