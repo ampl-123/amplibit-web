@@ -844,34 +844,25 @@
         </script>
         <script>
             const modalScreen = document.querySelector(".eu-modal-screen");
-            const openModalBtn = document.getElementById("openModalBtn");
-            const openModalLink = document.querySelector(".openModalLink");
-            const closeBtn = document.querySelector(".close");
 
-            function addModalVisible() {
+            document.getElementById("openModalBtn").addEventListener("click", function() {
                 modalScreen.classList.add("visible");
-            }
+            });
 
-            function removeModalVisible() {
+            document.querySelector(".openModalLink").addEventListener("click", function() {
+                modalScreen.classList.add("visible");
+            });
+
+            document.querySelector(".close").addEventListener("click", function() {
                 modalScreen.classList.remove("visible");
-            }
+            });
 
-            const isMobile = window.innerWidth <= 768;
-            const openEvent = isMobile ? "touchstart" : "click";
-            const closeEvent = isMobile ? "touchstart" : "click";
-
-            if (openModalBtn) openModalBtn.addEventListener(openEvent, addModalVisible);
-            if (openModalLink) openModalLink.addEventListener(openEvent, addModalVisible);
-
-            if (closeBtn) closeBtn.addEventListener(closeEvent, removeModalVisible);
-
-            modalScreen.addEventListener(isMobile ? "touchstart" : "click", function(e) {
+            modalScreen.addEventListener("click", function(e) {
                 if (e.target === modalScreen) {
-                    removeModalVisible();
+                    modalScreen.classList.remove("visible");
                 }
             });
         </script>
-
         <script>
             document.addEventListener("DOMContentLoaded", function () {
                 function c() {
