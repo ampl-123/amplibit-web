@@ -435,50 +435,49 @@ canvas {
     width: 100vw;
     background: black;
     z-index: 2;
+}
 
-    .what-we-built-wrapper {
-        display: flex;
-        flex-flow: column;
-    }
-
-    h1 {
-        opacity: 0;
-        font-family: Figtree, sans-serif;
-        font-size: 5.5vw;
-        font-weight: 500;
-        color: #FFFFFF;
-    }
-
-    h2 {
-        opacity: 0;
-        font-family: Figtree, sans-serif;
-        font-size: 2.5vw;
-        font-weight: 450;
-        color: #FFFFFF;
-        text-align: center;
-    }
-
+.what-we-built-section .what-we-built-wrapper {
+    display: flex;
+    flex-flow: column;
 }
 
 .what-we-built-section h1 {
     opacity: 0;
-    transition: opacity 0.7s ease-in-out;
-
-    &.fade-in {
-        opacity: 1;
-    }
-
+    font-family: Figtree, sans-serif;
+    font-size: 5.5vw;
+    font-weight: 500;
+    color: #FFFFFF;
 }
+
+.what-we-built-section h2 {
+    opacity: 0;
+    font-family: Figtree, sans-serif;
+    font-size: 2.5vw;
+    font-weight: 450;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+
+.what-we-built-section h1 {
+    opacity: 0;
+    transition: opacity 0.7s ease-in-out;
+}
+
+.what-we-built-section h1.fade-in {
+    opacity: 1;
+}
+
 .what-we-built-section h2 {
     opacity: 0;
     transition: opacity 0.7s ease-in-out;
     transition-delay: 0.3s;
-
-    &.fade-in {
-        opacity: 1;
-    }
 }
 
+.what-we-built-section h2.fade-in {
+    opacity: 1;
+}
 
 .services-list {
     position: relative;
@@ -500,7 +499,7 @@ canvas {
     height: 100%;
 }
 
-.product{
+.product {
     position: relative;
     display: flex;
     border-radius: 2.2vw;
@@ -508,13 +507,14 @@ canvas {
     width: 100%;
     height: 100%;
     padding: 2vw 0;
-
-    &.flipped {
-        flex-flow: row-reverse;
-    }
 }
 
-.item-info{
+.product.flipped {
+    flex-flow: row-reverse;
+}
+
+
+.item-info {
     display: flex;
     flex-flow: column;
     position: relative;
@@ -524,18 +524,17 @@ canvas {
     align-content: center;
     padding-left: 8.125vw;
     justify-content: center;
-
-    div {
-        strong:nth-child(2) {
-            text-decoration: underline;
-        }
-    }
-
-    &.flipped {
-        padding-left: 0;
-        padding-right: 8.125vw;
-    }
 }
+
+.item-info div strong:nth-child(2) {
+    text-decoration: underline;
+}
+
+.item-info.flipped {
+    padding-left: 0;
+    padding-right: 8.125vw;
+}
+
 
 .product-desc{
     max-width: 43vw;
@@ -577,10 +576,11 @@ canvas {
 
 .funded-by-eu {
     width: 21.5vw;
-    svg {
-        width: 100%;
-        height: auto;
-    }
+}
+
+.funded-by-eu svg {
+    width: 100%;
+    height: auto;
 }
 
 .item-img {
@@ -593,9 +593,6 @@ canvas {
     height: auto;
     position: relative;
     width: 100%;
-/*    top:50%;
-    left: 50%;
-    transform: translate(-50%, -50%);*/
     transition: transform 0.4s ease-in-out;
     will-change: transform;
     max-width: 70vh;
@@ -626,9 +623,10 @@ canvas {
     color: white;
     line-height: 150%;
 
-    h3 {
-        width: 33.6vw;
-    }
+}
+
+.request-demo-section h3 {
+    width: 33.6vw;
 }
 
 .request-demo-text-wrapper{
@@ -695,59 +693,61 @@ canvas {
     z-index: 100;
     background: #00000033;
     backdrop-filter: blur(6px);
-
-    &.visible {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .eu-modal-window {
-        padding: min(2.78vw, 40px);
-        font-size: 1.11vw;
-        width: 45.5vw;
-        height: auto;
-        border-radius: 1.8vw;
-        z-index: 1000;
-        background: #FFFFFF;
-    }
-    .eu-modal-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        margin-bottom: 1.5vw;
-
-        .eu-modal-logo-wrapper {
-            width: 22.7vw;
-            height: auto;
-
-            svg {
-                width: 100%;
-                height: auto;
-            }
-        }
-
-        .eu-modal-close-wrapper {
-            width: 1.94vw;
-            height: auto;
-
-            svg {
-                width: 100%;
-                height: auto;
-            }
-        }
-    }
-
-    .eu-modal-info {
-        display: flex;
-        flex-flow: column;
-        gap: 1vw;
-
-        span:last-child {
-            font-style: italic;
-        }
-    }
 }
+
+.eu-modal-screen.visible {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.eu-modal-screen .eu-modal-window {
+    padding: min(2.78vw, 40px);
+    font-size: 1.11vw;
+    width: 45.5vw;
+    height: auto;
+    border-radius: 1.8vw;
+    z-index: 1000;
+    background: #FFFFFF;
+}
+
+.eu-modal-screen .eu-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5vw;
+}
+
+.eu-modal-screen .eu-modal-header .eu-modal-logo-wrapper {
+    width: 22.7vw;
+    height: auto;
+}
+
+.eu-modal-screen .eu-modal-header .eu-modal-logo-wrapper svg {
+    width: 100%;
+    height: auto;
+}
+
+.eu-modal-screen .eu-modal-header .eu-modal-close-wrapper {
+    width: 1.94vw;
+    height: auto;
+}
+
+.eu-modal-screen .eu-modal-header .eu-modal-close-wrapper svg {
+    width: 100%;
+    height: auto;
+}
+
+.eu-modal-screen .eu-modal-info {
+    display: flex;
+    flex-flow: column;
+    gap: 1vw;
+}
+
+.eu-modal-screen .eu-modal-info span:last-child {
+    font-style: italic;
+}
+
 
 /* overlay navigation */
 .overlay-wrapper {
@@ -3464,13 +3464,13 @@ footer .text-hello span:nth-of-type(even),
         flex-flow: column-reverse;
         border-radius: 5vw;
         padding: 4vw 0;
-
-        &.flipped {
-            flex-flow: column-reverse;
-        }
     }
 
-    .product-background{
+    .product.flipped {
+        flex-flow: column-reverse;
+    }
+
+    .product-background {
         width: 95vw;
         height: auto;
     }
@@ -3481,13 +3481,12 @@ footer .text-hello span:nth-of-type(even),
         gap: 15px;
         align-content: flex-start;
         padding-bottom: 20px;
+    }
 
-        &.flipped {
-            padding-left: 8.125vw;
-            padding-right: 0;
-            height: 100%;
-        }
-
+    .item-info.flipped {
+        padding-left: 8.125vw;
+        padding-right: 0;
+        height: 100%;
     }
 
     .funded-by-eu {
@@ -3495,22 +3494,19 @@ footer .text-hello span:nth-of-type(even),
         padding-bottom: 30px;
     }
 
-    .eu-modal-screen {
+    .eu-modal-screen .eu-modal-window {
+        width: 85vw;
+        font-size: 14px;
+        padding: 16px;
+        border-radius: 5vw;
+    }
 
-        .eu-modal-window {
-            width: 85vw;
-            font-size: 14px;
-            padding: 16px;
-            border-radius: 5vw;
+    .eu-modal-screen .eu-modal-window .eu-modal-logo-wrapper {
+        width: 200px;
+    }
 
-            .eu-modal-logo-wrapper {
-                width: 200px;
-            }
-
-            .eu-modal-close-wrapper {
-                width: 25px;
-            }
-        }
+    .eu-modal-screen .eu-modal-window .eu-modal-close-wrapper {
+        width: 25px;
     }
 
     .item-img{
@@ -3743,14 +3739,12 @@ footer .text-hello span:nth-of-type(even),
         width: 80%;
     }
 
-    .what-we-built-wrapper {
-        h1 {
-            font-size: 40px;
-        }
+    .what-we-built-wrapper h1 {
+        font-size: 40px;
+    }
 
-        h2 {
-            font-size: 20px;
-        }
+    .what-we-built-wrapper h2 {
+        font-size: 20px;
     }
 
 }
