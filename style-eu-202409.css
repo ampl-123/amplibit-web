@@ -1496,7 +1496,7 @@ body.green-first{
     fill: white;
 }
 
-.contact-link-services::before {
+#contact-link-services::before {
     background: black;
 }
 
