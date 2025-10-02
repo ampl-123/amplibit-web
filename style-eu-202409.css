@@ -3251,19 +3251,9 @@ footer .text-hello span:nth-of-type(even),
     }
 
     .contact-link {
-        display: flex;
-        width: max-content;
-        align-items: center;
         gap: 0.55vw;
         padding: 2vw 3vw;
-        border: 2px solid white;
         border-radius: 7vw;
-        color: white;
-        background-color: transparent;
-        transition: color 0.4s ease;
-        overflow: hidden;
-        position: relative;
-        z-index: 4;
         text-decoration: none;
         height: unset;
     }
@@ -3272,7 +3262,6 @@ footer .text-hello span:nth-of-type(even),
         position: relative;
         width: 100%;
         z-index: 1;
-        color: white;
         transition: color 0.3s ease;
         font-size: 2vw;
         font-weight: 700;
@@ -3569,9 +3558,6 @@ footer .text-hello span:nth-of-type(even),
     }
 
     .contact-link {
-        display: flex;
-        width: max-content;
-        align-items: center;
         gap: max(8px, 0.55vw);
         padding: 3.5vw 7vw;
         border: 1px solid white;
