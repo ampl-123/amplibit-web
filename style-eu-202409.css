@@ -1473,31 +1473,28 @@ body.green-first{
     margin-bottom: 64px;
 
 }
-.contact-link {
 
-    &.contact-link-services {
-        border: 1px solid black;
-
-        svg {
-            fill: black;
-        }
-
-        span {
-            color: black;
-            -webkit-text-fill-color: black;
-        }
-
-        &:hover span {
-            color: white;
-            -webkit-text-fill-color: white;
-        }
-
-        &:hover svg {
-            fill: white;
-        }
-    }
+#contact-link-services {
+    border: 1px solid black;
 }
 
+#contact-link-services svg {
+    fill: black;
+}
+
+#contact-link-services span {
+    color: black;
+    -webkit-text-fill-color: black;
+}
+
+#contact-link-services:hover span {
+    color: white;
+    -webkit-text-fill-color: white;
+}
+
+#contact-link-services:hover svg {
+    fill: white;
+}
 
 .contact-link-services::before {
     background: black;
