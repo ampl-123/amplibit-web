@@ -1237,7 +1237,8 @@ canvas {
 }
 
 .contact-link:hover {
-    background-color: transparent;
+    transition: background-color 0.3s ease-in-out 0.1s;
+    background-color: white;
 }
 
 .contact-link:hover span {

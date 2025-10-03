@@ -1393,7 +1393,7 @@ body.green-first{
     border-radius: 5vw;
     color: white;
     background-color: transparent;
-    transition: color 0.4s ease;
+    transition: background-color 0s, color 0.4s ease;
     overflow: hidden;
     position: relative;
     z-index: 4;
@@ -1448,7 +1448,8 @@ body.green-first{
 }
 
 .contact-link:hover {
-    background-color: transparent;
+    transition: background-color 0.3s ease-in-out 0.1s;
+    background-color: white;
 }
 
 .contact-link:hover span {
@@ -1471,7 +1472,6 @@ body.green-first{
     margin-left: 6.95vw;
     margin-top: 64px;
     margin-bottom: 64px;
-
 }
 
 #contact-link-services {
@@ -1485,6 +1485,10 @@ body.green-first{
 #contact-link-services span {
     color: black;
     -webkit-text-fill-color: black;
+}
+
+.contact-link-big:hover {
+    background-color: white;
 }
 
 #contact-link-services:hover span {
@@ -3504,7 +3508,7 @@ footer .text-hello span:nth-of-type(even),
     }
 
     .eu-modal-info {
-        height: 85%;
+        height: 90%;
         overflow-y: auto;
     }
 
