@@ -365,6 +365,7 @@ canvas {
 
 .canvas-wrapper:not(.active){
     opacity: 0;
+    display: none;
 }
 
 .canvas-wrapper .active{
@@ -1486,6 +1487,7 @@ body.green-first{
 
 #contact-link-services span {
     color: black;
+    transition: color 0.3s ease;
     -webkit-text-fill-color: black;
 }
 
