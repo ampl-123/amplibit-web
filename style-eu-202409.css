@@ -42,6 +42,7 @@ html::-webkit-scrollbar {
     mix-blend-mode: unset;
 }
 .blue.green .cursor,
+.scrollbar-wrapper,
 .blue.navigationActive .cursor {
     mix-blend-mode: difference;
 }
@@ -333,6 +334,7 @@ html {
     z-index: 777;
     transform-origin: top left;
     transform: translateX(calc(-3.2vw - 50%)) rotate(-90deg);
+    mix-blend-mode: difference;
     animation: 1s 1s forwards scrollbar-wrapper;
 }
 
