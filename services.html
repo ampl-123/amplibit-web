@@ -610,7 +610,6 @@
                 canvas.style.display = "none";
             } else {
                 function resizeCanvas() {
-                    // Render at half resolution to reduce fragment shader load
                     canvas.width = Math.floor(window.innerWidth / 2);
                     canvas.height = Math.floor(window.innerHeight / 2);
 
@@ -924,7 +923,6 @@
                 a.style.marginTop = "1.042vw";
                 var b = a.clientHeight + "px";
                 var c = a.style.marginTop;
-                console.log(c)
                 a.style.height = "0px";
                 setTimeout(function () {
                     a.style.height = b;
