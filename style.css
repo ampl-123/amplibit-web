@@ -835,7 +835,6 @@ canvas {
     flex-flow: column;
     background: black;
     align-items: center;
-    height: 500vh;
     width: 100%;
     gap: max(1vw, 1vh);
 }
@@ -946,7 +945,7 @@ canvas {
 
 .product-item-name{
     position: relative;
-    font-size: 5.6vw;
+    font-size: min(5.6vw, 110px);
     font-weight: 700;
     color: #FFFFFF;
     line-height: 100%;
@@ -1028,6 +1027,11 @@ canvas {
     max-width: 60vh;
 }
 
+#products-amplihire-img{
+    width: 80%;
+    max-width: 60vh;
+}
+
 #vengo-gqi-2{
     width:25%;
     position: absolute;
@@ -1096,7 +1100,7 @@ canvas {
 .product-desc{
     max-width: 43vw;
     color: #FFFFFF;
-    font-size: 1.52vw;
+    font-size: max(16px, 1.52vw);
     font-weight: 500;
     width: 80%;
 }
@@ -1140,7 +1144,17 @@ canvas {
 #see-more-libby:hover svg{
     fill: #3c8ef0;
 }
+#see-more-amplihire:hover{
+    color: #6e4ed4;
+}
 
+#see-more-amplihire:hover span{
+    color: #6e4ed4;
+}
+
+#see-more-amplihire:hover svg{
+    fill: #6e4ed4;
+}
 .background {
     position: relative;
     width: 100vw;
@@ -4933,7 +4947,7 @@ footer .text-hello span:nth-of-type(even),
     /*##########################################################################*/
     .product-section{
         overflow-x: hidden;
-        height: 450vh;
+        height: 510vh;
     }
 
     .product{
@@ -5047,6 +5061,10 @@ footer .text-hello span:nth-of-type(even),
         transform: translate(60%, 90%);
     }
 
+    #products-amplihire-img{
+        width: 100%;
+        max-width: 100vh;
+    }
 
     .product-desc{
         width: 80%;

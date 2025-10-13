@@ -1493,7 +1493,7 @@ canvas {
 
 .product-item-name{
     position: relative;
-    font-size: 5.6vw;
+    font-size: min(5.6vw, 110px);
     font-weight: 700;
     color: #FFFFFF;
     margin-bottom: 1vw;
@@ -1553,6 +1553,11 @@ canvas {
     width: 80%;
     max-width: 75vh;
     z-index:3;
+}
+
+#products-amplihire-img {
+    width: 80%;
+    max-width: 75vh;
 }
 
 #catago-2{
@@ -1642,7 +1647,7 @@ canvas {
 .product-desc{
     max-width: 43vw;
     color: #FFFFFF;
-    font-size: 1.52vw;
+    font-size: min(30px, 1.52vw);
     font-weight: 500;
     width: 80%;
     margin-bottom: 2vw
@@ -1699,6 +1704,18 @@ canvas {
 
 #see-more-libby:hover svg{
     fill: #3c8ef0;
+}
+
+#see-more-amplihire:hover{
+    color: #6e4ed4;
+}
+
+#see-more-amplihire:hover span{
+    color: #6e4ed4;
+}
+
+#see-more-amplihire:hover svg{
+    fill: #6e4ed4;
 }
 
 
@@ -3937,6 +3954,12 @@ textarea {
         #libby-info{
             padding-left: 8.125vw;
             width: 100%;
+        }
+
+        #products-amplihire-img{
+            width: 90%;
+            max-width: 100vh;
+            top: 15vh;
         }
 
         .item-img{
