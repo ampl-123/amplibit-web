@@ -2952,6 +2952,127 @@ textarea {
     width: 25%;
 }
 
+.certifications-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    background: #FFFFFF;
+    padding: 20vh 5vw 20vh;
+}
+
+.separator {
+    height: 1px;
+    background: #FFFFFF;
+    width: 100%;
+    justify-items: center;
+}
+
+.line {
+    background: #e0dcdc;
+    width: 80%;
+    height: 100%;
+}
+
+.certifications-content {
+    width: 100%;
+}
+
+.certifications-badges {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    width: 100%;
+    justify-self: center;
+}
+
+.certifications-badge {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.certifications-badge img {
+    max-height: 13vh;
+}
+
+.funded-by-eu {
+    width: 50%;
+}
+
+.funded-by-eu png {
+    width: 100%;
+    height: auto;
+}
+
+.eu-modal-screen {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    justify-content: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    align-items: center;
+    z-index: 100;
+    background: #00000033;
+    backdrop-filter: blur(6px);
+}
+
+.eu-modal-screen.visible {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.eu-modal-screen .eu-modal-window {
+    padding: min(2.78vw, 40px);
+    font-size: 1.11vw;
+    width: 45.5vw;
+    height: auto;
+    border-radius: 1.8vw;
+    z-index: 1000;
+    background: #FFFFFF;
+}
+
+.eu-modal-screen .eu-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5vw;
+}
+
+.eu-modal-screen .eu-modal-header .eu-modal-logo-wrapper {
+    width: 22.7vw;
+    height: auto;
+}
+
+.eu-modal-screen .eu-modal-header .eu-modal-logo-wrapper img {
+    width: 100%;
+    height: auto;
+}
+
+.eu-modal-screen .eu-modal-header .eu-modal-close-wrapper {
+    width: 1.94vw;
+    height: auto;
+}
+
+.eu-modal-screen .eu-modal-header .eu-modal-close-wrapper svg {
+    width: 100%;
+    height: auto;
+}
+
+.eu-modal-screen .eu-modal-info {
+    display: flex;
+    flex-flow: column;
+    gap: 1vw;
+}
+
+.eu-modal-screen .eu-modal-info span:last-child {
+    font-style: italic;
+}
+
 @media screen and (max-width: 1280px) {
     .partners-container,
     .partners-title {
@@ -3456,6 +3577,13 @@ textarea {
         height: 15px;
     }
 
+    .certifications-badges {
+        flex-flow: column;
+        align-items: center;
+    }
+    .certifications-badge {
+        margin-bottom: 120px;
+    }
 }
 
 
@@ -3720,6 +3848,20 @@ textarea {
         display: none;
 /*        bottom: calc(4.2vw + 10px);
         left: calc(4.2vw + 10px);*/
+    }
+    .certifications-badges {
+        flex-flow: column;
+        align-items: center;
+    }
+    .certifications-badge {
+        margin-bottom: 70px;
+    }
+    .certifications-badge img {
+        height: 100px;
+        max-height: unset;
+    }
+    .certifications-badge.funded-by-eu img {
+        height: 70px;
     }
 
     @media screen and (max-width: 680px) {
@@ -4064,8 +4206,36 @@ textarea {
             max-width: 80vw;
             font-size: 4vw;
         }
-        .product-view-more{
+        .certifications-wrapper {
+            padding: 10vh 5vw;
+        }
 
+        .certifications-title {
+            font-size: 40px;
+        }
+
+        .certifications-content {
+            width: 100%;
+        }
+        .eu-modal-screen .eu-modal-window {
+            width: 85vw;
+            font-size: 18px;
+            padding: 16px;
+            border-radius: 5vw;
+            height: 80vh;
+            overflow-y: hidden;
+        }
+        .eu-modal-info {
+            height: 90%;
+            overflow-y: auto;
+        }
+
+        .eu-modal-screen .eu-modal-window .eu-modal-logo-wrapper {
+            width: 200px;
+        }
+
+        .eu-modal-screen .eu-modal-window .eu-modal-close-wrapper {
+            width: 25px;
         }
         /*##########################################################################*/
     }

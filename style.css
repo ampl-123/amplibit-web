@@ -3838,6 +3838,134 @@ textarea:focus {
     width: 25%;
 }
 
+.certifications-wrapper {
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    background: #FFFFFF;
+    padding: 15vh 5vw;
+}
+
+.certifications-title-wrapper {
+    background: #FFFFFF;
+    align-items: center;
+    justify-items: center;
+    padding: 0 6.94vw 5vh;
+}
+
+.certifications-title {
+    font-size: 5.556vw;
+    font-weight: 600;
+}
+
+.certifications-content {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    font-size: 1.38vw;
+}
+
+.certifications-text {
+    line-height: 1.6;
+    text-align: center;
+}
+
+.certifications-badges {
+    display: flex;
+    flex-flow: row;
+    margin-top: 10vh;
+    width: 100%;
+    justify-self: end;
+
+}
+
+.certifications-badge {
+    display: flex;
+    width: 50%;
+    justify-content: center;
+}
+
+.certifications-badge img {
+    max-height: 13vh;
+}
+
+
+.funded-by-eu png {
+    width: 100%;
+    height: auto;
+}
+
+.eu-modal-screen {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    justify-content: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    align-items: center;
+    z-index: 100;
+    background: #00000033;
+    backdrop-filter: blur(6px);
+}
+
+.eu-modal-screen.visible {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.eu-modal-screen .eu-modal-window {
+    padding: min(2.78vw, 40px);
+    font-size: 1.11vw;
+    width: 45.5vw;
+    height: auto;
+    border-radius: 1.8vw;
+    z-index: 1000;
+    background: #FFFFFF;
+}
+
+.eu-modal-screen .eu-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5vw;
+}
+
+.eu-modal-screen .eu-modal-header .eu-modal-logo-wrapper {
+    width: 22.7vw;
+    height: auto;
+}
+
+.eu-modal-screen .eu-modal-header .eu-modal-logo-wrapper img {
+    width: 100%;
+    height: auto;
+}
+
+.eu-modal-screen .eu-modal-header .eu-modal-close-wrapper {
+    width: 1.94vw;
+    height: auto;
+}
+
+.eu-modal-screen .eu-modal-header .eu-modal-close-wrapper svg {
+    width: 100%;
+    height: auto;
+}
+
+.eu-modal-screen .eu-modal-info {
+    display: flex;
+    flex-flow: column;
+    gap: 1vw;
+}
+
+.eu-modal-screen .eu-modal-info span:last-child {
+    font-style: italic;
+}
+
+
 .contact-text span:nth-of-type(even),
 footer .text-hello span:nth-of-type(even),
 .contact-info-container p.text-hello span:nth-of-type(even),
@@ -4325,6 +4453,23 @@ footer .text-hello span:nth-of-type(even),
         padding: 14px 22px;
         border-radius: 50px;
     }
+
+    .certifications-wrapper {
+        padding-top: 15vh;
+        min-height: 100vh;
+    }
+
+    .certifications-title {
+        font-size: 80px;
+    }
+
+    .certifications-content {
+        font-size: 20px;
+    }
+
+    .certifications-badges {
+        margin-top: 120px;
+    }
 }
 
 @media screen and (max-width: 960px) {
@@ -4716,6 +4861,22 @@ footer .text-hello span:nth-of-type(even),
         display: none;
     }
 
+    .certifications-badges {
+        flex-flow: column;
+        align-items: center;
+    }
+    .certifications-badge {
+        margin-bottom: 70px;
+    }
+    .certifications-badge img{
+        height: 100px;
+    }
+    .funded-by-eu {
+        width: auto;
+    }
+    .certifications-badge.funded-by-eu img {
+        height: 75px;
+    }
 }
 
 @media screen and (max-width: 680px) {
@@ -5485,6 +5646,38 @@ footer .text-hello span:nth-of-type(even),
         position: relative;
     }
     /*##########################################################################*/
+    .certifications-wrapper {
+        padding: 10vh 5vw;
+    }
+
+    .certifications-title {
+        font-size: 40px;
+    }
+
+    .certifications-content {
+        width: 100%;
+    }
+    .eu-modal-screen .eu-modal-window {
+        width: 85vw;
+        font-size: 18px;
+        padding: 16px;
+        border-radius: 5vw;
+        height: 80vh;
+        overflow-y: hidden;
+    }
+
+    .eu-modal-info {
+        height: 90%;
+        overflow-y: auto;
+    }
+
+    .eu-modal-screen .eu-modal-window .eu-modal-logo-wrapper {
+        width: 200px;
+    }
+
+    .eu-modal-screen .eu-modal-window .eu-modal-close-wrapper {
+        width: 25px;
+    }
 }
 
 @media screen and (max-width: 580px) {
