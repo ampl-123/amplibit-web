@@ -3168,6 +3168,10 @@ footer {
     margin-bottom: 5vh;
 }
 
+.team-goals-wrapper > div > div > div {
+    width: 70%;
+}
+
 .team-goals-wrapper h3 {
     width: 20%;
     color: #000;
@@ -3872,19 +3876,24 @@ textarea:focus {
     text-align: center;
 }
 
-.certifications-badges {
+.team-goals-wrapper > div > .certifications-badges {
     display: flex;
     flex-flow: row;
     margin-top: 10vh;
     width: 100%;
-    justify-self: end;
+    justify-self: center;
+    justify-items: center !important;
+}
 
+.team-goals-wrapper > div > .certifications-badges.certifications-badge img{
+    width: auto;
 }
 
 .certifications-badge {
     display: flex;
     width: 50%;
     justify-content: center;
+    margin-bottom: 10vh;
 }
 
 .certifications-badge img {
@@ -4470,6 +4479,11 @@ footer .text-hello span:nth-of-type(even),
     .certifications-badges {
         margin-top: 120px;
     }
+
+    .team-goals-wrapper > div > .certifications-badges {
+        flex-flow: column;
+        align-items: center;
+    }
 }
 
 @media screen and (max-width: 960px) {
@@ -4876,6 +4890,17 @@ footer .text-hello span:nth-of-type(even),
     }
     .certifications-badge.funded-by-eu img {
         height: 75px;
+    }
+
+    .team-goals-wrapper > div > .certifications-badges > .certifications-badge {
+        width: auto;
+        max-height: 10vh;
+    }
+
+
+    .certifications-badge {
+        height: 100%;
+        width: auto;
     }
 }
 
