@@ -2958,7 +2958,20 @@ textarea {
     align-items: center;
     flex-flow: column;
     background: #FFFFFF;
-    padding: 20vh 5vw 20vh;
+    padding: 15vh 5vw;
+}
+
+.certifications-title-wrapper {
+    background: #FFFFFF;
+    align-items: center;
+    justify-items: center;
+    padding: 0 6.94vw 5vh;
+    margin-bottom: 15vh
+}
+
+.certifications-title {
+    font-size: 4vw;
+    font-weight: 600;
 }
 
 .separator {
@@ -2992,8 +3005,18 @@ textarea {
     justify-content: center;
 }
 
+.certifications-badge:first-child {
+    justify-content: flex-end;
+    padding-right: 8vw;
+}
+
+.certifications-badge:last-child {
+    justify-content: flex-start;
+    padding-left: 8vw;
+}
+
 .certifications-badge img {
-    max-height: 13vh;
+    max-height: 15vh;
 }
 
 .funded-by-eu {
@@ -3583,6 +3606,23 @@ textarea {
     }
     .certifications-badge {
         margin-bottom: 120px;
+    }
+    .certifications-badge:first-child,
+    .certifications-badge:last-child {
+        justify-content: center;
+        padding-right: 0;
+        padding-left: 0;
+    }
+    .certifications-badge:last-child {
+        margin-bottom: 0;
+    }
+    .certifications-title-wrapper {
+        margin-bottom: 120px;
+        padding-bottom: 0;
+    }
+    .certifications-title {
+        font-size: 70px;
+        text-align: center;
     }
 }
 
@@ -4229,13 +4269,17 @@ textarea {
             height: 90%;
             overflow-y: auto;
         }
-
         .eu-modal-screen .eu-modal-window .eu-modal-logo-wrapper {
             width: 200px;
         }
-
         .eu-modal-screen .eu-modal-window .eu-modal-close-wrapper {
             width: 25px;
+        }
+        .certifications-title-wrapper {
+            margin-bottom: 80px;
+        }
+        .certifications-title {
+            font-size: 50px;
         }
         /*##########################################################################*/
     }
@@ -4487,6 +4531,12 @@ textarea {
             transform: translate(0);
             left: 0;
             position: relative;
+        }
+        .certifications-title-wrapper {
+            margin-bottom: 80px;
+        }
+        .certifications-title {
+            font-size: 40px;
         }
 
     }

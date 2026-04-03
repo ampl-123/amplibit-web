@@ -3896,8 +3896,18 @@ textarea:focus {
     margin-bottom: 10vh;
 }
 
+.certifications-badge:first-child {
+    justify-content: flex-end;
+    padding-right: 8vw;
+}
+
+.certifications-badge:last-child {
+    justify-content: flex-start;
+    padding-left: 8vw;
+}
+
 .certifications-badge img {
-    max-height: 13vh;
+    max-height: 15vh;
 }
 
 
@@ -4483,6 +4493,12 @@ footer .text-hello span:nth-of-type(even),
     .team-goals-wrapper > div > .certifications-badges {
         flex-flow: column;
         align-items: center;
+    }
+    .certifications-badge:first-child,
+    .certifications-badge:last-child {
+        justify-content: center;
+        padding-right: 0;
+        padding-left: 0;
     }
 }
 
