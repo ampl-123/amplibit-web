@@ -2965,13 +2965,37 @@ textarea {
     background: #FFFFFF;
     align-items: center;
     justify-items: center;
-    padding: 0 6.94vw 5vh;
-    margin-bottom: 15vh
+    padding: 0 6.94vw;
+    margin-bottom: 10vh
 }
 
 .certifications-title {
     font-size: 4vw;
     font-weight: 600;
+    margin-bottom: 10vh;
+}
+
+.certified-by-wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.certified-by {
+    font-size: 3vw;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cert-tuv-img {
+    display: flex;
+    justify-content: center;
+}
+
+.cert-tuv-img img {
+    max-height: 13vh;
 }
 
 .separator {
@@ -2991,6 +3015,14 @@ textarea {
     width: 100%;
 }
 
+.certified-by-wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 4vw;
+}
+
 .certifications-badges {
     display: flex;
     flex-flow: row;
@@ -3005,18 +3037,8 @@ textarea {
     justify-content: center;
 }
 
-.certifications-badge:first-child {
-    justify-content: flex-end;
-    padding-right: 8vw;
-}
-
-.certifications-badge:last-child {
-    justify-content: flex-start;
-    padding-left: 8vw;
-}
-
 .certifications-badge img {
-    max-height: 15vh;
+    max-height: 10vh;
 }
 
 .funded-by-eu {
@@ -3624,6 +3646,15 @@ textarea {
         font-size: 70px;
         text-align: center;
     }
+    .certified-by-wrapper {
+        flex-flow: column;
+    }
+    .certified-by {
+        font-size: 40px;
+    }
+    .cert-tuv-img img{
+        max-height: 80px;
+    }
 }
 
 
@@ -3897,11 +3928,11 @@ textarea {
         margin-bottom: 70px;
     }
     .certifications-badge img {
-        height: 100px;
+        height: 80px;
         max-height: unset;
     }
-    .certifications-badge.funded-by-eu img {
-        height: 70px;
+    .certified-by {
+        font-size: 40px;
     }
 
     @media screen and (max-width: 680px) {
@@ -4251,6 +4282,7 @@ textarea {
         }
 
         .certifications-title {
+            margin-bottom: 80px;
             font-size: 40px;
         }
 
@@ -4280,6 +4312,12 @@ textarea {
         }
         .certifications-title {
             font-size: 50px;
+        }
+        .certified-by {
+            font-size: 30px;
+        }
+        .certifications-badge img {
+            height: 50px;
         }
         /*##########################################################################*/
     }

@@ -3883,6 +3883,7 @@ textarea:focus {
     width: 100%;
     justify-self: center;
     justify-items: center !important;
+    margin-bottom: 0;
 }
 
 .team-goals-wrapper > div > .certifications-badges.certifications-badge img{
@@ -3893,7 +3894,6 @@ textarea:focus {
     display: flex;
     width: 50%;
     justify-content: center;
-    margin-bottom: 10vh;
 }
 
 .certifications-badge:first-child {
@@ -4490,6 +4490,14 @@ footer .text-hello span:nth-of-type(even),
         margin-top: 120px;
     }
 
+    .certifications-badge:first-child {
+        margin-bottom: 120px;
+    }
+
+    .certifications-badge img {
+        height: 100px;
+    }
+
     .team-goals-wrapper > div > .certifications-badges {
         flex-flow: column;
         align-items: center;
@@ -4895,17 +4903,14 @@ footer .text-hello span:nth-of-type(even),
         flex-flow: column;
         align-items: center;
     }
-    .certifications-badge {
-        margin-bottom: 70px;
-    }
     .certifications-badge img{
-        height: 100px;
+        height: 80px;
     }
     .funded-by-eu {
         width: auto;
     }
     .certifications-badge.funded-by-eu img {
-        height: 75px;
+        height: 50px;
     }
 
     .team-goals-wrapper > div > .certifications-badges > .certifications-badge {
