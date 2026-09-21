@@ -1391,6 +1391,10 @@ canvas {
     background: linear-gradient(252.14deg, #8950EB 0.52%, #664FCF 99.48%);
 }
 
+#rizago-hero {
+    background: linear-gradient(252deg, #9193FA 0.8%, #5A46E5 99.08%);
+}
+
 #arrango-hero hero-background-logo svg{
     position: absolute;
     left: 40%;
@@ -1507,6 +1511,13 @@ canvas {
     max-width: 80vh;
 }
 
+#rizago-product-big{
+    width: 50vw;
+    max-width: 80vh;
+    align-self: center;
+    justify-self: center;
+}
+
 .screen-section{
     width: 100vw;
     height: 100%;
@@ -1572,6 +1583,12 @@ canvas {
 
 #amplihire-screen-title-background{
     background: linear-gradient(252.14deg, #8950EB 0.52%, #664FCF 99.48%);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+#rizago-screen-title-background{
+    background: linear-gradient(252deg, #9193FA 0.8%, #5A46E5 99.08%);
     -webkit-background-clip: text;
     background-clip: text;
 }
@@ -1772,6 +1789,26 @@ canvas {
     transform: translate(-39vw, 10vw);
 }
 
+#rizago-screen-small-1{
+    transform: translate(71vw, 3vw);
+    width: 25vw;
+}
+
+#rizago-screen-small-2{
+    transform: translate(25vw, 35vw);
+    width: 35vw;
+}
+
+#rizago-screen-mini-1{
+    transform: scale(1.5) translate(-22vw, -6vw) rotate(-20deg) translateY(var(--parallax-y, 0));
+    z-index: 0;
+    border-radius: 0;
+}
+
+#rizago-screen-mini-2{
+    transform: scale(1.5) translate(10vw, -6vw) rotate(12deg) translateY(var(--parallax-y, 0));
+    z-index: 5;
+}
 .screen{
     width: 100%;
     height: 100%;
@@ -1921,6 +1958,12 @@ canvas {
     background-clip: text
 }
 
+.arrango-feature-header{
+    background: linear-gradient(252deg, #9193FA 0.8%, #5A46E5 99.08%);
+    -webkit-background-clip: text;
+    background-clip: text
+}
+
 .feature-header span{
     -webkit-text-fill-color: transparent;
     color: transparent;
@@ -2031,6 +2074,17 @@ canvas {
     --y-offset: -84%;
 }
 
+#rizago-benefits-background-logo-left{
+    left: 0;
+    --x-offset: -10%;
+    --y-offset: -10%;
+}
+
+#rizago-benefits-background-logo-right{
+    right: 0;
+    --x-offset: 10%;
+    --y-offset: -90%;
+}
 .benefits-background-logo{
     width: 100%;
     height: auto;
@@ -2212,6 +2266,21 @@ canvas {
     transform: translate(25vw, -7vw) translateY(var(--parallax-y, 0));
 }
 
+#rizago-benefits-card-1{
+    transform: translate(-21vw, -14vw) translateY(var(--parallax-y, 0));
+}
+
+#rizago-benefits-card-2{
+    transform: translate(22vw, -8vw) translateY(var(--parallax-y, 0));
+}
+
+#rizago-benefits-card-3{
+    transform: translate(-21vw, 13vw) translateY(var(--parallax-y, 0));
+}
+
+#rizago-benefits-card-4{
+    transform: translate(19vw, 16vw) translateY(var(--parallax-y, 0));
+}
 .request-demo-section{
     display: flex;
     align-items: center;
@@ -2240,6 +2309,9 @@ canvas {
     background: linear-gradient(252.14deg, #8950EB 0.52%, #664FCF 99.48%);
 }
 
+.rizago-background{
+    background: linear-gradient(252deg, #9193FA 0.8%, #5A46E5 99.08%);
+}
 .request-demo-text-section{
     width: 65%;
     font-family: Figtree, sans-serif;
@@ -2332,6 +2404,13 @@ canvas {
     fill: #6f4ed5;
 }
 
+#book-a-demo-rizago:hover{
+    color: #9193FA;
+}
+
+#book-a-demo-rizago:hover svg{
+    fill: #9193FA;
+}
 .request-demo-button-section{
     padding-top: 1px;
 }
@@ -3883,16 +3962,27 @@ textarea:focus {
     width: 100%;
     justify-self: center;
     justify-items: center !important;
-    margin-bottom: 0;
+    margin-bottom: 10vh;
 }
 
 .team-goals-wrapper > div > .certifications-badges.certifications-badge img{
     width: auto;
 }
 
+.team-goals-wrapper > div > .certifications-badges:last-child {
+    width: auto;
+    margin-bottom: 0;
+}
+
 .certifications-badge {
     display: flex;
     width: 50%;
+    justify-content: center;
+}
+
+.certifications-badge:only-child {
+    display: flex;
+    width: 100%;
     justify-content: center;
 }
 
@@ -3903,6 +3993,11 @@ textarea:focus {
 
 .certifications-badge:last-child {
     justify-content: flex-start;
+    padding-left: 8vw;
+}
+
+.certifications-badge:only-child:last-child {
+    justify-content: center;
     padding-left: 8vw;
 }
 
@@ -3932,6 +4027,12 @@ textarea:focus {
 }
 
 .eu-modal-screen.visible {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.eu-modal-screen-2.visible {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -3984,6 +4085,52 @@ textarea:focus {
     font-style: italic;
 }
 
+.eu-modal-screen-2 .eu-modal-window {
+    padding: min(2.78vw, 40px);
+    font-size: 1.11vw;
+    width: 45.5vw;
+    height: auto;
+    border-radius: 1.8vw;
+    z-index: 1000;
+    background: #FFFFFF;
+}
+
+.eu-modal-screen-2 .eu-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5vw;
+}
+
+.eu-modal-screen-2 .eu-modal-header .eu-modal-logo-wrapper {
+    width: 22.7vw;
+    height: auto;
+}
+
+.eu-modal-screen-2 .eu-modal-header .eu-modal-logo-wrapper img {
+    width: 100%;
+    height: auto;
+}
+
+.eu-modal-screen-2 .eu-modal-header .eu-modal-close-wrapper {
+    width: 1.94vw;
+    height: auto;
+}
+
+.eu-modal-screen-2 .eu-modal-header .eu-modal-close-wrapper svg {
+    width: 100%;
+    height: auto;
+}
+
+.eu-modal-screen-2 .eu-modal-info {
+    display: flex;
+    flex-flow: column;
+    gap: 1vw;
+}
+
+.eu-modal-screen-2 .eu-modal-info span:last-child {
+    font-style: italic;
+}
 
 .contact-text span:nth-of-type(even),
 footer .text-hello span:nth-of-type(even),
@@ -4492,6 +4639,10 @@ footer .text-hello span:nth-of-type(even),
 
     .certifications-badge:first-child {
         margin-bottom: 120px;
+    }
+
+    .certifications-badge:only-child {
+        margin-bottom: 0;
     }
 
     .certifications-badge img {
@@ -5712,6 +5863,15 @@ footer .text-hello span:nth-of-type(even),
         overflow-y: hidden;
     }
 
+    .eu-modal-screen-2 .eu-modal-window {
+        width: 85vw;
+        font-size: 18px;
+        padding: 16px;
+        border-radius: 5vw;
+        height: 80vh;
+        overflow-y: hidden;
+    }
+
     .eu-modal-info {
         height: 90%;
         overflow-y: auto;
@@ -5722,6 +5882,14 @@ footer .text-hello span:nth-of-type(even),
     }
 
     .eu-modal-screen .eu-modal-window .eu-modal-close-wrapper {
+        width: 25px;
+    }
+
+    .eu-modal-screen-2 .eu-modal-window .eu-modal-logo-wrapper {
+        width: 200px;
+    }
+
+    .eu-modal-screen-2 .eu-modal-window .eu-modal-close-wrapper {
         width: 25px;
     }
 }
