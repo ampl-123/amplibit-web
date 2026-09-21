@@ -3970,7 +3970,7 @@ textarea:focus {
 }
 
 .team-goals-wrapper > div > .certifications-badges:last-child {
-    width: auto;
+    width: 100%;
     margin-bottom: 0;
 }
 
@@ -3987,8 +3987,8 @@ textarea:focus {
 }
 
 .certifications-badge:first-child {
-    justify-content: flex-end;
     padding-right: 8vw;
+    width: auto;
 }
 
 .certifications-badge:last-child {
@@ -3998,7 +3998,7 @@ textarea:focus {
 
 .certifications-badge:only-child:last-child {
     justify-content: center;
-    padding-left: 8vw;
+    padding-left: 0;
 }
 
 .certifications-badge img {
