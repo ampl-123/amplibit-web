@@ -3247,10 +3247,6 @@ footer {
     margin-bottom: 5vh;
 }
 
-.team-goals-wrapper > div > div > div {
-    width: 70%;
-}
-
 .team-goals-wrapper h3 {
     width: 20%;
     color: #000;
@@ -3957,12 +3953,14 @@ textarea:focus {
 
 .team-goals-wrapper > div > .certifications-badges {
     display: flex;
-    flex-flow: row;
+    flex-flow: row wrap;
     margin-top: 10vh;
     width: 100%;
     justify-self: center;
-    justify-items: center !important;
+    justify-content: center !important;
     margin-bottom: 10vh;
+    align-items: center;
+    row-gap: 4vw;
 }
 
 .team-goals-wrapper > div > .certifications-badges.certifications-badge img{
@@ -3978,6 +3976,7 @@ textarea:focus {
     display: flex;
     width: 50%;
     justify-content: center;
+    padding: 0 4vw 0;
 }
 
 .certifications-badge:only-child {
@@ -3986,25 +3985,13 @@ textarea:focus {
     justify-content: center;
 }
 
-.certifications-badge:first-child {
-    padding-right: 8vw;
-    width: auto;
-}
-
-.certifications-badge:last-child {
-    justify-content: flex-start;
-    padding-left: 8vw;
-}
-
 .certifications-badge:only-child:last-child {
     justify-content: center;
-    padding-left: 0;
 }
 
 .certifications-badge img {
-    max-height: 15vh;
+    max-height: 10vh;
 }
-
 
 .funded-by-eu png {
     width: 100%;
@@ -4637,10 +4624,6 @@ footer .text-hello span:nth-of-type(even),
         margin-top: 120px;
     }
 
-    .certifications-badge:first-child {
-        margin-bottom: 120px;
-    }
-
     .certifications-badge:only-child {
         margin-bottom: 0;
     }
@@ -4649,10 +4632,6 @@ footer .text-hello span:nth-of-type(even),
         height: 100px;
     }
 
-    .team-goals-wrapper > div > .certifications-badges {
-        flex-flow: column;
-        align-items: center;
-    }
     .certifications-badge:first-child,
     .certifications-badge:last-child {
         justify-content: center;
@@ -5854,6 +5833,12 @@ footer .text-hello span:nth-of-type(even),
     .certifications-content {
         width: 100%;
     }
+
+    .team-goals-wrapper > div > .certifications-badges {
+        flex-flow: column;
+        gap: 80px;
+    }
+
     .eu-modal-screen .eu-modal-window {
         width: 85vw;
         font-size: 18px;
