@@ -4635,8 +4635,6 @@ footer .text-hello span:nth-of-type(even),
     .certifications-badge:first-child,
     .certifications-badge:last-child {
         justify-content: center;
-        padding-right: 0;
-        padding-left: 0;
     }
 }
 
