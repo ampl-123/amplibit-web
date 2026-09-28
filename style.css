@@ -861,6 +861,10 @@ canvas {
     padding: 2vw 0;
 }
 
+.product.flipped{
+    flex-flow: row-reverse;
+}
+
 .product.visible .product-img-container {
     animation: fadeIn 0.8s ease-out forwards;
 }
@@ -898,17 +902,21 @@ canvas {
 #background-logo-catago svg{
     height: 100%;
     width: 100%;
-    transform: translate(30%);
+    transform: translate(-30%);
 }
 
 #background-logo-arrango svg{
     height: 100%;
     width: 100%;
-    transform: translate(-30%);
+    transform: translate(30%);
 }
 
 #background-logo-libby svg{
-    transform: translate(20%);
+    transform: translate(-20%);
+}
+
+#background-logo-rizago svg{
+    transform: translate(30%);
 }
 
 .item-info{
@@ -923,18 +931,12 @@ canvas {
     justify-content: center;
 }
 
-#catago-info{
-    padding-left: 0;
-    width: 35%
-}
-
-#libby-info{
-    width: 35%;
+.product.flipped .item-info{
     padding-left: 0;
 }
 
 #libby-img{
-    padding-right: 3vw;
+    padding-left: 3vw;
 }
 
 .item-img {
@@ -1312,6 +1314,14 @@ canvas {
     fill: #6f4ed5;
 }
 
+#contact-link-rizago:hover{
+    color: #7060eb;
+}
+
+#contact-link-rizago:hover svg{
+    fill: #7060eb;
+}
+
 .contact-link:hover {
     color: #20cc9e;
 }
@@ -1393,6 +1403,10 @@ canvas {
 
 #rizago-hero {
     background: linear-gradient(252deg, #9193FA 0.8%, #5A46E5 99.08%);
+}
+
+#rizago-hero svg{
+    left: -15vw;
 }
 
 #arrango-hero hero-background-logo svg{
@@ -1802,7 +1816,7 @@ canvas {
 #rizago-screen-mini-1{
     transform: scale(1.5) translate(-22vw, -6vw) rotate(-20deg) translateY(var(--parallax-y, 0));
     z-index: 0;
-    border-radius: 0;
+    border-radius: 16;
 }
 
 #rizago-screen-mini-2{
@@ -5282,10 +5296,11 @@ footer .text-hello span:nth-of-type(even),
     /*##########################################################################*/
     .product-section{
         overflow-x: hidden;
-        height: 510vh;
+        height: 590vh;
     }
 
-    .product{
+    .product,
+    .product.flipped{
         flex-flow: column-reverse;
         border-radius: 5vw;
     }
@@ -5296,28 +5311,12 @@ footer .text-hello span:nth-of-type(even),
         min-height: 80vh;
     }
 
-    #catago-product{
-        flex-flow: column;
-    }
-
-    #libby-product{
-        flex-flow: column;
-    }
-
-    .item-info{
+    .item-info,
+    .product.flipped .item-info{
         width: 100%;
         height: 50%;
         gap: 15px;
         align-content: flex-start;
-    }
-
-    #catago-info{
-        padding-left: 8.125vw;
-        width: 100%;
-    }
-
-    #libby-info{
-        width: 100%;
         padding-left: 8.125vw;
     }
 
@@ -5505,6 +5504,13 @@ footer .text-hello span:nth-of-type(even),
         left: 35%;
         width: 40%;
         position: absolute;
+    }
+
+    #rizago-product-big{
+        position: relative;
+        transform: none;
+        width: 100%;
+        height: 100%;
     }
 
     .contact-link {
@@ -5755,6 +5761,26 @@ footer .text-hello span:nth-of-type(even),
         align-self: flex-end;
     }
 
+    #rizago-benefits-card-1{
+        transform: none;
+        align-self: flex-start;
+    }
+
+    #rizago-benefits-card-2{
+        transform: none;
+        align-self: flex-end;
+    }
+
+    #rizago-benefits-card-3{
+        transform: none;
+        align-self: flex-start;
+    }
+
+    #rizago-benefits-card-4{
+        transform: none;
+        align-self: flex-end;
+    }
+
     .benefits-card h1{
         font-size: 9vw;
     }
@@ -5906,7 +5932,7 @@ footer .text-hello span:nth-of-type(even),
 
     .partners-container img {
         width: fit-content;
-        height: 100%;
+        height: auto;
         max-height: 6.5vh;
     }
 

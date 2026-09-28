@@ -1409,6 +1409,10 @@ canvas {
     height: 100%;
 }
 
+.product.flipped{
+    flex-flow: row-reverse;
+}
+
 .product.visible .product-img-container {
     animation: fadeIn 0.8s ease-out forwards;
 }
@@ -1446,17 +1450,21 @@ canvas {
 #background-logo-catago svg{
     height: 100%;
     width: 100%;
-    transform: translate(30%);
+    transform: translate(-30%);
 }
 
 #background-logo-arrango svg{
     height: 100%;
     width: 100%;
-    transform: translate(-30%);
+    transform: translate(30%);
 }
 
 #background-logo-libby svg{
-    transform: translate(20%);
+    transform: translate(-20%);
+}
+
+#background-logo-rizago svg{
+    transform: translate(30%);
 }
 
 .item-info{
@@ -1471,18 +1479,12 @@ canvas {
     justify-content: center;
 }
 
-#catago-info{
+.product.flipped .item-info{
     padding-left: 0;
-    width: 35%
-}
-
-#libby-info{
-    padding-left: 0;
-    width: 35%
 }
 
 #libby-img{
-    padding-right: 3vw;
+    padding-left: 3vw;
 }
 
 .item-img {
@@ -1612,7 +1614,14 @@ canvas {
     width: 55%;
     max-width: 60vh;
     position: absolute;
-    transform: translate(-50%, -50%) translate(70%, 40%);
+    transform: translate(-50%, -50%) translate(-70%, 40%);
+}
+
+#rizago-1{
+    width: 90%;
+    max-width: 75vh;
+    z-index:3;
+
 }
 
 .product-img-svg-wrapper {
@@ -1716,6 +1725,18 @@ canvas {
 
 #see-more-amplihire:hover svg{
     fill: #6e4ed4;
+}
+
+#see-more-rizago:hover{
+    color: #9193FA;
+}
+
+#see-more-rizago:hover span{
+    color: #9193FA;
+}
+
+#see-more-rizago:hover svg{
+    fill: #9193FA;
 }
 
 
@@ -4139,35 +4160,22 @@ textarea {
             overflow-x: hidden;
         }
 
-        .product{
+        .product,
+        .product.flipped{
             flex-flow: column-reverse;
             border-radius: 5vw;
         }
 
-        #catago-product{
-            flex-flow: column;
-        }
-
-        #libby-product{
-            flex-flow: column;
-        }
-
-        .item-info{
+        .item-info,
+        .product.flipped .item-info{
             width: 100%;
             height: 50%;
             gap: 15px;
             align-content: flex-start;
+            padding-left: 8.125vw;
         }
 
-        #catago-info{
-            padding-left: 8.125vw;
-            width: 100%;
-        }
-
-        #libby-info{
-            padding-left: 8.125vw;
-            width: 100%;
-        }
+        
 
         #products-amplihire-img{
             width: 90%;
@@ -4240,7 +4248,6 @@ textarea {
 
         #arrango-2{
             width: 40%;
-            transform: translate(-60%, 110%);
         }
 
         #libby-1{
@@ -4251,7 +4258,10 @@ textarea {
         #libby-2{
             width: 45%;
             position: absolute;
-            transform: translate(60%, 90%);
+        }
+
+        #rizago-1{
+            top: 40%;
         }
 
         .see-more{
@@ -4347,7 +4357,7 @@ textarea {
 
         .partners-container img {
             width: fit-content;
-            height: 100%;
+            height: auto;
             max-height: 6.5vh;
         }
 
