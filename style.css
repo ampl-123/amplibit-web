@@ -1157,6 +1157,18 @@ canvas {
 #see-more-amplihire:hover svg{
     fill: #6e4ed4;
 }
+
+#see-more-rizago:hover{
+    color: #9193FA;
+}
+
+#see-more-rizago:hover span{
+    color: #9193FA;
+}
+
+#see-more-rizago:hover svg{
+    fill: #9193FA;
+}
 .background {
     position: relative;
     width: 100vw;
