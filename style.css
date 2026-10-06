@@ -1418,7 +1418,7 @@ canvas {
 }
 
 #rizago-hero svg{
-    left: -15vw;
+    left: 0;
 }
 
 #arrango-hero hero-background-logo svg{
@@ -5523,6 +5523,10 @@ footer .text-hello span:nth-of-type(even),
         transform: none;
         width: 100%;
         height: 100%;
+    }
+
+    #rizago-hero svg {
+        left: -15vw;
     }
 
     .contact-link {
